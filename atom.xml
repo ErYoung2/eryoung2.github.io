@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2022-06-06T17:11:10.799Z</updated>
+  <updated>2022-06-12T02:43:04.396Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Sourcetree 跳过注册环节</title>
+    <link href="http://eryoung2.github.io/2022/06/12/Sourcetree-%E8%B7%B3%E8%BF%87%E6%B3%A8%E5%86%8C%E7%8E%AF%E8%8A%82/"/>
+    <id>http://eryoung2.github.io/2022/06/12/Sourcetree-%E8%B7%B3%E8%BF%87%E6%B3%A8%E5%86%8C%E7%8E%AF%E8%8A%82/</id>
+    <published>2022-06-12T02:23:40.000Z</published>
+    <updated>2022-06-12T02:43:04.396Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前几天在电脑上装了个sourcetree，结果它硬要我注册，烦得很。<br>于是查了一下怎么跳过注册环节，结果还真有，试了一下，真给力！<br>特此记录。</p><h3 id="MAC版本："><a href="#MAC版本：" class="headerlink" title="MAC版本："></a>MAC版本：</h3><ol><li><p>打开sourcetree</p></li><li><p>关闭sourcetree</p></li><li><p>命令终端输入</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults write com.torusknot.SourceTreeNotMAS completedWelcomeWizardVersion 3</span><br></pre></td></tr></table></figure></li><li><p>打开sourcetree即可跳过登录</p></li></ol><p> </p><h3 id="Windows版本："><a href="#Windows版本：" class="headerlink" title="Windows版本："></a>Windows版本：</h3><ol><li><p>打开我的电脑，输入“%LocalAppData%\Atlassian\SourceTree\”，并新建一个<strong>accounts.json</strong>文件</p></li><li><p>在<strong>accounts.json</strong>文件中输入以下内容后，重新登录，即可跳过注册&#x2F;登陆环节，直接使用。</p></li></ol><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">[</span> <span class="punctuation">&#123;</span> <span class="attr">&quot;$id&quot;</span><span class="punctuation">:</span><span class="string">&quot;1&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;$type&quot;</span><span class="punctuation">:</span><span class="string">&quot;SourceTree.Api.Host.Identity.Model.IdentityAccount, SourceTree.Api.Host.Identity&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;Authenticate&quot;</span><span class="punctuation">:</span><span class="keyword">true</span><span class="punctuation">,</span> <span class="attr">&quot;HostInstance&quot;</span><span class="punctuation">:</span><span class="punctuation">&#123;</span>  <span class="attr">&quot;$id&quot;</span><span class="punctuation">:</span><span class="string">&quot;2&quot;</span><span class="punctuation">,</span>  <span class="attr">&quot;$type&quot;</span><span class="punctuation">:</span><span class="string">&quot;SourceTree.Host.Atlassianaccount.AtlassianAccountInstance, SourceTree.Host.AtlassianAccount&quot;</span><span class="punctuation">,</span>  <span class="attr">&quot;Host&quot;</span><span class="punctuation">:</span><span class="punctuation">&#123;</span>   <span class="attr">&quot;$id&quot;</span><span class="punctuation">:</span><span class="string">&quot;3&quot;</span><span class="punctuation">,</span>   <span class="attr">&quot;$type&quot;</span><span class="punctuation">:</span><span class="string">&quot;SourceTree.Host.Atlassianaccount.AtlassianAccountHost, SourceTree.Host.AtlassianAccount&quot;</span><span class="punctuation">,</span>   <span class="attr">&quot;Id&quot;</span><span class="punctuation">:</span><span class="string">&quot;atlassian account&quot;</span>  <span class="punctuation">&#125;</span><span class="punctuation">,</span>  <span class="attr">&quot;BaseUrl&quot;</span><span class="punctuation">:</span><span class="string">&quot;https://id.atlassian.com/&quot;</span>  <span class="punctuation">&#125;</span><span class="punctuation">,</span>  <span class="attr">&quot;Credentials&quot;</span><span class="punctuation">:</span><span class="punctuation">&#123;</span>   <span class="attr">&quot;$id&quot;</span><span class="punctuation">:</span><span class="string">&quot;4&quot;</span><span class="punctuation">,</span>   <span class="attr">&quot;$type&quot;</span><span class="punctuation">:</span><span class="string">&quot;SourceTree.Model.BasicAuthCredentials, SourceTree.Api.Account&quot;</span><span class="punctuation">,</span>   <span class="attr">&quot;Username&quot;</span><span class="punctuation">:</span><span class="string">&quot;&quot;</span><span class="punctuation">,</span>   <span class="attr">&quot;Email&quot;</span><span class="punctuation">:</span><span class="keyword">null</span>  <span class="punctuation">&#125;</span><span class="punctuation">,</span>  <span class="attr">&quot;IsDefault&quot;</span><span class="punctuation">:</span><span class="keyword">false</span> <span class="punctuation">&#125;</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;前几天在电脑上装了个sourcetree，结果它硬要我注册，烦得很。&lt;br&gt;于是查了一下怎么跳过注册环节，结果还真有，试了一下，真给力！&lt;b</summary>
+      
+    
+    
+    
+    <category term="工具使用" scheme="http://eryoung2.github.io/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    
+    
+    <category term="Sourcetree" scheme="http://eryoung2.github.io/tags/Sourcetree/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo 改变主题的问题</title>
