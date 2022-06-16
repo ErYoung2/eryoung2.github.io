@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2022-06-16T15:24:51.005Z</updated>
+  <updated>2022-06-16T15:35:29.349Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://eryoung2.github.io/2022/06/16/hexo%E6%B7%BB%E5%8A%A0%E5%9B%BE%E5%BA%8A/"/>
     <id>http://eryoung2.github.io/2022/06/16/hexo%E6%B7%BB%E5%8A%A0%E5%9B%BE%E5%BA%8A/</id>
     <published>2022-06-16T15:10:16.000Z</published>
-    <updated>2022-06-16T15:24:51.005Z</updated>
+    <updated>2022-06-16T15:35:29.349Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>如果大家用过Markdown的话，就会知道在markdown里边插入图片时非常蛋疼，但凡换个地方来发布，图片就会404.</p><p>由于我最近在github pages上建了一个blog，我也遇到了这个问题，这时候就得找找办法。经过查询资料，我发现可以通过github创建图床来解决，效果不错。</p><h2 id="图床"><a href="#图床" class="headerlink" title="图床"></a>图床</h2><p>顾名思义，图床就是对博客图片的集中管理。目前比较好用的应用有SM.MS、iPic、Picgo等。由于我这里使用MarkText来写博客，而MarkText也支持了创建图床的功能，故直接使用此功能来做图床。</p><h2 id="创建过程"><a href="#创建过程" class="headerlink" title="创建过程"></a>创建过程</h2><h3 id="1-在github上创建一个git仓库"><a href="#1-在github上创建一个git仓库" class="headerlink" title="1. 在github上创建一个git仓库"></a>1. 在github上创建一个git仓库</h3><p><img src="/Users/eryoung2/Library/Application%20Support/marktext/images/2022-06-16-23-18-15-image.png"></p><h3 id="2-创建一个Access-token"><a href="#2-创建一个Access-token" class="headerlink" title="2. 创建一个Access token"></a>2. 创建一个Access token</h3><p>在”<strong>用户-Setting-Developer Settings</strong>“下建立一个access token，创建之后有一串密文，将其保存下来。</p><p><img src="/Users/eryoung2/Library/Application%20Support/marktext/images/2022-06-16-23-21-19-image.png"></p><h3 id="3-在MarkText设置图床"><a href="#3-在MarkText设置图床" class="headerlink" title="3. 在MarkText设置图床"></a>3. 在MarkText设置图床</h3><p>打开MarkText的<strong>reference-image</strong>, 按如下内容做设置</p><p><img src="/Users/eryoung2/Library/Application%20Support/marktext/images/2022-06-16-23-24-29-image.png"></p><p>然后就可以了。不得不说，挺好用的哈哈。</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>如果大家用过Markdown的话，就会知道在markdown里边插入图片时非常蛋疼，但凡换个地方来发布，图片就会404.</p><p>由于我最近在github pages上建了一个blog，我也遇到了这个问题，这时候就得找找办法。经过查询资料，我发现可以通过github创建图床来解决，效果不错。</p><h2 id="图床"><a href="#图床" class="headerlink" title="图床"></a>图床</h2><p>顾名思义，图床就是对博客图片的集中管理。目前比较好用的应用有SM.MS、iPic、Picgo等。由于我这里使用MarkText来写博客，而MarkText也支持了创建图床的功能，故直接使用此功能来做图床。</p><h2 id="创建过程"><a href="#创建过程" class="headerlink" title="创建过程"></a>创建过程</h2><h3 id="1-在github上创建一个git仓库"><a href="#1-在github上创建一个git仓库" class="headerlink" title="1. 在github上创建一个git仓库"></a>1. 在github上创建一个git仓库</h3><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2022/06/16-23-34-48-git.png"></p><h3 id="2-创建一个Access-token"><a href="#2-创建一个Access-token" class="headerlink" title="2. 创建一个Access token"></a>2. 创建一个Access token</h3><p>在”<strong>用户-Setting-Developer Settings</strong>“下建立一个access token，创建之后有一串密文，将其保存下来。</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2022/06/16-23-35-02-token.png"></p><h3 id="3-在MarkText设置图床"><a href="#3-在MarkText设置图床" class="headerlink" title="3. 在MarkText设置图床"></a>3. 在MarkText设置图床</h3><p>打开MarkText的<strong>reference-image</strong>, 按如下内容做设置</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2022/06/16-23-35-24-setup.png"></p><p>然后就可以了。不得不说，挺好用的哈哈。</p>]]></content>
     
     
       
