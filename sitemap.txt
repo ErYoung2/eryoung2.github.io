@@ -1,8 +1,8 @@
+http://eryoung2.github.io/2022/06/14/%E5%B8%B8%E7%94%A8%E5%8F%91%E5%B8%83%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/
 http://eryoung2.github.io/2022/06/21/mysql%E4%B8%BB%E4%BB%8E%E6%9E%B6%E6%9E%84/
 http://eryoung2.github.io/2022/06/16/hexo%E6%B7%BB%E5%8A%A0%E5%9B%BE%E5%BA%8A/
 http://eryoung2.github.io/link/index.html
 http://eryoung2.github.io/2022/06/12/Sourcetree-%E8%B7%B3%E8%BF%87%E6%B3%A8%E5%86%8C%E7%8E%AF%E8%8A%82/
-http://eryoung2.github.io/2022/06/14/%E5%B8%B8%E7%94%A8%E5%8F%91%E5%B8%83%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/
 http://eryoung2.github.io/archive/index.html
 http://eryoung2.github.io/2022/06/06/hexo-%E6%94%B9%E5%8F%98%E4%B8%BB%E9%A2%98%E7%9A%84%E9%97%AE%E9%A2%98/
 http://eryoung2.github.io/categories/index.html
