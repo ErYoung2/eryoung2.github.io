@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2022-06-23T17:54:51.080Z</updated>
+  <updated>2022-06-25T14:56:42.348Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux安装jdk8</title>
+    <link href="http://eryoung2.github.io/2022/06/25/linux%E5%AE%89%E8%A3%85jdk8/"/>
+    <id>http://eryoung2.github.io/2022/06/25/linux%E5%AE%89%E8%A3%85jdk8/</id>
+    <published>2022-06-25T14:56:03.000Z</published>
+    <updated>2022-06-25T14:56:42.348Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h4 id="1-下载安装包并上传"><a href="#1-下载安装包并上传" class="headerlink" title="1. 下载安装包并上传"></a>1. 下载安装包并上传</h4><h4 id="2-解压"><a href="#2-解压" class="headerlink" title="2.  解压"></a>2.  解压</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@home:/home/young# tar zxf jdk-8u131-linux-x64.tar.gz -C /usr/local/</span><br><span class="line">root@home:/home/young# mv /usr/local/jdk1.8.0_131/ /usr/local/java8</span><br></pre></td></tr></table></figure><h4 id="3-在-x2F-etc-x2F-profile添加项目"><a href="#3-在-x2F-etc-x2F-profile添加项目" class="headerlink" title="3. 在&#x2F;etc&#x2F;profile添加项目"></a>3. 在&#x2F;etc&#x2F;profile添加项目</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/java8/</span><br><span class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</span><br><span class="line">export CLASSPATH=.:$&#123;JAVA_HOME&#125;/lib:$&#123;JRE_HOME&#125;/lib</span><br><span class="line">export PATH=$&#123;JAVA_HOME&#125;/bin:$PATH</span><br></pre></td></tr></table></figure><h3 id="4-使-x2F-etc-x2F-profile生效"><a href="#4-使-x2F-etc-x2F-profile生效" class="headerlink" title="4. 使&#x2F;etc&#x2F;profile生效"></a>4. 使&#x2F;etc&#x2F;profile生效</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure><h3 id="5-验证jdk版本"><a href="#5-验证jdk版本" class="headerlink" title="5. 验证jdk版本"></a>5. 验证jdk版本</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;方法&quot;&gt;&lt;a href=&quot;#方法&quot; class=&quot;headerlink&quot; title=&quot;方法&quot;&gt;&lt;/a&gt;方法&lt;/h2&gt;&lt;h4 id=&quot;1-下载安装包并上传&quot;&gt;&lt;a href=&quot;#1-下载安装包并上传&quot; class=&quot;headerlink&quot; title=&quot;1. 下载</summary>
+      
+    
+    
+    
+    <category term="操作系统" scheme="http://eryoung2.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+    <category term="linux" scheme="http://eryoung2.github.io/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>vim操作(第一弹)</title>

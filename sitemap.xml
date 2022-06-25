@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://eryoung2.github.io/2022/06/25/linux%E5%AE%89%E8%A3%85jdk8/</loc>
+    
+    <lastmod>2022-06-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://eryoung2.github.io/2022/06/24/vim%E6%93%8D%E4%BD%9C-%E7%AC%AC%E4%B8%80%E5%BC%B9/</loc>
     
     <lastmod>2022-06-23</lastmod>
@@ -103,7 +112,7 @@
 
   <url>
     <loc>http://eryoung2.github.io/</loc>
-    <lastmod>2022-06-23</lastmod>
+    <lastmod>2022-06-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -111,35 +120,42 @@
   
   <url>
     <loc>http://eryoung2.github.io/tags/hexo/</loc>
-    <lastmod>2022-06-23</lastmod>
+    <lastmod>2022-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://eryoung2.github.io/tags/Sourcetree/</loc>
-    <lastmod>2022-06-23</lastmod>
+    <lastmod>2022-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://eryoung2.github.io/tags/%E5%8F%91%E5%B8%83%E6%96%B9%E5%BC%8F/</loc>
-    <lastmod>2022-06-23</lastmod>
+    <lastmod>2022-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://eryoung2.github.io/tags/mysql/</loc>
-    <lastmod>2022-06-23</lastmod>
+    <lastmod>2022-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://eryoung2.github.io/tags/vim/</loc>
-    <lastmod>2022-06-23</lastmod>
+    <lastmod>2022-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://eryoung2.github.io/tags/linux/</loc>
+    <lastmod>2022-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -148,42 +164,49 @@
   
   <url>
     <loc>http://eryoung2.github.io/categories/%E9%94%99%E8%AF%AF%E6%8E%92%E6%9F%A5/</loc>
-    <lastmod>2022-06-23</lastmod>
+    <lastmod>2022-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://eryoung2.github.io/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/</loc>
-    <lastmod>2022-06-23</lastmod>
+    <lastmod>2022-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://eryoung2.github.io/categories/IT%E6%A6%82%E5%BF%B5/</loc>
-    <lastmod>2022-06-23</lastmod>
+    <lastmod>2022-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://eryoung2.github.io/categories/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/</loc>
-    <lastmod>2022-06-23</lastmod>
+    <lastmod>2022-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://eryoung2.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
-    <lastmod>2022-06-23</lastmod>
+    <lastmod>2022-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://eryoung2.github.io/categories/%E7%BC%96%E8%BE%91%E5%99%A8/</loc>
-    <lastmod>2022-06-23</lastmod>
+    <lastmod>2022-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://eryoung2.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
+    <lastmod>2022-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
