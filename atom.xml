@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2022-07-08T15:00:46.505Z</updated>
+  <updated>2022-07-11T18:04:18.493Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ssh服务</title>
+    <link href="http://eryoung2.github.io/2022/07/12/ssh%E6%9C%8D%E5%8A%A1/"/>
+    <id>http://eryoung2.github.io/2022/07/12/ssh%E6%9C%8D%E5%8A%A1/</id>
+    <published>2022-07-11T18:02:11.000Z</published>
+    <updated>2022-07-11T18:04:18.493Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="概念、定义："><a href="#概念、定义：" class="headerlink" title="概念、定义："></a>概念、定义：</h2><ul><li>SSH是Secure Shell Protocol的简写，由IETF网络工作小组（Network Working Group）制定。</li><li>SSH在数据传输之前，将联机数据包进行加密处理，才会发出给服务端。</li><li>SSH是unix&#x2F;linux进行远程控制或者传输文件的一种协议。</li><li>SSH包括两部分，SSH客户端和SSHD服务端。</li></ul><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul><li>SSH是密文传输，较明文传输的telnet安全。</li><li>SSH是基于TCP传输协议的，所以是可靠传输。</li><li>SSH的默认端口是22，如要改变端口号，需在修改配置文件之后，加-p参数指定新端口进行ssh连接。</li></ul><h2 id="连接过程："><a href="#连接过程：" class="headerlink" title="连接过程："></a>连接过程：</h2><p>基于账户密码的连接方式：</p><ol><li>客户端用会话密钥加密用户名、认证方法、密码并将加密后的结果发至服务器端。</li><li>服务器端使用会话密钥解密得到用户名、密码，进行核对。若正确，则通过连接；若失败，则返回认证失败报文给客户端。客户端循环第一步，<br>直至达到最大连接次数，TCP连接关闭。<br>基于公钥私钥的连接方式：<ol><li>客户端使用ssh-keygen生成一对公钥和私钥。</li><li>客户端将公钥推送至服务端。ssh-copy-id -i <del>&#x2F;.ssh&#x2F;id_rsa.pub server,即将本机的公钥推送至server机的</del>&#x2F;.ssh&#x2F;authorized_keys里。</li><li>客户端用会话密钥加密用户名、认证方法、公钥并将加密后的结果发至服务器端。</li><li>服务器端进行解密后，对比此公钥是否存在于server机的~&#x2F;.ssh&#x2F;authorized_keys里。若存在，通过验证，进行下一步；若不存在，<br>则返回失败信息。</li><li>服务器端生成质询码，用客户端公钥进行一次加密，用会话密钥进行二次加密，推送给客户端。</li><li>客户端使用会话密钥进行一次解密，用公钥进行二次解密得到质询码。将质询码用会话密钥加密后重新发送给服务器端。</li><li>服务器端使用会话密钥解密后，判断是否是自己的质询码。如果是，则免密登录；若不是，则返回连接失败的信息。</li></ol></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;概念、定义：&quot;&gt;&lt;a href=&quot;#概念、定义：&quot; class=&quot;headerlink&quot; title=&quot;概念、定义：&quot;&gt;&lt;/a&gt;概念、定义：&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;SSH是Secure Shell Protocol的简写，由IETF网络工作小组（Network</summary>
+      
+    
+    
+    
+    <category term="服务" scheme="http://eryoung2.github.io/categories/%E6%9C%8D%E5%8A%A1/"/>
+    
+    
+    <category term="ssh" scheme="http://eryoung2.github.io/tags/ssh/"/>
+    
+  </entry>
   
   <entry>
     <title>git创建空白分支</title>
