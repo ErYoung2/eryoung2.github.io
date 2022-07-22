@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2022-07-20T07:09:03.354Z</updated>
+  <updated>2022-07-22T19:34:18.548Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ruby gem timed out解决</title>
+    <link href="http://eryoung2.github.io/2022/07/23/ruby-gem-timed-out%E8%A7%A3%E5%86%B3/"/>
+    <id>http://eryoung2.github.io/2022/07/23/ruby-gem-timed-out%E8%A7%A3%E5%86%B3/</id>
+    <published>2022-07-22T19:33:00.000Z</published>
+    <updated>2022-07-22T19:34:18.548Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天在折腾vagrant的时候，发现当我安装vagrant时，需要一些ruby插件。</p><p>如果我们没有设置正确的源，就会报time out的错误。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ERROR: While executing gem ... (Gem::RemoteFetcher::UnknownHostError)</span><br><span class="line">    timed out (https://api.rubygems.org/latest_specs.4.8.gz)</span><br></pre></td></tr></table></figure><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>可以使用国内源。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gem sources --remove https://rubygems.org/</span><br><span class="line">gem sources -a https://gems.ruby-china.com/</span><br></pre></td></tr></table></figure><p>就可以了。</p><h2 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h2><p><a href="https://gems.ruby-china.com/">ruby gems中文官网</a></p><p><a href="https://blog.csdn.net/Never__Give_Up_/article/details/100592393">Ruby Gem Timeout【超时】问题的解决_Joel__Li的博客-CSDN博客</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;今天在折腾vagrant的时候，发现当我安装vagrant时，需要一些ruby插件。&lt;/p&gt;
+&lt;p&gt;如果我们没有设置正确的源，就会报time</summary>
+      
+    
+    
+    
+    <category term="环境配置" scheme="http://eryoung2.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    
+    <category term="ruby" scheme="http://eryoung2.github.io/tags/ruby/"/>
+    
+  </entry>
   
   <entry>
     <title>飘向北方--namewee</title>
