@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2022-08-04T01:13:05.410Z</updated>
+  <updated>2022-08-09T09:38:06.130Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>powershell执行策略</title>
+    <link href="http://eryoung2.github.io/2022/08/09/powershell%E6%89%A7%E8%A1%8C%E7%AD%96%E7%95%A5/"/>
+    <id>http://eryoung2.github.io/2022/08/09/powershell%E6%89%A7%E8%A1%8C%E7%AD%96%E7%95%A5/</id>
+    <published>2022-08-09T09:33:58.000Z</published>
+    <updated>2022-08-09T09:38:06.130Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上一篇博文，我介绍了一下powershell和cmd的对比。通过学习，我发现powershell的确比cmd更加power，也更加适应现在的使用场景。<br>那么本文将继续介绍一个powershell的另一个特性，执行策略。<br>&amp;nbsp;</p><h2 id="execution-policy描述"><a href="#execution-policy描述" class="headerlink" title="execution policy描述"></a>execution policy描述</h2><p>首先我们看看官网是怎么描述execution policy的:</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">PowerShell&#x27;s execution policy is a safety feature that controls the conditions under which PowerShell loads configuration files and runs scripts. This feature helps prevent the execution of malicious scripts.</span><br><span class="line"></span><br><span class="line">On a Windows computer you can set an execution policy for the local computer, for the current user, or for a particular session. You can also use a Group Policy setting to set execution policies for computers and users.</span><br><span class="line"></span><br><span class="line">Execution policies for the local computer and current user are stored in the registry. You don&#x27;t need to set execution policies in your PowerShell profile. The execution policy for a particular session is stored only in memory and is lost when the session is closed.</span><br><span class="line"></span><br><span class="line">The execution policy isn&#x27;t a security system that restricts user actions. For example, users can easily bypass a policy by typing the script contents at the command line when they cannot run a script. Instead, the execution policy helps users to set basic rules and prevents them from violating them unintentionally.</span><br><span class="line"></span><br><span class="line">On non-Windows computers, the default execution policy is Unrestricted and cannot be changed. The Set-ExecutionPolicy cmdlet is available, but PowerShell displays a console message that it&#x27;s not supported. While Get-ExecutionPolicy returns Unrestricted on non-Windows platforms, the behavior really matches Bypass because those platforms do not implement the Windows Security Zones.</span><br></pre></td></tr></table></figure><p>我们总结一下，这段文字中提到了几个要点：</p><ol><li>powershell的执行策略是种安全特性，保证不会什么猫狗脚本都执行，对于操作系统是种保护。</li><li>windows的执行策略执行粒度分3种：本机、当前用户、特定会话。本机和当前用户的策略会存进注册表，当前会话的执行策略只会进内存，会话一断就会消失。</li><li>执行策略并不会限制用户操作，只是给了用户一把安全锁，可用可不用。</li><li>对于非windows机器，不会有执行策略的设置，因此会建议windows机器来做设置。<br>&amp;nbsp;</li></ol><h2 id="常见的执行策略"><a href="#常见的执行策略" class="headerlink" title="常见的执行策略"></a>常见的执行策略</h2><p>明白了上面的几个要点，我们来看windows提供了哪些执行策略供我们使用。</p><ol><li><p>ByPass<br>任何脚本都可以执行，且没有任何提示。</p></li><li><p>Undefined<br>没有设置脚本执行策略。</p></li><li><p>Unrestricted<br>允许运行未签名的脚本，但是会有安全性提示。</p></li><li><p>Default<br>默认策略，对客户端是Restricted，对服务端是RemoteSigned</p></li><li><p>RemoteSigned<br>Windows Server 2012 R2 之后的默认策略<br>如果从网络下载的脚本会有限制，需要添加数字签名；如果是本地创建的脚本，则不需要数字签名可以运行。</p></li></ol><p>但是问题来了，真的会有老哥从网络上下载到本地运行，而不是复制粘贴到本地，自己创建的文件里？</p><p>不会吧，不会吧？<br><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2022/08/09-17-37-42-buhui.jpg" alt="image"></p><ol start="6"><li><p>AllSigned<br>本策略只允许运行具有数字签名的脚本。</p></li><li><p>Restricted<br>本策略允许运行命令，但无法运行脚本。</p></li></ol><p>&amp;nbsp;</p><h2 id="运行范围"><a href="#运行范围" class="headerlink" title="运行范围"></a>运行范围</h2><p>上面也讲了，powershell有3种范围：本机、当前用户、当前会话。<br>可使用Scope选项进行设置。</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> C:\Windows\system32&gt; <span class="built_in">Get-ExecutionPolicy</span> <span class="literal">-Scope</span> LocalMachine</span><br><span class="line">RemoteSigned</span><br><span class="line"><span class="built_in">PS</span> C:\Windows\system32&gt; <span class="built_in">Get-ExecutionPolicy</span> <span class="literal">-Scope</span> CurrentUser</span><br><span class="line">Undefined</span><br><span class="line"><span class="built_in">PS</span> C:\Windows\system32&gt; <span class="built_in">Set-ExecutionPolicy</span> RemoteSigned <span class="literal">-Scope</span> CurrentUserc</span><br><span class="line">执行策略更改</span><br><span class="line">执行策略可帮助你防止执行不信任的脚本。更改执行策略可能会产生安全风险，如 https:/go.microsoft.com/fwlink/?LinkID=<span class="number">135170</span></span><br><span class="line">中的 about_Execution_Policies 帮助主题所述。是否要更改执行策略?</span><br><span class="line">[<span class="type">Y</span>] 是(Y)  [<span class="type">A</span>] 全是(A)  [<span class="type">N</span>] 否(N)  [<span class="type">L</span>] 全否(L)  [<span class="type">S</span>] 暂停(S)  [?] 帮助 (默认值为“N”): A</span><br><span class="line"><span class="built_in">PS</span> C:\Windows\system32&gt; <span class="built_in">Get-ExecutionPolicy</span> <span class="literal">-Scope</span> CurrentUser</span><br><span class="line">RemoteSigned</span><br></pre></td></tr></table></figure><p>&amp;nbsp;</p><h2 id="cmd调用powershell"><a href="#cmd调用powershell" class="headerlink" title="cmd调用powershell"></a>cmd调用powershell</h2><p>由于powershell和cmd是不同的命令行，而且powershell有执行策略的限制，如果我们想使用cmd去运行powershell脚本，除了需要设置powershell的策略，还需要使用cmd设置ps1脚本默认的运行方式。<br>默认方式是打开&#x2F;编辑，而不是运行。</p><p>设置成运行：</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ftype</span> Microsoft.PowerShellScript.<span class="number">1</span>=&quot;<span class="variable">%SystemRoot%</span>\system32\WindowsPowerShell\v1.<span class="number">0</span>\powershell.exe&quot; &quot;%<span class="number">1</span>&quot;</span><br></pre></td></tr></table></figure><p>设置成编辑：</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ftype</span> Microsoft.PowerShellScript.<span class="number">1</span>=&quot;<span class="variable">%SystemRoot%</span>\system32\notepad.exe&quot; &quot;%<span class="number">1</span>&quot;</span><br></pre></td></tr></table></figure><h2 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h2><p><a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.2">官网</a><br><a href="https://www.cnblogs.com/sparkdev/p/7460518.html">powershell脚本执行策略</a><br><a href="https://www.codeleading.com/article/55285613479/">CMD命令行修改.ps1文件（powershell脚本）的默认打开方式</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;上一篇博文，我介绍了一下powershell和cmd的对比。通过学习，我发现powershell的确比cmd更加power，也更加适应现在的</summary>
+      
+    
+    
+    
+    <category term="windows" scheme="http://eryoung2.github.io/categories/windows/"/>
+    
+    
+    <category term="powershell" scheme="http://eryoung2.github.io/tags/powershell/"/>
+    
+  </entry>
   
   <entry>
     <title>powershell和cmd比较</title>
@@ -487,30 +511,6 @@
     
     
     <category term="hexo" scheme="http://eryoung2.github.io/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>常用发布方式总结</title>
-    <link href="http://eryoung2.github.io/2022/06/14/%E5%B8%B8%E7%94%A8%E5%8F%91%E5%B8%83%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/"/>
-    <id>http://eryoung2.github.io/2022/06/14/%E5%B8%B8%E7%94%A8%E5%8F%91%E5%B8%83%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93/</id>
-    <published>2022-06-14T15:23:16.000Z</published>
-    <updated>2022-06-23T17:42:33.106Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我们都知道，在IT公司中，如果要发布新版本的话，需要考虑上线的安全性与稳定性。传统的方法是先停机，然后做新版本发布，最后重新上线。但我们都知道，这样做会导致服务中断，可能会造成业务丢失，从而造成损失。</p><p>所以我们通常会使用一些不会造成服务中断的发布方式，即边发布新版本，边提供服务，使得发布过程变得较为平滑。</p><p>常用的发布方式有：蓝绿发布、滚动发布、灰度发布(金丝雀发布)三种。</p><h2 id="蓝绿发布"><a href="#蓝绿发布" class="headerlink" title="蓝绿发布"></a>蓝绿发布</h2><p>蓝绿发布中，一共有两套系统。一套运行旧版本应用，被称为“绿色”；一套运行新版本应用，被称为“蓝色”。两套系统均功能完善，并且正在运行的系统，只是系统版本和对外服务情况不同。正在对外提供服务的老系统是绿色系统，新部署的系统是蓝色系统。</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2022/06/15-00-15-14-lanlv.png"></p><p>两套系统互不干扰，我们可以单独对蓝色系统进行调试，而不影响绿色系统提供服务。</p><p>在蓝色系统调试好后，可将流量导至蓝色系统，进行用户测试；若出现问题，则切回绿色系统。</p><p>在用户测试没问题后，升级绿色系统。</p><h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p>1）蓝绿部署的目的是<strong>减少发布时的中断时间</strong>、<strong>能够快速撤回发布</strong>。</p><p>2）两套系统没有耦合的时候才能百分百保证不干扰。</p><h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>蓝绿发布是发布方式中的一种，需要根据特定情况进行选择。蓝绿部署能够简单快捷实施的前提假设是目标系统是非常内聚的，如果目标系统相当复杂，那么如何切换、两套系统的数据是否需要以及如何同步等，都需要仔细考虑。</p><p>当你切换到蓝色环境时，需要妥当处理未完成的业务和新的业务。如果你的数据库后端无法处理，会是一个比较麻烦的问题；</p><ul><li>可能会出现需要同时处理“微服务架构应用”和“传统架构应用”的情况，如果在蓝绿部署中协调不好这两者，还是有可能会导致服务停止。</li><li>需要提前考虑数据库与应用部署同步迁移 &#x2F;回滚的问题。</li><li>蓝绿部署需要有基础设施支持。</li><li>在非隔离基础架构（ VM 、 Docker 等）上执行蓝绿部署，蓝色环境和绿色环境有被摧毁的风险。</li></ul><h2 id="滚动发布"><a href="#滚动发布" class="headerlink" title="滚动发布"></a>滚动发布</h2><p>相比蓝绿发布将机器分为两拨，滚动发布会分得更细。每次只升级一小部分机器，然后滚动升级，最终完成全部升级。</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2022/06/15-00-15-01-gundong.png"></p><h3 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h3><p>1）这种部署方式相对于蓝绿部署，更加节约资源——它不需要运行两个集群、两倍的实例数。我们可以部分部署，例如每次只取出集群的20%进行升级。</p><p>2）回滚困难。</p><h3 id="滚动发布注意事项"><a href="#滚动发布注意事项" class="headerlink" title="滚动发布注意事项"></a>滚动发布注意事项</h3><p>1）滚动发布没有一个确定可行的环境。蓝绿部署我们知道老版本是可行的，但是滚动发布不行。</p><p>2）修改了现有环境。</p><p>3）回滚困难。举个例子，在某一次发布中，我们需要更新100个实例，每次更新10个实例，每次部署需要5分钟。当滚动发布到第80个实例时，发现了问题，需要回滚，这个回滚却是一个痛苦，并且漫长的过程。</p><p>4）有的时候，我们还可能对系统进行动态伸缩，如果部署期间，系统自动扩容&#x2F;缩容了，我们还需判断到底哪个节点使用的是哪个代码。尽管有一些自动化的运维工具，但是依然令人心惊胆战。</p><p>5）因为是逐步更新，那么我们在上线代码的时候，就会短暂出现新老版本不一致的情况，如果对上线要求较高的场景，那么就需要考虑如何做好兼容的问题。 </p><h2 id="灰度发布（金丝雀发布）"><a href="#灰度发布（金丝雀发布）" class="headerlink" title="灰度发布（金丝雀发布）"></a>灰度发布（金丝雀发布）</h2><p>灰度发布，也叫金丝雀发布。是指在黑与白之间平滑过渡的一种发布方式。AB test就是一种灰度发布方式，让一部分用户继续用A，一部分用户开始用B，如果用户对B没有什么反对意见，那么逐步扩大范围，把所有用户都迁移到B上面来。灰度发布可以保证整体系统的稳定，在初始灰度的时候就可以发现、调整问题，以保证其影响度，而我们平常所说的金丝雀部署也就是灰度发布的一种方式。</p><p>具体到服务器上, 实际操作中还可以做更多控制，譬如说，给最初更新的10台服务器设置较低的权重、控制发送给这10台服务器的请求数，然后逐渐提高权重、增加请求数。一种平滑过渡的思路, 这个控制叫做“流量切分”。</p><p>关于金丝雀发布这个名字的来源，可以参考以下故事：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">17世纪，英国矿井工人发现，金丝雀对瓦斯这种气体十分敏感。空气中哪怕有极其微量的瓦斯，金丝雀也会停止歌唱；而当瓦斯含量超过一定限度时，虽然鲁钝的人类毫无察觉，金丝雀却早已毒发身亡。当时在采矿设备相对简陋的条件下，工人们每次下井都会带上一只金丝雀作为“瓦斯检测指标”，以便在危险状况下紧急撤离。</span><br></pre></td></tr></table></figure><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2022/06/15-00-14-49-huidu.png"></p><p>过程:</p><p>1）准备好部署各个阶段的工件，包括：构建工件，测试脚本，配置文件和部署清单文件。</p><p>2）将“金丝雀”服务器部署进服务器中, 测试。</p><p>3）从负载均衡列表中移除掉“金丝雀”服务器。</p><p>4）升级“金丝雀”应用（排掉原有流量并进行部署）。</p><p>5）对应用进行自动化测试。</p><p>6）将“金丝雀”服务器重新添加到负载均衡列表中（连通性和健康检查）。</p><p>7）如果“金丝雀”在线使用测试成功，升级剩余的其他服务器。（否则就回滚）</p><h2 id="A-x2F-B测试"><a href="#A-x2F-B测试" class="headerlink" title="A&#x2F;B测试"></a>A&#x2F;B测试</h2><p>顾名思义，上面三个都是发布策略，而A&#x2F;B是个测试策略。二者侧重点不同，发布策略主要关注新系统的程序bug和隐患，而测试策略主要关注新旧版本之间的使用对比，关注实际效果，如转化率、订单情况等。</p><p>A&#x2F;B测试时，线上同时运行多个版本的服务，这些服务通常会有一些体验上的差异，譬如说页面样式、颜色、操作流程不同。相关人员通过分析各个版本服务的实际效果，选出效果最好的版本。</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2022/06/15-00-14-35-ab.png"></p><h2 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h2><p><a href="https://www.cnblogs.com/Courage129/p/14498788.html">微服务部署之蓝绿发布、滚动发布、灰度发布区别与特点</a></p><p><a href="https://zh.wikipedia.org/wiki/A/B%E6%B8%AC%E8%A9%A6">AB测试</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;我们都知道，在IT公司中，如果要发布新版本的话，需要考虑上线的安全性与稳定性。传统的方法是先停机，然后做新版本发布，最后重新上线。但我们都知</summary>
-      
-    
-    
-    
-    <category term="IT概念" scheme="http://eryoung2.github.io/categories/IT%E6%A6%82%E5%BF%B5/"/>
-    
-    
-    <category term="发布方式" scheme="http://eryoung2.github.io/tags/%E5%8F%91%E5%B8%83%E6%96%B9%E5%BC%8F/"/>
     
   </entry>
   
