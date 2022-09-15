@@ -1,3 +1,4 @@
+http://eryoung2.github.io/2022/09/16/linux%E6%B7%BB%E5%8A%A0BBR%E5%8A%A0%E9%80%9F/
 http://eryoung2.github.io/2022/08/15/ubuntu-dpkg%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/
 http://eryoung2.github.io/2022/07/23/%E9%AB%98%E5%B1%B1%E4%BD%8E%E8%B0%B7-%E6%9E%97%E5%A5%95%E5%8C%A1/
 http://eryoung2.github.io/2022/07/20/%E9%A3%98%E5%90%91%E5%8C%97%E6%96%B9-namewee/
