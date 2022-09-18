@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2022-09-15T20:16:36.176Z</updated>
+  <updated>2022-09-18T16:41:36.643Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>jenkins docker安装时插件缺失</title>
+    <link href="http://eryoung2.github.io/2022/09/19/jenkins-docker%E5%AE%89%E8%A3%85%E6%97%B6%E6%8F%92%E4%BB%B6%E7%BC%BA%E5%A4%B1/"/>
+    <id>http://eryoung2.github.io/2022/09/19/jenkins-docker%E5%AE%89%E8%A3%85%E6%97%B6%E6%8F%92%E4%BB%B6%E7%BC%BA%E5%A4%B1/</id>
+    <published>2022-09-18T16:37:45.000Z</published>
+    <updated>2022-09-18T16:41:36.643Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天又试着装了一下docker版的jenkins，今天用了<font color="red">jenkins:2.60.3</font>这个镜像，发现某些插件没有，导致安装不成功。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">an error occurred during installation:No such plugin: cloudbees-folder</span><br></pre></td></tr></table></figure><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>我检查了一大圈，发现这个带版本的镜像<font color="red">jenkins:2.60.3</font>的确没有此插件，从其他地方下载也没办法放到镜像里边去，所以需要换一个jenkins镜像。</p><p>换到<font color="red">jenkins&#x2F;jenkins</font>就好了。</p><h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>后来发现之前写的文章，发现用的就是这个<font color="red">jenkins&#x2F;jenkins</font>镜像，词镜像里的插件比较全，就没遇到类似问题。</p><p>文章链接：</p><blockquote><p><a href="https://www.cnblogs.com/young233/p/14815787.html">docker 安装jenkins - eryoung2 - 博客园</a></p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;今天又试着装了一下docker版的jenkins，今天用了&lt;font color=&quot;red&quot;&gt;jenkins:2.60.3&lt;/font&gt;这个</summary>
+      
+    
+    
+    
+    <category term="工具使用" scheme="http://eryoung2.github.io/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    
+    
+    <category term="jenkins" scheme="http://eryoung2.github.io/tags/jenkins/"/>
+    
+  </entry>
   
   <entry>
     <title>linux添加BBR加速</title>
@@ -497,30 +521,6 @@
     
     
     <category term="linux" scheme="http://eryoung2.github.io/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vim操作(第一弹)</title>
-    <link href="http://eryoung2.github.io/2022/06/24/vim%E6%93%8D%E4%BD%9C-%E7%AC%AC%E4%B8%80%E5%BC%B9/"/>
-    <id>http://eryoung2.github.io/2022/06/24/vim%E6%93%8D%E4%BD%9C-%E7%AC%AC%E4%B8%80%E5%BC%B9/</id>
-    <published>2022-06-23T17:52:40.000Z</published>
-    <updated>2022-06-23T17:57:04.012Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>vi&#x2F;vim是unix&#x2F;linux操作系统下的文本编辑器。<br>由于unix&#x2F;linux万物届文件的特性，vi&#x2F;vim可以编辑任何格式的文件。<br>下面是常见的知识点，仅供参考。</p><h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><h4 id="编辑方式"><a href="#编辑方式" class="headerlink" title="编辑方式"></a>编辑方式</h4><p>vi&#x2F;vim + 文件路径。其中，文件路径可以是绝对路径，也可以是相对路径。如果这个文件不存在，就会新建一个文件。</p><h4 id="编辑模式"><a href="#编辑模式" class="headerlink" title="编辑模式"></a>编辑模式</h4><p>vi&#x2F;vim常用的模式有两种：命令行模式和输入模式。</p><h4 id="模式切换"><a href="#模式切换" class="headerlink" title="模式切换"></a>模式切换</h4><p>由命令行模式切换到输入模式的命令：</p><ul><li><p>新增 (append)<br>a ：从光标所在位置後面开始新增资料，光标後的资料随新增资料向後移动。<br>A： 从光标所在列最後面的地方开始新增资料。</p></li><li><p>插入（insert）<br>i： 从光标所在位置前面开始插入资料，光标後的资料随新增资料向後移动。<br>I ：从光标所在列的第一个非空白字元前面开始插入资料。</p></li><li><p>开始(open)<br>o ：在光标所在列下新增一列并进入输入模式。<br>O: 在光标所在列上方新增一列并进入输入模式。</p></li><li><p>保存&#x2F;退出<br>在指令模式下键入:q,:q!,:wq或:x(注意:号），就会退出vi。其中:wq和:x是存盘退出，而:q是直接退出，如果文件已有新的变化，vi会提示你保存文件而:q命令也会失效，这时你可以用:w命令保存文件后再用:q退出，或用:wq或:x命令退出，如果你不想保存改变后的文件，你就需要用:q!命令，这个命令将不保存文件而直接退出vi。</p></li><li><p>常用操作(命令行模式下)：<br>Ctrl+F：下翻一页<br>Ctrl+B:上翻一页<br>&#x2F;+单词：查找<br>dd：删除一行</p></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;vi&amp;#x2F;vim是unix&amp;#x2F;linux操作系统下的文本编辑器。&lt;br&gt;由于unix&amp;#x2F;linux万物届文件的特性，v</summary>
-      
-    
-    
-    
-    <category term="编辑器" scheme="http://eryoung2.github.io/categories/%E7%BC%96%E8%BE%91%E5%99%A8/"/>
-    
-    
-    <category term="vim" scheme="http://eryoung2.github.io/tags/vim/"/>
     
   </entry>
   
