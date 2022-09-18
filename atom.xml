@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2022-09-18T16:41:36.643Z</updated>
+  <updated>2022-09-18T16:44:50.064Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://eryoung2.github.io/2022/09/19/jenkins-docker%E5%AE%89%E8%A3%85%E6%97%B6%E6%8F%92%E4%BB%B6%E7%BC%BA%E5%A4%B1/"/>
     <id>http://eryoung2.github.io/2022/09/19/jenkins-docker%E5%AE%89%E8%A3%85%E6%97%B6%E6%8F%92%E4%BB%B6%E7%BC%BA%E5%A4%B1/</id>
     <published>2022-09-18T16:37:45.000Z</published>
-    <updated>2022-09-18T16:41:36.643Z</updated>
+    <updated>2022-09-18T16:44:50.064Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天又试着装了一下docker版的jenkins，今天用了<font color="red">jenkins:2.60.3</font>这个镜像，发现某些插件没有，导致安装不成功。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">an error occurred during installation:No such plugin: cloudbees-folder</span><br></pre></td></tr></table></figure><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>我检查了一大圈，发现这个带版本的镜像<font color="red">jenkins:2.60.3</font>的确没有此插件，从其他地方下载也没办法放到镜像里边去，所以需要换一个jenkins镜像。</p><p>换到<font color="red">jenkins&#x2F;jenkins</font>就好了。</p><h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>后来发现之前写的文章，发现用的就是这个<font color="red">jenkins&#x2F;jenkins</font>镜像，词镜像里的插件比较全，就没遇到类似问题。</p><p>文章链接：</p><blockquote><p><a href="https://www.cnblogs.com/young233/p/14815787.html">docker 安装jenkins - eryoung2 - 博客园</a></p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天又试着装了一下docker版的jenkins，今天用了<font color="red">jenkins:2.60.3</font>这个镜像，发现某些插件没有，导致安装不成功。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">an error occurred during installation:No such plugin: cloudbees-folder</span><br></pre></td></tr></table></figure><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>我检查了一大圈，发现这个带版本的镜像<font color="red">jenkins:2.60.3</font>的确没有此插件，从其他地方下载也没办法放到镜像里边去，所以需要换一个jenkins镜像。</p><p>换到<font color="red">jenkins&#x2F;jenkins</font>就好了。</p><h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>后来发现之前写的文章，发现用的就是这个<font color="red">jenkins&#x2F;jenkins</font>镜像，词镜像里的插件比较全，就没遇到类似问题。</p><h2 id="文章链接："><a href="#文章链接：" class="headerlink" title="文章链接："></a>文章链接：</h2><blockquote><p><a href="https://www.cnblogs.com/young233/p/14815787.html">docker 安装jenkins - eryoung2 - 博客园</a></p></blockquote>]]></content>
     
     
       
