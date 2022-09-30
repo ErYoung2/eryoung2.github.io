@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2022-09-18T16:44:50.064Z</updated>
+  <updated>2022-09-30T12:47:36.032Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HTTP状态码(比较全的版本)</title>
+    <link href="http://eryoung2.github.io/2022/09/30/HTTP%E7%8A%B6%E6%80%81%E7%A0%81-%E6%AF%94%E8%BE%83%E5%85%A8%E7%9A%84%E7%89%88%E6%9C%AC/"/>
+    <id>http://eryoung2.github.io/2022/09/30/HTTP%E7%8A%B6%E6%80%81%E7%A0%81-%E6%AF%94%E8%BE%83%E5%85%A8%E7%9A%84%E7%89%88%E6%9C%AC/</id>
+    <published>2022-09-30T12:44:00.000Z</published>
+    <updated>2022-09-30T12:47:36.032Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1xx-信息相应"><a href="#1xx-信息相应" class="headerlink" title="1xx: 信息相应"></a>1xx: 信息相应</h2><p>100: Continue, 客户端继续请求<br>101: Switching Protocal，切换协议，响应客户端的请求头<br>102: Processing，服务器收到正在处理，没有响应可用<br>103: Early Hints, 主要用于与 Link 链接头一起使用，以允许用户代理在服务器准备响应阶段时开始预加载 preloading 资源。</p><h2 id="2xx-成功响应"><a href="#2xx-成功响应" class="headerlink" title="2xx: 成功响应"></a>2xx: 成功响应</h2><p>200: OK, 相应成功<br>201: Created，请求成功，因此创建一个新资源<br>202: Accepted，请求收到，但未响应<br>203: Non-Authoritative Information, 服务器已处理请求，但是返回的不是原始服务器的确定集合，而是来自本地或第三方的拷贝<br>204：No Content, 对于该请求没有的内容可发送，但头部字段可能有用。用户代理可能会用此时请求头部信息来更新原来资源的头部缓存字段。<br>205：Reset Content, 告诉用户代理重置发送此请求的文档。<br>206: Partial Content, 客户端部分请求资源被响应。<br>207：Multi-Status, 对于多个状态代码都可能合适的情况，传输有关多个资源的信息。<br>208：Already Reported, 在 DAV 里面使用 dav:propstat 响应元素以避免重复枚举多个绑定的内部成员到同一个集合。<br>226: IM Used, 服务器已经完成了对资源的GET请求，并且响应是对当前实例应用的一个或多个实例操作结果的表示。</p><h2 id="3xx-重定向"><a href="#3xx-重定向" class="headerlink" title="3xx: 重定向"></a>3xx: 重定向</h2><p>300：Multiple Choice, 多个可能的响应。<br>301：Moved Permanently，永久重定向。<br>302：Found，临时重定向。<br>303：See Other，从其他URL进行进一步改变。<br>304: Not Modified, 未更改，可用缓存。<br>305：Use Proxy，使用代理。<br>306：unused，没用了。<br>307：Temporary Redirect, 临时重定向，等同于302。<br>308：Permanent Redirect, 永久重定向，等同于301。</p><h2 id="4xx-客户端错误"><a href="#4xx-客户端错误" class="headerlink" title="4xx: 客户端错误"></a>4xx: 客户端错误</h2><p>400: Bad request, 请求错误<br>401: Unauthorized, 未进行身份验证。<br>402: Payment Required，将代码保留并留到未来使用。<br>403: Forbidden, 无权限访问。<br>404：Not Found, 找不到请求资源。<br>405: Method not allowed，目标资源不支持该方法。<br>406：Not Acceptable, 当 web 服务器在执行服务端驱动型内容协商机制后，没有发现任何符合用户代理给定标准的内容时，就会发送此响应。<br>407：Proxy Authentication Required, 代理未进行身份认证。<br>408: Request Timeout，请求超时。<br>409: Conflict, 请求冲突。<br>410：Gone，当请求的内容已从服务器中永久删除且没有转发地址时，将发送此响应。<br>411：Length Required，请求头部的Content-Length未定义。<br>412：Precondition Failed, 客户端在头部指出了服务器不满足的先决条件。<br>413:Payload Too Large, 请求实体大于服务器定义的限制。<br>414：URL Too Long, URL超过服务器规定。<br>415: Unsupported Media Type, 服务器不支持的媒体格式。<br>416: Range not Satisfiable, 请求头部的Range字段不满足。<br>417: Exceptation Failed, 无法满足Except请求标头字段所指示的期望。<br>418: I am a teapot, 拒绝用茶壶煮咖啡？<br>421: Misdirected Request, 请求被定向到无法相应的服务器。<br>422: Unprocessable Entity, 请求格式正确，但语义错误。<br>423: Locked, 访问资源被锁。<br>424: Failed Dependency, 因为前一个请求失败而请求失败。<br>425: Too early, 服务器不愿冒险处理可能被重播的请求。<br>426: Upgrade Required, 拒绝使用当前协议执行请求。<br>428: Precondition Required, 源服务器要求请求是有条件的。此响应旨在防止’丢失更新’问题，即当第三方修改服务器上的状态时，客户端 GET 获取资源的状态，对其进行修改并将其 PUT 放回服务器，从而导致冲突。<br>429: Too many requires, 请求过多。<br>431: Request Header Fields Too Large, 请求字段太大，减小之后可以重新提交请求。<br>451: Unavailable For Legal Reason, 用户代理请求了无法合法提供的资源。<br>499：Client Closed Request, 客户端主动断开连接。</p><h2 id="5xx-服务端错误响应"><a href="#5xx-服务端错误响应" class="headerlink" title="5xx: 服务端错误响应"></a>5xx: 服务端错误响应</h2><p>500: Internal Server Error，服务器内部问题。<br>501: Not Implemented，服务器不支持请求方法。<br>502: Bad Gateway, 服务器作为网关得到错误响应。<br>503: Service Unavailable, 服务不可用。<br>504: Gateway Timeout, 服务器充当网关未获取响应。<br>505: HTTP Version Not Supported, HTTP版本不对。<br>506: Variant Also Negotiates, 服务器存在内部配置错误。<br>507: Insufficient Storage, 无法在资源上执行该方法。<br>508: Loop Detected，服务器处理请求时循环了。<br>510: Not extended, 服务器需要对请求进行扩展才能完成请求。<br>511: Network Authentication Required, 客户端需要进行身份验证才可以访问网络资源。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;1xx-信息相应&quot;&gt;&lt;a href=&quot;#1xx-信息相应&quot; class=&quot;headerlink&quot; title=&quot;1xx: 信息相应&quot;&gt;&lt;/a&gt;1xx: 信息相应&lt;/h2&gt;&lt;p&gt;100: Continue, 客户端继续请求&lt;br&gt;101: Switching Pro</summary>
+      
+    
+    
+    
+    <category term="面试" scheme="http://eryoung2.github.io/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+    <category term="HTTP" scheme="http://eryoung2.github.io/tags/HTTP/"/>
+    
+  </entry>
   
   <entry>
     <title>jenkins docker安装时插件缺失</title>
@@ -494,30 +518,6 @@
     
     
     <category term="权限管理" scheme="http://eryoung2.github.io/categories/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/"/>
-    
-    
-    <category term="linux" scheme="http://eryoung2.github.io/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux安装jdk8</title>
-    <link href="http://eryoung2.github.io/2022/06/25/linux%E5%AE%89%E8%A3%85jdk8/"/>
-    <id>http://eryoung2.github.io/2022/06/25/linux%E5%AE%89%E8%A3%85jdk8/</id>
-    <published>2022-06-25T14:56:03.000Z</published>
-    <updated>2022-07-27T07:32:10.407Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h4 id="1-下载安装包并上传"><a href="#1-下载安装包并上传" class="headerlink" title="1. 下载安装包并上传"></a>1. 下载安装包并上传</h4><h4 id="2-解压"><a href="#2-解压" class="headerlink" title="2.  解压"></a>2.  解压</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@home:/home/young# tar zxf jdk-8u131-linux-x64.tar.gz -C /usr/local/</span><br><span class="line">root@home:/home/young# mv /usr/local/jdk1.8.0_131/ /usr/local/java8</span><br></pre></td></tr></table></figure><h4 id="3-在-x2F-etc-x2F-profile添加项目"><a href="#3-在-x2F-etc-x2F-profile添加项目" class="headerlink" title="3. 在&#x2F;etc&#x2F;profile添加项目"></a>3. 在&#x2F;etc&#x2F;profile添加项目</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/java8/</span><br><span class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</span><br><span class="line">export CLASSPATH=.:$&#123;JAVA_HOME&#125;/lib:$&#123;JRE_HOME&#125;/lib</span><br><span class="line">export PATH=$&#123;JAVA_HOME&#125;/bin:$PATH</span><br></pre></td></tr></table></figure><h3 id="4-使-x2F-etc-x2F-profile生效"><a href="#4-使-x2F-etc-x2F-profile生效" class="headerlink" title="4. 使&#x2F;etc&#x2F;profile生效"></a>4. 使&#x2F;etc&#x2F;profile生效</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure><h3 id="5-验证jdk版本"><a href="#5-验证jdk版本" class="headerlink" title="5. 验证jdk版本"></a>5. 验证jdk版本</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;方法&quot;&gt;&lt;a href=&quot;#方法&quot; class=&quot;headerlink&quot; title=&quot;方法&quot;&gt;&lt;/a&gt;方法&lt;/h2&gt;&lt;h4 id=&quot;1-下载安装包并上传&quot;&gt;&lt;a href=&quot;#1-下载安装包并上传&quot; class=&quot;headerlink&quot; title=&quot;1. 下载</summary>
-      
-    
-    
-    
-    <category term="操作系统" scheme="http://eryoung2.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
     
     <category term="linux" scheme="http://eryoung2.github.io/tags/linux/"/>
