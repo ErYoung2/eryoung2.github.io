@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2022-12-18T14:46:57.620Z</updated>
+  <updated>2023-01-31T05:53:55.881Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ACP云原生容器工程师 - 考试大纲</title>
+    <link href="http://eryoung2.github.io/2023/01/31/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/"/>
+    <id>http://eryoung2.github.io/2023/01/31/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/</id>
+    <published>2023-01-31T05:42:59.000Z</published>
+    <updated>2023-01-31T05:53:55.881Z</updated>
+    
+    <content type="html"><![CDATA[<p>ACP云原生容器工程师 - 大纲简介</p><p><img src="/Users/eryoung2/Library/Application%20Support/marktext/images/41ee198015b33405d9a680659e668432369091cd.png" alt="imagepng"></p><h2 id="ACP云原生容器工程师-所需知识"><a href="#ACP云原生容器工程师-所需知识" class="headerlink" title="ACP云原生容器工程师 - 所需知识"></a>ACP云原生容器工程师 - 所需知识</h2><p><img src="https://cdn.nlark.com/yuque/0/2022/png/2393289/1663644293262-f9c5d9cf-2d74-47a2-90e7-9612fdaafaa4.png" alt="imagepng"></p><h2 id="ACP云原生容器工程师-考试范围"><a href="#ACP云原生容器工程师-考试范围" class="headerlink" title="ACP云原生容器工程师 - 考试范围"></a>ACP云原生容器工程师 - 考试范围</h2><p><img src="https://cdn.nlark.com/yuque/0/2022/png/2393289/1663644480140-fb2769f0-eb93-4514-812f-a59815526cdb.png"></p><h2 id="考试重点"><a href="#考试重点" class="headerlink" title="考试重点"></a>考试重点</h2><ul><li>云原生通识技术: **<font color="red">云原生定义、核心技术、典型架构&#x2F;技术、Docker&#x2F;K8s功能特点、核心组件、应用实践</font>**等。</li><li>ACK: **<font color="red">概念(ACK)三种形态、架构、功能、优势、应用场景、生命周期；网络、存储、日志监控的使用；ACK弹性伸缩、集群管理、应用发布管理、安全管理体系</font>**等。</li><li>ASK: **<font color="red">ASK与ACK区别、使用场景、核心功能、组件；ASK具体配置和操作，ASK集群管理、应用管理、网络、存储、日志、监控；集群弹性伸缩；ASK使用中的注意事项、安全管理</font>**等。</li><li>ASM: **<font color="red">服务网格的概念、优势、架构特点、应用场景；ASM核心功能使用：授权管理、网格诊断、入口网关配置、流量管理、可观测性管理等；构建ASM统一网格、构建统一的管理系统；ASM注意点及解决方法</font>**。</li><li>ACR: **<font color="red">Docker基本概念、ACR基本概念、二者关系、异同点、适用场景、ACR默认实例版和企业版核心功能；ACR操作和配置(创建、网络、权限、交付链管理、镜像安全扫描及加速等)；ACR注意事项、解决常见问题</font>**。</li><li>ACK@Edge: **<font color="red">熟悉基础概念(边缘容器场景、云边一体化协同等)；ACK@Edge的具体操作和配置、可视化管理；ACK@Edge的统一管理和统一生命周期</font>**等。</li></ul><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li>ACK(<a href="https://help.aliyun.com/product/85222.html?spm=a2c4g.750001.list.167.18987b13uyzIJ4">容器服务 ACK-阿里云帮助中心</a>)</li><li>ASK(<a href="https://help.aliyun.com/knowledge_list/127525.html?spm=5176.11065259.1996646101.8.b1602d4b6rgCT2">Serverless容器集群ASK_容器服务Kubernetes版-阿里云帮助中心</a>)</li><li>服务网格 – ASM(<a href="https://help.aliyun.com/product/147365.html?spm=5176.10695662.3291411370.5.35ce19eaTCBBaV">服务网格 ASM-阿里云帮助中心</a>)</li><li>容器镜像服务(<a href="https://help.aliyun.com/document_detail/60945.html?spm=5176.10695662.1362911.4.54b639f3wLxseL">https://help.aliyun.com/document_detail/60945.html?spm=5176.10695662.1362911.4.54b639f3wLxseL</a>)</li><li>边缘容器服务(<a href="https://help.aliyun.com/document_detail/163259.html?spm=5176.10695662.8115314850.4.3b34a67b2O6mFx">什么是ACK@Edge_容器服务Kubernetes版-阿里云帮助中心</a>)</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;ACP云原生容器工程师 - 大纲简介&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/Users/eryoung2/Library/Application%20Support/marktext/images/41ee198015b33405d9a680659e668432369091c</summary>
+      
+    
+    
+    
+    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="阿里云ACP认证" scheme="http://eryoung2.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91ACP%E8%AE%A4%E8%AF%81/"/>
+    
+  </entry>
   
   <entry>
     <title>《在那遥远的地方》-- 王洛宾</title>
@@ -494,34 +519,6 @@
     
     
     <category term="podman" scheme="http://eryoung2.github.io/tags/podman/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>清理缓存</title>
-    <link href="http://eryoung2.github.io/2022/07/03/%E6%B8%85%E7%90%86%E7%BC%93%E5%AD%98/"/>
-    <id>http://eryoung2.github.io/2022/07/03/%E6%B8%85%E7%90%86%E7%BC%93%E5%AD%98/</id>
-    <published>2022-07-02T17:19:41.000Z</published>
-    <updated>2022-07-04T06:51:54.420Z</updated>
-    
-    <content type="html"><![CDATA[<p>释放缓存区内存的方法</p><p><strong>1）清理pagecache（页面缓存）</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@homeserver:~<span class="comment"># echo 1 &gt; /proc/sys/vm/drop_caches 或者 # sysctl -w vm.drop_caches=1</span></span><br></pre></td></tr></table></figure><p><strong>2）清理dentries（目录缓存）和inodes</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@homeserver:~<span class="comment"># echo 2 &gt; /proc/sys/vm/drop_caches 或者 # sysctl -w vm.drop_caches=2</span></span><br></pre></td></tr></table></figure><p><strong>3）清理pagecache、dentries和inodes</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@homeserver:~<span class="comment"># echo 3 &gt; /proc/sys/vm/drop_caches 或者 # sysctl -w vm.drop_caches=3</span></span><br></pre></td></tr></table></figure><p>上面三种方式都是临时释放缓存的方法，要想永久释放缓存，需要在&#x2F;etc&#x2F;sysctl.conf文件中配置：vm.drop_caches&#x3D;1&#x2F;2&#x2F;3，然后sysctl -p生效即可！</p><p>另外，可以使用sync命令来清理文件系统缓存，还会清理僵尸(zombie)对象和它们占用的内存</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@homeserver:~<span class="comment"># sync</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;释放缓存区内存的方法&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;1）清理pagecache（页面缓存）&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=</summary>
-      
-    
-    
-    
-    <category term="操作系统" scheme="http://eryoung2.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-    <category term="linux" scheme="http://eryoung2.github.io/tags/linux/"/>
-    
-    <category term="内核" scheme="http://eryoung2.github.io/tags/%E5%86%85%E6%A0%B8/"/>
     
   </entry>
   
