@@ -1,0 +1,330 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>ACP云原生容器工程师-ACK概述 | Eryoung2的个人博客</title><meta name="keywords" content="阿里云ACP认证"><meta name="author" content="ErYoung2"><meta name="copyright" content="ErYoung2"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="ACK简介阿里云容器服务ACK，是阿里云针对云原生推出的拳头产品，基于原版Kubernetes进行适配和增强，简化集群的搭建和运维工作，整合阿里云虚拟化、存储、网络和安全能力，使得扩容和缩容更加简易，打造云端最佳的Kubernetes容器化应用运行环境。 ACK分类ACK产品根据运维整合度，可分为三类：  专有版Kubernetes  托管版Kubernetes  Serverless Kuber">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ACP云原生容器工程师-ACK概述">
+<meta property="og:url" content="http://eryoung2.github.io/2023/02/10/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E6%A6%82%E8%BF%B0/index.html">
+<meta property="og:site_name" content="Eryoung2的个人博客">
+<meta property="og:description" content="ACK简介阿里云容器服务ACK，是阿里云针对云原生推出的拳头产品，基于原版Kubernetes进行适配和增强，简化集群的搭建和运维工作，整合阿里云虚拟化、存储、网络和安全能力，使得扩容和缩容更加简易，打造云端最佳的Kubernetes容器化应用运行环境。 ACK分类ACK产品根据运维整合度，可分为三类：  专有版Kubernetes  托管版Kubernetes  Serverless Kuber">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+<meta property="article:published_time" content="2023-02-09T17:46:34.000Z">
+<meta property="article:modified_time" content="2023-02-09T17:50:32.021Z">
+<meta property="article:author" content="ErYoung2">
+<meta property="article:tag" content="阿里云ACP认证">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://eryoung2.github.io/2023/02/10/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E6%A6%82%E8%BF%B0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'ACP云原生容器工程师-ACK概述',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-02-10 01:50:32'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Eryoung2的个人博客" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/panda.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">32</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">17</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Eryoung2的个人博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">ACP云原生容器工程师-ACK概述</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-02-09T17:46:34.000Z" title="发表于 2023-02-10 01:46:34">2023-02-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-02-09T17:50:32.021Z" title="更新于 2023-02-10 01:50:32">2023-02-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%80%83%E8%AF%95/">考试</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">855</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="ACK简介"><a href="#ACK简介" class="headerlink" title="ACK简介"></a>ACK简介</h2><p>阿里云容器服务ACK，是阿里云针对云原生推出的拳头产品，基于原版Kubernetes进行适配和增强，简化集群的搭建和运维工作，整合阿里云虚拟化、存储、网络和安全能力，使得扩容和缩容更加简易，打造云端最佳的Kubernetes容器化应用运行环境。</p>
+<h2 id="ACK分类"><a href="#ACK分类" class="headerlink" title="ACK分类"></a>ACK分类</h2><p>ACK产品根据运维整合度，可分为三类：</p>
+<ul>
+<li><p><strong>专有版Kubernetes</strong></p>
+</li>
+<li><p><strong>托管版Kubernetes</strong></p>
+</li>
+<li><p><strong>Serverless Kubernetes</strong></p>
+</li>
+</ul>
+<p>三者的特点和区别如下：</p>
+<p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/10-01-50-02-diff.png"></p>
+<p>适用人群分别为：</p>
+<ul>
+<li><p>专业版ACK：懂技术、有运维K8S的能力、资源规划明显、Master节点定制、完全自营、成本不敏感</p>
+</li>
+<li><p>托管版ACK: Kubernetes能上手、不关心Master节点、只部署应用、降低成本</p>
+</li>
+<li><p>Serverless Kubernetes：批量任务、突发扩容、开箱即用、零运维、按量付费、不关注基础设施</p>
+</li>
+</ul>
+<h4 id="ACK-vs-原生K8S"><a href="#ACK-vs-原生K8S" class="headerlink" title="ACK vs 原生K8S"></a>ACK vs 原生K8S</h4><ul>
+<li><p>ACK基于原生K8S</p>
+</li>
+<li><p>ACK整合阿里云虚拟化、网络、存储、安全能力</p>
+</li>
+<li><p>高性能可伸缩能力加强</p>
+</li>
+<li><p>简化集群的运维和扩容工作，更专注应用开发</p>
+</li>
+</ul>
+<p>也可参考此图：</p>
+<p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/10-01-50-14-diff2.png"></p>
+<h2 id="ACK核心功能"><a href="#ACK核心功能" class="headerlink" title="ACK核心功能"></a>ACK核心功能</h2><h3 id="集群管理"><a href="#集群管理" class="headerlink" title="集群管理"></a>集群管理</h3><p>通过控制台一键创建Kubernetes集群，支持跨可用区高可用。</p>
+<p>特点如下：</p>
+<ul>
+<li><p>集群形态：支持ACK&#x2F;ACK Pro&#x2F;ASK</p>
+</li>
+<li><p>组件升级：一键升级K8S版本</p>
+</li>
+<li><p>弹性伸缩：支持垂直伸缩、水平伸缩等多种扩容模式</p>
+</li>
+<li><p>多云管理：支持多云、混合云集群管理</p>
+</li>
+<li><p>安全授权：支持RAM授权和RBAC权限管理</p>
+</li>
+</ul>
+<h3 id="应用管理"><a href="#应用管理" class="headerlink" title="应用管理"></a>应用管理</h3><ul>
+<li><p>一站式容器全生命周期管理</p>
+</li>
+<li><p>应用创建：从镜像、模板的创建，支持环境变量、应用健康的配置</p>
+</li>
+<li><p>应用全生命周期管理：支持应用查看、更新、删除、回滚等</p>
+</li>
+<li><p>应用调度：支持节点亲和性调度、应用亲和性和反亲和性调度</p>
+</li>
+<li><p>应用伸缩：支持手动伸缩应用容器实例，HPA自动伸缩策略</p>
+</li>
+<li><p>应用发布：支持灰度发布和蓝绿发布</p>
+</li>
+<li><p>应用目录：支持应用目录，简化云服务集成</p>
+</li>
+</ul>
+<h3 id="存储与网络"><a href="#存储与网络" class="headerlink" title="存储与网络"></a>存储与网络</h3><ul>
+<li><p>整合阿里云虚拟化、网络、存储、安全能力</p>
+</li>
+<li><p>支持阿里云云盘、NAS、OSS等持久化存储支持</p>
+</li>
+<li><p>支持高性能Flannel和Terway容器网络</p>
+</li>
+</ul>
+<h3 id="运维与安全"><a href="#运维与安全" class="headerlink" title="运维与安全"></a>运维与安全</h3><ul>
+<li>提供全方位的安全管理体系：基础架构安全、运行时安全、可信软件供应链安全</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/10-01-50-23-security.png"></p>
+<ul>
+<li><p>监控：支持集群、节点、应用、容器实例监控</p>
+</li>
+<li><p>日志：日志管理及日志查看</p>
+</li>
+<li><p>安全中心：提升容器安全整体纵深防御能力</p>
+</li>
+<li><p>安全沙箱：提供安全沙箱环境，具备独立内核</p>
+</li>
+<li><p>支持机密计算，提供可信执行加密环境</p>
+</li>
+</ul>
+<h3 id="弹性伸缩"><a href="#弹性伸缩" class="headerlink" title="弹性伸缩"></a>弹性伸缩</h3><ul>
+<li><p>使用场景：在线业务弹性、大规模计算训练、深度学习GPU或共享GPU的训练和推理、定时周期性负载变化等。</p>
+</li>
+<li><p>弹性伸缩维度：弹性层调度、资源层调度</p>
+</li>
+<li><p>调度层组件：容器水平伸缩（HPA）、容器垂直伸缩（VPA）、容器定时伸缩（Cron-HPA）、弹性负载（Elastic-Workload）</p>
+</li>
+</ul>
+<h2 id="容器服务ACK产品优势"><a href="#容器服务ACK产品优势" class="headerlink" title="容器服务ACK产品优势"></a>容器服务ACK产品优势</h2><ul>
+<li><p>强大的集群管理</p>
+</li>
+<li><p>极致弹性的资源扩张</p>
+</li>
+<li><p>一站式容器管理</p>
+</li>
+<li><p>丰富的工作节点</p>
+</li>
+<li><p>最优的IaaS层能力</p>
+</li>
+<li><p>企业级的安全稳定</p>
+</li>
+<li><p>全天候技术支持</p>
+</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://eryoung2.github.io">ErYoung2</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://eryoung2.github.io/2023/02/10/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E6%A6%82%E8%BF%B0/">http://eryoung2.github.io/2023/02/10/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E6%A6%82%E8%BF%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://eryoung2.github.io" target="_blank">Eryoung2的个人博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91ACP%E8%AE%A4%E8%AF%81/">阿里云ACP认证</a></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/02/09/%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2%E6%8A%80%E6%9C%AF/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">地址转换技术</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/01/31/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/" title="ACP云原生容器工程师 - 考试大纲"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-31</div><div class="title">ACP云原生容器工程师 - 考试大纲</div></div></a></div><div><a href="/2023/01/31/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-%E4%BA%91%E5%8E%9F%E7%94%9F%E6%A6%82%E8%A6%81-1/" title="ACP云原生容器工程师-云原生概要-1"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-31</div><div class="title">ACP云原生容器工程师-云原生概要-1</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/panda.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ErYoung2</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">32</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">17</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">eryoung2写字的地方</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ACK%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">ACK简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ACK%E5%88%86%E7%B1%BB"><span class="toc-number">2.</span> <span class="toc-text">ACK分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ACK-vs-%E5%8E%9F%E7%94%9FK8S"><span class="toc-number">2.0.1.</span> <span class="toc-text">ACK vs 原生K8S</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ACK%E6%A0%B8%E5%BF%83%E5%8A%9F%E8%83%BD"><span class="toc-number">3.</span> <span class="toc-text">ACK核心功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%86%E7%BE%A4%E7%AE%A1%E7%90%86"><span class="toc-number">3.1.</span> <span class="toc-text">集群管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E7%AE%A1%E7%90%86"><span class="toc-number">3.2.</span> <span class="toc-text">应用管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E4%B8%8E%E7%BD%91%E7%BB%9C"><span class="toc-number">3.3.</span> <span class="toc-text">存储与网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E7%BB%B4%E4%B8%8E%E5%AE%89%E5%85%A8"><span class="toc-number">3.4.</span> <span class="toc-text">运维与安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%B9%E6%80%A7%E4%BC%B8%E7%BC%A9"><span class="toc-number">3.5.</span> <span class="toc-text">弹性伸缩</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1ACK%E4%BA%A7%E5%93%81%E4%BC%98%E5%8A%BF"><span class="toc-number">4.</span> <span class="toc-text">容器服务ACK产品优势</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/02/10/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E6%A6%82%E8%BF%B0/" title="ACP云原生容器工程师-ACK概述"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ACP云原生容器工程师-ACK概述"/></a><div class="content"><a class="title" href="/2023/02/10/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E6%A6%82%E8%BF%B0/" title="ACP云原生容器工程师-ACK概述">ACP云原生容器工程师-ACK概述</a><time datetime="2023-02-09T17:46:34.000Z" title="发表于 2023-02-10 01:46:34">2023-02-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/02/09/%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2%E6%8A%80%E6%9C%AF/" title="地址转换技术"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="地址转换技术"/></a><div class="content"><a class="title" href="/2023/02/09/%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2%E6%8A%80%E6%9C%AF/" title="地址转换技术">地址转换技术</a><time datetime="2023-02-09T09:08:14.000Z" title="发表于 2023-02-09 17:08:14">2023-02-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/31/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-%E4%BA%91%E5%8E%9F%E7%94%9F%E6%A6%82%E8%A6%81-1/" title="ACP云原生容器工程师-云原生概要-1"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ACP云原生容器工程师-云原生概要-1"/></a><div class="content"><a class="title" href="/2023/01/31/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-%E4%BA%91%E5%8E%9F%E7%94%9F%E6%A6%82%E8%A6%81-1/" title="ACP云原生容器工程师-云原生概要-1">ACP云原生容器工程师-云原生概要-1</a><time datetime="2023-01-31T08:04:47.000Z" title="发表于 2023-01-31 16:04:47">2023-01-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/31/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/" title="ACP云原生容器工程师 - 考试大纲"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ACP云原生容器工程师 - 考试大纲"/></a><div class="content"><a class="title" href="/2023/01/31/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/" title="ACP云原生容器工程师 - 考试大纲">ACP云原生容器工程师 - 考试大纲</a><time datetime="2023-01-31T05:42:59.000Z" title="发表于 2023-01-31 13:42:59">2023-01-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/18/%E3%80%8A%E5%9C%A8%E9%82%A3%E9%81%A5%E8%BF%9C%E7%9A%84%E5%9C%B0%E6%96%B9%E3%80%8B-%E7%8E%8B%E6%B4%9B%E5%AE%BE/" title="《在那遥远的地方》-- 王洛宾"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="《在那遥远的地方》-- 王洛宾"/></a><div class="content"><a class="title" href="/2022/12/18/%E3%80%8A%E5%9C%A8%E9%82%A3%E9%81%A5%E8%BF%9C%E7%9A%84%E5%9C%B0%E6%96%B9%E3%80%8B-%E7%8E%8B%E6%B4%9B%E5%AE%BE/" title="《在那遥远的地方》-- 王洛宾">《在那遥远的地方》-- 王洛宾</a><time datetime="2022-12-18T14:43:22.000Z" title="发表于 2022-12-18 22:43:22">2022-12-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By ErYoung2</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'http://eryoung2.github.io/2023/02/10/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E6%A6%82%E8%BF%B0/'
+    this.page.identifier = '2023/02/10/ACP云原生容器工程师-ACK概述/'
+    this.page.title = 'ACP云原生容器工程师-ACK概述'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+}
+
+if ('Valine' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

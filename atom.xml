@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-02-09T09:10:12.389Z</updated>
+  <updated>2023-02-09T17:50:32.021Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ACP云原生容器工程师-ACK概述</title>
+    <link href="http://eryoung2.github.io/2023/02/10/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E6%A6%82%E8%BF%B0/"/>
+    <id>http://eryoung2.github.io/2023/02/10/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E6%A6%82%E8%BF%B0/</id>
+    <published>2023-02-09T17:46:34.000Z</published>
+    <updated>2023-02-09T17:50:32.021Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="ACK简介"><a href="#ACK简介" class="headerlink" title="ACK简介"></a>ACK简介</h2><p>阿里云容器服务ACK，是阿里云针对云原生推出的拳头产品，基于原版Kubernetes进行适配和增强，简化集群的搭建和运维工作，整合阿里云虚拟化、存储、网络和安全能力，使得扩容和缩容更加简易，打造云端最佳的Kubernetes容器化应用运行环境。</p><h2 id="ACK分类"><a href="#ACK分类" class="headerlink" title="ACK分类"></a>ACK分类</h2><p>ACK产品根据运维整合度，可分为三类：</p><ul><li><p><strong>专有版Kubernetes</strong></p></li><li><p><strong>托管版Kubernetes</strong></p></li><li><p><strong>Serverless Kubernetes</strong></p></li></ul><p>三者的特点和区别如下：</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/10-01-50-02-diff.png"></p><p>适用人群分别为：</p><ul><li><p>专业版ACK：懂技术、有运维K8S的能力、资源规划明显、Master节点定制、完全自营、成本不敏感</p></li><li><p>托管版ACK: Kubernetes能上手、不关心Master节点、只部署应用、降低成本</p></li><li><p>Serverless Kubernetes：批量任务、突发扩容、开箱即用、零运维、按量付费、不关注基础设施</p></li></ul><h4 id="ACK-vs-原生K8S"><a href="#ACK-vs-原生K8S" class="headerlink" title="ACK vs 原生K8S"></a>ACK vs 原生K8S</h4><ul><li><p>ACK基于原生K8S</p></li><li><p>ACK整合阿里云虚拟化、网络、存储、安全能力</p></li><li><p>高性能可伸缩能力加强</p></li><li><p>简化集群的运维和扩容工作，更专注应用开发</p></li></ul><p>也可参考此图：</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/10-01-50-14-diff2.png"></p><h2 id="ACK核心功能"><a href="#ACK核心功能" class="headerlink" title="ACK核心功能"></a>ACK核心功能</h2><h3 id="集群管理"><a href="#集群管理" class="headerlink" title="集群管理"></a>集群管理</h3><p>通过控制台一键创建Kubernetes集群，支持跨可用区高可用。</p><p>特点如下：</p><ul><li><p>集群形态：支持ACK&#x2F;ACK Pro&#x2F;ASK</p></li><li><p>组件升级：一键升级K8S版本</p></li><li><p>弹性伸缩：支持垂直伸缩、水平伸缩等多种扩容模式</p></li><li><p>多云管理：支持多云、混合云集群管理</p></li><li><p>安全授权：支持RAM授权和RBAC权限管理</p></li></ul><h3 id="应用管理"><a href="#应用管理" class="headerlink" title="应用管理"></a>应用管理</h3><ul><li><p>一站式容器全生命周期管理</p></li><li><p>应用创建：从镜像、模板的创建，支持环境变量、应用健康的配置</p></li><li><p>应用全生命周期管理：支持应用查看、更新、删除、回滚等</p></li><li><p>应用调度：支持节点亲和性调度、应用亲和性和反亲和性调度</p></li><li><p>应用伸缩：支持手动伸缩应用容器实例，HPA自动伸缩策略</p></li><li><p>应用发布：支持灰度发布和蓝绿发布</p></li><li><p>应用目录：支持应用目录，简化云服务集成</p></li></ul><h3 id="存储与网络"><a href="#存储与网络" class="headerlink" title="存储与网络"></a>存储与网络</h3><ul><li><p>整合阿里云虚拟化、网络、存储、安全能力</p></li><li><p>支持阿里云云盘、NAS、OSS等持久化存储支持</p></li><li><p>支持高性能Flannel和Terway容器网络</p></li></ul><h3 id="运维与安全"><a href="#运维与安全" class="headerlink" title="运维与安全"></a>运维与安全</h3><ul><li>提供全方位的安全管理体系：基础架构安全、运行时安全、可信软件供应链安全</li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/10-01-50-23-security.png"></p><ul><li><p>监控：支持集群、节点、应用、容器实例监控</p></li><li><p>日志：日志管理及日志查看</p></li><li><p>安全中心：提升容器安全整体纵深防御能力</p></li><li><p>安全沙箱：提供安全沙箱环境，具备独立内核</p></li><li><p>支持机密计算，提供可信执行加密环境</p></li></ul><h3 id="弹性伸缩"><a href="#弹性伸缩" class="headerlink" title="弹性伸缩"></a>弹性伸缩</h3><ul><li><p>使用场景：在线业务弹性、大规模计算训练、深度学习GPU或共享GPU的训练和推理、定时周期性负载变化等。</p></li><li><p>弹性伸缩维度：弹性层调度、资源层调度</p></li><li><p>调度层组件：容器水平伸缩（HPA）、容器垂直伸缩（VPA）、容器定时伸缩（Cron-HPA）、弹性负载（Elastic-Workload）</p></li></ul><h2 id="容器服务ACK产品优势"><a href="#容器服务ACK产品优势" class="headerlink" title="容器服务ACK产品优势"></a>容器服务ACK产品优势</h2><ul><li><p>强大的集群管理</p></li><li><p>极致弹性的资源扩张</p></li><li><p>一站式容器管理</p></li><li><p>丰富的工作节点</p></li><li><p>最优的IaaS层能力</p></li><li><p>企业级的安全稳定</p></li><li><p>全天候技术支持</p></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;ACK简介&quot;&gt;&lt;a href=&quot;#ACK简介&quot; class=&quot;headerlink&quot; title=&quot;ACK简介&quot;&gt;&lt;/a&gt;ACK简介&lt;/h2&gt;&lt;p&gt;阿里云容器服务ACK，是阿里云针对云原生推出的拳头产品，基于原版Kubernetes进行适配和增强，简化集群的搭建和</summary>
+      
+    
+    
+    
+    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="阿里云ACP认证" scheme="http://eryoung2.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91ACP%E8%AE%A4%E8%AF%81/"/>
+    
+  </entry>
   
   <entry>
     <title>地址转换技术</title>
@@ -495,30 +519,6 @@
     
     
     <category term="ssh" scheme="http://eryoung2.github.io/tags/ssh/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git创建空白分支</title>
-    <link href="http://eryoung2.github.io/2022/07/08/git%E5%88%9B%E5%BB%BA%E7%A9%BA%E7%99%BD%E5%88%86%E6%94%AF/"/>
-    <id>http://eryoung2.github.io/2022/07/08/git%E5%88%9B%E5%BB%BA%E7%A9%BA%E7%99%BD%E5%88%86%E6%94%AF/</id>
-    <published>2022-07-08T14:59:56.000Z</published>
-    <updated>2022-07-27T07:32:21.370Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在github上创建一些新的分支，发现默认会从某一个分支拉过来成立一个新的分支，.git文件下会有前一分支的提交信息，例如head、ref、logs等。</p><p>那我们能不能创建一个新的分支，让它成为一个空白的分支，不带其他分支的head、ref、logs呢？</p><p>答案是可以的，可以使用orphan参数。</p><h2 id="git-orphan"><a href="#git-orphan" class="headerlink" title="git orphan"></a>git orphan</h2><p>用法：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout --orphan branch-name</span><br></pre></td></tr></table></figure><p>首先我们在github创建一个test仓库，克隆到本地，写入一些东西进行提交。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">➜  test git:(master) ls</span><br><span class="line">➜  test git:(master) git logs</span><br><span class="line">git：&#x27;logs&#x27; 不是一个 git 命令。参见 &#x27;git --help&#x27;。</span><br><span class="line"></span><br><span class="line">最相似的命令是</span><br><span class="line">    log</span><br><span class="line">➜  test git:(master) git log</span><br><span class="line">fatal: 您的当前分支 &#x27;master&#x27; 尚无任何提交</span><br><span class="line">➜  test git:(master) echo &quot;init test&quot; &gt; test1.txt</span><br><span class="line">➜  test git:(master) ✗ git add test1.txt</span><br><span class="line">➜  test git:(master) ✗ git commit -m &quot;test1&quot;</span><br><span class="line">[master（根提交） 80674b3] test1</span><br><span class="line"> 1 file changed, 1 insertion(+)</span><br><span class="line"> create mode 100644 test1.txt</span><br><span class="line">➜  test git:(master) git push -u</span><br><span class="line">枚举对象中: 3, 完成.</span><br><span class="line">对象计数中: 100% (3/3), 完成.</span><br><span class="line">写入对象中: 100% (3/3), 216 字节 | 216.00 KiB/s, 完成.</span><br><span class="line">总共 3（差异 0），复用 0（差异 0），包复用 0</span><br><span class="line">To github.com:ErYoung2/test.git</span><br><span class="line"> * [new branch]      master -&gt; master</span><br><span class="line">分支 &#x27;master&#x27; 设置为跟踪来自 &#x27;origin&#x27; 的远程分支 &#x27;master&#x27;。</span><br><span class="line">➜  test git:(master) git log</span><br><span class="line">commit 80674b32438bd3bfe0de6d6183b91ea8bdfca129 (HEAD -&gt; master, origin/master)</span><br><span class="line">Author: ErYoung2 </span><br><span class="line">Date:   Fri Jul 8 22:35:21 2022 +0800</span><br><span class="line"></span><br><span class="line">    test1</span><br><span class="line">(END)</span><br></pre></td></tr></table></figure><p>可以看到，我们有一条提交记录。我们创建一个新的branch，先不使用orphan参数。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">➜  test git:(master) git branch test master</span><br><span class="line">➜  test git:(master) git checkout test</span><br><span class="line">切换到分支 &#x27;test&#x27;</span><br><span class="line">➜  test git:(test) git log</span><br><span class="line">commit 80674b32438bd3bfe0de6d6183b91ea8bdfca129 (HEAD -&gt; test, origin/master, master)</span><br><span class="line">Author: ErYoung2 </span><br><span class="line">Date:   Fri Jul 8 22:35:21 2022 +0800</span><br><span class="line"></span><br><span class="line">    test1</span><br><span class="line">(END)</span><br></pre></td></tr></table></figure><p>我们再使用orphan参数。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">➜  test git:(test) git checkout --orphan test2</span><br><span class="line">切换到一个新分支 &#x27;test2&#x27;</span><br><span class="line">➜  test git:(test2) ✗ git log</span><br><span class="line">fatal: 您的当前分支 &#x27;test2&#x27; 尚无任何提交</span><br></pre></td></tr></table></figure><p>就可以发现，新建的分支test2是没有提交记录的。</p><h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>这个主要两个作用：</p><ol><li><p>减少仓库数量，我们可以直接切换就好</p></li><li><p>减少新分支对于原分支的依赖，可以不受原分支.git历史文件的干扰，从而可以达到在旧仓库达到git init的效果，进而方便自己的管理。</p></li></ol>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;最近在github上创建一些新的分支，发现默认会从某一个分支拉过来成立一个新的分支，.git文件下会有前一分支的提交信息，例如head、re</summary>
-      
-    
-    
-    
-    <category term="版本控制" scheme="http://eryoung2.github.io/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/"/>
-    
-    
-    <category term="git" scheme="http://eryoung2.github.io/tags/git/"/>
     
   </entry>
   
