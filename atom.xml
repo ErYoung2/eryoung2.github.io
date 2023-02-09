@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-02-02T16:14:36.335Z</updated>
+  <updated>2023-02-09T09:10:12.389Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>地址转换技术</title>
+    <link href="http://eryoung2.github.io/2023/02/09/%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2%E6%8A%80%E6%9C%AF/"/>
+    <id>http://eryoung2.github.io/2023/02/09/%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2%E6%8A%80%E6%9C%AF/</id>
+    <published>2023-02-09T09:08:14.000Z</published>
+    <updated>2023-02-09T09:10:12.389Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在我们上网的过程中，不可能只用同一个ip地址来访问，在公网和内网之间，需要一些地址转换来实现公网和内网ip的变化。通常，我们可以使用NAT来做；在公网ip不固定的时候，也需要使用MASQUERADE来做地址转换。</p><h2 id="NAT-Network-Address-Translation"><a href="#NAT-Network-Address-Translation" class="headerlink" title="NAT(Network Address Translation)"></a>NAT(Network Address Translation)</h2><p>我们都知道，在ip数据包中，有两个参数可以定位包的源地址和目的地址，一个是源地址ip，一个是目标地址ip。我们常用的NAT有两种，一种是SNAT，修改源地址；一种是DNAT，修改目标地址。</p><h3 id="SNAT-Source-NAT"><a href="#SNAT-Source-NAT" class="headerlink" title="SNAT(Source NAT)"></a>SNAT(Source NAT)</h3><p>此协议转换包的源地址，通常用于内网ip转公网ip，也就是正向代理会对发出的ip包做SNAT，使其可以传到公网环境中进行下一跳路由动作。</p><p>此修改作用于iptables的POSTROUTING阶段，具体命令如下：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -t nat -A POSTROUTING -s &lt;修改之前的ip段&gt; -o &lt;出口网卡&gt; -j SNAT --to-source &lt;修改之后的ip&gt; </span><br></pre></td></tr></table></figure><h3 id="DNAT-Destination-NAT"><a href="#DNAT-Destination-NAT" class="headerlink" title="DNAT(Destination NAT)"></a>DNAT(Destination NAT)</h3><p>此协议转换包的目的地址，通常用于公网ip转内网ip，也就是反向代理会对收到的ip包做DNAT，使其可以传到内网环境中进行下一跳路由动作。</p><p>此修改作用于iptables的PREROUTING阶段，具体命令如下：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -t nat -A PREROUTING -d &lt;需要使用的ip地址&gt; -i &lt;入口网卡&gt; -j DNAT --to-destination &lt;修改之前的ip段&gt;</span><br></pre></td></tr></table></figure><h2 id="MASQUERADE-伪装"><a href="#MASQUERADE-伪装" class="headerlink" title="MASQUERADE(伪装)"></a>MASQUERADE(伪装)</h2><p>当我们的网卡绑定的公网ip是动态的，我们就需要动态读取网卡上的ip信息，这时我们使用MASQUERADE协议可以实现。</p><p>当然，MASQUERADE是一种特殊的SNAT，通常用于动态网络环境中，也作用于POSTROUTING阶段。</p><p>具体的命令如下：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -t nat -A POSTROUTING -s &lt;修改之前的ip段&gt; -o &lt;出口网卡&gt; MASQUERADE</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在我们上网的过程中，不可能只用同一个ip地址来访问，在公网和内网之间，需要一些地址转换来实现公网和内网ip的变化。通常，我们可以使用NAT来</summary>
+      
+    
+    
+    
+    <category term="面试" scheme="http://eryoung2.github.io/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+    <category term="linux" scheme="http://eryoung2.github.io/tags/linux/"/>
+    
+    <category term="网络" scheme="http://eryoung2.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>ACP云原生容器工程师-云原生概要-1</title>
@@ -493,31 +519,6 @@
     
     
     <category term="git" scheme="http://eryoung2.github.io/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux-dd命令</title>
-    <link href="http://eryoung2.github.io/2022/07/05/linux-dd%E5%91%BD%E4%BB%A4/"/>
-    <id>http://eryoung2.github.io/2022/07/05/linux-dd%E5%91%BD%E4%BB%A4/</id>
-    <published>2022-07-05T09:36:57.000Z</published>
-    <updated>2022-07-05T09:39:51.222Z</updated>
-    
-    <content type="html"><![CDATA[<p>dd命令可以轻易实现创建指定大小的文件，如：</p><p><strong><font color="red">dd if&#x3D;&#x2F;dev&#x2F;zero of&#x3D;test bs&#x3D;1M count&#x3D;1000</font></strong></p><p>会生成一个1000M的test文件，文件内容为全0（因从&#x2F;dev&#x2F;zero中读取，&#x2F;dev&#x2F;zero为0源）。<br>但是这样为实际写入硬盘，文件产生速度取决于硬盘读写速度，如果欲产生超大文件，速度很慢。</p><p>在某种场景下，我们只想让文件系统认为存在一个超大文件在此，但是并不实际写入硬盘。<br>则可以：</p><p><strong><font color="red">dd if&#x3D;&#x2F;dev&#x2F;zero of&#x3D;test bs&#x3D;1M count&#x3D;0 seek&#x3D;100000</font></strong></p><p>此时创建的文件在文件系统中的显示大小为100000MB，但是并不实际占用block，因此创建速度与内存速度相当。<br>seek的作用是跳过输出文件中指定大小的部分，这就达到了创建大文件，但是并不实际写入的目的。</p><p>当然，因为不实际写入硬盘，所以你在容量只有10G的硬盘上创建100G的此类文件都是可以的。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;dd命令可以轻易实现创建指定大小的文件，如：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;font color=&quot;red&quot;&gt;dd if&amp;#x3D;&amp;#x2F;dev&amp;#x2F;zero of&amp;#x3D;test bs&amp;#x3D;1M count&amp;#x3D;1000&lt;/font&gt;&lt;/st</summary>
-      
-    
-    
-    
-    <category term="操作系统" scheme="http://eryoung2.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-    <category term="linux" scheme="http://eryoung2.github.io/tags/linux/"/>
     
   </entry>
   
