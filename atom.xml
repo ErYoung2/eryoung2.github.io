@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-02-09T17:50:32.021Z</updated>
+  <updated>2023-02-10T10:15:36.307Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ACP云原生容器工程师-ACK Pro概述</title>
+    <link href="http://eryoung2.github.io/2023/02/10/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK-Pro%E6%A6%82%E8%BF%B0/"/>
+    <id>http://eryoung2.github.io/2023/02/10/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK-Pro%E6%A6%82%E8%BF%B0/</id>
+    <published>2023-02-10T10:04:53.000Z</published>
+    <updated>2023-02-10T10:15:36.307Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="ACK-Pro集群概述"><a href="#ACK-Pro集群概述" class="headerlink" title="ACK Pro集群概述"></a>ACK Pro集群概述</h2><h3 id="对比ACK托管版集群"><a href="#对比ACK托管版集群" class="headerlink" title="对比ACK托管版集群"></a>对比ACK托管版集群</h3><ul><li><p>相比ACK托管版，针对企业版大规模生产环境进一步增强了可靠性、安全性</p></li><li><p>继承了原托管版集群的所有优势</p></li><li><p>提供可赔付的SLA的Kubernetes集群</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/10-18-08-24-vs%20ack%20tuoguan.png"></p><h3 id="对比标准版集群"><a href="#对比标准版集群" class="headerlink" title="对比标准版集群"></a>对比标准版集群</h3><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/10-18-08-37-vs%20biaozhun.png"></p><h2 id="ACK-Pro各种集群"><a href="#ACK-Pro各种集群" class="headerlink" title="ACK Pro各种集群"></a>ACK Pro各种集群</h2><h3 id="可靠性强化集群"><a href="#可靠性强化集群" class="headerlink" title="可靠性强化集群"></a>可靠性强化集群</h3><p>更可靠的托管Master节点，API Server自动弹性，保证集群平滑扩容海量节点。</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/10-18-09-39-kekao.png"></p><h3 id="安全性强化集群"><a href="#安全性强化集群" class="headerlink" title="安全性强化集群"></a>安全性强化集群</h3><p>开放安全管理，并提供针对运行中容器更强检测和自动修复能力的安全管理高级版，与KMS结合会更安全。</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/10-18-09-49-anquan.png"></p><h3 id="调度性强化集群"><a href="#调度性强化集群" class="headerlink" title="调度性强化集群"></a>调度性强化集群</h3><ul><li><p>集成更强调度性能的kube-scheduler，支持多种智能调度算法</p></li><li><p>优化在大规模数据计算、高性能数据处理等业务场景下的容器调度能力</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/10-18-10-00-diaodu.png"></p><h3 id="ACK-Pro显著特点"><a href="#ACK-Pro显著特点" class="headerlink" title="ACK Pro显著特点"></a>ACK Pro显著特点</h3><ul><li><p>可靠的强化集群</p></li><li><p>提升安全性的集群</p></li><li><p>调度能力更强</p></li></ul><h4 id="ACK-Pro版适用行业"><a href="#ACK-Pro版适用行业" class="headerlink" title="ACK Pro版适用行业"></a>ACK Pro版适用行业</h4><ul><li><p>金融企业</p></li><li><p>互联网企业</p></li><li><p>大数据计算企业</p></li><li><p>开展中国业务的海外企业</p></li></ul><h2 id="ACK-Pro适用场景"><a href="#ACK-Pro适用场景" class="headerlink" title="ACK Pro适用场景"></a>ACK Pro适用场景</h2><h3 id="弹性伸缩架构"><a href="#弹性伸缩架构" class="headerlink" title="弹性伸缩架构"></a>弹性伸缩架构</h3><ul><li><p>容器服务可以根据业务流量自动对业务扩容、缩容，不需要人工干预</p></li><li><p>避免流量激增扩容不及时导致系统挂掉，以及平时大量资源闲置</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/10-18-14-45-shensuo.png"></p><h3 id="DevOps持续交付"><a href="#DevOps持续交付" class="headerlink" title="DevOps持续交付"></a>DevOps持续交付</h3><h3 id="云原生AI"><a href="#云原生AI" class="headerlink" title="云原生AI"></a>云原生AI</h3><ul><li><p>深度学习的三个核心问题：性能、效率、成本</p></li><li><p>ACK Pro无缝整合了云的计算、存储、负载均衡等服务，同时贯穿了深度学习的全生命周期</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/10-18-14-55-cncf.png"></p><h3 id="微服务架构"><a href="#微服务架构" class="headerlink" title="微服务架构"></a>微服务架构</h3><ul><li><p>企业生产环境中，通过合理微服务拆分，将每个微服务应用存储在阿里云镜像帮您管理</p></li><li><p>您只需迭代每个微服务应用，有阿里云容器服务ACK提供调度、编排、部署、灰度发布</p></li><li><p>帮助企业快速实现敏捷开发和部署落地，加速企业业务迭代</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/10-18-15-18-microservice.png"></p><h3 id="混合云架构"><a href="#混合云架构" class="headerlink" title="混合云架构"></a>混合云架构</h3><ul><li><p>在容器服务控制台上同时管理云上云下的资源，不需要在多种云管理控制台中反复切换</p></li><li><p>基于容器基础设施无关的特性，使用同一套镜像和编排同时在云上云下部署应用</p></li><li><p>基于阿里云容器服务ACK实现统一运维多个云端资源</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/10-18-15-31-mixcloud.png"></p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ol><li><p>ACK Pro集群概述，与ACK托管版和ACK标准版对比</p></li><li><p>ACK Pro各种集群：可靠性强化集群、安全性强化集群、调度性强化集群</p></li><li><p>ACK Pro显著特点、适用行业</p></li><li><p>ACK适用场景：弹性伸缩架构、DevOps持续交付、云原生AI、微服务架构、混合云架构</p></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;ACK-Pro集群概述&quot;&gt;&lt;a href=&quot;#ACK-Pro集群概述&quot; class=&quot;headerlink&quot; title=&quot;ACK Pro集群概述&quot;&gt;&lt;/a&gt;ACK Pro集群概述&lt;/h2&gt;&lt;h3 id=&quot;对比ACK托管版集群&quot;&gt;&lt;a href=&quot;#对比ACK托管</summary>
+      
+    
+    
+    
+    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="阿里云ACP认证" scheme="http://eryoung2.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91ACP%E8%AE%A4%E8%AF%81/"/>
+    
+  </entry>
   
   <entry>
     <title>ACP云原生容器工程师-ACK概述</title>
@@ -71,7 +95,7 @@
     <link href="http://eryoung2.github.io/2023/01/31/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-%E4%BA%91%E5%8E%9F%E7%94%9F%E6%A6%82%E8%A6%81-1/"/>
     <id>http://eryoung2.github.io/2023/01/31/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-%E4%BA%91%E5%8E%9F%E7%94%9F%E6%A6%82%E8%A6%81-1/</id>
     <published>2023-01-31T08:04:47.000Z</published>
-    <updated>2023-02-02T16:14:36.335Z</updated>
+    <updated>2023-02-09T17:51:46.496Z</updated>
     
     <content type="html"><![CDATA[<h2 id="云原生概念"><a href="#云原生概念" class="headerlink" title="云原生概念"></a>云原生概念</h2><p>说到云，我们都不陌生。我们身边有各种厂商的云产品，例如AWS、GCP、AZure、阿里云、腾讯云等，但是说到云原生这个概念，恐怕就不是单纯的产品上云这么简单了，而是从产品的架构设计、网络规划、拓扑图补全、产品落地、后期运维等步骤中，都需要考虑云产品的特点而进行设计的。</p><p>云原生这个词是近几年伴随着云技术的迅猛发展而流行起来的一个概念，在不同时期我们对于云原生的概念定义也不一样。我这里列出几个比较具有代表性的定义方法：</p><ul><li><p>Heroku于2011年提出了十二因子的应用定义，该定义可以适用于各种编程语言，通常被认为是最早对于云原生的技术定义。<br>其十二因子分别为：**<font color="red">基准代码；依赖；配置；后端服务；构建、发布、运行；进程；端口绑定；并发；易处理；环境等价；日志；进程管理</font>**</p></li><li><p>Pivital于2015年提出了“Cloud Native”的概念：云原生是一种可以充分利用云计算优势的构建和运行应用的方法。主要包括以下要素：**<font color="red">Devops；持续交付；微服务；容器</font>**</p></li><li><p>云原生计算基金会对于云原生定义的最新版本是：云原生的代表技术为**<font color="red">容器、服务网格、微服务、不可变基础设施、声明式API</font>**</p></li><li><p>阿里巴巴对云原生的定义：云原生是一条使用户能低心智负担的、敏捷的、以可扩展可复制的方式，最大限度利用云的能力、发挥云特点的最佳路径。</p></li></ul><p>&amp;nbsp;</p><h2 id="云原生的定位及意义"><a href="#云原生的定位及意义" class="headerlink" title="云原生的定位及意义"></a>云原生的定位及意义</h2><h3 id="云原生是种架构模式及软件开发的新的思想理念"><a href="#云原生是种架构模式及软件开发的新的思想理念" class="headerlink" title="云原生是种架构模式及软件开发的新的思想理念"></a>云原生是种架构模式及软件开发的新的思想理念</h3><ul><li><p>云原生基于云计算理念的深化，是面向云应用设计的一种新的架构设计理念</p></li><li><p>充分发挥云效能的最佳实践路径</p></li><li><p>帮助企业构建弹性可靠、松耦合、易管理可观测的应用系统</p></li><li><p>提升交付效率，降低运维复杂度</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/01/31-16-31-17-linian.png"></p><h3 id="云原生架构与传统架构对比"><a href="#云原生架构与传统架构对比" class="headerlink" title="云原生架构与传统架构对比"></a>云原生架构与传统架构对比</h3><ul><li>传统软件架构，用户不仅仅需要关注基础设施的能力及其运维，还需要采购及维护大量的第三方软件以及非功能性能力，降低软件开发效率，并且没有充分利用云计算IaaS与PaaS的能力。</li><li>从技术的角度，云原生架构是基于云原生技术的一组架构原则和设计模式的集合，旨在将云应用中<br>的非业务代码部分进行最大化的剥离，从而让云设施接管应用中原有的大量非功能特性(如弹性、<br>韧性、安全、可观测性、灰度等)，使业务不再有非功能性业务中断困扰的同时，具备轻量、敏捷、<br>高度自动化的特点。</li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/01/31-16-32-19-duibi.png"></p><h3 id="云原生技术改变了软件开发及运维模式"><a href="#云原生技术改变了软件开发及运维模式" class="headerlink" title="云原生技术改变了软件开发及运维模式"></a>云原生技术改变了软件开发及运维模式</h3><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/01/31-16-33-11-moshi.png"></p><h3 id="容器技术（docker）"><a href="#容器技术（docker）" class="headerlink" title="容器技术（docker）"></a>容器技术（docker）</h3><p>容器技术处在云原生的技术栈中的底层一环，是保证云原生能实现的基础。其包括3个核心：</p><ul><li><p>镜像：没有生命周期的打包制品</p></li><li><p>容器：具有生命周期的运行态</p></li><li><p>容器仓库：存储镜像的仓库</p></li></ul><p>三者的关系如下：</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/02-17-48-36-docker.png"></p><p>它们之间的调用关系如下：</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/02-17-51-55-diaoyong.png"></p><p>由于Dockerfile是提前写好的，所以镜像打包时的规格是一致的，但是不同需求下，可以添加不同的参数，如添加存储卷、添加映射端口、是否后台运行等，这时容器的状态会有不同。</p><h3 id="容器编排技术（kubernetes）"><a href="#容器编排技术（kubernetes）" class="headerlink" title="容器编排技术（kubernetes）"></a>容器编排技术（kubernetes）</h3><p>随着容器规模的越来越大，节点规模也会变大，我们对容器的管理也更加复杂。而容器编排技术就是为了解决在多集群节点中更好地管理容器应用的解决方案。</p><p>Kubernetes是目前使用最广泛的容器编排技术。在传统时代，我们需要操作系统来管理硬件资源，在操作系统基础上来部署软件和应用；而在云原生的理念当中，Kubernetes就扮演着操作系统的作用。它通过已知的不可变基础设施，通过声明式API来管理和调度各种应用资源，例如Pod、Service、Deployment、Statefulset、PV、PVC、Daemonset、ingress-gateway等。</p><p>Kubernetes的核心功能有以下几项：</p><p>● 服务发现与负载均衡<br>● 容器的自动装箱<br>● 存储编排<br>● 自动化容器恢复<br>● 自动发布与回顾<br>● 批量与密文管理<br>● 批量执行<br>● 水平伸缩</p><p>可以看到，kubernetes可以说是非常全能的一套容器编排解决方案，而它的架构是master-node，master节点会有控制模块，而node节点会有通信组件、网络代理和容器运行时。二者的架构如图所示：</p><h5 id="核心架构"><a href="#核心架构" class="headerlink" title="核心架构"></a>核心架构</h5><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/03-00-02-25-core.png"></p><h5 id="主节点架构"><a href="#主节点架构" class="headerlink" title="主节点架构"></a>主节点架构</h5><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/03-00-02-48-master.png"></p><h5 id="工作节点架构"><a href="#工作节点架构" class="headerlink" title="工作节点架构"></a>工作节点架构</h5><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/03-00-03-07-node.png"></p><p>其中，Kubelet是个服务，kube-proxy有两种方式：iptables或ipvs, CRI是容器运行时</p><h4 id="Kubernetes应用场景"><a href="#Kubernetes应用场景" class="headerlink" title="Kubernetes应用场景"></a>Kubernetes应用场景</h4><ul><li><p>典型调度场景<br><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/03-00-08-32-statement1.png"></p></li><li><p>调度<br><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/03-00-08-59-schedule.png"></p></li><li><p>自动恢复<br><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/03-00-09-24-auto-recovery.png"></p></li><li><p>弹性伸缩<br><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/03-00-09-53-autoscaler.png"></p></li></ul><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>本文简单介绍了：</p><ul><li><p>云原生概念</p></li><li><p>云原生的定位与意义</p></li><li><p>容器技术-Docker</p></li><li><p>容器编排技术-Kubernetes</p></li></ul><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><blockquote><p><a href="https://www.cnblogs.com/young233/p/10958624.html">docker入门1–简介、安装 - eryoung2 - 博客园</a></p></blockquote><blockquote><p><a href="https://www.cnblogs.com/young233/p/10961741.html">docker入门2–生命周期 - eryoung2 - 博客园</a></p></blockquote><blockquote><p><a href="https://www.cnblogs.com/young233/p/15119748.html">kubernetes 搭建集群 - eryoung2 - 博客园</a></p></blockquote><blockquote><p><a href="https://www.cnblogs.com/young233/p/15145682.html">k8s 五个重要概念 - eryoung2 - 博客园</a></p></blockquote>]]></content>
     
@@ -494,31 +518,6 @@
     <category term="k8s" scheme="http://eryoung2.github.io/tags/k8s/"/>
     
     <category term="cri-o" scheme="http://eryoung2.github.io/tags/cri-o/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ssh服务</title>
-    <link href="http://eryoung2.github.io/2022/07/12/ssh%E6%9C%8D%E5%8A%A1/"/>
-    <id>http://eryoung2.github.io/2022/07/12/ssh%E6%9C%8D%E5%8A%A1/</id>
-    <published>2022-07-11T18:02:11.000Z</published>
-    <updated>2022-07-11T18:04:18.493Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="概念、定义："><a href="#概念、定义：" class="headerlink" title="概念、定义："></a>概念、定义：</h2><ul><li>SSH是Secure Shell Protocol的简写，由IETF网络工作小组（Network Working Group）制定。</li><li>SSH在数据传输之前，将联机数据包进行加密处理，才会发出给服务端。</li><li>SSH是unix&#x2F;linux进行远程控制或者传输文件的一种协议。</li><li>SSH包括两部分，SSH客户端和SSHD服务端。</li></ul><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul><li>SSH是密文传输，较明文传输的telnet安全。</li><li>SSH是基于TCP传输协议的，所以是可靠传输。</li><li>SSH的默认端口是22，如要改变端口号，需在修改配置文件之后，加-p参数指定新端口进行ssh连接。</li></ul><h2 id="连接过程："><a href="#连接过程：" class="headerlink" title="连接过程："></a>连接过程：</h2><p>基于账户密码的连接方式：</p><ol><li>客户端用会话密钥加密用户名、认证方法、密码并将加密后的结果发至服务器端。</li><li>服务器端使用会话密钥解密得到用户名、密码，进行核对。若正确，则通过连接；若失败，则返回认证失败报文给客户端。客户端循环第一步，<br>直至达到最大连接次数，TCP连接关闭。<br>基于公钥私钥的连接方式：<ol><li>客户端使用ssh-keygen生成一对公钥和私钥。</li><li>客户端将公钥推送至服务端。ssh-copy-id -i <del>&#x2F;.ssh&#x2F;id_rsa.pub server,即将本机的公钥推送至server机的</del>&#x2F;.ssh&#x2F;authorized_keys里。</li><li>客户端用会话密钥加密用户名、认证方法、公钥并将加密后的结果发至服务器端。</li><li>服务器端进行解密后，对比此公钥是否存在于server机的~&#x2F;.ssh&#x2F;authorized_keys里。若存在，通过验证，进行下一步；若不存在，<br>则返回失败信息。</li><li>服务器端生成质询码，用客户端公钥进行一次加密，用会话密钥进行二次加密，推送给客户端。</li><li>客户端使用会话密钥进行一次解密，用公钥进行二次解密得到质询码。将质询码用会话密钥加密后重新发送给服务器端。</li><li>服务器端使用会话密钥解密后，判断是否是自己的质询码。如果是，则免密登录；若不是，则返回连接失败的信息。</li></ol></li></ol>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;概念、定义：&quot;&gt;&lt;a href=&quot;#概念、定义：&quot; class=&quot;headerlink&quot; title=&quot;概念、定义：&quot;&gt;&lt;/a&gt;概念、定义：&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;SSH是Secure Shell Protocol的简写，由IETF网络工作小组（Network</summary>
-      
-    
-    
-    
-    <category term="服务" scheme="http://eryoung2.github.io/categories/%E6%9C%8D%E5%8A%A1/"/>
-    
-    
-    <category term="ssh" scheme="http://eryoung2.github.io/tags/ssh/"/>
     
   </entry>
   
