@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-02-13T05:14:47.480Z</updated>
+  <updated>2023-02-13T07:11:29.759Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>ACK云原生容器工程师-ACK网络(下)</title>
+    <link href="http://eryoung2.github.io/2023/02/13/ACK%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E7%BD%91%E7%BB%9C-%E4%B8%8B/"/>
+    <id>http://eryoung2.github.io/2023/02/13/ACK%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E7%BD%91%E7%BB%9C-%E4%B8%8B/</id>
+    <published>2023-02-13T07:07:42.000Z</published>
+    <updated>2023-02-13T07:11:29.759Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="容器网络规划"><a href="#容器网络规划" class="headerlink" title="容器网络规划"></a>容器网络规划</h2><ul><li><p>容器网络规划、VPC专有网络配置阶段、容器网络配置阶段、Service网络配置阶段</p></li><li><p>根据集群业务需求，实现容器网络的配置完成</p></li></ul><h2 id="容器网络实践"><a href="#容器网络实践" class="headerlink" title="容器网络实践"></a>容器网络实践</h2><h3 id="Flannel"><a href="#Flannel" class="headerlink" title="Flannel"></a>Flannel</h3><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/13-15-11-01-flannel1.png"></p><h2 id="Terway"><a href="#Terway" class="headerlink" title="Terway"></a>Terway</h2><h4 id="Terway网络规划注意事项"><a href="#Terway网络规划注意事项" class="headerlink" title="Terway网络规划注意事项"></a>Terway网络规划注意事项</h4><ul><li><p>建议选用高配ECS规格机型，如5代或6代的8G以上机型</p></li><li><p>共享ENI支持的最大Pod数&#x3D;(ECS支持的ENI数-1)×单个ENI支持的私有ip数</p></li><li><p>独占ENI支持的最大Pod数&#x3D;ECS支持的ENI数-1</p></li></ul><h4 id="Terway网络实践步骤"><a href="#Terway网络实践步骤" class="headerlink" title="Terway网络实践步骤"></a>Terway网络实践步骤</h4><h5 id="1-规划和准备集群网络"><a href="#1-规划和准备集群网络" class="headerlink" title="1. 规划和准备集群网络"></a>1. 规划和准备集群网络</h5><ul><li><p>在创建ACK Kubernetes集群时，需要指定VPC地址段、虚拟交换机、Pod地址段、Service地址段</p></li><li><p>需要先创建一个专有网络VPC，然后在VPC下创建两个虚拟交换机</p></li><li><p>虚拟交换机和Pod交换机需要在同一可用区下</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/13-15-11-17-terway1.png"></p><h5 id="2-创建专有网络"><a href="#2-创建专有网络" class="headerlink" title="2. 创建专有网络"></a>2. 创建专有网络</h5><ol><li><p>登录专有网络管理控制台</p></li><li><p>在顶部菜单栏，选择地域，然后创建专有网络</p></li><li><p>创建专有网络和虚拟交换机。</p></li></ol><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/13-15-11-26-terway2.png"></p><h5 id="3-创建ACK集群"><a href="#3-创建ACK集群" class="headerlink" title="3. 创建ACK集群"></a>3. 创建ACK集群</h5><ol><li><p>登录阿里云容器服务ACK管理控制台</p></li><li><p>创建集群</p></li><li><p>在选择集群模板页面，单机标准托管集群下的创建</p></li></ol><h5 id="4-配置Terway网络"><a href="#4-配置Terway网络" class="headerlink" title="4. 配置Terway网络"></a>4. 配置Terway网络</h5><ol><li><p>配置的关键信息：专有网络、虚拟交换机、网络插件选Terway</p></li><li><p>配置Terway模式：独占弹性网卡或者共享弹性网卡(IPVlan)，是否支持NetworkPolicy选项(仅在共享弹性网卡模式下可选)，Pod网段，Service网段</p></li></ol><h5 id="5-配置节点实例及创建集群"><a href="#5-配置节点实例及创建集群" class="headerlink" title="5. 配置节点实例及创建集群"></a>5. 配置节点实例及创建集群</h5><p>选择节点实例，点击创建</p><h4 id="Terway和Flannel模式的不同"><a href="#Terway和Flannel模式的不同" class="headerlink" title="Terway和Flannel模式的不同"></a>Terway和Flannel模式的不同</h4><ul><li><p>Pod需要通过弹性网卡(ENI)接入虚拟交换机，来组件Pod网络</p></li><li><p>不同ECS规格所能支持的弹性网卡数不同</p></li></ul><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul><li><p>容器网络规划步骤介绍</p></li><li><p>容器网络实践</p><ul><li><p>Flannel</p></li><li><p>Terway，主要介绍了ENI模式下如何创建集群网络</p></li></ul></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;容器网络规划&quot;&gt;&lt;a href=&quot;#容器网络规划&quot; class=&quot;headerlink&quot; title=&quot;容器网络规划&quot;&gt;&lt;/a&gt;容器网络规划&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;容器网络规划、VPC专有网络配置阶段、容器网络配置阶段、Service网络配置阶段&lt;/p&gt;</summary>
+      
+    
+    
+    
+    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="阿里云ACP认证" scheme="http://eryoung2.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91ACP%E8%AE%A4%E8%AF%81/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ACP云原生容器工程师-ACK网络(上)</title>
     <link href="http://eryoung2.github.io/2023/02/13/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E7%BD%91%E7%BB%9C-%E4%B8%8A/"/>
     <id>http://eryoung2.github.io/2023/02/13/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E7%BD%91%E7%BB%9C-%E4%B8%8A/</id>
     <published>2023-02-13T05:08:04.000Z</published>
-    <updated>2023-02-13T05:14:47.480Z</updated>
+    <updated>2023-02-13T06:57:40.359Z</updated>
     
     <content type="html"><![CDATA[<h2 id="容器集群网络设计目标"><a href="#容器集群网络设计目标" class="headerlink" title="容器集群网络设计目标"></a>容器集群网络设计目标</h2><h3 id="主要解决的4个问题"><a href="#主要解决的4个问题" class="headerlink" title="主要解决的4个问题"></a>主要解决的4个问题</h3><ul><li><p>容器与容器之间的通信</p></li><li><p>Pod与Pod之间的通信</p></li><li><p>Pod与Service之间的通信</p></li><li><p>外部世界与Service之间的通信</p></li></ul><h3 id="Kubernetes网络接入的三个原则"><a href="#Kubernetes网络接入的三个原则" class="headerlink" title="Kubernetes网络接入的三个原则"></a>Kubernetes网络接入的三个原则</h3><ul><li><p>Pod和Pod的通信不需要NAT转换，可直接通信</p></li><li><p>Node和Pod可以相互通信，在不限制的情况下，Pod可以访问任意网络</p></li><li><p>Pod拥有独立的网络栈，Pod看到自己地址和外部看到自己地址是一样的，Pod内部容器共用一套独立的网络栈</p></li></ul><h3 id="容器到容器之间的通信"><a href="#容器到容器之间的通信" class="headerlink" title="容器到容器之间的通信"></a>容器到容器之间的通信</h3><ul><li><p>在容器中，容器之间的网络通信是通过docker0网桥，凡是连接到docker0的容器，都可以通过它来直接通信。</p></li><li><p>要想容器连接到docker0网桥，我们需要veth pair的虚拟设备来实现</p></li><li><p>当容器在一台宿主机上，访问该容器的ip地址时，这个数据包：</p><ul><li><p>先根据路由规则到达docker0网桥</p></li><li><p>然后被转发到对应的veth pair设备</p></li><li><p>最后，出现在容器里</p></li></ul></li></ul><h3 id="通过Service实现内外部统一访问"><a href="#通过Service实现内外部统一访问" class="headerlink" title="通过Service实现内外部统一访问"></a>通过Service实现内外部统一访问</h3><h4 id="为什么设立Service"><a href="#为什么设立Service" class="headerlink" title="为什么设立Service?"></a>为什么设立Service?</h4><ul><li><p>Kubernetes集群是通过Pod部署的，我们知道在Pod的生命周期中，随时可能被销毁和变化</p></li><li><p>应用创建Pod组来统一访问入口及负载均衡</p></li><li><p>应用服务需要暴露给外部，需要提供给外部用户进行访问</p></li><li><p>Pod之间的通信也可以通过Kubernetes Service进行访问</p></li><li><p>Kubernetes Service可以实现访问负载到一组Pod上</p></li></ul><p>具体如图：</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/13-13-12-00-svc.png"></p><h3 id="跨主机网络通信"><a href="#跨主机网络通信" class="headerlink" title="跨主机网络通信"></a>跨主机网络通信</h3><ul><li><p>Docker默认不支持容器之间跨主机通信</p></li><li><p>Kubernetes提出了CNI作为网络接口可以实现容器跨主机通信</p><ul><li><p>CNI是Kubernetes中标准的一个调用网络实现的接口</p></li><li><p>Kubelet通过调用此API来调用不同的网络插件来实现不同的网络配置，实现此借口额就是CNI</p></li><li><p>目前常用的CNI有：Flannel、Calico、Weave、Terway等</p></li></ul></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/13-13-12-17-cni1.png"></p><h3 id="几种常见的CNI介绍"><a href="#几种常见的CNI介绍" class="headerlink" title="几种常见的CNI介绍"></a>几种常见的CNI介绍</h3><ul><li><p>Flannel：Flannel是最早由CoreOS团队推出的CNI，用于让集群中不同节点都使用全局唯一的网络，也是当前Kubernetes开源方案中最成熟的一个，支持HostGW和VXLAN模式。</p></li><li><p>Calico：是一个纯3层的数据中心网络方案，支持IPIP和BGP模式，后者可以无缝集成像Openstack这种IaaS云架构，能够提供可控的VM、容器、裸机之间的IP通信。</p></li><li><p>Terway: 是阿里云开源的基于VPC网络的CNI插件，支持VPC和ENI模式，后者可实现容器网络使用VPC子网网络，即可以与VPC子网重合。</p></li></ul><h2 id="阿里云ACK容器网络技术实现"><a href="#阿里云ACK容器网络技术实现" class="headerlink" title="阿里云ACK容器网络技术实现"></a>阿里云ACK容器网络技术实现</h2><h3 id="CNI"><a href="#CNI" class="headerlink" title="CNI"></a>CNI</h3><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/13-13-12-37-cni2.png"></p><h3 id="阿里云容器服务ACK容器网络模式"><a href="#阿里云容器服务ACK容器网络模式" class="headerlink" title="阿里云容器服务ACK容器网络模式"></a>阿里云容器服务ACK容器网络模式</h3><ul><li><p>容器服务将Kubernetes网络、SLB、VPC进行深度集成，提供了稳定高效能的容器网络。</p></li><li><p>在容器服务中，支持以下互通类型：</p><ul><li><p>在一个容器集群中，Pod之间相互访问</p></li><li><p>在一个容器集群中，Pod访问Service</p></li><li><p>在一个容器集群中，ECS访问Service</p></li><li><p>Pod直接访问同一个VPC下的ECS</p></li><li><p>同一个VPC下的ECS直接访问Pod</p></li></ul></li></ul><h3 id="阿里云容器服务ACK容器网络规划与实现"><a href="#阿里云容器服务ACK容器网络规划与实现" class="headerlink" title="阿里云容器服务ACK容器网络规划与实现"></a>阿里云容器服务ACK容器网络规划与实现</h3><ul><li><p>在创建ACK集群时，您需要执行VPC、虚拟交换机、Pod网络CIDR和Service CIDR</p></li><li><p>建议您提前规划ECS地址、Kubernetes Pod地址和Service地址</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/13-13-12-59-network1.png"></p><h3 id="阿里云容器服务ACK容器网络规划注意事项"><a href="#阿里云容器服务ACK容器网络规划注意事项" class="headerlink" title="阿里云容器服务ACK容器网络规划注意事项"></a>阿里云容器服务ACK容器网络规划注意事项</h3><ul><li><p>VPC网段：从10.0.0.0&#x2F;8, 172.16.0.0&#x2F;12, 192.168.0.0&#x2F;16中三选一</p></li><li><p>交换机网段：</p><ul><li><p>在VPC中创建指定的交换机网段，必须是VPC子网段</p></li><li><p>交换机下创建的ECS实例，网络ip从交换机网段中获得</p></li><li><p>一个VPC下，可创建多个交换机，但其网段不可重叠</p></li></ul></li><li><p>Pod地址段(K8S特定概念)</p><ul><li><p>每个Pod具有独立ip地址</p></li><li><p>Pod的地址段不能与VPC网络重叠(针对Flannel和Calico)</p></li></ul></li><li><p>Service地址段(K8S特定概念)</p><ul><li><p>每个Service有独立ip地址</p></li><li><p>Service地址段无法与VPC和Pod地址段重合</p></li><li><p>Service只能在集群内部使用，不能出集群</p></li></ul></li></ul><h2 id="容器网络规划"><a href="#容器网络规划" class="headerlink" title="容器网络规划"></a>容器网络规划</h2><h3 id="VPC专有网络"><a href="#VPC专有网络" class="headerlink" title="VPC专有网络"></a>VPC专有网络</h3><p>专有网络VPC可以基于阿里云帮您构建出一套隔离的网络环境</p><ul><li><p>可以完全掌控自己的虚拟网络，包括自定义IP地址范围、划分网段、配置路由表和网关等</p></li><li><p>容器服务通过配置VPC路由表的方式将容器对容器的访问转发到容器IP所对应的ECS机器上</p></li><li><p>容器服务是依赖VPC的路由表做容器IP到ECS的流量转发的</p></li><li><p>在VPC的路由表配置中，我们可以看到容器服务配置的网段到ECS的配置，这个是容器服务自动完成的，如果配置不小心被删除了，可以对照节点上的docker info找到本节点相应的网段，手动恢复到VPC的路由表中。</p></li></ul><h3 id="VPC专有网络规划"><a href="#VPC专有网络规划" class="headerlink" title="VPC专有网络规划"></a>VPC专有网络规划</h3><p>阿里云容器网络与VPC网络深度集成</p><ul><li><p>在创建阿里云容器网络之前，需要先创建VPC和虚拟交换机</p></li><li><p>需要结合具体业务来规划VPC和交换机的数量及网段等</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/13-13-13-34-vpc1.png"></p><h3 id="网络容器插件"><a href="#网络容器插件" class="headerlink" title="网络容器插件"></a>网络容器插件</h3><ul><li><p>Flannel</p></li><li><p>Terway</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/13-13-13-58-chajian.png"></p><h3 id="Flannel网络插件"><a href="#Flannel网络插件" class="headerlink" title="Flannel网络插件"></a>Flannel网络插件</h3><ul><li><p>Flannel是最常见的Kubernetes CNI，配合阿里云的VPC高速网络，能提供高性能和稳定的容器网络体验。</p></li><li><p>通过网桥进行数据包转发，container-&gt;Host-&gt;Other pod container</p></li><li><p>三种后端方式：VXLAN，UDP，host-gw</p></li><li><p>Pod网段独立于VPC网段，每个节点需要对应一个VPC的路由表条目。</p></li><li><p>Pod网段会按照掩码均匀划分每个集群中的节点，每个节点上的Pod会从节点上划分的网段中分配IP地址。</p></li><li><p>基于阿里云VPC的Flannel网络无封包，相对默认的Flannel VXLAN性能提升20%</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/13-13-14-10-flannel.png"></p><h3 id="Terway"><a href="#Terway" class="headerlink" title="Terway"></a>Terway</h3><ul><li><p>是阿里云开源的基于专有网络VPC的容器网络接口CNI，采用云原生的网络方案</p></li><li><p>基于K8S标准的网络策略来定义容器间的访问策略</p></li><li><p>将原生的弹性网卡分配给Pod实现Pod网络</p></li><li><p>支持基于K8S标准的网络策略来定义容器间的访问策略，并兼容Calico的网络策略。</p></li><li><p>Terway兼容VPC的网络方案，方便对接已有的基础设施</p></li><li><p>没有Overlay封包解包的损耗，简单易用，方便网络诊断</p></li><li><p>直接基于VPC中的弹性网卡来构建容器网络</p></li><li><p>Pod网段直接由弹性网卡资源分配，所以可以与VPC网段重合</p></li><li><p>每个Pod都拥有自己独立的网络栈和ip地址</p></li><li><p>同一台ECS内的Pod之间通信，直接通过机器内部转发；跨ECS的Pod通信，报文通过VPC的弹性网卡进行转发</p></li><li><p>Terway不需要使用VxLAN等隧道技术进行转发，因此通信效率很高</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/13-13-14-19-terway.png"></p><h3 id="Flannel与Terway对比"><a href="#Flannel与Terway对比" class="headerlink" title="Flannel与Terway对比"></a>Flannel与Terway对比</h3><p>结论：对于不需要使用Network Policy的用户，可以选择Flannel；否则还是建议选择Terway</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/13-13-14-31-duibi.png"></p><h3 id="Service网络"><a href="#Service网络" class="headerlink" title="Service网络"></a>Service网络</h3><p>通过服务抽象，能够解耦前端和后端的关联，从而实现松耦合的微服务设计，以及自动负载均衡实现快速的业务弹性。</p><p>Service是四层负载均衡。</p><p>ACK容器服务采用Service方式为一组容器统一提供固定的访问入口，并对这一组容器做负载均衡。</p><p>服务访问方式：</p><ul><li><p>Nodeport：在cluster每个node上开辟一个转发的端口。</p></li><li><p>ClusterIP: 默认模式，根据是否生成ClusterIP又可分为普通Service和Headless Service两类：</p><ul><li><p>普通Service：通过为Kubernetes的Service分配一个集群内部可访问的固定虚拟ip（Cluster IP），实现集群内的访问。为最常见的方式。</p></li><li><p>Headless Service：该服务不会分配Cluster IP，也不通过kube-proxy做反向代理和负载均衡。而是通过DNS提供稳定的网络ID来访问，DNS会将headless service的后端直接解析为podIP列表。主要供StatefulSet使用。</p></li></ul></li><li><p>LoadBalancer: 除了使用一个Cluster IP和nodePort之外，还会向所使用的公有云申请一个负载均衡器(负载均衡器后端映射到各节点的nodePort)，实现从集群外通过LB访问服务。</p></li></ul><h3 id="Ingress网络"><a href="#Ingress网络" class="headerlink" title="Ingress网络"></a>Ingress网络</h3><ul><li><p>集群内对外暴露的访问接入点，承载几乎全部的流量</p></li><li><p>Ingress是七层负载均衡。</p></li><li><p>可以通过Ingress配置不同的转发规则，从而达到根据不同的规则设置访问集群内不同的Service后端Pod。</p></li><li><p>阿里云容器服务提供高可靠的Ingress Controller组件，集成了阿里云SLB服务，为您的Kubernetes集群提供灵活可靠的路由服务(Ingress)</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/13-13-14-41-ingress.png"></p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul><li><p>容器集群网络设计目标</p></li><li><p>阿里云ACK容器网络技术实现</p></li><li><p>容器网络规划</p></li></ul>]]></content>
     
@@ -484,35 +509,6 @@
     
     
     <category term="ruby" scheme="http://eryoung2.github.io/tags/ruby/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《飘向北方》-- namewee</title>
-    <link href="http://eryoung2.github.io/2022/07/20/%E9%A3%98%E5%90%91%E5%8C%97%E6%96%B9-namewee/"/>
-    <id>http://eryoung2.github.io/2022/07/20/%E9%A3%98%E5%90%91%E5%8C%97%E6%96%B9-namewee/</id>
-    <published>2022-07-20T07:06:30.000Z</published>
-    <updated>2022-08-10T13:43:34.563Z</updated>
-    
-    <content type="html"><![CDATA[<p>王：</p><p>漂向北方，别问我家乡，高耸古老的城墙，挡不住忧伤；<br>我漂向北方，家人是否无恙，肩上沉重的行囊，盛满了惆怅。</p><p>    </p><p>黄：<br>有人说他在老家欠了一堆钱，想要避避风头，<br>有人说他练就了一身武艺，却没机会展露，<br>有人失去了自我，手足无措四处漂流，<br>有人为了梦想为了三餐为养家糊口。<br>他住在燕郊区，残破的求职公寓，<br>拥挤的大楼里，堆满陌生人都来自外地，<br>他埋头写着履历，怀抱着多少憧憬，<br>往返在九三零号公路，内心盼着奇迹。<br>不听也不想，不敢回头望的遗憾，<br>扛下了梦想，要毅然决然去流浪。<br>卸下了自尊、光环，过去多风光，<br>就算再不堪、败仗，也不能投降。<br>再见了南方，眺望最美丽的家乡，<br>椰子树摇晃，梦境倒映着的幻象。<br>雾霾太猖狂，不散，都看不清前方。</p><p>    </p><p>王：<br>漂向北方，别问我家乡，高耸古老的城墙，挡不住忧伤；<br>我漂向北方，家人是否无恙，肩上沉重的行囊，盛满了惆怅。<br>也是最后寄望，回不去的远方～Oh～</p><p>    </p><p>黄：<br>空气太脏、太浑浊，他说不喜欢，<br>车太混乱、太匆忙，他还不习惯。<br>人行道一双有一双，斜视冷漠的眼光，<br>他经常自将己灌醉，强迫融入，这大染缸。<br>走着脚步蹒跚，二锅头在摇晃，<br>失意的人啊偶尔醉倒在那胡同陋巷。<br>咀嚼爆肚涮羊，手中盛着一碗热汤，<br>用力地、温暖着，内心里的不安。<br>不听也不想，不敢回头望的遗憾，<br>扛下了梦想，要毅然决然去流浪。<br>卸下了自尊、光环，过去多风光，<br>就算再不堪、败仗，也不能投降。<br>再见了南方，眺望最美丽的家乡，<br>椰子树摇晃，梦境倒映着的幻象。<br>雾霾太猖狂，不散，都看不清前方。</p><p>    </p><p>王：<br>漂向北方，别问我家乡，高耸古老的城墙，挡不住忧伤；<br>我漂向北方，家人是否无恙，肩上沉重的行囊，盛满了惆怅。<br>就像那尘土飘散随着风向，谁又能带领着我一起飞翔，<br>我站在天坛中央闭上眼，祈求一家人都平安。</p><p>我漂向北方，别问我家乡，高耸古老的城墙，挡不住忧伤；<br>我漂向北方，家人是否无恙，肩上沉重的行囊，盛满了惆怅。</p><p>我漂向北方，别问我家乡，高耸古老的城墙，挡不住忧伤；<br>我漂向北方，家人是否无恙，肩上沉重的行囊，盛满了惆怅。</p><p>    </p><p>合：<br>我站在天子脚下，被踩的喘不过气，<br>走在前门大街，跟人潮，总会分歧。<br>或许我根本不属于这里，早就该离去，<br>谁能给我致命的一击，请用力到彻底。<br>这里是梦想的中心，但梦想都遥不可及，<br>这里是圆梦的圣地，但却总是扑朔迷离。<br>多少人敌不过残酷的现实，从此销声匿迹，<br>多少人陷入了昏迷，剩下一具，空壳尸体。<br>Rest in Peace～</p><p>    </p><p> </p><p>王：<br>漂向北方，别再问我家乡～</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;王：&lt;/p&gt;
-&lt;p&gt;漂向北方，别问我家乡，高耸古老的城墙，挡不住忧伤；&lt;br&gt;我漂向北方，家人是否无恙，肩上沉重的行囊，盛满了惆怅。&lt;/p&gt;
-&lt;p&gt;    &lt;/p&gt;
-&lt;p&gt;黄：&lt;br&gt;有人说他在老家欠了一堆钱，想要避避风头，&lt;br&gt;有人说他练就了一身武艺，却没机会展露，&lt;b</summary>
-      
-    
-    
-    
-    <category term="歌词" scheme="http://eryoung2.github.io/categories/%E6%AD%8C%E8%AF%8D/"/>
-    
-    
-    <category term="namewee" scheme="http://eryoung2.github.io/tags/namewee/"/>
-    
-    <category term="王力宏" scheme="http://eryoung2.github.io/tags/%E7%8E%8B%E5%8A%9B%E5%AE%8F/"/>
     
   </entry>
   
