@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-02-13T07:17:23.825Z</updated>
+  <updated>2023-02-14T08:06:23.743Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ACP云原生容器工程师-ACK存储</title>
+    <link href="http://eryoung2.github.io/2023/02/14/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E5%AD%98%E5%82%A8/"/>
+    <id>http://eryoung2.github.io/2023/02/14/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E5%AD%98%E5%82%A8/</id>
+    <published>2023-02-14T08:00:14.000Z</published>
+    <updated>2023-02-14T08:06:23.743Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul><li><p>在Kubernetes里最小的管理单元是Pod</p></li><li><p>Pod中产生的数据都是临时的，Pod销毁后默认不保存</p></li><li><p>对于有状态的服务，需要数据持久化</p></li><li><p>所以Kubernetes给定了一些数据持久化的方案</p></li></ul><h2 id="Kubernetes存储应用场景"><a href="#Kubernetes存储应用场景" class="headerlink" title="Kubernetes存储应用场景"></a>Kubernetes存储应用场景</h2><ul><li><p>服务的基本配置文件读取、密码密钥管理等</p></li><li><p>服务的存储状态、数据存储等</p></li><li><p>不同服务或应用程序间共享数据</p></li></ul><h2 id="Kubernetes存储系统核心概念"><a href="#Kubernetes存储系统核心概念" class="headerlink" title="Kubernetes存储系统核心概念"></a>Kubernetes存储系统核心概念</h2><h3 id="Volumn"><a href="#Volumn" class="headerlink" title="Volumn"></a>Volumn</h3><ul><li><p>Pod可以同时使用任意数目的卷类型</p></li><li><p>临时卷类型的生命周期与Pod相同，但持久化卷可以比Pod的存活时间长</p></li><li><p>卷的存在时间会超出Pod中所有容器，且在Pod重启时会重新加载</p></li></ul><h3 id="持久卷-PV"><a href="#持久卷-PV" class="headerlink" title="持久卷(PV)"></a>持久卷(PV)</h3><ul><li><p>是集群中管理员集中配置的一块存储</p></li><li><p>它是集群中的资源，就和节点是集群资源一样，包含存储的类型、大小和访问模式等</p></li><li><p>PV是卷插件比如Volumes等。但是它的生命周期独立于使用PV的任何Pod个体。比如，Pod销毁时，PV会得以保留。</p></li></ul><h3 id="持久卷声明-PVC"><a href="#持久卷声明-PVC" class="headerlink" title="持久卷声明(PVC)"></a>持久卷声明(PVC)</h3><ul><li><p>是用户关于存储的请求</p></li><li><p>描述对PV的一个请求，请求信息包含PV大小、访问模式等，PVC会消耗PV资源</p></li></ul><h2 id="Kubernetes存储插件"><a href="#Kubernetes存储插件" class="headerlink" title="Kubernetes存储插件"></a>Kubernetes存储插件</h2><ul><li><p>Kubernetes可以直接调用某种存储插件，对接后端存储服务，现阶段存储插件有20多种。</p></li><li><p>Kubernetes的存储插件可以分为：In-tree和Out-of-tree两大类</p><ul><li><p>In-tree: 源码放在Kubernetes内部，和Kubernetes一起发布、更迭，缺点是及时迭代速度慢、灵活性差</p></li><li><p>Out-of-tree: Volume Plugins独立于Kubernetes，它是由存储商提供实现的。主要有FlexVolume和CSI两种，ACK主要使用此类插件</p></li></ul></li></ul><h2 id="ACK存储插件"><a href="#ACK存储插件" class="headerlink" title="ACK存储插件"></a>ACK存储插件</h2><h3 id="FlexVolume"><a href="#FlexVolume" class="headerlink" title="FlexVolume"></a>FlexVolume</h3><ul><li><p>社区较早实现的存储卷扩展机制</p></li><li><p>FlexVolume运行在host空间，不能使用RBAC访问Kubernetes API，导致功能受到很大限制</p></li><li><p>由Shell部署</p></li></ul><h3 id="CSI"><a href="#CSI" class="headerlink" title="CSI"></a>CSI</h3><ul><li><p>社区推荐的存储卷扩展机制</p></li><li><p>ACK集群提供的CSI存储插件兼容社区的CSI特性</p></li><li><p>CSI不仅仅支持Kubernetes平台存储插件接口，而是作为云原生生态中容器存储接口的标准</p></li><li><p>CSI是容器部署的</p></li></ul><h2 id="CSI存储插件"><a href="#CSI存储插件" class="headerlink" title="CSI存储插件"></a>CSI存储插件</h2><h3 id="概念要点"><a href="#概念要点" class="headerlink" title="概念要点"></a>概念要点</h3><ul><li><p>遵循标准CSI规范，支持EBS、NAS、OSS等存储类型的挂载行为</p></li><li><p>自ACK v1.16开始，部署集群会默认安装最新版本的CSI组件，可以通过CSI存储插件使用阿里云存储服务</p></li><li><p>CSI存储插件提供了数据卷的全生命管理周期，包括数据卷的：创建、挂载、卸载、删除、扩容等服务</p></li><li><p>ACK目前只支持一种存储插件，CSI或者FlexVolume</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/14-16-04-38-sp1.png"></p><h3 id="插件特性"><a href="#插件特性" class="headerlink" title="插件特性"></a>插件特性</h3><ul><li><p>CSI是Kubernetes社区推荐的存储插件方案，CSI插件包括以下两部分：</p><ul><li><p>CSI-Plugin: 实现数据卷的挂载、卸载功能。ACK默认提供云盘、NAS、OSS三种存储卷的挂载能力</p></li><li><p>CSI-Provisioner: 实现数据卷的自动创造能力，目前支持云盘、NAS两种存储卷创造能力。</p></li></ul></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/14-16-04-48-plugin1.png"></p><h3 id="CSI存储插件选择-EBS-NAS-OSS"><a href="#CSI存储插件选择-EBS-NAS-OSS" class="headerlink" title="CSI存储插件选择(EBS, NAS, OSS)"></a>CSI存储插件选择(EBS, NAS, OSS)</h3><h4 id="选择EBS的情景"><a href="#选择EBS的情景" class="headerlink" title="选择EBS的情景"></a>选择EBS的情景</h4><p>EBS(阿里云云盘)是阿里云提供的数据块级别的块存储产品，优势是性能高、时延低，适合于OLTP数据库、NoSQL数据库等IO密集型的高性能、低时延的应用工作负载。</p><h4 id="选择NAS的情景"><a href="#选择NAS的情景" class="headerlink" title="选择NAS的情景"></a>选择NAS的情景</h4><p>无需修改应用，可直接挂在NAS。文件存储NAS适用于多计算节点、无状态集群的共享数据访问。</p><h4 id="选择OSS的情景"><a href="#选择OSS的情景" class="headerlink" title="选择OSS的情景"></a>选择OSS的情景</h4><p>OSS采用扁平化的文件组织形式，采用Restful API接口访问，不支持文件随机读写，适用于互联网架构的海量数据的上传下载和分发。</p><h2 id="通过控制台使用云盘静态存储卷"><a href="#通过控制台使用云盘静态存储卷" class="headerlink" title="通过控制台使用云盘静态存储卷"></a>通过控制台使用云盘静态存储卷</h2><h3 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h3><ol><li><p>已创建一个ACK集群，并且在该集群中部署CSI集群</p></li><li><p>创建了一个按需付费的云盘</p></li></ol><h3 id="创建PV"><a href="#创建PV" class="headerlink" title="创建PV"></a>创建PV</h3><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/14-16-05-06-pv1.png"></p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/14-16-05-16-pv2.png"></p><h3 id="创建PVC"><a href="#创建PVC" class="headerlink" title="创建PVC"></a>创建PVC</h3><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/14-16-05-28-pvc.png"></p><h3 id="创建应用"><a href="#创建应用" class="headerlink" title="创建应用"></a>创建应用</h3><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/14-16-05-39-app1.png"></p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/14-16-06-13-app2.png"></p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul><li><p>Kubernetes存储核心概念：Volume、PV、PVC</p></li><li><p>Kubernetes插件存储分类：In-tree和Out-of-tree两类</p></li><li><p>ACK支持的存储插件模式：FlexVolume和CSI</p></li><li><p>ACK支持通过Pod绑定的三种存储形态：EBS、NAS、OSS</p></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;在Kubernetes里最小的管理单元是Pod&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Pod中产生的数据都是临时的，Pod销毁</summary>
+      
+    
+    
+    
+    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="阿里云ACP认证" scheme="http://eryoung2.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91ACP%E8%AE%A4%E8%AF%81/"/>
+    
+  </entry>
   
   <entry>
     <title>ACK云原生容器工程师-ACK网络(下)</title>
@@ -484,31 +511,6 @@
     
     
     <category term="林奕匡" scheme="http://eryoung2.github.io/tags/%E6%9E%97%E5%A5%95%E5%8C%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ruby gem timed out解决</title>
-    <link href="http://eryoung2.github.io/2022/07/23/ruby-gem-timed-out%E8%A7%A3%E5%86%B3/"/>
-    <id>http://eryoung2.github.io/2022/07/23/ruby-gem-timed-out%E8%A7%A3%E5%86%B3/</id>
-    <published>2022-07-22T19:33:00.000Z</published>
-    <updated>2022-07-22T19:34:18.548Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天在折腾vagrant的时候，发现当我安装vagrant时，需要一些ruby插件。</p><p>如果我们没有设置正确的源，就会报time out的错误。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ERROR: While executing gem ... (Gem::RemoteFetcher::UnknownHostError)</span><br><span class="line">    timed out (https://api.rubygems.org/latest_specs.4.8.gz)</span><br></pre></td></tr></table></figure><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>可以使用国内源。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gem sources --remove https://rubygems.org/</span><br><span class="line">gem sources -a https://gems.ruby-china.com/</span><br></pre></td></tr></table></figure><p>就可以了。</p><h2 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h2><p><a href="https://gems.ruby-china.com/">ruby gems中文官网</a></p><p><a href="https://blog.csdn.net/Never__Give_Up_/article/details/100592393">Ruby Gem Timeout【超时】问题的解决_Joel__Li的博客-CSDN博客</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;今天在折腾vagrant的时候，发现当我安装vagrant时，需要一些ruby插件。&lt;/p&gt;
-&lt;p&gt;如果我们没有设置正确的源，就会报time</summary>
-      
-    
-    
-    
-    <category term="环境配置" scheme="http://eryoung2.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    
-    
-    <category term="ruby" scheme="http://eryoung2.github.io/tags/ruby/"/>
     
   </entry>
   
