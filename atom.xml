@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-03-08T04:35:24.543Z</updated>
+  <updated>2023-03-08T15:49:44.375Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo博客迁移 from mac to mac</title>
+    <link href="http://eryoung2.github.io/2023/03/08/hexo%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB-from-mac-to-mac/"/>
+    <id>http://eryoung2.github.io/2023/03/08/hexo%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB-from-mac-to-mac/</id>
+    <published>2023-03-08T15:34:54.000Z</published>
+    <updated>2023-03-08T15:49:44.375Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>前段时间我的MBP15留在家里给老妈做视频播放器了，这段时间重新收了一台Mac mini来使用。由于前一台电脑大部分内容均已备份，剩余的东西也就是此博客，所以我就把它放在iCloud里边，一并同步过来了。</p><p>但是我发现这个迁移也会遇到些蛋疼的问题，我们一个一个来说。</p><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="1-node-modules依赖太多"><a href="#1-node-modules依赖太多" class="headerlink" title="1. node_modules依赖太多"></a>1. node_modules依赖太多</h3><p>我们都知道，对于hexo来说，它是用nodejs来搭建的，所以会有超多的小文件在node_modules下面。而我遇到的第一个问题则是，iCloud同步小文件时非常、非常、非常慢。</p><p>这个问题也好解决，把博客打个包然后拷贝出来就行了。可以直接使用Mac的实用工具进行打包，做完以后是一个zip文件，然后将其拷贝出来即可。</p><h3 id="2-node没安装"><a href="#2-node没安装" class="headerlink" title="2. node没安装"></a>2. node没安装</h3><p>由于我只是备份了文档，应用并未安装，所以需要重新安装nodejs。</p><p>这里可以移步官网，自行下载相应版本并进行安装，安装之后在terminal输入<strong>node -v</strong>进行验证。</p><h3 id="3-hexo组件未安装"><a href="#3-hexo组件未安装" class="headerlink" title="3. hexo组件未安装"></a>3. hexo组件未安装</h3><p>在解压并进入博客目录后，会发现大部分的内容是在的，只是hexo相关组件还未安装。</p><p>可以删除掉node_modules文件夹和package-lock.json文件，并重新安装hexo插件。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm -rf node_modules package-lock.json</span><br><span class="line">sudo npm install --unsafe-perm --verbose -g hexo  </span><br></pre></td></tr></table></figure><p>安装完毕之后，可使用hexo g或者hexo s进行测试，一般就ok的了。</p><h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>此法用于Mac-&gt;Mac迁移，Mac-&gt;Windows会麻烦一些，之前我也做过一次，太蛋疼了，虽然成功了，但是还是不推荐这么迁移。</p><h2 id="引用与鸣谢"><a href="#引用与鸣谢" class="headerlink" title="引用与鸣谢"></a>引用与鸣谢</h2><blockquote><p>nodejs官网 <a href="https://nodejs.org/en/">Node.js</a></p><p><a href="https://gwang-cv.github.io/2017/08/25/%E5%AE%89%E8%A3%85Hexo%E7%9A%84%E9%97%AE%E9%A2%98/">安装Hexo的问题 | my lab</a></p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;前提&quot;&gt;&lt;a href=&quot;#前提&quot; class=&quot;headerlink&quot; title=&quot;前提&quot;&gt;&lt;/a&gt;前提&lt;/h2&gt;&lt;p&gt;前段时间我的MBP15留在家里给老妈做视频播放器了，这段时间重新收了一台Mac mini来使用。由于前一台电脑大部分内容均已备份，剩余的东西</summary>
+      
+    
+    
+    
+    <category term="博客迁移" scheme="http://eryoung2.github.io/categories/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB/"/>
+    
+    
+    <category term="hexo" scheme="http://eryoung2.github.io/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>ACP云原生容器工程师 - 日志与监控</title>
@@ -485,31 +509,6 @@
     
     
     <category term="podman" scheme="http://eryoung2.github.io/tags/podman/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git fetch和git pull对比</title>
-    <link href="http://eryoung2.github.io/2022/07/26/git-fetch%E5%92%8Cgit-pull%E5%AF%B9%E6%AF%94/"/>
-    <id>http://eryoung2.github.io/2022/07/26/git-fetch%E5%92%8Cgit-pull%E5%AF%B9%E6%AF%94/</id>
-    <published>2022-07-26T10:45:20.000Z</published>
-    <updated>2022-07-26T11:22:19.713Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="情景重现"><a href="#情景重现" class="headerlink" title="情景重现"></a>情景重现</h2><p>你：面试官您好，我是xxx，毕业于xxx学校，工作xxx年，精通各种git命令。</p><p>面试官：您好您好，我问个常见的问题考察一下您的技术水平哈。请问，git pull和git fetch有什么区别，二者都在什么情况下使用？</p><p>你：emmmm…母鸡喔</p><p>面试官（微笑）：回家等消息吧，有结果通知你~</p><h2 id="二者区分"><a href="#二者区分" class="headerlink" title="二者区分"></a>二者区分</h2><h3 id="git-fetch"><a href="#git-fetch" class="headerlink" title="git fetch"></a>git fetch</h3><p>首先我们来看一下git fetch的定义：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git fetch only downloads latest changes into the local repository. </span><br><span class="line">It downloads fresh changes that other developers have pushed to </span><br><span class="line">the remote repository since the late fetch and allows you to review </span><br><span class="line">and merge manually at a later time using git merge. </span><br><span class="line">Because it doesn&#x27;t change your working directory or the staging area, </span><br><span class="line">it is entirely safe, and you can run it as often as you want.</span><br></pre></td></tr></table></figure><p>我们提取几个关键信息：</p><ol><li><p>git fetch提取远端的最新改变到本地</p></li><li><p>git fetch不强行改变本地状态和预存区</p></li><li><p>可使用git merge手动合并</p></li><li><p>git fetch很安全</p></li></ol><h3 id="git-pull"><a href="#git-pull" class="headerlink" title="git pull"></a>git pull</h3><p>我们再看一下git pull的定义：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git pull downloads latest changes into the local repository </span><br><span class="line">and it also automatically merges change in your working directory. </span><br><span class="line">It doesn&#x27;t give you a chance to review the changes before merging, </span><br><span class="line">and as a consequence, &#x27;merge conflicts&#x27; can and do occur. One important thing</span><br><span class="line">to keep in mind is that it will merge only into the current working branch.</span><br><span class="line">Other branches will stay unaffected.</span><br></pre></td></tr></table></figure><p>我们再提取几个关键信息：</p><ol><li><p>git pull直接将改动同步到本地工作区</p></li><li><p>git pull没机会做merge操作</p></li><li><p>git pull可能出现merge冲突</p></li><li><p>最好在同分支之间使用git pull，否则会出错误</p></li></ol><p>总之：<font color="red">git pull &#x3D; git fetch + git merge</font></p><h2 id="二者在git中的位置"><a href="#二者在git中的位置" class="headerlink" title="二者在git中的位置"></a>二者在git中的位置</h2><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2022/07/26-18-47-43-git%20fetch%20vs%20git%20pull.png" alt="image"></p><h2 id="git-fetch使用"><a href="#git-fetch使用" class="headerlink" title="git fetch使用"></a>git fetch使用</h2><ol><li>获取远端分支的最新内容到FETCH_HEAD，并查看。</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin master</span><br><span class="line">git <span class="built_in">log</span> -p FETCH_HEAD</span><br></pre></td></tr></table></figure><ol start="2"><li>如果可以合并，就合并内容到本地</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge</span><br></pre></td></tr></table></figure><p>这里解释一下这个FETCH_HEAD, 它是一个版本链接，记录在本地一个文件中(.git&#x2F;FETCH_HEAD)，指向当前分支最新版本。</p><h2 id="git-pull使用"><a href="#git-pull使用" class="headerlink" title="git pull使用"></a>git pull使用</h2><p>git pull的使用相当于上面两步的和，</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin master</span><br><span class="line">git merge FETCH_HEAD</span><br></pre></td></tr></table></figure><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>此题不难，但答不上来的侮辱性极强。</p><p>本题主要考察的是git的基础知识，多看一些博客或者文章就可以搞定。</p><h2 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h2><p><a href="https://www.youtube.com/watch?v=ip1UxTswbo8&ab_channel=KKJavaTutorials">git fetch vs git pull</a></p><p><a href="https://git-scm.com/docs/git-fetch">git官网</a></p><p><a href="https://juejin.cn/post/6844903921794859021">git fetch &amp; pull详解</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;情景重现&quot;&gt;&lt;a href=&quot;#情景重现&quot; class=&quot;headerlink&quot; title=&quot;情景重现&quot;&gt;&lt;/a&gt;情景重现&lt;/h2&gt;&lt;p&gt;你：面试官您好，我是xxx，毕业于xxx学校，工作xxx年，精通各种git命令。&lt;/p&gt;
-&lt;p&gt;面试官：您好您好，我问个常见</summary>
-      
-    
-    
-    
-    <category term="工具使用" scheme="http://eryoung2.github.io/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
-    
-    
-    <category term="git" scheme="http://eryoung2.github.io/tags/git/"/>
     
   </entry>
   
