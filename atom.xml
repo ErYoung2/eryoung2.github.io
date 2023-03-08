@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-02-14T08:06:23.743Z</updated>
+  <updated>2023-03-08T04:35:24.543Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ACP云原生容器工程师 - 日志与监控</title>
+    <link href="http://eryoung2.github.io/2023/03/08/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-%E6%97%A5%E5%BF%97%E4%B8%8E%E7%9B%91%E6%8E%A7/"/>
+    <id>http://eryoung2.github.io/2023/03/08/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-%E6%97%A5%E5%BF%97%E4%B8%8E%E7%9B%91%E6%8E%A7/</id>
+    <published>2023-03-08T04:34:04.000Z</published>
+    <updated>2023-03-08T04:35:24.543Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>阿里云的可观测性体系： 日志管理、监控管理</p><h2 id="日志管理"><a href="#日志管理" class="headerlink" title="日志管理"></a>日志管理</h2><h3 id="Kubernetes可观测性体系概述"><a href="#Kubernetes可观测性体系概述" class="headerlink" title="Kubernetes可观测性体系概述"></a>Kubernetes可观测性体系概述</h3><ul><li><p>可观测性指如何从外部输出推测及衡量体系内部状态</p></li><li><p>Kubernetes可观测性体系包括：监控和日志，是大型分布式系统的重要基础设施</p><ul><li>监控可以帮助开发者插卡系统的运行状态</li><li>日志可以协助问题的排查和诊断</li><li>在Kubernetes中，监控和日志属于生态的一部分，他并不是核心组件，因此大部分的能力依赖上层的云厂商的适配。</li><li>Kubernetes定义了介入的接口标准和规范，任何符合接口的组件都可以快速集成。</li></ul></li><li><p>Logging-日志</p><ul><li>基于阿里云日志服务SLS提供了完整的日志方案，可以对应用日志进行收集、处理，并提供了操作审计，kubernetes事件中心等能力。</li></ul></li><li><p>Metrics-监控指标</p><ul><li>对基础设施服务(比如ECS、存储、网络)，云监控提供了全面的监控。</li><li>对于业务应用的性能指标，ARMS无需修改业务代码即可对Java和PHP应用提供全方位的性能监控。</li></ul></li><li><p>Tracing-全链路追踪</p><ul><li>Tracing Analysis为开发者提供了完整的分布式应用调用链路统计、拓扑分析等工具。</li><li>能够帮助开发者快速发现和诊断分布式应用中的性能瓶颈，提升微服务应用的性能和稳定性。</li></ul></li></ul><h3 id="Kubernetes日志使用场景"><a href="#Kubernetes日志使用场景" class="headerlink" title="Kubernetes日志使用场景"></a>Kubernetes日志使用场景</h3><p>Kubernetes日志使用场景主要分为四个大的场景：</p><ul><li>主机内核的日志： 协助开发者进行一些常见的问题与诊断：网络栈异常、驱动异常、文件系统异常、影像节点（内核）稳定的异常。</li><li>Runtime日志：主要包括Docker日志</li><li>核心组件的日志：APIServer日志可以用来审计，Scheduler日志可以诊断调度，etcd日志可以查看存储状态，Ingress日志可以分析接入层流量</li><li>部署应用的日志：可以通过应用日志分析插卡业务层的状态，状态异常。</li></ul><h3 id="Kubernetes日志的采集"><a href="#Kubernetes日志的采集" class="headerlink" title="Kubernetes日志的采集"></a>Kubernetes日志的采集</h3><p>从采集位置上划分，主要分为三种：</p><ul><li>宿主机文件</li><li>容器内文件</li><li>容器标准&#x2F;错误输出</li></ul><h3 id="阿里云ACK日志服务"><a href="#阿里云ACK日志服务" class="headerlink" title="阿里云ACK日志服务"></a>阿里云ACK日志服务</h3><p>可创建两种日志：</p><ul><li>集群日志服务</li><li>应用配置日志服务</li></ul><h2 id="监控"><a href="#监控" class="headerlink" title="监控"></a>监控</h2><h3 id="监控类型"><a href="#监控类型" class="headerlink" title="监控类型"></a>监控类型</h3><p>从监控类型上划分，在Kubernetes中可以分成4个不同的类型:</p><ul><li>资源监控：主要监控CPU、内存、网络等常规指标</li><li>性能监控：应用的内部监控，通常是通过Hook的机制在虚拟机层、字节码执行层通过隐式调用，或者是在应用层显示注入，获得更深层次的一个监控指标，一般是用来应用的调优和诊断的。</li><li>安全监控：安全监控主要是对安全进行的一系列的监控监控，类似像越权管理、安全漏洞扫描等。</li><li>事件监控：事件监控紧密贴合Kubernetes的设计理念，补充常规监控方案的欠缺和弊端。</li></ul><h3 id="监控工具"><a href="#监控工具" class="headerlink" title="监控工具"></a>监控工具</h3><ul><li>Cloud Monitor: 基础资源监控</li><li>SLS: 阿里云日志服务</li><li>AHAS: 架构感知监控，应用高可用服务AHAS</li><li>ARMS APM：阿里云应用性能监控ARMS</li><li>ARMS Prometheus：阿里云托管版Prometheus</li><li>XTrace：链路追踪Tracing Analysis</li></ul><h4 id="基础资源监控Cloud-Monitor"><a href="#基础资源监控Cloud-Monitor" class="headerlink" title="基础资源监控Cloud Monitor"></a>基础资源监控Cloud Monitor</h4><ul><li><p>云监控</p><ul><li>是一项针对阿里云资源和互联网应用进行监控的服务</li><li>云监控用于监控各云服务资源的监控指标，探测云服务ECS和运营商站点的可用性，并针对制定监控指标设置报警。</li><li>全面了解阿里云上资源的使用情况和业务运行状况，并及时对故障资源进行处理，保证业务正常运行。</li></ul></li><li><p>查看容器监控数据</p></li><li><p>管理报警规则</p></li></ul><h4 id="日志服务SLS"><a href="#日志服务SLS" class="headerlink" title="日志服务SLS"></a>日志服务SLS</h4><ul><li><p>主要负责日志的采集、分析</p></li><li><p>可采集以下日志：</p><ul><li>APIServer等核心组件的日志</li><li>Service Mesh&#x2F;Ingress等接入层的日志</li><li>应用的标准日志</li></ul></li><li><p>提供上层的日志分析能力</p></li><li><p>默认提供了基于API Server的审计分析能力、接入层的可观测性展现，应用层的日志分析</p></li></ul><h4 id="应用实时监控服务ARMS"><a href="#应用实时监控服务ARMS" class="headerlink" title="应用实时监控服务ARMS"></a>应用实时监控服务ARMS</h4><ul><li>是一款阿里云应用性能管理(APM)类监控产品</li><li>可以基于前端、应用、业务自定义等维度，迅速便捷地为企业构架秒级响应的业务监控能力</li><li>ARMS提供一系列的监控定制功能，包括数据接入、数据计算、数据存储、大盘展示与报警、下游API对接等环节</li><li>用户需要关心三件事：数据从哪里来、实时计算怎么编排、数据怎么用</li></ul><h4 id="架构感知监控AHAS"><a href="#架构感知监控AHAS" class="headerlink" title="架构感知监控AHAS"></a>架构感知监控AHAS</h4><ul><li>AHAS是架构感知监控，通常在Kubernetes集群中负载的类型大部分为微服务，微服务的调用拓扑也比较复杂，因此当集群的网络链路出问题时，如何快速定位问题、发现问题、诊断问题则成为了最大的难题。</li><li>AHAS通过网络的流量和走向，将集群的拓扑进行展现，提供更高层次的问题诊断方式。</li><li>为Kubernetes应用安装AHAS探针后，AHAS能自动识别系统中的Pod、Deployment、Service和它们与其他组件的依赖关系</li><li>通过采集Kubernetes元信息，构建Kubernetes资源的物理拓扑关系，支持自建Kubernetes集群、阿里云容器服务Kubernetes集群</li></ul><h3 id="不同层次的监控解决方案"><a href="#不同层次的监控解决方案" class="headerlink" title="不同层次的监控解决方案"></a>不同层次的监控解决方案</h3><p>从可观测性的角度，以ACK为基础的系统架构可以粗略分为4个层次，自下而上分别是：</p><ul><li>基础设施层</li><li>容器性能层</li><li>应用性能层</li><li>用户业务层</li></ul><h3 id="阿里云容器服务ACK监控方案详解"><a href="#阿里云容器服务ACK监控方案详解" class="headerlink" title="阿里云容器服务ACK监控方案详解"></a>阿里云容器服务ACK监控方案详解</h3><ul><li><p>基础设施层可观测性：包括架构可视化感知方案和基础设施指标监控方向</p></li><li><p>集群、容器的性能指标监控：阿里云托管版Prometheus监控方案、开源Prometheus监控方案、事件的监控方案</p></li><li><p>应用性能可观测性：无侵入应用监控APM监控方案、侵入应用监控APM监控方案</p></li><li><p>用户业务可观测性：自定义日志监控方案</p></li></ul><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul><li><p>阿里云容器服务ACK版可观测性体系包括：</p><ul><li><p>Logging-日志</p></li><li><p>Metrics-监控指标</p></li><li><p>Tracing-全链路追踪</p></li></ul></li><li><p>阿里云容器服务ACK版集成了日志服务、在创建集群时启用日志服务、快速采集Kubernetes集群的容器日志、包括容器的标准输出以及容器内的文本文件</p></li><li><p>阿里云容器服务ACK版提供了云原生标准的监控接口</p><ul><li><p>它将监控的数据消费能力进行了标准化解耦</p></li><li><p>可以实现和不同云厂商提供的监控服务进行标准化接入</p></li><li><p>目前已经实现多个监控云服务打通接入</p></li></ul></li><li><p>阿里云容器服务ACK版监控生态解决方案分为：</p><ul><li><p>基础设施层场景的可观测性</p></li><li><p>容器性能层场景的可观测性</p></li><li><p>应用性能层场景的可观测性</p></li><li><p>用户业务层场景的可观测性</p></li></ul></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;p&gt;阿里云的可观测性体系： 日志管理、监控管理&lt;/p&gt;
+&lt;h2 id=&quot;日志管理&quot;&gt;&lt;a href=&quot;#日志管理&quot; class=&quot;headerl</summary>
+      
+    
+    
+    
+    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="阿里云ACP认证" scheme="http://eryoung2.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91ACP%E8%AE%A4%E8%AF%81/"/>
+    
+  </entry>
   
   <entry>
     <title>ACP云原生容器工程师-ACK存储</title>
@@ -485,32 +510,6 @@
     
     
     <category term="git" scheme="http://eryoung2.github.io/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《高山低谷》-- 林奕匡</title>
-    <link href="http://eryoung2.github.io/2022/07/23/%E9%AB%98%E5%B1%B1%E4%BD%8E%E8%B0%B7-%E6%9E%97%E5%A5%95%E5%8C%A1/"/>
-    <id>http://eryoung2.github.io/2022/07/23/%E9%AB%98%E5%B1%B1%E4%BD%8E%E8%B0%B7-%E6%9E%97%E5%A5%95%E5%8C%A1/</id>
-    <published>2022-07-23T03:17:26.000Z</published>
-    <updated>2022-08-10T13:43:58.889Z</updated>
-    
-    <content type="html"><![CDATA[<p>站在树林内，就如没氧气，<br>在夕阳下，寂寥吧，没权利见你。<br>早知高的山、低的谷，将你我分隔两地，失去人情味。<br>你那贵族游戏，我的街角游记，<br>天真到信真心，太儿戏。</p><p>    </p><p>你快乐过生活，我拼命去生存，<br>几多人位于山之巅俯瞰我的疲倦。<br>渴望被成全，努力做人谁怕气喘，<br>但那终点，挂在那天边。</p><p>    </p><p>你界定了生活，我侮辱了生存，<br>只适宜滞于山之谷整理我的凌乱。<br>渴望大团圆，脚下路程难以削短，<br>未见终点，也未见恩典，我与你极远。</p><p>    </p><p>越望，越无望，未来没有我，<br>在断崖下，尽头吧，乐园未有过。<br>仿佛天一黑天一光挥发了一句再会，只见人下堕。<br>快慰继续传播，你都不慰问我，<br>区分到太清楚，太严苛。</p><p>    </p><p>你快乐过生活，我拼命去生存，<br>几多人位于山之巅俯瞰我的疲倦。<br>渴望被成全，努力做人谁怕气喘，<br>但那终点，挂在那天边。</p><p>    </p><p>你界定了生活，我侮辱了生存，<br>只适宜滞于山之谷整理我的凌乱。<br>渴望大团圆，脚下路程难以削短，<br>未见终点，也未见恩典，我与你极远。</p><p>    </p><p>我却尚要生存，偷偷存活于山之谷等到某天魂断。<br>你继续盘旋，我继续埋藏我爱恋，<br>没有终点，永没有终点，那永远极远。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;站在树林内，就如没氧气，&lt;br&gt;在夕阳下，寂寥吧，没权利见你。&lt;br&gt;早知高的山、低的谷，将你我分隔两地，失去人情味。&lt;br&gt;你那贵族游戏，我的街角游记，&lt;br&gt;天真到信真心，太儿戏。&lt;/p&gt;
-&lt;p&gt;    &lt;/p&gt;
-&lt;p&gt;你快乐过生活，我拼命去生存，&lt;br&gt;几多人位于山之</summary>
-      
-    
-    
-    
-    <category term="歌词" scheme="http://eryoung2.github.io/categories/%E6%AD%8C%E8%AF%8D/"/>
-    
-    
-    <category term="林奕匡" scheme="http://eryoung2.github.io/tags/%E6%9E%97%E5%A5%95%E5%8C%A1/"/>
     
   </entry>
   
