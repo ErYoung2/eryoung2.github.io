@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-03-08T15:49:44.375Z</updated>
+  <updated>2023-03-09T06:11:08.167Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ACP云原生容器工程师 - ACK自动伸缩</title>
+    <link href="http://eryoung2.github.io/2023/03/09/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E8%87%AA%E5%8A%A8%E4%BC%B8%E7%BC%A9/"/>
+    <id>http://eryoung2.github.io/2023/03/09/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E8%87%AA%E5%8A%A8%E4%BC%B8%E7%BC%A9/</id>
+    <published>2023-03-09T05:59:48.000Z</published>
+    <updated>2023-03-09T06:11:08.167Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>弹性伸缩是ACK特点功能之一，典型的场景包括：</p><ul><li><p>在线业务弹性</p></li><li><p>大规模计算训练</p></li><li><p>定时周期性负载变化等</p></li></ul><p>弹性伸缩分为两个维度：</p><ul><li><p>弹性调度层：主要负责修改负载的调度容量变化，在已有资源条件下进行pod调度</p></li><li><p>资源弹性层：主要负责扩充资源的方式调度容量的补充，对资源本社进行调度</p></li></ul><h2 id="资源层阶段弹性提供"><a href="#资源层阶段弹性提供" class="headerlink" title="资源层阶段弹性提供"></a>资源层阶段弹性提供</h2><ul><li><p>阿里云Kubernetes集群的一个重要特性，是集群的节点可以动态的增加或减少</p></li><li><p>有了这个特性，集群才能在计算资源不足的情况下扩充新的节点</p></li><li><p>同时，也可以在资源利用率降低的时候，释放节点以节省费用</p></li><li><p>资源层扩缩容可以分为：手动扩缩容、自动扩缩容</p></li></ul><h3 id="资源层弹性插件"><a href="#资源层弹性插件" class="headerlink" title="资源层弹性插件"></a>资源层弹性插件</h3><ul><li><p>Cluster-autoscaler: Kubernetes社区开源组件，节点水平伸缩软件，阿里云提供了独有的调度、弹性优化、成本优化的功能。</p></li><li><p>Virtual-node: ACK开源插件，提供无服务器运行时环境，开发者无需挂心节点资源，只需针对Pod按量付费即可。</p></li><li><p>Virtual-kubelet-autoscaler: ACK服务组件，提供无服务弹性伸缩能力</p></li></ul><h2 id="节点自动伸缩"><a href="#节点自动伸缩" class="headerlink" title="节点自动伸缩"></a>节点自动伸缩</h2><h3 id="节点自动伸缩机制"><a href="#节点自动伸缩机制" class="headerlink" title="节点自动伸缩机制"></a>节点自动伸缩机制</h3><p>定期检测集群中应用pod的状态，如果处于pending状态且日志中出现调度原因不足时，会触发cluster-autoscaler的模拟调度，会在各node中查询哪台机可以负载新的pod，如果有就分配；如果没有就触发资源调度，实现资源级别的自动伸缩。</p><h3 id="节点自动伸缩实现原理"><a href="#节点自动伸缩实现原理" class="headerlink" title="节点自动伸缩实现原理"></a>节点自动伸缩实现原理</h3><ul><li><p>阿里云容器服务ACK的自动伸缩能力，是通过节点自动伸缩组件(cluster-autoscaler)实现的。</p></li><li><p>可以按需弹出普通实例、GPU实例、竞价付费实例、支持多可用区、多实例规格、多种伸缩模式、满足不同的节点伸缩场景。</p><ul><li><p>伸缩配置：通过控制台配置伸缩节点的规格属性</p></li><li><p>自动伸缩组件监听：自动伸缩组件cluster-autoscaler，它以Pod的形式运行在K8S集群中、监听Pod状态，在Pod因为节点资源不足而不能被调度的状态时，启动自动伸缩规则</p></li><li><p>伸缩规则启动：根据伸缩配置的内容，启动ESS弹性伸缩服务</p></li><li><p>ESS弹性伸缩服务创建实例：通过ESS他行设所服务按照配置创建实例后，继续进行集群监听</p></li></ul></li></ul><h3 id="节点自动伸缩操作"><a href="#节点自动伸缩操作" class="headerlink" title="节点自动伸缩操作"></a>节点自动伸缩操作</h3><p>可分为3个步骤：</p><ul><li>执行自动伸缩</li></ul><p><img src="/Users/eryoung2/Documents/codes/eryoung2.github.io/source/_posts/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E8%87%AA%E5%8A%A8%E4%BC%B8%E7%BC%A9/%E6%88%AA%E5%B1%8F2023-03-09%2014.03.14.png"></p><ul><li>弹性伸缩服务ESS授权</li></ul><p><img src="/Users/eryoung2/Documents/codes/eryoung2.github.io/source/_posts/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E8%87%AA%E5%8A%A8%E4%BC%B8%E7%BC%A9/%E6%88%AA%E5%B1%8F2023-03-09%2014.03.33.png"></p><ul><li>配置自动伸缩</li></ul><p><img src="/Users/eryoung2/Documents/codes/eryoung2.github.io/source/_posts/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E8%87%AA%E5%8A%A8%E4%BC%B8%E7%BC%A9/%E6%88%AA%E5%B1%8F2023-03-09%2014.08.32.png"></p><p><img src="/Users/eryoung2/Documents/codes/eryoung2.github.io/source/_posts/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E8%87%AA%E5%8A%A8%E4%BC%B8%E7%BC%A9/%E6%88%AA%E5%B1%8F2023-03-09%2014.08.49.png"></p><ul><li>查看结果</li></ul><h2 id="调度层弹性伸缩"><a href="#调度层弹性伸缩" class="headerlink" title="调度层弹性伸缩"></a>调度层弹性伸缩</h2><h3 id="调度层弹性介绍"><a href="#调度层弹性介绍" class="headerlink" title="调度层弹性介绍"></a>调度层弹性介绍</h3><ul><li><p>调度层弹性组件是指所有的弹性动作都是和pod相关的，并不关心具体的资源情况。</p></li><li><p>调度层弹性组件包括：容器水平伸缩(HPA)，容器垂直伸缩(VPA)，容器定时伸缩(CronHPA)</p></li></ul><h3 id="调度层弹性组件"><a href="#调度层弹性组件" class="headerlink" title="调度层弹性组件"></a>调度层弹性组件</h3><ul><li><p>HPA: Pod水平伸缩的组件</p><ul><li><p>除了社区支持的Resource Metrics和CustomMetrics，阿里云容器服务Kuberenetes还提供了external-metrics-adapter</p></li><li><p>支持云服务的指标作为弹性伸缩的判断条件</p></li><li><p>目前已经支持例如Ingress的QPS、RT等监控指标</p></li></ul></li><li><p>VPA：Pod的纵向伸缩的最贱，主要面向有状态服务的扩容和升级场景，用于大型单体应用</p></li><li><p>CronHPA：定时伸缩组件，主要面向的是周期性负载，通过资源画像可以预测有规律的负载周期，并通过周期性伸缩，实现资源成本的节约</p></li></ul><h3 id="调度层弹性组件使用场景及限制"><a href="#调度层弹性组件使用场景及限制" class="headerlink" title="调度层弹性组件使用场景及限制"></a>调度层弹性组件使用场景及限制</h3><p><img src="/Users/eryoung2/Documents/codes/eryoung2.github.io/source/_posts/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E8%87%AA%E5%8A%A8%E4%BC%B8%E7%BC%A9/%E6%88%AA%E5%B1%8F2023-03-09%2014.04.24.png"></p><p>通常使用HPA+AutoScaler进行两层扩容，HPA负载容量管理，AutoScaler负责资源池的所扩容</p><h2 id="ACK开启HPA"><a href="#ACK开启HPA" class="headerlink" title="ACK开启HPA"></a>ACK开启HPA</h2><p><img src="/Users/eryoung2/Documents/codes/eryoung2.github.io/source/_posts/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E8%87%AA%E5%8A%A8%E4%BC%B8%E7%BC%A9/%E6%88%AA%E5%B1%8F2023-03-09%2014.04.32.png"></p><p><img src="/Users/eryoung2/Documents/codes/eryoung2.github.io/source/_posts/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E8%87%AA%E5%8A%A8%E4%BC%B8%E7%BC%A9/%E6%88%AA%E5%B1%8F2023-03-09%2014.04.38.png"></p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul><li><p>阿里云容器服务ACK弹性伸缩分为两个维度：</p><ul><li><p>调度层弹性：主要负责修改负载的调度容量变化</p></li><li><p>资源层调度：主要是集群的容量规划不能满足集群调度容量时，会通过扩充资源的方式进行调度容量的补充</p></li></ul></li><li><p>阿里云容器服务Kubernetes弹性调度资源：</p><p>通过调度与资源解耦的两层弹性模型来解决的，当集群的调度水位达到设置的阈值时会触发资源蹭的弹性扩容，当资源弹出后，无法调度的单元会自动调度到新弹出的节点上，从而降低整个应用的负载情况</p></li><li><p>阿里云容器服务ACK集群调度层弹性组件：</p><ul><li><p>容器水平伸缩(HPA)</p></li><li><p>容器垂直伸缩(VPA)</p></li><li><p>容器定时伸缩(CronHPA)</p></li></ul></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;p&gt;弹性伸缩是ACK特点功能之一，典型的场景包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;在线业务弹性&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;大规模计算训</summary>
+      
+    
+    
+    
+    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="阿里云ACP认证" scheme="http://eryoung2.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91ACP%E8%AE%A4%E8%AF%81/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo博客迁移 from mac to mac</title>
@@ -70,7 +98,7 @@
     <link href="http://eryoung2.github.io/2023/02/14/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E5%AD%98%E5%82%A8/"/>
     <id>http://eryoung2.github.io/2023/02/14/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E5%AD%98%E5%82%A8/</id>
     <published>2023-02-14T08:00:14.000Z</published>
-    <updated>2023-02-14T08:06:23.743Z</updated>
+    <updated>2023-03-09T02:33:18.837Z</updated>
     
     <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul><li><p>在Kubernetes里最小的管理单元是Pod</p></li><li><p>Pod中产生的数据都是临时的，Pod销毁后默认不保存</p></li><li><p>对于有状态的服务，需要数据持久化</p></li><li><p>所以Kubernetes给定了一些数据持久化的方案</p></li></ul><h2 id="Kubernetes存储应用场景"><a href="#Kubernetes存储应用场景" class="headerlink" title="Kubernetes存储应用场景"></a>Kubernetes存储应用场景</h2><ul><li><p>服务的基本配置文件读取、密码密钥管理等</p></li><li><p>服务的存储状态、数据存储等</p></li><li><p>不同服务或应用程序间共享数据</p></li></ul><h2 id="Kubernetes存储系统核心概念"><a href="#Kubernetes存储系统核心概念" class="headerlink" title="Kubernetes存储系统核心概念"></a>Kubernetes存储系统核心概念</h2><h3 id="Volumn"><a href="#Volumn" class="headerlink" title="Volumn"></a>Volumn</h3><ul><li><p>Pod可以同时使用任意数目的卷类型</p></li><li><p>临时卷类型的生命周期与Pod相同，但持久化卷可以比Pod的存活时间长</p></li><li><p>卷的存在时间会超出Pod中所有容器，且在Pod重启时会重新加载</p></li></ul><h3 id="持久卷-PV"><a href="#持久卷-PV" class="headerlink" title="持久卷(PV)"></a>持久卷(PV)</h3><ul><li><p>是集群中管理员集中配置的一块存储</p></li><li><p>它是集群中的资源，就和节点是集群资源一样，包含存储的类型、大小和访问模式等</p></li><li><p>PV是卷插件比如Volumes等。但是它的生命周期独立于使用PV的任何Pod个体。比如，Pod销毁时，PV会得以保留。</p></li></ul><h3 id="持久卷声明-PVC"><a href="#持久卷声明-PVC" class="headerlink" title="持久卷声明(PVC)"></a>持久卷声明(PVC)</h3><ul><li><p>是用户关于存储的请求</p></li><li><p>描述对PV的一个请求，请求信息包含PV大小、访问模式等，PVC会消耗PV资源</p></li></ul><h2 id="Kubernetes存储插件"><a href="#Kubernetes存储插件" class="headerlink" title="Kubernetes存储插件"></a>Kubernetes存储插件</h2><ul><li><p>Kubernetes可以直接调用某种存储插件，对接后端存储服务，现阶段存储插件有20多种。</p></li><li><p>Kubernetes的存储插件可以分为：In-tree和Out-of-tree两大类</p><ul><li><p>In-tree: 源码放在Kubernetes内部，和Kubernetes一起发布、更迭，缺点是及时迭代速度慢、灵活性差</p></li><li><p>Out-of-tree: Volume Plugins独立于Kubernetes，它是由存储商提供实现的。主要有FlexVolume和CSI两种，ACK主要使用此类插件</p></li></ul></li></ul><h2 id="ACK存储插件"><a href="#ACK存储插件" class="headerlink" title="ACK存储插件"></a>ACK存储插件</h2><h3 id="FlexVolume"><a href="#FlexVolume" class="headerlink" title="FlexVolume"></a>FlexVolume</h3><ul><li><p>社区较早实现的存储卷扩展机制</p></li><li><p>FlexVolume运行在host空间，不能使用RBAC访问Kubernetes API，导致功能受到很大限制</p></li><li><p>由Shell部署</p></li></ul><h3 id="CSI"><a href="#CSI" class="headerlink" title="CSI"></a>CSI</h3><ul><li><p>社区推荐的存储卷扩展机制</p></li><li><p>ACK集群提供的CSI存储插件兼容社区的CSI特性</p></li><li><p>CSI不仅仅支持Kubernetes平台存储插件接口，而是作为云原生生态中容器存储接口的标准</p></li><li><p>CSI是容器部署的</p></li></ul><h2 id="CSI存储插件"><a href="#CSI存储插件" class="headerlink" title="CSI存储插件"></a>CSI存储插件</h2><h3 id="概念要点"><a href="#概念要点" class="headerlink" title="概念要点"></a>概念要点</h3><ul><li><p>遵循标准CSI规范，支持EBS、NAS、OSS等存储类型的挂载行为</p></li><li><p>自ACK v1.16开始，部署集群会默认安装最新版本的CSI组件，可以通过CSI存储插件使用阿里云存储服务</p></li><li><p>CSI存储插件提供了数据卷的全生命管理周期，包括数据卷的：创建、挂载、卸载、删除、扩容等服务</p></li><li><p>ACK目前只支持一种存储插件，CSI或者FlexVolume</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/14-16-04-38-sp1.png"></p><h3 id="插件特性"><a href="#插件特性" class="headerlink" title="插件特性"></a>插件特性</h3><ul><li><p>CSI是Kubernetes社区推荐的存储插件方案，CSI插件包括以下两部分：</p><ul><li><p>CSI-Plugin: 实现数据卷的挂载、卸载功能。ACK默认提供云盘、NAS、OSS三种存储卷的挂载能力</p></li><li><p>CSI-Provisioner: 实现数据卷的自动创造能力，目前支持云盘、NAS两种存储卷创造能力。</p></li></ul></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/14-16-04-48-plugin1.png"></p><h3 id="CSI存储插件选择-EBS-NAS-OSS"><a href="#CSI存储插件选择-EBS-NAS-OSS" class="headerlink" title="CSI存储插件选择(EBS, NAS, OSS)"></a>CSI存储插件选择(EBS, NAS, OSS)</h3><h4 id="选择EBS的情景"><a href="#选择EBS的情景" class="headerlink" title="选择EBS的情景"></a>选择EBS的情景</h4><p>EBS(阿里云云盘)是阿里云提供的数据块级别的块存储产品，优势是性能高、时延低，适合于OLTP数据库、NoSQL数据库等IO密集型的高性能、低时延的应用工作负载。</p><h4 id="选择NAS的情景"><a href="#选择NAS的情景" class="headerlink" title="选择NAS的情景"></a>选择NAS的情景</h4><p>无需修改应用，可直接挂在NAS。文件存储NAS适用于多计算节点、无状态集群的共享数据访问。</p><h4 id="选择OSS的情景"><a href="#选择OSS的情景" class="headerlink" title="选择OSS的情景"></a>选择OSS的情景</h4><p>OSS采用扁平化的文件组织形式，采用Restful API接口访问，不支持文件随机读写，适用于互联网架构的海量数据的上传下载和分发。</p><h2 id="通过控制台使用云盘静态存储卷"><a href="#通过控制台使用云盘静态存储卷" class="headerlink" title="通过控制台使用云盘静态存储卷"></a>通过控制台使用云盘静态存储卷</h2><h3 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h3><ol><li><p>已创建一个ACK集群，并且在该集群中部署CSI集群</p></li><li><p>创建了一个按需付费的云盘</p></li></ol><h3 id="创建PV"><a href="#创建PV" class="headerlink" title="创建PV"></a>创建PV</h3><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/14-16-05-06-pv1.png"></p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/14-16-05-16-pv2.png"></p><h3 id="创建PVC"><a href="#创建PVC" class="headerlink" title="创建PVC"></a>创建PVC</h3><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/14-16-05-28-pvc.png"></p><h3 id="创建应用"><a href="#创建应用" class="headerlink" title="创建应用"></a>创建应用</h3><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/14-16-05-39-app1.png"></p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/14-16-06-13-app2.png"></p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul><li><p>Kubernetes存储核心概念：Volume、PV、PVC</p></li><li><p>Kubernetes插件存储分类：In-tree和Out-of-tree两类</p></li><li><p>ACK支持的存储插件模式：FlexVolume和CSI</p></li><li><p>ACK支持通过Pod绑定的三种存储形态：EBS、NAS、OSS</p></li></ul>]]></content>
     
@@ -483,32 +511,6 @@
     <category term="powershell" scheme="http://eryoung2.github.io/tags/powershell/"/>
     
     <category term="cmd" scheme="http://eryoung2.github.io/tags/cmd/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>podman网络缺失</title>
-    <link href="http://eryoung2.github.io/2022/07/30/podman%E7%BD%91%E7%BB%9C%E7%BC%BA%E5%A4%B1/"/>
-    <id>http://eryoung2.github.io/2022/07/30/podman%E7%BD%91%E7%BB%9C%E7%BC%BA%E5%A4%B1/</id>
-    <published>2022-07-29T19:37:47.000Z</published>
-    <updated>2022-07-29T19:38:44.650Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>podman由于没有daemon，使用的时候会出现network问题。</p><p>今天打算跑一个busybox时，发现报错：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root@home:~/manifests# podman run -it busybox</span><br><span class="line">ERRO[0000] error loading cached network config: network &quot;podman&quot; not found in CNI cache</span><br><span class="line">WARN[0000] falling back to loading from existing plugins on disk</span><br><span class="line">ERRO[0000] Error tearing down partially created network namespace for container 25909b12b14aa8a8d1c1934e6e58b5cb55ca0e4e9af45fdff359620f3bc290ce: CNI network &quot;podman&quot; not found</span><br><span class="line">Error: error configuring network namespace for container 25909b12b14aa8a8d1c1934e6e58b5cb55ca0e4e9af45fdff359620f3bc290ce: CNI network &quot;podman&quot; not found</span><br></pre></td></tr></table></figure><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>没有podman所支持的网络环境。</p><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>可以跑以下命令：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@home:~/manifests# podman network create podman</span><br><span class="line">/etc/cni/net.d/podman.conflist</span><br></pre></td></tr></table></figure><p>然后问题解决，就可以启动容器了。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@home:~/manifests# podman run -it busybox</span><br><span class="line">/ #</span><br></pre></td></tr></table></figure><h2 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h2><p><a href="https://github.com/containers/podman/issues/12651">Running podman with sudo returns <code>error loading cached network config: network &amp;quot;podman&amp;quot; not found in CNI cache</code> · Issue #12651 · containers&#x2F;podman · GitHub</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;podman由于没有daemon，使用的时候会出现network问题。&lt;/p&gt;
-&lt;p&gt;今天打算跑一个busybox时，发现报错：&lt;/p&gt;
-&lt;</summary>
-      
-    
-    
-    
-    <category term="容器" scheme="http://eryoung2.github.io/categories/%E5%AE%B9%E5%99%A8/"/>
-    
-    
-    <category term="podman" scheme="http://eryoung2.github.io/tags/podman/"/>
     
   </entry>
   
