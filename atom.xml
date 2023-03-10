@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-03-09T17:01:43.169Z</updated>
+  <updated>2023-03-10T05:43:05.125Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ACP云原生容器工程师 - 安全管理</title>
+    <link href="http://eryoung2.github.io/2023/03/10/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86/"/>
+    <id>http://eryoung2.github.io/2023/03/10/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86/</id>
+    <published>2023-03-10T05:25:49.000Z</published>
+    <updated>2023-03-10T05:43:05.125Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="阿里云容器服务ACK安全体系"><a href="#阿里云容器服务ACK安全体系" class="headerlink" title="阿里云容器服务ACK安全体系"></a>阿里云容器服务ACK安全体系</h2><ul><li><p>阿里云容器服务Kubernetes版安全体系</p><ul><li><p>提供从基础设施到上层用户业务应用全链条安全体系支撑</p></li><li><p>支持运行时刻的安全策略管理，应用安全配置巡检和运行时刻的安全监控和告警</p></li><li><p>提升容器安全整体纵深防御能力</p></li></ul></li><li><p>主要分为3个层级：运行时安全、可信软件供应链、基础架构安全</p></li></ul><h2 id="基础架构安全"><a href="#基础架构安全" class="headerlink" title="基础架构安全"></a>基础架构安全</h2><ul><li><p>从公有云、专有云、混合云等多角度覆盖</p></li><li><p>通过集群安全加固、身份验证管理、细粒度安全访问控制、集群日志审计、敏感数据加密等多个环节保障集群基础设施安全稳定高效运行</p></li><li><p>与ACK&#x2F;SLS深度绑定，可查询多维度的日志信息，以进行审计</p></li><li><p>KMS保证敏感数据安全加密</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/10-13-42-58-%E6%88%AA%E5%B1%8F2023-03-10%2013.42.46.png"></p><h2 id="可信软件供应链"><a href="#可信软件供应链" class="headerlink" title="可信软件供应链"></a>可信软件供应链</h2><ul><li><p>安全是企业在应用容器技术时最大的顾虑之一</p></li><li><p>为了系统化提升容器平台的安全性，就需要全方位进行安全防护</p></li><li><p>阿里云的做法是：</p><ul><li><p>将DevOps升级为DevSecOps</p></li><li><p>将安全概念融入整个软件生命周期之中</p></li><li><p>将安全防护能力转移到开发和交互阶段</p></li></ul></li><li><p>安全措施包括：镜像扫描、镜像签名、云原生应用交付链</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/10-13-42-23-%E6%88%AA%E5%B1%8F2023-03-10%2013.38.02.png"></p><h2 id="运行时安全"><a href="#运行时安全" class="headerlink" title="运行时安全"></a>运行时安全</h2><ul><li><p>安全巡检：ACK集群提供了应用运行时刻的安全配置巡检能力，帮您实时了解当前转台下运行应用的配置是否存在安全隐患</p></li><li><p>策略管理：安全策略PSP时Kubernetes中Pod部署时重要的安全校验手段，能够有效地约束应用运行时的行为安全</p></li><li><p>运行时监控和告警：阿里云容器服务和云安全中心深度集成了告警处理和漏洞检测能力，在应用运行时提供监控和告警能力</p></li><li><p>安全沙箱管理：安全沙箱为您提供一种新的容器运行时选项，可以让您的应用运行在一个轻量虚拟机沙箱环境中，拥有独立的内核、具备更好的安全隔离能力</p></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;阿里云容器服务ACK安全体系&quot;&gt;&lt;a href=&quot;#阿里云容器服务ACK安全体系&quot; class=&quot;headerlink&quot; title=&quot;阿里云容器服务ACK安全体系&quot;&gt;&lt;/a&gt;阿里云容器服务ACK安全体系&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;阿里云容器服务Kubern</summary>
+      
+    
+    
+    
+    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="阿里云ACP认证" scheme="http://eryoung2.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91ACP%E8%AE%A4%E8%AF%81/"/>
+    
+  </entry>
   
   <entry>
     <title>ACP云原生容器工程师 - 集群管理</title>
@@ -488,30 +513,6 @@
     
     
     <category term="宋冬野" scheme="http://eryoung2.github.io/tags/%E5%AE%8B%E5%86%AC%E9%87%8E/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>powershell执行策略</title>
-    <link href="http://eryoung2.github.io/2022/08/09/powershell%E6%89%A7%E8%A1%8C%E7%AD%96%E7%95%A5/"/>
-    <id>http://eryoung2.github.io/2022/08/09/powershell%E6%89%A7%E8%A1%8C%E7%AD%96%E7%95%A5/</id>
-    <published>2022-08-09T09:33:58.000Z</published>
-    <updated>2022-08-09T12:16:10.916Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上一篇博文，我介绍了一下powershell和cmd的对比。通过学习，我发现powershell的确比cmd更加power，也更加适应现在的使用场景。<br>那么本文将继续介绍一个powershell的另一个特性，执行策略。</p><h2 id="execution-policy描述"><a href="#execution-policy描述" class="headerlink" title="execution policy描述"></a>execution policy描述</h2><p>首先我们看看官网是怎么描述execution policy的:</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">PowerShell&#x27;s execution policy is a safety feature that controls the conditions under which PowerShell loads configuration files and runs scripts. This feature helps prevent the execution of malicious scripts.</span><br><span class="line"></span><br><span class="line">On a Windows computer you can set an execution policy for the local computer, for the current user, or for a particular session. You can also use a Group Policy setting to set execution policies for computers and users.</span><br><span class="line"></span><br><span class="line">Execution policies for the local computer and current user are stored in the registry. You don&#x27;t need to set execution policies in your PowerShell profile. The execution policy for a particular session is stored only in memory and is lost when the session is closed.</span><br><span class="line"></span><br><span class="line">The execution policy isn&#x27;t a security system that restricts user actions. For example, users can easily bypass a policy by typing the script contents at the command line when they cannot run a script. Instead, the execution policy helps users to set basic rules and prevents them from violating them unintentionally.</span><br><span class="line"></span><br><span class="line">On non-Windows computers, the default execution policy is Unrestricted and cannot be changed. The Set-ExecutionPolicy cmdlet is available, but PowerShell displays a console message that it&#x27;s not supported. While Get-ExecutionPolicy returns Unrestricted on non-Windows platforms, the behavior really matches Bypass because those platforms do not implement the Windows Security Zones.</span><br></pre></td></tr></table></figure><p>我们总结一下，这段文字中提到了几个要点：</p><ol><li>powershell的执行策略是种安全特性，保证不会什么猫狗脚本都执行，对于操作系统是种保护。</li><li>windows的执行策略执行粒度分3种：本机、当前用户、特定会话。本机和当前用户的策略会存进注册表，当前会话的执行策略只会进内存，会话一断就会消失。</li><li>执行策略并不会限制用户操作，只是给了用户一把安全锁，可用可不用。</li><li>对于非windows机器，不会有执行策略的设置，因此会建议windows机器来做设置。</li></ol><h2 id="常见的执行策略"><a href="#常见的执行策略" class="headerlink" title="常见的执行策略"></a>常见的执行策略</h2><p>明白了上面的几个要点，我们来看windows提供了哪些执行策略供我们使用。</p><ol><li><p>ByPass<br>任何脚本都可以执行，且没有任何提示。</p></li><li><p>Undefined<br>没有设置脚本执行策略。</p></li><li><p>Unrestricted<br>允许运行未签名的脚本，但是会有安全性提示。</p></li><li><p>Default<br>默认策略，对客户端是Restricted，对服务端是RemoteSigned</p></li><li><p>RemoteSigned<br>Windows Server 2012 R2 之后的默认策略<br>如果从网络下载的脚本会有限制，需要添加数字签名；如果是本地创建的脚本，则不需要数字签名可以运行。</p></li></ol><p>但是问题来了，真的会有老哥从网络上下载到本地运行，而不是复制粘贴到本地，自己创建的文件里？</p><p>不会吧，不会吧？<br><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2022/08/09-20-15-39-buhui.jpg" alt="image"></p><ol start="6"><li><p>AllSigned<br>本策略只允许运行具有数字签名的脚本。</p></li><li><p>Restricted<br>本策略允许运行命令，但无法运行脚本。</p></li></ol><h2 id="运行范围"><a href="#运行范围" class="headerlink" title="运行范围"></a>运行范围</h2><p>上面也讲了，powershell有3种范围：本机、当前用户、当前会话。<br>可使用Scope选项进行设置。</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> C:\Windows\system32&gt; <span class="built_in">Get-ExecutionPolicy</span> <span class="literal">-Scope</span> LocalMachine</span><br><span class="line">RemoteSigned</span><br><span class="line"><span class="built_in">PS</span> C:\Windows\system32&gt; <span class="built_in">Get-ExecutionPolicy</span> <span class="literal">-Scope</span> CurrentUser</span><br><span class="line">Undefined</span><br><span class="line"><span class="built_in">PS</span> C:\Windows\system32&gt; <span class="built_in">Set-ExecutionPolicy</span> RemoteSigned <span class="literal">-Scope</span> CurrentUserc</span><br><span class="line">执行策略更改</span><br><span class="line">执行策略可帮助你防止执行不信任的脚本。更改执行策略可能会产生安全风险，如 https:/go.microsoft.com/fwlink/?LinkID=<span class="number">135170</span></span><br><span class="line">中的 about_Execution_Policies 帮助主题所述。是否要更改执行策略?</span><br><span class="line">[<span class="type">Y</span>] 是(Y)  [<span class="type">A</span>] 全是(A)  [<span class="type">N</span>] 否(N)  [<span class="type">L</span>] 全否(L)  [<span class="type">S</span>] 暂停(S)  [?] 帮助 (默认值为“N”): A</span><br><span class="line"><span class="built_in">PS</span> C:\Windows\system32&gt; <span class="built_in">Get-ExecutionPolicy</span> <span class="literal">-Scope</span> CurrentUser</span><br><span class="line">RemoteSigned</span><br></pre></td></tr></table></figure><h2 id="cmd调用powershell"><a href="#cmd调用powershell" class="headerlink" title="cmd调用powershell"></a>cmd调用powershell</h2><p>由于powershell和cmd是不同的命令行，而且powershell有执行策略的限制，如果我们想使用cmd去运行powershell脚本，除了需要设置powershell的策略，还需要使用cmd设置ps1脚本默认的运行方式。<br>默认方式是打开&#x2F;编辑，而不是运行。</p><p>设置成运行：</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ftype</span> Microsoft.PowerShellScript.<span class="number">1</span>=&quot;<span class="variable">%SystemRoot%</span>\system32\WindowsPowerShell\v1.<span class="number">0</span>\powershell.exe&quot; &quot;%<span class="number">1</span>&quot;</span><br></pre></td></tr></table></figure><p>设置成编辑：</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ftype</span> Microsoft.PowerShellScript.<span class="number">1</span>=&quot;<span class="variable">%SystemRoot%</span>\system32\notepad.exe&quot; &quot;%<span class="number">1</span>&quot;</span><br></pre></td></tr></table></figure><h2 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h2><p><a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.2">微软powershell官方文档</a><br><a href="https://www.cnblogs.com/sparkdev/p/7460518.html">powershell脚本执行策略</a><br><a href="https://www.codeleading.com/article/55285613479/">CMD命令行修改.ps1文件（powershell脚本）的默认打开方式</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;上一篇博文，我介绍了一下powershell和cmd的对比。通过学习，我发现powershell的确比cmd更加power，也更加适应现在的</summary>
-      
-    
-    
-    
-    <category term="windows" scheme="http://eryoung2.github.io/categories/windows/"/>
-    
-    
-    <category term="powershell" scheme="http://eryoung2.github.io/tags/powershell/"/>
     
   </entry>
   
