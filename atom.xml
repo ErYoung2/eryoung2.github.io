@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-03-10T05:43:05.125Z</updated>
+  <updated>2023-03-10T07:28:35.898Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>ACP云原生容器工程师 - ACK应用与发布管理</title>
+    <link href="http://eryoung2.github.io/2023/03/10/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E5%BA%94%E7%94%A8%E4%B8%8E%E5%8F%91%E5%B8%83%E7%AE%A1%E7%90%86/"/>
+    <id>http://eryoung2.github.io/2023/03/10/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E5%BA%94%E7%94%A8%E4%B8%8E%E5%8F%91%E5%B8%83%E7%AE%A1%E7%90%86/</id>
+    <published>2023-03-10T06:44:25.000Z</published>
+    <updated>2023-03-10T07:28:35.898Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>ACK应用与发布管理包括4种方式：</p><ul><li><p>灰度发布</p></li><li><p>手动发布</p></li><li><p>自动发布</p></li><li><p>Helm发布</p></li></ul><h2 id="灰度发布-又名金丝雀发布"><a href="#灰度发布-又名金丝雀发布" class="headerlink" title="灰度发布(又名金丝雀发布)"></a>灰度发布(又名金丝雀发布)</h2><h3 id="灰度发布概念"><a href="#灰度发布概念" class="headerlink" title="灰度发布概念"></a>灰度发布概念</h3><ul><li><p>灰度发布是将应用的旧版本A与新版本B同时部署在环境中，业务请求可能会被路由到版本A或者版本B的后端上，您可以自定义灰度发布策略，快速调整版本A和版本B的流量占比。</p></li><li><p>灰度发布可以再发布新版本应用时：</p><ul><li><p>自定义控制新版本应用流量比重</p></li><li><p>渐进式完成新版本应用的全量上线</p></li><li><p>最大限度地控制新版本发布带来的业务风险，降低故障带来的影响</p></li><li><p>同时支持快速回滚</p></li></ul></li></ul><h3 id="灰度发布实现"><a href="#灰度发布实现" class="headerlink" title="灰度发布实现"></a>灰度发布实现</h3><p>灰度发布是可以帮助您渐进式更新Deployment的工具</p><ul><li><p>他能结合路由控制器Ingress Controller实现多版本并存，发布暂停、流量百分比切换、健康检查等功能</p></li><li><p>极大解放灰度发布过程中的手动操作，全自动化实现线上灰度流量切换</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/10-15-07-11-%E6%88%AA%E5%B1%8F2023-03-10%2015.06.34.png"></p><h3 id="安装灰度发布组件"><a href="#安装灰度发布组件" class="headerlink" title="安装灰度发布组件"></a>安装灰度发布组件</h3><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/10-15-07-22-%E6%88%AA%E5%B1%8F2023-03-10%2015.06.51.png"></p><h2 id="手动发布"><a href="#手动发布" class="headerlink" title="手动发布"></a>手动发布</h2><ul><li><p>在使用灰度发布的手动发布方式的时候，您需要创建一个Ingress、Service和Deployment结构的应用。</p></li><li><p>目前灰度发布只支持基于Deployment和Ingress的灰度发布流程。</p></li></ul><h3 id="手动发布流程"><a href="#手动发布流程" class="headerlink" title="手动发布流程"></a>手动发布流程</h3><ol><li><p>创建测试应用：可使用YAML文件来创建Deployment、Ingress向外暴露服务</p></li><li><p>创建灰度发布：创建灰度发布时，设置上述创建的Deployment、Service、Ingress，然后设置发布方式为手动发布</p></li><li><p>执行灰度发布：</p><ul><li><p>初始化完毕后，就可以进行灰度发布</p></li><li><p>开始灰度发布前，您需要更新应用</p></li></ul></li><li><p>查看历史记录：在灰度发布页面的历史记录区域，您可以查看所有创建的灰度发布的发布记录，在每个创建的灰度发布详情页面下方的发布日志区域，查看发布过程。</p></li></ol><h2 id="自动发布"><a href="#自动发布" class="headerlink" title="自动发布"></a>自动发布</h2><p>自动发布模式可以让您全自动化地完成灰度发布流程。</p><h3 id="自动发布流程"><a href="#自动发布流程" class="headerlink" title="自动发布流程"></a>自动发布流程</h3><ol><li><p>创建测试应用：可使用YAML文件来创建Deployment、Ingress向外暴露服务</p></li><li><p>创建灰度发布：创建灰度发布时，设置上述创建的Deployment、Service、Ingress，然后设置发布方式为自动发布，然后灰度发布即可自动运行。</p></li><li><p>查看历史记录：在灰度发布页面的历史记录区域，您可以查看所有创建的灰度发布的发布记录，在每个创建的灰度发布详情页面下方的发布日志区域，查看发布过程。</p></li></ol><h2 id="基于Helm的发布管理"><a href="#基于Helm的发布管理" class="headerlink" title="基于Helm的发布管理"></a>基于Helm的发布管理</h2><ul><li><p>阿里云Kubernetes服务集成了Helm包管理工具，帮助您快速构建云上应用，因为chart可以多次发布，这就带来一个发布版本管理的问题</p></li><li><p>因此，阿里云Kubernetes提供了发布功能，通过Web界面的方式对通过Helm发布的应用进行管理。</p></li></ul><h3 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h3><ul><li><p>已经成功创建一个Kubernetes集群</p></li><li><p>已开通了应用目录或者服务目录功能，安装了Helm应用</p></li></ul><h3 id="查看发布详情"><a href="#查看发布详情" class="headerlink" title="查看发布详情"></a>查看发布详情</h3><ol><li><p>登录容器服务管理控制台</p></li><li><p>在控制台左侧导航栏中，单击集群</p></li><li><p>在集群列表页面中，单击目标集群名称或者目标集群右侧操作栏下的详情</p></li><li><p>在集群管理业左侧导航栏中，单击应用</p></li><li><p>单击Helm页签，进入发布列表页面</p></li><li><p>查看发布的详情信息，单击右侧的详情，进入该发布的详情页面</p></li><li><p>单击参数页签，您可查看该Helm包的参数设置</p></li></ol><h3 id="发布更新的版本"><a href="#发布更新的版本" class="headerlink" title="发布更新的版本"></a>发布更新的版本</h3><ol><li><p>在控制台左侧导航栏中，单击集群</p></li><li><p>在集群列表页面中，单击目标集群名称或者目标集群右侧操作栏下的详情</p></li><li><p>在集群管理业左侧导航栏中，单击应用</p></li><li><p>单击Helm页签，进入发布列表页面</p></li><li><p>您可更新该发布，单击右侧的更新，弹性更新发布对话框</p></li><li><p>在更新发布对话框中修改相关参数，随后单击更新，可对该发布进行更新</p></li></ol><h3 id="发布回滚"><a href="#发布回滚" class="headerlink" title="发布回滚"></a>发布回滚</h3><ol><li><p>单击Helm页签，进入发布列表页面</p></li><li><p>您可删除该发布，单击右侧的删除</p></li><li><p>在删除应用对话框中，勾选是否清楚发布记录，然后单击确定，可将应用、服务、部署一并删除。</p></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;p&gt;ACK应用与发布管理包括4种方式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;灰度发布&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;手动发布&lt;/p&gt;
+&lt;/li&gt;</summary>
+      
+    
+    
+    
+    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="阿里云ACP认证" scheme="http://eryoung2.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91ACP%E8%AE%A4%E8%AF%81/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ACP云原生容器工程师 - 安全管理</title>
     <link href="http://eryoung2.github.io/2023/03/10/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86/"/>
     <id>http://eryoung2.github.io/2023/03/10/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86/</id>
     <published>2023-03-10T05:25:49.000Z</published>
-    <updated>2023-03-10T05:43:05.125Z</updated>
+    <updated>2023-03-10T05:44:18.777Z</updated>
     
     <content type="html"><![CDATA[<h2 id="阿里云容器服务ACK安全体系"><a href="#阿里云容器服务ACK安全体系" class="headerlink" title="阿里云容器服务ACK安全体系"></a>阿里云容器服务ACK安全体系</h2><ul><li><p>阿里云容器服务Kubernetes版安全体系</p><ul><li><p>提供从基础设施到上层用户业务应用全链条安全体系支撑</p></li><li><p>支持运行时刻的安全策略管理，应用安全配置巡检和运行时刻的安全监控和告警</p></li><li><p>提升容器安全整体纵深防御能力</p></li></ul></li><li><p>主要分为3个层级：运行时安全、可信软件供应链、基础架构安全</p></li></ul><h2 id="基础架构安全"><a href="#基础架构安全" class="headerlink" title="基础架构安全"></a>基础架构安全</h2><ul><li><p>从公有云、专有云、混合云等多角度覆盖</p></li><li><p>通过集群安全加固、身份验证管理、细粒度安全访问控制、集群日志审计、敏感数据加密等多个环节保障集群基础设施安全稳定高效运行</p></li><li><p>与ACK&#x2F;SLS深度绑定，可查询多维度的日志信息，以进行审计</p></li><li><p>KMS保证敏感数据安全加密</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/10-13-42-58-%E6%88%AA%E5%B1%8F2023-03-10%2013.42.46.png"></p><h2 id="可信软件供应链"><a href="#可信软件供应链" class="headerlink" title="可信软件供应链"></a>可信软件供应链</h2><ul><li><p>安全是企业在应用容器技术时最大的顾虑之一</p></li><li><p>为了系统化提升容器平台的安全性，就需要全方位进行安全防护</p></li><li><p>阿里云的做法是：</p><ul><li><p>将DevOps升级为DevSecOps</p></li><li><p>将安全概念融入整个软件生命周期之中</p></li><li><p>将安全防护能力转移到开发和交互阶段</p></li></ul></li><li><p>安全措施包括：镜像扫描、镜像签名、云原生应用交付链</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/10-13-42-23-%E6%88%AA%E5%B1%8F2023-03-10%2013.38.02.png"></p><h2 id="运行时安全"><a href="#运行时安全" class="headerlink" title="运行时安全"></a>运行时安全</h2><ul><li><p>安全巡检：ACK集群提供了应用运行时刻的安全配置巡检能力，帮您实时了解当前转台下运行应用的配置是否存在安全隐患</p></li><li><p>策略管理：安全策略PSP时Kubernetes中Pod部署时重要的安全校验手段，能够有效地约束应用运行时的行为安全</p></li><li><p>运行时监控和告警：阿里云容器服务和云安全中心深度集成了告警处理和漏洞检测能力，在应用运行时提供监控和告警能力</p></li><li><p>安全沙箱管理：安全沙箱为您提供一种新的容器运行时选项，可以让您的应用运行在一个轻量虚拟机沙箱环境中，拥有独立的内核、具备更好的安全隔离能力</p></li></ul>]]></content>
     
@@ -46,7 +75,7 @@
     <link href="http://eryoung2.github.io/2023/03/10/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-%E9%9B%86%E7%BE%A4%E7%AE%A1%E7%90%86/"/>
     <id>http://eryoung2.github.io/2023/03/10/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-%E9%9B%86%E7%BE%A4%E7%AE%A1%E7%90%86/</id>
     <published>2023-03-09T16:48:39.000Z</published>
-    <updated>2023-03-09T17:01:43.169Z</updated>
+    <updated>2023-03-10T06:43:28.774Z</updated>
     
     <content type="html"><![CDATA[<h2 id="集群升级"><a href="#集群升级" class="headerlink" title="集群升级"></a>集群升级</h2><ul><li><p>可以通过容器服务控制台，可视化升级集群的Kubernetes版本</p></li><li><p>可以在kuberenetes集群列表页面查看集群的Kubernetes版本，以及当前是否有新的版本可供升级。升级集群的过程包含前置检查、升级Master、升级Node</p></li><li><p>集群升级策略：</p><ul><li><p>定义了您将使用怎样的策略对集群进行升级</p></li><li><p>默认策略为分批升级</p></li><li><p>升级Node阶段对集群内的节点进行分批升级，具体策略为：</p><ol><li><p>第一批升级的节点数为1，后续的批次为2的幂数进行增长。暂停后重新恢复升级的第一批次为1，后续也是以2的幂数进行增长。</p></li><li><p>每一批节点的最大数量不会超过节点总数的10%</p></li></ol></li></ul></li><li><p>集群升级前置检查在您开始集群升级之后，ACK会为您自动启动集群升级前置检查</p></li><li><p>该检查会对集群进行多项健康检查，以确保您的集群可以顺利的完成此次升级</p></li><li><p>如果您的集群存在不合理配置或潜在风险，将无法通过前置检查。</p></li><li><p>集群可以升级暂停或者升级停止，已完成的节点就升级完毕了，未升级的节点不升级。</p></li></ul><h2 id="管理维护组件步骤"><a href="#管理维护组件步骤" class="headerlink" title="管理维护组件步骤"></a>管理维护组件步骤</h2><ol><li><p>登录容器管理控制台</p></li><li><p>在控制台左侧导航栏中，单击集群</p></li><li><p>在集群列表页面，选择目标肌群，并在目标集群右侧操作列下，选择更多-系统组件管理</p></li><li><p>在组件管理页面，您可以：</p><ul><li><p>选择需要安装的组件，单击安装</p></li><li><p>选择需要卸载的组件，单击卸载</p></li><li><p>选择需要升级的组件，单击升级</p></li></ul></li></ol><p>组件主要包含：核心组件、存储组件、应用管理组件、网络组件、日志与监控组件、安全组件、其他组件</p><ul><li>核心组件无法卸载！</li></ul><h2 id="扩容集群步骤"><a href="#扩容集群步骤" class="headerlink" title="扩容集群步骤"></a>扩容集群步骤</h2><ol><li><p>登录容器服务管理控制台</p></li><li><p>在控制台左侧导航栏中，单击集群</p></li><li><p>在集群列表页面，选择目标集群，并在目标集群右侧操作列下，选择更多-集群扩容</p></li><li><p>在集群扩容页面进行扩容配置</p></li><li><p>根据业务需求扩容所需要的节点配置</p></li><li><p>配置内容与Worker节点配置一致</p></li></ol>]]></content>
     
@@ -489,30 +518,6 @@
     
     
     <category term="ubuntu" scheme="http://eryoung2.github.io/tags/ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《郭源潮》-- 宋冬野</title>
-    <link href="http://eryoung2.github.io/2022/08/10/%E3%80%8A%E9%83%AD%E6%BA%90%E6%BD%AE%E3%80%8B-%E5%AE%8B%E5%86%AC%E9%87%8E/"/>
-    <id>http://eryoung2.github.io/2022/08/10/%E3%80%8A%E9%83%AD%E6%BA%90%E6%BD%AE%E3%80%8B-%E5%AE%8B%E5%86%AC%E9%87%8E/</id>
-    <published>2022-08-10T13:40:23.000Z</published>
-    <updated>2022-08-10T13:42:42.373Z</updated>
-    
-    <content type="html"><![CDATA[<p>你说你知道，他们的世界，<br>悲歌三首，买一切。<br>买昆仑落脚，蓬莱放思想，<br>买人们的争执，酿酒汤。<br>买公主坟的乌鸦，事发之木和东窗之麻，<br>买胭脂河里船行渔歌，黄金世界中万物法则。<br>你我都一样，将被遗忘，郭源潮，<br>你的病也和我的一样，风月难扯，离合不骚。<br>层楼终究误少年，自由早晚乱余生，<br>你我山前没相见，山后别相逢。</p><p>    </p><p>    </p><p>买石灰街车站的海鸥，山水禽兽和年少一梦，<br>买太平湖底陈年水墨，哥本哈根的童年传说。<br>其实你我都一样，终将被遗忘，郭源潮，<br>你的病也和我的一样，风月难扯，离合不骚。<br>层楼终究误少年，自由早晚乱余生，<br>你我山前没相见，山后别相逢。</p><p>    </p><p>    </p><p>其实你我都一样，终将被遗忘，郭源潮，<br>你的病也和我的一样，风月难扯，离合不骚。<br>层楼终究误少年，自由早晚乱余生，<br>你我山前没相见，山后别相逢。</p><p>    </p><p>你我山前没相见，山后别相逢。</p><p>    </p><p>你我山前没相见，山后别相逢。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;你说你知道，他们的世界，&lt;br&gt;悲歌三首，买一切。&lt;br&gt;买昆仑落脚，蓬莱放思想，&lt;br&gt;买人们的争执，酿酒汤。&lt;br&gt;买公主坟的乌鸦，事发之木和东窗之麻，&lt;br&gt;买胭脂河里船行渔歌，黄金世界中万物法则。&lt;br&gt;你我都一样，将被遗忘，郭源潮，&lt;br&gt;你的病也和我的一样，风月</summary>
-      
-    
-    
-    
-    <category term="歌词" scheme="http://eryoung2.github.io/categories/%E6%AD%8C%E8%AF%8D/"/>
-    
-    
-    <category term="宋冬野" scheme="http://eryoung2.github.io/tags/%E5%AE%8B%E5%86%AC%E9%87%8E/"/>
     
   </entry>
   
