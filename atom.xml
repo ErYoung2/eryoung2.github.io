@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-03-11T09:23:00.624Z</updated>
+  <updated>2023-03-12T07:02:34.510Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ACP云原生容器工程师 - ACK对比ASK</title>
+    <link href="http://eryoung2.github.io/2023/03/12/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E5%AF%B9%E6%AF%94ASK/"/>
+    <id>http://eryoung2.github.io/2023/03/12/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E5%AF%B9%E6%AF%94ASK/</id>
+    <published>2023-03-12T06:36:38.000Z</published>
+    <updated>2023-03-12T07:02:34.510Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我们都知道，ACK与ASK是阿里云两种不同的业务形态，那么它们有何异同呢？</p><h2 id="ASK的容器是一等公民"><a href="#ASK的容器是一等公民" class="headerlink" title="ASK的容器是一等公民"></a>ASK的容器是一等公民</h2><p>由于ACK需要先部署ECS，然后在ECS上部署应用容器，这时容器就是二等公民；</p><p>而ASK无需部署ECS，可以直接在ECI上部署应用容器，因此容器是一等公民。</p><h2 id="ASK适用场景"><a href="#ASK适用场景" class="headerlink" title="ASK适用场景"></a>ASK适用场景</h2><p>由于ASK的弹性伸缩能力较ACK更强更灵活，所以适用场景均为弹性相关。</p><ol><li><p>应用托管</p></li><li><p>在线业务弹性</p></li><li><p>数据计算</p></li><li><p>CI&#x2F;CD持续集成</p></li><li><p>定时任务</p></li><li><p>测试环境</p></li></ol><h2 id="ASK核心功能"><a href="#ASK核心功能" class="headerlink" title="ASK核心功能"></a>ASK核心功能</h2><h3 id="虚拟节点"><a href="#虚拟节点" class="headerlink" title="虚拟节点"></a>虚拟节点</h3><ul><li><p>ASK集群中基于虚拟节点创建Pod</p><ul><li>虚拟节点实现了Kubernetes与弹性容器实例ECI的无缝连接，让Kubernetes集群获得极大的弹性能力，而不必关心底层计算虚拟容量。可通过客户端查看服务情况，虚拟节点不占用任何计算资源。</li></ul></li></ul><h3 id="Pod安全隔离"><a href="#Pod安全隔离" class="headerlink" title="Pod安全隔离"></a>Pod安全隔离</h3><ul><li><p>ASK集群中的Pod基于阿里云弹性容器实例ECI运行在安全隔离的容器运行环境中。</p></li><li><p>每个容器实例底层通过轻量级虚拟化安全沙箱技术完全强隔离，容器实例间互不影响。</p></li><li><p>实例在调度时尽可能分布在不同的物理机上，进一步保障了高可用性。</p></li><li><p>ECI的容器实例底层运行在Allibaba Cloud Linux2操作系统之上，ASK集群作为Serverless容器服务，您无法访问ECI底层OS运行环境。另外，此系统可免费使用。</p></li></ul><h3 id="Pod配置"><a href="#Pod配置" class="headerlink" title="Pod配置"></a>Pod配置</h3><ul><li><p>Pod基于弹性容器实例ECI创建，支持原生的Kubernetes Pod功能，包括启动多个容器、设置启动多个容器、设置环境变量、设置RestartPolicy、设置健康检查命令和挂载Volume、preStop等。</p></li><li><p>同时支持执行命令kubectl logs访问容器日志和智行kubectl exec进入容器</p></li><li><p>ECI支持多种规格配置的方式来申请资源和计费</p><ul><li><p>制定CPU和Memory，包括容器和pod两种</p></li><li><p>制定Pod的ECS规格</p></li><li><p>抢占式实例</p></li></ul></li></ul><h3 id="应用负载管理"><a href="#应用负载管理" class="headerlink" title="应用负载管理"></a>应用负载管理</h3><ul><li><p>支持Deployment、StatefulSet、Job&#x2F;CronJob、Pod、CRD等原生Kubernetes负载类型。</p></li><li><p>不支持DaemonSet，Serverless集群中不支持节点相关的功能</p></li></ul><h3 id="弹性伸缩"><a href="#弹性伸缩" class="headerlink" title="弹性伸缩"></a>弹性伸缩</h3><ul><li><p>ASK集群中没有真实节点</p><ul><li><p>无需考虑节点的容量规划</p></li><li><p>无需考虑基于cluster-autoscaler的节点扩容</p></li><li><p>只考虑应用的按需扩容</p></li></ul></li><li><p>可配置HPA或CronHPA策略进行Pod的灵活按需扩容</p></li></ul><h3 id="网络管理"><a href="#网络管理" class="headerlink" title="网络管理"></a>网络管理</h3><ul><li><p>群众的ECI Pod默认使用Host网络模式，占用交换机VSwitch的一个弹性网卡ENI资源，与VPC内的ECS、RDS互联互通。</p><ul><li><p>Service：不支持Nodeport模式</p></li><li><p>Ingress：需要先安装Ingress Controller</p></li><li><p>服务发现：需要先开启PrivateZone</p></li><li><p>弹性公网：支持给ECI Node挂载EIP，或自动创建然后绑定到EIP实例上</p></li></ul></li></ul><h3 id="存储管理"><a href="#存储管理" class="headerlink" title="存储管理"></a>存储管理</h3><ul><li><p>Pod支持挂载阿里云块存储和文件存储</p><ul><li><p>阿里云块存储(EBS)，需要先创建DiskController</p></li><li><p>阿里云文件存储(NAS)，可使用NFS方式挂载NAS目录，无需安装flex-volume插件，可直接制定NAS目录</p></li></ul></li></ul><h3 id="日志管理"><a href="#日志管理" class="headerlink" title="日志管理"></a>日志管理</h3><ul><li><p>在ASK集群中无需部署logtail daemonset即可收集Pod的stdout和文件输出日志</p></li><li><p>在Serverless Kubernetes集群中将业务容器的标准输出和日志文件收集到阿里云日志服务</p></li><li><p>ECI模式下不支持DaemonSet，通过将Job类任务挂载NAS盘，把输出的日志存储在NAS盘，在通过另一个同样挂载NAS盘的Pod来采集Job任务标准输出到日志系统中</p></li><li><p>日志服务支持在ECI中通过Sidecar模式采集日志</p></li></ul><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/12-15-02-27-%E6%88%AA%E5%B1%8F2023-03-12%2015.02.04.png"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;我们都知道，ACK与ASK是阿里云两种不同的业务形态，那么它们有何异同呢？&lt;/p&gt;
+&lt;h2 id=&quot;ASK的容器是一等公民&quot;&gt;&lt;a href</summary>
+      
+    
+    
+    
+    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="阿里云ACP认证" scheme="http://eryoung2.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91ACP%E8%AE%A4%E8%AF%81/"/>
+    
+  </entry>
   
   <entry>
     <title>ACP云原生容器工程师 - ASK概述与产品介绍</title>
@@ -493,30 +518,6 @@
     
     
     <category term="jenkins" scheme="http://eryoung2.github.io/tags/jenkins/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux添加BBR加速</title>
-    <link href="http://eryoung2.github.io/2022/09/16/linux%E6%B7%BB%E5%8A%A0BBR%E5%8A%A0%E9%80%9F/"/>
-    <id>http://eryoung2.github.io/2022/09/16/linux%E6%B7%BB%E5%8A%A0BBR%E5%8A%A0%E9%80%9F/</id>
-    <published>2022-09-15T20:15:28.000Z</published>
-    <updated>2022-09-15T20:16:36.176Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="BBR简介"><a href="#BBR简介" class="headerlink" title="BBR简介"></a>BBR简介</h2><p>TCP BBR是由来自Google的 Neal Cardwell 和 Yuchung Cheng 发表的新的TCP拥塞控制算法，目前已经在Google内部大范围使用并且随着linux 4.9版本正式发布。可大幅提升上网的访问速度。</p><h2 id="BBR添加"><a href="#BBR添加" class="headerlink" title="BBR添加"></a>BBR添加</h2><ol><li>查看内核版本，需要大于4.9</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -r</span><br></pre></td></tr></table></figure><ol start="2"><li>开启BBR</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;net.core.default_qdisc=fq&quot; &gt;&gt; /etc/sysctl.conf</span><br><span class="line">echo &quot;net.ipv4.tcp_congestion_control=bbr&quot; &gt;&gt; /etc/sysctl.conf</span><br></pre></td></tr></table></figure><ol start="3"><li>生效</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctl -p</span><br></pre></td></tr></table></figure><ol start="4"><li>检查状态</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsmod | grep bbr</span><br></pre></td></tr></table></figure><h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>本文只是记录BBR使用方法，至于通信原理尚在研读当中，如有进展会再出一篇文章进行讲解。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;BBR简介&quot;&gt;&lt;a href=&quot;#BBR简介&quot; class=&quot;headerlink&quot; title=&quot;BBR简介&quot;&gt;&lt;/a&gt;BBR简介&lt;/h2&gt;&lt;p&gt;TCP BBR是由来自Google的 Neal Cardwell 和 Yuchung Cheng 发表的新的TCP拥</summary>
-      
-    
-    
-    
-    <category term="操作系统" scheme="http://eryoung2.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-    <category term="linux" scheme="http://eryoung2.github.io/tags/linux/"/>
     
   </entry>
   
