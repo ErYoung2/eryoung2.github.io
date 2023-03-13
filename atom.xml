@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-03-12T07:02:34.510Z</updated>
+  <updated>2023-03-13T07:50:22.381Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ACP云原生容器工程师 - ECI介绍</title>
+    <link href="http://eryoung2.github.io/2023/03/13/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ECI%E4%BB%8B%E7%BB%8D/"/>
+    <id>http://eryoung2.github.io/2023/03/13/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ECI%E4%BB%8B%E7%BB%8D/</id>
+    <published>2023-03-13T06:35:34.000Z</published>
+    <updated>2023-03-13T07:50:22.381Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="ECI概述"><a href="#ECI概述" class="headerlink" title="ECI概述"></a>ECI概述</h2><ul><li><p>弹性容器实例ECI是阿里云在云原生时代为用户提供的基础计算服务，是阿里云云原生时代下的云计算基础设施。</p></li><li><p>ECI改变了以往计算服务以整台机器作为交付形态的传统，通过结合容器技术与无服务器技术为用户提供了一套安全便捷的Serverless服务。</p></li><li><p>使用ECI的过程中用户不再需要关注繁冗的底层基础设施维护工作，仅需提供打包好的容器镜像即可运行用户服务。</p></li><li><p>在颠覆传统资源交付形态的同事，用户还可以享受按实际消耗资源付费等便利，降低用户的实际使用成本。</p></li><li><p>ECI为Kubernetes提供了基础的容器Pod运行环境，但业务间的依赖、负载均衡、弹性伸缩、定期调度等能力依然需要Kubernetes来提供。</p></li><li><p>阿里云弹性容器实例ECI是面向容器的无服务器弹性计算服务；提供免运维、强隔离、快速启动的容器运行环境；使用ECI无需购买和管理底层ECS服务器，让您更加关注在容器应用而非底层基础设施的维护工作。</p></li></ul><h2 id="ECI-vs-ECS"><a href="#ECI-vs-ECS" class="headerlink" title="ECI vs ECS"></a>ECI vs ECS</h2><ul><li>对于整体的云原生基础设施来说，ECI和ECS是同级别的计算资源来产品。</li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/13-14-47-46-%E6%88%AA%E5%B1%8F2023-03-13%2014.45.49.png"></p><ul><li><p>ECI相比ECS的优势：</p><ul><li><p>更低的计算成本：弹性成本低于ECS</p></li><li><p>更高的弹性效率：ECI扩容速度优于ECS</p></li><li><p>更大的弹性规模：ECI可直接、迅速对容器进行伸缩</p></li><li><p>持平的计算性能：ECI的计算效能与ECS差不多</p></li><li><p>更低的迁移成本：与现有容器应用生态完美集成</p></li><li><p>更低的使用成本：全自动化安全与运维能力</p></li></ul></li></ul><h2 id="ECI关键技术"><a href="#ECI关键技术" class="headerlink" title="ECI关键技术"></a>ECI关键技术</h2><ul><li><p>基于轻量化Micro VM的安全容器运行时，pod底层沙箱给与Micro VM而非ECS的cgroup namespace</p></li><li><p>基于Pod的基本调度单位和标准、开放的API接口</p></li><li><p>ECI与ECS并池架构，使得ECI的使用方式更多样、成本更低</p></li></ul><h2 id="ECI的优势"><a href="#ECI的优势" class="headerlink" title="ECI的优势"></a>ECI的优势</h2><h3 id="弹性"><a href="#弹性" class="headerlink" title="弹性"></a>弹性</h3><ul><li><p>弹性是云计算带给用户的最大价值之一，通过将业务部署在云上，用户基础设施的扩缩容等方面能够更加灵活。</p></li><li><p>当前ECI服务完全构建在弹性计算整体资源调度平台之上，在ECS服务使用相同的困村管理与调度策略。依托弹性计算强大的库存管理系统，ECI服务能够切实保证充足的库存，满足用户对极致弹性的需求。</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/13-15-06-02-%E6%88%AA%E5%B1%8F2023-03-13%2015.05.44.png"></p><h3 id="Serverless"><a href="#Serverless" class="headerlink" title="Serverless"></a>Serverless</h3><ul><li><p>Serverless技术的核心是将用户从繁冗的基础设施运维问题中拯救出来，让用户能够将精力专注于自身业务和服务上。</p></li><li><p>ECI通过结合容器技术和无服务器技术，将云厂商的运维边界从基础设施的整机层面提升到了容器运行时层面。</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/13-15-06-10-%E6%88%AA%E5%B1%8F2023-03-13%2015.05.55.png"></p><h3 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h3><ul><li><p>安全问题可以细化为两个层面的问题：</p><ul><li><p>云平台自身的安全</p></li><li><p>用户自身的安全问题</p></li></ul></li><li><p>ECI选择基于袋鼠云云生容器引擎和轻量化Micro VM来实现安全、隔离的容器运行时。除了运行时的资源隔离之外，不同用户之间的网络、存储、库存、弹性SLO等一系列能力也就阿里云基础设施，实现了严格的多租隔离。</p></li><li><p>在性能方面，除了袋鼠容器引擎在OS&#x2F;容器方面的高度优化之外，ECI在容器执行上优化集成了现有阿里云基础设施能力。</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/13-15-10-14-%E6%88%AA%E5%B1%8F2023-03-13%2015.10.06.png"></p><h3 id="易用性"><a href="#易用性" class="headerlink" title="易用性"></a>易用性</h3><ul><li><p>ECI服务在管控、虚拟化、镜像拉取等多个层面在交付时间进行了优化。</p></li><li><p>借助于ECS服务共生的关系，通过优化ECI的管控系统能够更快地获取各类底层基础资源的情况，着重对创建链路进行优化，加快管控系统中ECI相关创建时间的处理速度。</p></li><li><p>在容器运行环境的创建中也采用了特殊的虚拟化技术，快速批量创建实例。</p></li><li><p>对容器镜像的拉去过程也进行了一定优化。</p></li></ul><h2 id="ECI-Pod"><a href="#ECI-Pod" class="headerlink" title="ECI Pod"></a>ECI Pod</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><ul><li><p>安全隔离</p><ul><li>每个ECI实例底层通过轻量级安全沙箱技术完全墙隔离，实例间互不影响。</li></ul></li><li><p>ECI支持多种规格配置的方式来申请资源和计费</p><ul><li><p>指定CPU&#x2F;Memory，默认1c2g，按照单核单G * 使用规格 * 使用时长计费，按照秒来计费</p></li><li><p>制定Pod的ECS规格，按照规格单价 * 运行时长计费，按照秒来计费</p></li><li><p>抢占式实例：通过配置Annotation来使用</p></li></ul></li></ul><h3 id="存储管理"><a href="#存储管理" class="headerlink" title="存储管理"></a>存储管理</h3><ul><li>支持NFS、FlexVolume、PV&#x2F;PVC</li></ul><h3 id="网络管理"><a href="#网络管理" class="headerlink" title="网络管理"></a>网络管理</h3><ul><li><p>ECI Pod默认使用Host网络模式，占用交换机vSwitch的一个弹性网卡ENI资源</p></li><li><p>从外部连接Pod的方式包括：LoadBalancer Service、ClusterIP Service、EIP</p></li></ul><h3 id="镜像拉取和日志管理"><a href="#镜像拉取和日志管理" class="headerlink" title="镜像拉取和日志管理"></a>镜像拉取和日志管理</h3><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/13-15-35-27-%E6%88%AA%E5%B1%8F2023-03-13%2015.35.19.png"></p><h3 id="创建ECI-Pod"><a href="#创建ECI-Pod" class="headerlink" title="创建ECI Pod"></a>创建ECI Pod</h3><ul><li><p>制定ECI实例内容器规格</p><ul><li><p>通过Kubernetes标准方式配置单个容器的CPU和内存，ECI的资源则是Pod内所有容器所需资源的总和。</p></li><li><p>每个ECI实例支持最多20个容器，实例内每个容器的资源支持自定义配置，但汇总到ECI实例级别需要满足CPU和内存约束。</p></li></ul></li><li><p>指定ECI Pod规格</p><ul><li>在指定ECI Pod级别的CPU和内存模式下，对于指定的CPU和内存规格，ECI会尝试使用多种ECS规格进行支撑，以提供比ECS单规格更好地库存和弹性能力。</li></ul></li><li><p>抢占式实例</p><ul><li>抢占式实例是一种低成本竞价型实例，您可以对阿里云当前闲置的资源出价，获得资源后运行容器，直到因为其他客户的更高出价而被回收容器资源，从而降低部分场景下使用ECI实例的成本</li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/13-15-40-59-%E6%88%AA%E5%B1%8F2023-03-13%2015.40.50.png"></p></li></ul><h3 id="特殊实例"><a href="#特殊实例" class="headerlink" title="特殊实例"></a>特殊实例</h3><ul><li><p>抢占式实例</p><ul><li><p>抢占式实例适用于无状态的应用场景，例如可弹性伸缩的Web站点服务、图像渲染、大数据分析和大规模并行计算等。</p></li><li><p>应用程序的分布度、可扩展性和容错能力越高，越适合使用抢占式实例节省成本和提升吞吐量。</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/13-15-43-01-%E6%88%AA%E5%B1%8F2023-03-13%2015.42.52.png"></p></li><li><p>GPU实例</p><ul><li><p>ECI支持通过指定ECS GPU规格来创建ECI GPU实例。</p></li><li><p>GPU实例内置了对应的Docker镜像，因此使用ECI GPU实例时无需安装Tensorflow、CUDA Toolkit等实例。</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/13-15-44-44-%E6%88%AA%E5%B1%8F2023-03-13%2015.44.35.png"></p></li><li><p>AMD实例</p><ul><li><p>ECI支持通过制定ECS AMD规格进行实例的创建。</p></li><li><p>AMD实例依托神龙架构，将大量虚拟化功能卸载到专用软件，降低虚拟化开销，提供稳定可预期的超高性能。</p></li><li><p>AMD实例的适用范围：视频编解码、高网络包收发场景、Web前端服务器、MMO前端、测试开发</p></li></ul></li><li><p>多可用区的ECI Pod</p><ul><li>使用ASK的多可用区特性可以提高ECI实例的创建成功率。</li></ul></li></ul><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul><li><p>ECI概述</p><ul><li><p>ECI vs ECS</p></li><li><p>ECI关键技术</p></li><li><p>ECI优势</p></li></ul></li><li><p>ECI Pod概述</p><ul><li><p>ECI存储管理</p></li><li><p>ECI网络管理</p></li><li><p>创建ECI Pod</p></li><li><p>ECI特殊实例</p></li></ul></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;ECI概述&quot;&gt;&lt;a href=&quot;#ECI概述&quot; class=&quot;headerlink&quot; title=&quot;ECI概述&quot;&gt;&lt;/a&gt;ECI概述&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;弹性容器实例ECI是阿里云在云原生时代为用户提供的基础计算服务，是阿里云云原生时代下的云计算基础设</summary>
+      
+    
+    
+    
+    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="阿里云ACP认证" scheme="http://eryoung2.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91ACP%E8%AE%A4%E8%AF%81/"/>
+    
+  </entry>
   
   <entry>
     <title>ACP云原生容器工程师 - ACK对比ASK</title>
@@ -494,30 +519,6 @@
     
     
     <category term="HTTP" scheme="http://eryoung2.github.io/tags/HTTP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>jenkins docker安装时插件缺失</title>
-    <link href="http://eryoung2.github.io/2022/09/19/jenkins-docker%E5%AE%89%E8%A3%85%E6%97%B6%E6%8F%92%E4%BB%B6%E7%BC%BA%E5%A4%B1/"/>
-    <id>http://eryoung2.github.io/2022/09/19/jenkins-docker%E5%AE%89%E8%A3%85%E6%97%B6%E6%8F%92%E4%BB%B6%E7%BC%BA%E5%A4%B1/</id>
-    <published>2022-09-18T16:37:45.000Z</published>
-    <updated>2022-09-18T16:44:50.064Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天又试着装了一下docker版的jenkins，今天用了<font color="red">jenkins:2.60.3</font>这个镜像，发现某些插件没有，导致安装不成功。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">an error occurred during installation:No such plugin: cloudbees-folder</span><br></pre></td></tr></table></figure><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>我检查了一大圈，发现这个带版本的镜像<font color="red">jenkins:2.60.3</font>的确没有此插件，从其他地方下载也没办法放到镜像里边去，所以需要换一个jenkins镜像。</p><p>换到<font color="red">jenkins&#x2F;jenkins</font>就好了。</p><h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>后来发现之前写的文章，发现用的就是这个<font color="red">jenkins&#x2F;jenkins</font>镜像，词镜像里的插件比较全，就没遇到类似问题。</p><h2 id="文章链接："><a href="#文章链接：" class="headerlink" title="文章链接："></a>文章链接：</h2><blockquote><p><a href="https://www.cnblogs.com/young233/p/14815787.html">docker 安装jenkins - eryoung2 - 博客园</a></p></blockquote>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;今天又试着装了一下docker版的jenkins，今天用了&lt;font color=&quot;red&quot;&gt;jenkins:2.60.3&lt;/font&gt;这个</summary>
-      
-    
-    
-    
-    <category term="工具使用" scheme="http://eryoung2.github.io/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
-    
-    
-    <category term="jenkins" scheme="http://eryoung2.github.io/tags/jenkins/"/>
     
   </entry>
   
