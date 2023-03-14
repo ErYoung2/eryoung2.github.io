@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-03-14T07:51:12.687Z</updated>
+  <updated>2023-03-14T16:07:14.139Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -17,13 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>ACP云原生容器工程师 - ASK网络、存储、日志、监控管理</title>
+    <link href="http://eryoung2.github.io/2023/03/14/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ASK%E7%BD%91%E7%BB%9C%E3%80%81%E5%AD%98%E5%82%A8%E3%80%81%E6%97%A5%E5%BF%97%E3%80%81%E7%9B%91%E6%8E%A7%E7%AE%A1%E7%90%86/"/>
+    <id>http://eryoung2.github.io/2023/03/14/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ASK%E7%BD%91%E7%BB%9C%E3%80%81%E5%AD%98%E5%82%A8%E3%80%81%E6%97%A5%E5%BF%97%E3%80%81%E7%9B%91%E6%8E%A7%E7%AE%A1%E7%90%86/</id>
+    <published>2023-03-14T15:33:36.000Z</published>
+    <updated>2023-03-14T16:07:14.139Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><p>包含网络容器CNI、服务Service、路由Ingress、安全组4项</p><h3 id="容器CNI"><a href="#容器CNI" class="headerlink" title="容器CNI"></a>容器CNI</h3><ul><li><p>阿里云Serverless Kubernetes服务、虚拟节点推出Pod挂载弹性公网ip功能，此功能使某些Serverless容器应用的部署和服务访问变得更加简单和便利</p><ul><li><p>无需创建VPC NAT网关即可让单个Pod访问公网</p></li><li><p>无需创建Service也可以让单个Pod暴露公网服务</p></li><li><p>可以更加灵活而且动态绑定Pod和EIP</p></li></ul></li></ul><h3 id="服务Service"><a href="#服务Service" class="headerlink" title="服务Service"></a>服务Service</h3><ul><li><p>Kubernetes Service定义了这样一种抽象：一个Pod的逻辑分组，一种可以访问它们的策略，通常称为微服务。</p></li><li><p>由于Pod会被频繁创建和删除，无法堆外直接进行服务，因此需要一个Pod的逻辑分组+访问策略，也就是Service</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/14-23-50-29-%E6%88%AA%E5%B1%8F2023-03-14%2023.49.14.png"></p><h3 id="路由Ingress"><a href="#路由Ingress" class="headerlink" title="路由Ingress"></a>路由Ingress</h3><ul><li><p>在kubernetes集群中，Ingress是Kubernetes中的一个资源对象，用来管理集群外部访问集群内部服务的方式</p></li><li><p>集群反向代理器，用ingress controller来解析转发规则，转发http&#x2F;https请求</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/14-23-52-14-%E6%88%AA%E5%B1%8F2023-03-14%2023.52.06.png"></p><h3 id="安全组"><a href="#安全组" class="headerlink" title="安全组"></a>安全组</h3><ul><li><p>安全组是一个逻辑上的分组，由同一地域内具有相同安全保护需求并相互信任的实例组成</p></li><li><p>一台ECI实例至少属于一个安全组</p></li><li><p>一个安全组可以管理同一个地域内的多台ECI实例</p></li><li><p>不同安全组内的ECI实例之间默认内网不通</p></li></ul><h2 id="管理配置"><a href="#管理配置" class="headerlink" title="管理配置"></a>管理配置</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><ul><li><p>容器服务ASK支持自动绑定阿里云云盘(EBS)、阿里云文件存储NAS、阿里云对象存储OSS存储服务</p></li><li><p>容器服务支持静态存储卷和动态存储卷，具体如下：</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/14-23-56-03-%E6%88%AA%E5%B1%8F2023-03-14%2023.55.42.png"></p><ul><li>阿里云容器服务ASK集群支持Flexolume和CSI两种存储插件</li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/14-23-57-37-%E6%88%AA%E5%B1%8F2023-03-14%2023.57.29.png"></p><h2 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h2><h3 id="通过阿里云日志服务采集日志"><a href="#通过阿里云日志服务采集日志" class="headerlink" title="通过阿里云日志服务采集日志"></a>通过阿里云日志服务采集日志</h3><ul><li><p>打开集群工作负载下无状态页面，点击使用模板创建</p></li><li><p>新建并部署YAML模板，通过环境变量创建采集配置，所有与配置相关的环境变量都采用aliyun_logs_作为前缀</p></li><li><p>当YAML编写完成后，单击创建，即可将相应的配置交由集群执行</p></li></ul><h3 id="查看日志"><a href="#查看日志" class="headerlink" title="查看日志"></a>查看日志</h3><ul><li><p>打开日志服务控制台，在Project列表区域选择Kubernetes集群对应的Project，进入日志库列表页签</p></li><li><p>在列表中找到相应的Logstore，打击，在下拉框中选择查询分析</p></li></ul><h2 id="监控"><a href="#监控" class="headerlink" title="监控"></a>监控</h2><h3 id="阿里云Prometheus监控"><a href="#阿里云Prometheus监控" class="headerlink" title="阿里云Prometheus监控"></a>阿里云Prometheus监控</h3><ul><li><p>阿里云Prometheus监控全面对接开源Prometheus生态</p></li><li><p>支持类型丰富的组件监控</p></li><li><p>提供多种开箱即用的预置监控大盘</p></li><li><p>提供全面托管的Proetheus服务</p></li><li><p>更轻量、更稳定、更准确的重试机制</p></li><li><p>数据量无上限</p></li><li><p>完全兼容开源生态</p></li><li><p>节省成本</p></li></ul><h3 id="开启阿里云Prometheus监控"><a href="#开启阿里云Prometheus监控" class="headerlink" title="开启阿里云Prometheus监控"></a>开启阿里云Prometheus监控</h3><ul><li><p>登录容器服务管理控制台</p></li><li><p>在控制台左侧导航栏中，选择市场 - 应用目录</p></li><li><p>在应用目录页面的阿里云应用页签中，搜索并单击ack-arms-prometheus</p></li><li><p>在右侧的创建区域中，选择目标集群，然后单击创建</p></li></ul><h3 id="执行结果"><a href="#执行结果" class="headerlink" title="执行结果"></a>执行结果</h3><ul><li>单击ARMS控制台右侧的Prometheus监控，找到目标集群并单击已安装的插件进入大盘查看监控数据</li></ul><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>ASK各个管理模块：</p><ul><li><p>网络管理</p></li><li><p>存储管理</p></li><li><p>日志管理</p></li><li><p>监控管理</p></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;网络&quot;&gt;&lt;a href=&quot;#网络&quot; class=&quot;headerlink&quot; title=&quot;网络&quot;&gt;&lt;/a&gt;网络&lt;/h2&gt;&lt;p&gt;包含网络容器CNI、服务Service、路由Ingress、安全组4项&lt;/p&gt;
+&lt;h3 id=&quot;容器CNI&quot;&gt;&lt;a href=&quot;#容器CNI</summary>
+      
+    
+    
+    
+    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="阿里云ACP认证" scheme="http://eryoung2.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91ACP%E8%AE%A4%E8%AF%81/"/>
+    
+  </entry>
+  
+  <entry>
     <title>整个宇宙只为你闪烁 - 陈雪然</title>
     <link href="http://eryoung2.github.io/2023/03/14/%E6%95%B4%E4%B8%AA%E5%AE%87%E5%AE%99%E5%8F%AA%E4%B8%BA%E4%BD%A0%E9%97%AA%E7%83%81-%E9%99%88%E9%9B%AA%E7%84%B6/"/>
     <id>http://eryoung2.github.io/2023/03/14/%E6%95%B4%E4%B8%AA%E5%AE%87%E5%AE%99%E5%8F%AA%E4%B8%BA%E4%BD%A0%E9%97%AA%E7%83%81-%E9%99%88%E9%9B%AA%E7%84%B6/</id>
     <published>2023-03-14T07:44:14.000Z</published>
-    <updated>2023-03-14T07:51:12.687Z</updated>
+    <updated>2023-03-14T07:57:36.723Z</updated>
     
-    <content type="html"><![CDATA[<p>If I were gone tomorrow, would they wonder where I am?</p><p>If I were gone tomorrow, would they wonder how I am? </p><p>又奔波在，一样的路上，追赶来来往往的夕阳。</p><p>又停留在，一样的方向，有着多多少少已经忘记的梦想。 </p><p>当整个宇宙，它为你而闪烁，</p><p>请别走，因为是你值得拥有。</p><p>当整个宇宙，它为你而闪烁，</p><p>请别走，因为是只为你闪烁。   </p><p>When the universe, it shine for you,</p><p>Please don’t go, it’s only for you, it’s only for you.</p><p>    </p><p>当整个宇宙，它为你而闪烁，</p><p>请别走，因为是你值得拥有。</p><p>当整个宇宙，它为你而闪烁，</p><p>请别走，因为是只为你闪烁。 </p><p>只为你闪烁……</p>]]></content>
+    <content type="html"><![CDATA[<p>If I were gone tomorrow, would they wonder where I am?</p><p>If I were gone tomorrow, would they wonder how I am? </p><p>又奔波在，一样的路上，追赶来来往往的夕阳。</p><p>又停留在，一样的方向，有着多多少少已经忘记的梦想。 </p><p>当整个宇宙，它为你而闪烁，</p><p>请别走，因为是你值得拥有。</p><p>当整个宇宙，它为你而闪烁，    </p><p>请别走，因为是只为你闪烁。   </p><p>When the universe, it shine for you,</p><p>Please don’t go, it’s only for you, it’s only for you.</p><p>    </p><p>当整个宇宙，它为你而闪烁，</p><p>请别走，因为是你值得拥有。</p><p>当整个宇宙，它为你而闪烁，</p><p>请别走，因为是只为你闪烁。 </p><p>只为你闪烁……</p>]]></content>
     
     
       
@@ -495,30 +520,6 @@
     <category term="linux" scheme="http://eryoung2.github.io/tags/linux/"/>
     
     <category term="网络" scheme="http://eryoung2.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ACP云原生容器工程师-云原生概要-1</title>
-    <link href="http://eryoung2.github.io/2023/01/31/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-%E4%BA%91%E5%8E%9F%E7%94%9F%E6%A6%82%E8%A6%81-1/"/>
-    <id>http://eryoung2.github.io/2023/01/31/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-%E4%BA%91%E5%8E%9F%E7%94%9F%E6%A6%82%E8%A6%81-1/</id>
-    <published>2023-01-31T08:04:47.000Z</published>
-    <updated>2023-02-09T17:51:46.496Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="云原生概念"><a href="#云原生概念" class="headerlink" title="云原生概念"></a>云原生概念</h2><p>说到云，我们都不陌生。我们身边有各种厂商的云产品，例如AWS、GCP、AZure、阿里云、腾讯云等，但是说到云原生这个概念，恐怕就不是单纯的产品上云这么简单了，而是从产品的架构设计、网络规划、拓扑图补全、产品落地、后期运维等步骤中，都需要考虑云产品的特点而进行设计的。</p><p>云原生这个词是近几年伴随着云技术的迅猛发展而流行起来的一个概念，在不同时期我们对于云原生的概念定义也不一样。我这里列出几个比较具有代表性的定义方法：</p><ul><li><p>Heroku于2011年提出了十二因子的应用定义，该定义可以适用于各种编程语言，通常被认为是最早对于云原生的技术定义。<br>其十二因子分别为：**<font color="red">基准代码；依赖；配置；后端服务；构建、发布、运行；进程；端口绑定；并发；易处理；环境等价；日志；进程管理</font>**</p></li><li><p>Pivital于2015年提出了“Cloud Native”的概念：云原生是一种可以充分利用云计算优势的构建和运行应用的方法。主要包括以下要素：**<font color="red">Devops；持续交付；微服务；容器</font>**</p></li><li><p>云原生计算基金会对于云原生定义的最新版本是：云原生的代表技术为**<font color="red">容器、服务网格、微服务、不可变基础设施、声明式API</font>**</p></li><li><p>阿里巴巴对云原生的定义：云原生是一条使用户能低心智负担的、敏捷的、以可扩展可复制的方式，最大限度利用云的能力、发挥云特点的最佳路径。</p></li></ul><p>&amp;nbsp;</p><h2 id="云原生的定位及意义"><a href="#云原生的定位及意义" class="headerlink" title="云原生的定位及意义"></a>云原生的定位及意义</h2><h3 id="云原生是种架构模式及软件开发的新的思想理念"><a href="#云原生是种架构模式及软件开发的新的思想理念" class="headerlink" title="云原生是种架构模式及软件开发的新的思想理念"></a>云原生是种架构模式及软件开发的新的思想理念</h3><ul><li><p>云原生基于云计算理念的深化，是面向云应用设计的一种新的架构设计理念</p></li><li><p>充分发挥云效能的最佳实践路径</p></li><li><p>帮助企业构建弹性可靠、松耦合、易管理可观测的应用系统</p></li><li><p>提升交付效率，降低运维复杂度</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/01/31-16-31-17-linian.png"></p><h3 id="云原生架构与传统架构对比"><a href="#云原生架构与传统架构对比" class="headerlink" title="云原生架构与传统架构对比"></a>云原生架构与传统架构对比</h3><ul><li>传统软件架构，用户不仅仅需要关注基础设施的能力及其运维，还需要采购及维护大量的第三方软件以及非功能性能力，降低软件开发效率，并且没有充分利用云计算IaaS与PaaS的能力。</li><li>从技术的角度，云原生架构是基于云原生技术的一组架构原则和设计模式的集合，旨在将云应用中<br>的非业务代码部分进行最大化的剥离，从而让云设施接管应用中原有的大量非功能特性(如弹性、<br>韧性、安全、可观测性、灰度等)，使业务不再有非功能性业务中断困扰的同时，具备轻量、敏捷、<br>高度自动化的特点。</li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/01/31-16-32-19-duibi.png"></p><h3 id="云原生技术改变了软件开发及运维模式"><a href="#云原生技术改变了软件开发及运维模式" class="headerlink" title="云原生技术改变了软件开发及运维模式"></a>云原生技术改变了软件开发及运维模式</h3><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/01/31-16-33-11-moshi.png"></p><h3 id="容器技术（docker）"><a href="#容器技术（docker）" class="headerlink" title="容器技术（docker）"></a>容器技术（docker）</h3><p>容器技术处在云原生的技术栈中的底层一环，是保证云原生能实现的基础。其包括3个核心：</p><ul><li><p>镜像：没有生命周期的打包制品</p></li><li><p>容器：具有生命周期的运行态</p></li><li><p>容器仓库：存储镜像的仓库</p></li></ul><p>三者的关系如下：</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/02-17-48-36-docker.png"></p><p>它们之间的调用关系如下：</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/02-17-51-55-diaoyong.png"></p><p>由于Dockerfile是提前写好的，所以镜像打包时的规格是一致的，但是不同需求下，可以添加不同的参数，如添加存储卷、添加映射端口、是否后台运行等，这时容器的状态会有不同。</p><h3 id="容器编排技术（kubernetes）"><a href="#容器编排技术（kubernetes）" class="headerlink" title="容器编排技术（kubernetes）"></a>容器编排技术（kubernetes）</h3><p>随着容器规模的越来越大，节点规模也会变大，我们对容器的管理也更加复杂。而容器编排技术就是为了解决在多集群节点中更好地管理容器应用的解决方案。</p><p>Kubernetes是目前使用最广泛的容器编排技术。在传统时代，我们需要操作系统来管理硬件资源，在操作系统基础上来部署软件和应用；而在云原生的理念当中，Kubernetes就扮演着操作系统的作用。它通过已知的不可变基础设施，通过声明式API来管理和调度各种应用资源，例如Pod、Service、Deployment、Statefulset、PV、PVC、Daemonset、ingress-gateway等。</p><p>Kubernetes的核心功能有以下几项：</p><p>● 服务发现与负载均衡<br>● 容器的自动装箱<br>● 存储编排<br>● 自动化容器恢复<br>● 自动发布与回顾<br>● 批量与密文管理<br>● 批量执行<br>● 水平伸缩</p><p>可以看到，kubernetes可以说是非常全能的一套容器编排解决方案，而它的架构是master-node，master节点会有控制模块，而node节点会有通信组件、网络代理和容器运行时。二者的架构如图所示：</p><h5 id="核心架构"><a href="#核心架构" class="headerlink" title="核心架构"></a>核心架构</h5><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/03-00-02-25-core.png"></p><h5 id="主节点架构"><a href="#主节点架构" class="headerlink" title="主节点架构"></a>主节点架构</h5><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/03-00-02-48-master.png"></p><h5 id="工作节点架构"><a href="#工作节点架构" class="headerlink" title="工作节点架构"></a>工作节点架构</h5><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/03-00-03-07-node.png"></p><p>其中，Kubelet是个服务，kube-proxy有两种方式：iptables或ipvs, CRI是容器运行时</p><h4 id="Kubernetes应用场景"><a href="#Kubernetes应用场景" class="headerlink" title="Kubernetes应用场景"></a>Kubernetes应用场景</h4><ul><li><p>典型调度场景<br><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/03-00-08-32-statement1.png"></p></li><li><p>调度<br><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/03-00-08-59-schedule.png"></p></li><li><p>自动恢复<br><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/03-00-09-24-auto-recovery.png"></p></li><li><p>弹性伸缩<br><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/03-00-09-53-autoscaler.png"></p></li></ul><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>本文简单介绍了：</p><ul><li><p>云原生概念</p></li><li><p>云原生的定位与意义</p></li><li><p>容器技术-Docker</p></li><li><p>容器编排技术-Kubernetes</p></li></ul><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><blockquote><p><a href="https://www.cnblogs.com/young233/p/10958624.html">docker入门1–简介、安装 - eryoung2 - 博客园</a></p></blockquote><blockquote><p><a href="https://www.cnblogs.com/young233/p/10961741.html">docker入门2–生命周期 - eryoung2 - 博客园</a></p></blockquote><blockquote><p><a href="https://www.cnblogs.com/young233/p/15119748.html">kubernetes 搭建集群 - eryoung2 - 博客园</a></p></blockquote><blockquote><p><a href="https://www.cnblogs.com/young233/p/15145682.html">k8s 五个重要概念 - eryoung2 - 博客园</a></p></blockquote>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;云原生概念&quot;&gt;&lt;a href=&quot;#云原生概念&quot; class=&quot;headerlink&quot; title=&quot;云原生概念&quot;&gt;&lt;/a&gt;云原生概念&lt;/h2&gt;&lt;p&gt;说到云，我们都不陌生。我们身边有各种厂商的云产品，例如AWS、GCP、AZure、阿里云、腾讯云等，但是说到云原生这</summary>
-      
-    
-    
-    
-    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
-    
-    
-    <category term="阿里云ACP认证" scheme="http://eryoung2.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91ACP%E8%AE%A4%E8%AF%81/"/>
     
   </entry>
   
