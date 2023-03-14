@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-03-14T04:16:15.466Z</updated>
+  <updated>2023-03-14T07:46:10.780Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>整个宇宙只为你闪烁 - 陈雪然</title>
+    <link href="http://eryoung2.github.io/2023/03/14/%E6%95%B4%E4%B8%AA%E5%AE%87%E5%AE%99%E5%8F%AA%E4%B8%BA%E4%BD%A0%E9%97%AA%E7%83%81-%E9%99%88%E9%9B%AA%E7%84%B6/"/>
+    <id>http://eryoung2.github.io/2023/03/14/%E6%95%B4%E4%B8%AA%E5%AE%87%E5%AE%99%E5%8F%AA%E4%B8%BA%E4%BD%A0%E9%97%AA%E7%83%81-%E9%99%88%E9%9B%AA%E7%84%B6/</id>
+    <published>2023-03-14T07:44:14.000Z</published>
+    <updated>2023-03-14T07:46:10.780Z</updated>
+    
+    <content type="html"><![CDATA[<p>If I were gone tomorrow, would they wonder where I am?</p><p>If I were gone tomorrow, would they wonder how I am?</p><p>&amp;nbsp;</p><p>又奔波在，一样的路上，追赶来来往往的夕阳。</p><p>又停留在，一样的方向，有着多多少少已经忘记的梦想。</p><p>&amp;nbsp;</p><p>当整个宇宙，它为你而闪烁，</p><p>请别走，因为是你值得拥有。</p><p>当整个宇宙，它为你而闪烁，</p><p>请别走，因为是只为你闪烁。</p><p>&amp;nbsp;</p><p>When the universe, it shine for you,</p><p>Please don’t go, it’s only for you, it’s only for you.</p><p>&amp;nbsp;</p><p>当整个宇宙，它为你而闪烁，</p><p>请别走，因为是你值得拥有。</p><p>当整个宇宙，它为你而闪烁，</p><p>请别走，因为是只为你闪烁。</p><p>&amp;nbsp;</p><p>只为你闪烁……</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;If I were gone tomorrow, would they wonder where I am?&lt;/p&gt;
+&lt;p&gt;If I were gone tomorrow, would they wonder how I am?&lt;/p&gt;
+&lt;p&gt;&amp;amp;nbsp;&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="歌词" scheme="http://eryoung2.github.io/categories/%E6%AD%8C%E8%AF%8D/"/>
+    
+    
+    <category term="三体" scheme="http://eryoung2.github.io/tags/%E4%B8%89%E4%BD%93/"/>
+    
+  </entry>
   
   <entry>
     <title>苹果电脑进入恢复模式</title>
@@ -485,30 +512,6 @@
       
       
     <summary type="html">&lt;h2 id=&quot;云原生概念&quot;&gt;&lt;a href=&quot;#云原生概念&quot; class=&quot;headerlink&quot; title=&quot;云原生概念&quot;&gt;&lt;/a&gt;云原生概念&lt;/h2&gt;&lt;p&gt;说到云，我们都不陌生。我们身边有各种厂商的云产品，例如AWS、GCP、AZure、阿里云、腾讯云等，但是说到云原生这</summary>
-      
-    
-    
-    
-    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
-    
-    
-    <category term="阿里云ACP认证" scheme="http://eryoung2.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91ACP%E8%AE%A4%E8%AF%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ACP云原生容器工程师 - 考试大纲</title>
-    <link href="http://eryoung2.github.io/2023/01/31/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/"/>
-    <id>http://eryoung2.github.io/2023/01/31/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2/</id>
-    <published>2023-01-31T05:42:59.000Z</published>
-    <updated>2023-02-02T15:32:29.348Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="ACP云原生容器工程师-大纲简介"><a href="#ACP云原生容器工程师-大纲简介" class="headerlink" title="ACP云原生容器工程师 - 大纲简介"></a>ACP云原生容器工程师 - 大纲简介</h2><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/01/31-13-59-20-dagang.png" alt="imagepng"></p><h2 id="ACP云原生容器工程师-所需知识"><a href="#ACP云原生容器工程师-所需知识" class="headerlink" title="ACP云原生容器工程师 - 所需知识"></a>ACP云原生容器工程师 - 所需知识</h2><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/01/31-13-59-29-zhishi.png" alt="imagepng"></p><h2 id="ACP云原生容器工程师-考试范围"><a href="#ACP云原生容器工程师-考试范围" class="headerlink" title="ACP云原生容器工程师 - 考试范围"></a>ACP云原生容器工程师 - 考试范围</h2><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/01/31-13-59-37-fanwei.png"></p><h2 id="考试重点"><a href="#考试重点" class="headerlink" title="考试重点"></a>考试重点</h2><ul><li>云原生通识技术: **<font color="red">云原生定义、核心技术、典型架构&#x2F;技术、Docker&#x2F;K8s功能特点、核心组件、应用实践</font>**等。</li><li>ACK: **<font color="red">概念(ACK)三种形态、架构、功能、优势、应用场景、生命周期；网络、存储、日志监控的使用；ACK弹性伸缩、集群管理、应用发布管理、安全管理体系</font>**等。</li><li>ASK: **<font color="red">ASK与ACK区别、使用场景、核心功能、组件；ASK具体配置和操作，ASK集群管理、应用管理、网络、存储、日志、监控；集群弹性伸缩；ASK使用中的注意事项、安全管理</font>**等。</li><li>ASM: **<font color="red">服务网格的概念、优势、架构特点、应用场景；ASM核心功能使用：授权管理、网格诊断、入口网关配置、流量管理、可观测性管理等；构建ASM统一网格、构建统一的管理系统；ASM注意点及解决方法</font>**。</li><li>ACR: **<font color="red">Docker基本概念、ACR基本概念、二者关系、异同点、适用场景、ACR默认实例版和企业版核心功能；ACR操作和配置(创建、网络、权限、交付链管理、镜像安全扫描及加速等)；ACR注意事项、解决常见问题</font>**。</li><li>ACK@Edge: **<font color="red">熟悉基础概念(边缘容器场景、云边一体化协同等)；ACK@Edge的具体操作和配置、可视化管理；ACK@Edge的统一管理和统一生命周期</font>**等。</li></ul><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li>ACK(<a href="https://help.aliyun.com/product/85222.html?spm=a2c4g.750001.list.167.18987b13uyzIJ4">容器服务 ACK-阿里云帮助中心</a>)</li><li>ASK(<a href="https://help.aliyun.com/knowledge_list/127525.html?spm=5176.11065259.1996646101.8.b1602d4b6rgCT2">Serverless容器集群ASK_容器服务Kubernetes版-阿里云帮助中心</a>)</li><li>服务网格 – ASM(<a href="https://help.aliyun.com/product/147365.html?spm=5176.10695662.3291411370.5.35ce19eaTCBBaV">服务网格 ASM-阿里云帮助中心</a>)</li><li>容器镜像服务(<a href="https://help.aliyun.com/document_detail/60945.html?spm=5176.10695662.1362911.4.54b639f3wLxseL">https://help.aliyun.com/document_detail/60945.html?spm=5176.10695662.1362911.4.54b639f3wLxseL</a>)</li><li>边缘容器服务(<a href="https://help.aliyun.com/document_detail/163259.html?spm=5176.10695662.8115314850.4.3b34a67b2O6mFx">什么是ACK@Edge_容器服务Kubernetes版-阿里云帮助中心</a>)</li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;ACP云原生容器工程师-大纲简介&quot;&gt;&lt;a href=&quot;#ACP云原生容器工程师-大纲简介&quot; class=&quot;headerlink&quot; title=&quot;ACP云原生容器工程师 - 大纲简介&quot;&gt;&lt;/a&gt;ACP云原生容器工程师 - 大纲简介&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;</summary>
       
     
     
