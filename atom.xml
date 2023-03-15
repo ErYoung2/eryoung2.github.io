@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-03-14T16:07:14.139Z</updated>
+  <updated>2023-03-15T14:24:32.705Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ACP云原生容器工程师 - ASK弹性伸缩管理</title>
+    <link href="http://eryoung2.github.io/2023/03/15/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ASK%E5%BC%B9%E6%80%A7%E4%BC%B8%E7%BC%A9%E7%AE%A1%E7%90%86/"/>
+    <id>http://eryoung2.github.io/2023/03/15/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ASK%E5%BC%B9%E6%80%A7%E4%BC%B8%E7%BC%A9%E7%AE%A1%E7%90%86/</id>
+    <published>2023-03-15T14:09:04.000Z</published>
+    <updated>2023-03-15T14:24:32.705Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h3><ul><li><p>弹性伸缩式ASK上被广泛采用的功能，典型的场景包含在线业务弹性、大规模计算训练、深度学习GPU或共享GPU的训练与推理、定时周期负载变化等</p></li><li><p>弹性层次包括调度层和资源层</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/15-22-13-19-%E6%88%AA%E5%B1%8F2023-03-15%2022.12.28.png"></p><h3 id="容器水平伸缩HPA"><a href="#容器水平伸缩HPA" class="headerlink" title="容器水平伸缩HPA"></a>容器水平伸缩HPA</h3><ul><li><p>通过容器服务控制台创建HPA应用</p><ul><li><p>在集群列表页面中，单击目标集群名称或者目标集群右侧操作列下的详情</p></li><li><p>在工作负载 - 无状态页面中，单击使用镜像创建</p></li><li><p>在应用基本信息页面填写应用的名称，设置应用部署集群和命名空间，单击下一步</p></li><li><p>在高级设置页的访问设置区域，单击服务的创建，设置服务的相关信息</p></li><li><p>在高级设置页面中容器组水平伸缩的开启，设置伸缩的条件和配置</p></li><li><p>单击右下角的创建，一个支持HPA的Deployment就已经创建完毕</p></li></ul></li><li><p>验证结果</p><ul><li>在工作负载 - 无状态中单击应用名称或操作列的详情，单击容器伸缩，在详情中查看指标伸缩信息</li></ul></li></ul><h3 id="容器定时伸缩CronHPA"><a href="#容器定时伸缩CronHPA" class="headerlink" title="容器定时伸缩CronHPA"></a>容器定时伸缩CronHPA</h3><ul><li><p>通过容器服务控制台创建HPA应用</p><ul><li><p>创建一个新的Deployment并设置相关信息</p></li><li><p>在高级设置页选中定时伸缩的开启</p></li><li><p>设置定时任务名称、目标副本数、调度周期</p></li><li><p>单击右下角的创建，一个支持定时伸缩的Deployment就已经创建完毕</p></li></ul></li><li><p>验证结果</p><ul><li>在工作负载 - 无状态中单击应用名称或者操作列的详情，单击容器伸缩，在详情中查看定时伸缩CronHPA信息</li></ul></li><li><p>部署alibaba-cloud-metrics-adapter组件</p><ul><li>在右侧创建区域配置集群信息，并单击创建</li></ul></li></ul><h3 id="阿里云指标容器水平伸缩"><a href="#阿里云指标容器水平伸缩" class="headerlink" title="阿里云指标容器水平伸缩"></a>阿里云指标容器水平伸缩</h3><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/15-22-21-45-%E6%88%AA%E5%B1%8F2023-03-15%2022.21.37.png"></p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/15-22-22-56-%E6%88%AA%E5%B1%8F2023-03-15%2022.22.28.png"></p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/15-22-23-17-%E6%88%AA%E5%B1%8F2023-03-15%2022.23.09.png"></p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/15-22-23-41-%E6%88%AA%E5%B1%8F2023-03-15%2022.23.33.png"></p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul><li><p>ASK弹性伸缩管理模块的主要功能</p></li><li><p>ASK弹性伸缩的两种种类和实现</p></li><li><p>ASK弹性伸缩的定制化实现</p></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;h3 id=&quot;背景介绍&quot;&gt;&lt;a href=&quot;#背景介绍&quot; class=&quot;headerlink&quot; title=&quot;背景介绍&quot;&gt;&lt;/a&gt;背景介绍&lt;/h</summary>
+      
+    
+    
+    
+    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="阿里云ACP认证" scheme="http://eryoung2.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91ACP%E8%AE%A4%E8%AF%81/"/>
+    
+  </entry>
   
   <entry>
     <title>ACP云原生容器工程师 - ASK网络、存储、日志、监控管理</title>
@@ -494,32 +518,6 @@
     
     
     <category term="阿里云ACP认证" scheme="http://eryoung2.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91ACP%E8%AE%A4%E8%AF%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>地址转换技术</title>
-    <link href="http://eryoung2.github.io/2023/02/09/%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2%E6%8A%80%E6%9C%AF/"/>
-    <id>http://eryoung2.github.io/2023/02/09/%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2%E6%8A%80%E6%9C%AF/</id>
-    <published>2023-02-09T09:08:14.000Z</published>
-    <updated>2023-02-09T09:10:12.389Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在我们上网的过程中，不可能只用同一个ip地址来访问，在公网和内网之间，需要一些地址转换来实现公网和内网ip的变化。通常，我们可以使用NAT来做；在公网ip不固定的时候，也需要使用MASQUERADE来做地址转换。</p><h2 id="NAT-Network-Address-Translation"><a href="#NAT-Network-Address-Translation" class="headerlink" title="NAT(Network Address Translation)"></a>NAT(Network Address Translation)</h2><p>我们都知道，在ip数据包中，有两个参数可以定位包的源地址和目的地址，一个是源地址ip，一个是目标地址ip。我们常用的NAT有两种，一种是SNAT，修改源地址；一种是DNAT，修改目标地址。</p><h3 id="SNAT-Source-NAT"><a href="#SNAT-Source-NAT" class="headerlink" title="SNAT(Source NAT)"></a>SNAT(Source NAT)</h3><p>此协议转换包的源地址，通常用于内网ip转公网ip，也就是正向代理会对发出的ip包做SNAT，使其可以传到公网环境中进行下一跳路由动作。</p><p>此修改作用于iptables的POSTROUTING阶段，具体命令如下：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -t nat -A POSTROUTING -s &lt;修改之前的ip段&gt; -o &lt;出口网卡&gt; -j SNAT --to-source &lt;修改之后的ip&gt; </span><br></pre></td></tr></table></figure><h3 id="DNAT-Destination-NAT"><a href="#DNAT-Destination-NAT" class="headerlink" title="DNAT(Destination NAT)"></a>DNAT(Destination NAT)</h3><p>此协议转换包的目的地址，通常用于公网ip转内网ip，也就是反向代理会对收到的ip包做DNAT，使其可以传到内网环境中进行下一跳路由动作。</p><p>此修改作用于iptables的PREROUTING阶段，具体命令如下：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -t nat -A PREROUTING -d &lt;需要使用的ip地址&gt; -i &lt;入口网卡&gt; -j DNAT --to-destination &lt;修改之前的ip段&gt;</span><br></pre></td></tr></table></figure><h2 id="MASQUERADE-伪装"><a href="#MASQUERADE-伪装" class="headerlink" title="MASQUERADE(伪装)"></a>MASQUERADE(伪装)</h2><p>当我们的网卡绑定的公网ip是动态的，我们就需要动态读取网卡上的ip信息，这时我们使用MASQUERADE协议可以实现。</p><p>当然，MASQUERADE是一种特殊的SNAT，通常用于动态网络环境中，也作用于POSTROUTING阶段。</p><p>具体的命令如下：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -t nat -A POSTROUTING -s &lt;修改之前的ip段&gt; -o &lt;出口网卡&gt; MASQUERADE</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在我们上网的过程中，不可能只用同一个ip地址来访问，在公网和内网之间，需要一些地址转换来实现公网和内网ip的变化。通常，我们可以使用NAT来</summary>
-      
-    
-    
-    
-    <category term="面试" scheme="http://eryoung2.github.io/categories/%E9%9D%A2%E8%AF%95/"/>
-    
-    
-    <category term="linux" scheme="http://eryoung2.github.io/tags/linux/"/>
-    
-    <category term="网络" scheme="http://eryoung2.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
