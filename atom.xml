@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-03-15T16:42:15.502Z</updated>
+  <updated>2023-03-16T03:30:04.242Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ACP云原生容器工程师 - ASM服务网格概述</title>
+    <link href="http://eryoung2.github.io/2023/03/16/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ASM%E6%9C%8D%E5%8A%A1%E7%BD%91%E6%A0%BC%E6%A6%82%E8%BF%B0/"/>
+    <id>http://eryoung2.github.io/2023/03/16/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ASM%E6%9C%8D%E5%8A%A1%E7%BD%91%E6%A0%BC%E6%A6%82%E8%BF%B0/</id>
+    <published>2023-03-16T01:50:43.000Z</published>
+    <updated>2023-03-16T03:30:04.242Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="技术概要"><a href="#技术概要" class="headerlink" title="技术概要"></a>技术概要</h3><h4 id="第一代服务网格"><a href="#第一代服务网格" class="headerlink" title="第一代服务网格"></a>第一代服务网格</h4><ul><li><p>服务网格</p><ul><li><p>基础设施层</p></li><li><p>微服务通信</p><ul><li><p>保证请求可靠传递</p></li><li><p>隐藏通信细节</p></li><li><p>减少框架耦合</p></li><li><p>预言无关</p></li></ul></li><li><p>数据平面</p><ul><li><p>边车模式</p></li><li><p>通信代理服务</p></li><li><p>独立、平行、同步、透明</p></li></ul></li><li><p>控制平面</p><ul><li><p>集中式控制面板</p></li><li><p>统一运维管理</p></li></ul></li></ul></li></ul><p>此时的服务网格面临的问题：</p><ol><li><p>开发者需要更多地关注框架本身</p></li><li><p>框架本身只支持一种或多种特定语言，通用性并不好</p></li><li><p>框架耦合过大，不升级对服务无法透明</p></li></ol><h4 id="第二代服务网格"><a href="#第二代服务网格" class="headerlink" title="第二代服务网格"></a>第二代服务网格</h4><ul><li><p>服务网格平台istio</p><ul><li><p>连接 </p><ul><li><p>通信撸油</p></li><li><p>流量管理</p></li></ul></li><li><p>安全</p><ul><li><p>加密通信</p></li><li><p>身份验证</p></li></ul></li><li><p>控制</p><ul><li><p>自动策略</p></li><li><p>分布式资源调配</p></li></ul></li><li><p>观察</p><ul><li><p>量度指标</p></li><li><p>日志</p></li><li><p>追踪</p></li></ul></li></ul></li></ul><p>ASM是对istio进行优化开发的产品</p><h4 id="阿里云服务网格"><a href="#阿里云服务网格" class="headerlink" title="阿里云服务网格"></a>阿里云服务网格</h4><ul><li><p>统一管理微服务应用流量，兼容istio的托管式平台</p></li><li><p>通过流量控制、网格观测以及服务间通信安全等功能，服务网格可以全方位简化服务治理</p></li><li><p>在运行异构计算基础设施上的服务提供统一的管理能力</p></li><li><p>适用于Kubernetes集群、Serverless Kubernetes集群、ECS虚拟机以及自建集群</p></li><li><p>与阿里云产品深度融合，历经数个版本迭代优化，多区域覆盖</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/16-10-09-38-%E6%88%AA%E5%B1%8F2023-03-16%2010.08.23.png"></p><h3 id="产品架构"><a href="#产品架构" class="headerlink" title="产品架构"></a>产品架构</h3><ul><li><p>控制平面</p><ul><li><p>完全托管的istio实例</p></li><li><p>与开源社区兼容</p></li><li><p>声明式定义路由规则</p></li><li><p>统一服务流量管理</p></li><li><p>阿里云组件集成</p></li></ul></li><li><p>数据平面</p><ul><li><p>Kubernetes集群的应用服务</p></li><li><p>ECI Pod上的应用服务</p></li><li><p>声明式定义路由规则</p></li><li><p>统一服务流量管理</p></li></ul></li><li><p>扩展与集成</p><ul><li><p>可观测性服务</p></li><li><p>网络互联CEN</p></li><li><p>整合社区开源软件</p><ul><li><p>OPA</p></li><li><p>授权服务</p></li></ul></li><li><p>WebAssembly</p><ul><li><p>协议</p></li><li><p>指标</p></li><li><p>日志</p></li><li><p>过滤器</p></li></ul></li><li><p>GitOps</p><ul><li>CI&#x2F;CD</li></ul></li></ul></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/16-10-11-29-%E6%88%AA%E5%B1%8F2023-03-16%2010.11.21.png"></p><h3 id="功能特点"><a href="#功能特点" class="headerlink" title="功能特点"></a>功能特点</h3><ul><li><p>一致的管理方式</p><ul><li><p>以一致的方式来管理运行于不统计群的应用服务</p></li><li><p>支持混合云、多云场景和异构环境</p></li><li><p>提供一致的可观测性和流量控制</p></li></ul></li><li><p>统一的流量管理</p><ul><li>支持容器或者虚拟机混合环境下统一的流量管理</li></ul></li><li><p>控制平面核心组件托管化</p><ul><li><p>托管控制平面的核心组件</p></li><li><p>最大限度地降低用户资源开销和运维成本</p></li></ul></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/16-10-15-37-%E6%88%AA%E5%B1%8F2023-03-16%2010.15.21.png"></p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/16-10-16-20-%E6%88%AA%E5%B1%8F2023-03-16%2010.16.10.png"></p><h3 id="产品优势"><a href="#产品优势" class="headerlink" title="产品优势"></a>产品优势</h3><ul><li><p>使用便捷</p><ul><li><p>部署挑战</p><ul><li><p>复杂的架构和组件关系</p></li><li><p>大量个性化配置</p></li><li><p>多集群、混合云、异构应用</p></li></ul></li><li><p>基于托管组件</p><ul><li><p>提高社区兼容性</p></li><li><p>高可用、免运维、内建安全</p></li><li><p>数据平面可观测性</p></li><li><p>统一管理异构混合云</p></li></ul></li><li><p>一键式使用</p><ul><li><p>创建服务网格</p></li><li><p>升级服务网格</p></li></ul></li><li><p>灵活定义资源</p><ul><li><p>istio虚拟服务</p></li><li><p>目标规则</p></li><li><p>入口网管</p></li></ul></li></ul></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/16-11-24-39-%E6%88%AA%E5%B1%8F2023-03-16%2011.24.17.png"></p><h3 id=""><a href="#" class="headerlink" title=""></a><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/16-11-26-12-%E6%88%AA%E5%B1%8F2023-03-16%2011.25.02.png"></h3><h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul><li><p>多语言应用微服务之治理</p><ul><li><p>金丝雀发布</p></li><li><p>无损上下线</p></li><li><p>服务鉴权</p></li><li><p>标签路由</p></li></ul></li><li><p>多集群应用统一流量管理</p><ul><li><p>多地域</p></li><li><p>混合云</p></li><li><p>灵活灾备</p></li></ul></li><li><p>应用容器化平滑上云</p><ul><li><p>存量应用迁移</p></li><li><p>无服务状态架构升级</p></li></ul></li></ul><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul><li><p>技术概要</p><ul><li><p>第一代服务网格</p></li><li><p>第二代服务网格</p></li><li><p>阿里云服务网格ASM</p></li><li><p>产品架构</p></li><li><p>功能特点</p></li><li><p>产品优势</p></li><li><p>应用场景</p></li></ul></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;h3 id=&quot;技术概要&quot;&gt;&lt;a href=&quot;#技术概要&quot; class=&quot;headerlink&quot; title=&quot;技术概要&quot;&gt;&lt;/a&gt;技术概要&lt;/h</summary>
+      
+    
+    
+    
+    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="阿里云ACP认证" scheme="http://eryoung2.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91ACP%E8%AE%A4%E8%AF%81/"/>
+    
+  </entry>
   
   <entry>
     <title>ACP云原生容器工程师 - ASK应用场景</title>
@@ -486,30 +510,6 @@
     <summary type="html">&lt;h2 id=&quot;操作流程&quot;&gt;&lt;a href=&quot;#操作流程&quot; class=&quot;headerlink&quot; title=&quot;操作流程&quot;&gt;&lt;/a&gt;操作流程&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;授权账号(RBAC&amp;#x2F;RAM)&lt;/li&gt;
 &lt;li&gt;创建集群(专有版、托管版、serverless版)&lt;/</summary>
-      
-    
-    
-    
-    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
-    
-    
-    <category term="阿里云ACP认证" scheme="http://eryoung2.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91ACP%E8%AE%A4%E8%AF%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ACP云原生容器工程师-ACK Pro概述</title>
-    <link href="http://eryoung2.github.io/2023/02/10/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK-Pro%E6%A6%82%E8%BF%B0/"/>
-    <id>http://eryoung2.github.io/2023/02/10/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK-Pro%E6%A6%82%E8%BF%B0/</id>
-    <published>2023-02-10T10:04:53.000Z</published>
-    <updated>2023-02-15T07:47:48.864Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="ACK-Pro集群概述"><a href="#ACK-Pro集群概述" class="headerlink" title="ACK Pro集群概述"></a>ACK Pro集群概述</h2><h3 id="对比ACK托管版集群"><a href="#对比ACK托管版集群" class="headerlink" title="对比ACK托管版集群"></a>对比ACK托管版集群</h3><ul><li><p>相比ACK托管版，针对企业版大规模生产环境进一步增强了可靠性、安全性</p></li><li><p>继承了原托管版集群的所有优势</p></li><li><p>提供可赔付的SLA的Kubernetes集群</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/10-18-08-24-vs%20ack%20tuoguan.png"></p><h3 id="对比标准版集群"><a href="#对比标准版集群" class="headerlink" title="对比标准版集群"></a>对比标准版集群</h3><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/10-18-08-37-vs%20biaozhun.png"></p><h2 id="ACK-Pro各种集群"><a href="#ACK-Pro各种集群" class="headerlink" title="ACK Pro各种集群"></a>ACK Pro各种集群</h2><h3 id="可靠性强化集群"><a href="#可靠性强化集群" class="headerlink" title="可靠性强化集群"></a>可靠性强化集群</h3><p>更可靠的托管Master节点，API Server自动弹性，保证集群平滑扩容海量节点。</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/10-18-09-39-kekao.png"></p><h3 id="安全性强化集群"><a href="#安全性强化集群" class="headerlink" title="安全性强化集群"></a>安全性强化集群</h3><p>开放安全管理，并提供针对运行中容器更强检测和自动修复能力的安全管理高级版，与KMS结合会更安全。</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/10-18-09-49-anquan.png"></p><h3 id="调度性强化集群"><a href="#调度性强化集群" class="headerlink" title="调度性强化集群"></a>调度性强化集群</h3><ul><li><p>集成更强调度性能的kube-scheduler，支持多种智能调度算法</p></li><li><p>优化在大规模数据计算、高性能数据处理等业务场景下的容器调度能力</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/10-18-10-00-diaodu.png"></p><h3 id="ACK-Pro显著特点"><a href="#ACK-Pro显著特点" class="headerlink" title="ACK Pro显著特点"></a>ACK Pro显著特点</h3><ul><li><p>可靠的强化集群</p></li><li><p>提升安全性的集群</p></li><li><p>调度能力更强</p></li></ul><h4 id="ACK-Pro版适用行业"><a href="#ACK-Pro版适用行业" class="headerlink" title="ACK Pro版适用行业"></a>ACK Pro版适用行业</h4><ul><li><p>金融企业</p></li><li><p>互联网企业</p></li><li><p>大数据计算企业</p></li><li><p>开展中国业务的海外企业</p></li></ul><h2 id="ACK-Pro适用场景"><a href="#ACK-Pro适用场景" class="headerlink" title="ACK Pro适用场景"></a>ACK Pro适用场景</h2><h3 id="弹性伸缩架构"><a href="#弹性伸缩架构" class="headerlink" title="弹性伸缩架构"></a>弹性伸缩架构</h3><ul><li><p>容器服务可以根据业务流量自动对业务扩容、缩容，不需要人工干预</p></li><li><p>避免流量激增扩容不及时导致系统挂掉，以及平时大量资源闲置</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/10-18-14-45-shensuo.png"></p><h3 id="DevOps持续交付"><a href="#DevOps持续交付" class="headerlink" title="DevOps持续交付"></a>DevOps持续交付</h3><h3 id="云原生AI"><a href="#云原生AI" class="headerlink" title="云原生AI"></a>云原生AI</h3><ul><li><p>深度学习的三个核心问题：性能、效率、成本</p></li><li><p>ACK Pro无缝整合了云的计算、存储、负载均衡等服务，同时贯穿了深度学习的全生命周期</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/10-18-14-55-cncf.png"></p><h3 id="微服务架构"><a href="#微服务架构" class="headerlink" title="微服务架构"></a>微服务架构</h3><ul><li><p>企业生产环境中，通过合理微服务拆分，将每个微服务应用存储在阿里云镜像帮您管理</p></li><li><p>您只需迭代每个微服务应用，有阿里云容器服务ACK提供调度、编排、部署、灰度发布</p></li><li><p>帮助企业快速实现敏捷开发和部署落地，加速企业业务迭代</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/10-18-15-18-microservice.png"></p><h3 id="混合云架构"><a href="#混合云架构" class="headerlink" title="混合云架构"></a>混合云架构</h3><ul><li><p>在容器服务控制台上同时管理云上云下的资源，不需要在多种云管理控制台中反复切换</p></li><li><p>基于容器基础设施无关的特性，使用同一套镜像和编排同时在云上云下部署应用</p></li><li><p>基于阿里云容器服务ACK实现统一运维多个云端资源</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/10-18-15-31-mixcloud.png"></p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ol><li><p>ACK Pro集群概述，与ACK托管版和ACK标准版对比</p></li><li><p>ACK Pro各种集群：可靠性强化集群、安全性强化集群、调度性强化集群</p></li><li><p>ACK Pro显著特点、适用行业</p></li><li><p>ACK适用场景：弹性伸缩架构、DevOps持续交付、云原生AI、微服务架构、混合云架构</p></li></ol>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;ACK-Pro集群概述&quot;&gt;&lt;a href=&quot;#ACK-Pro集群概述&quot; class=&quot;headerlink&quot; title=&quot;ACK Pro集群概述&quot;&gt;&lt;/a&gt;ACK Pro集群概述&lt;/h2&gt;&lt;h3 id=&quot;对比ACK托管版集群&quot;&gt;&lt;a href=&quot;#对比ACK托管</summary>
       
     
     
