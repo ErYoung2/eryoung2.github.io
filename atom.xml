@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-03-17T02:09:08.552Z</updated>
+  <updated>2023-03-17T10:34:24.351Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ACP云原生容器工程师 - ACR进阶</title>
+    <link href="http://eryoung2.github.io/2023/03/17/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACR%E8%BF%9B%E9%98%B6/"/>
+    <id>http://eryoung2.github.io/2023/03/17/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACR%E8%BF%9B%E9%98%B6/</id>
+    <published>2023-03-17T09:18:01.000Z</published>
+    <updated>2023-03-17T10:34:24.351Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h2><p>DevOps是近年来非常火的概念，是一种重视开发人员和运维人员之间沟通合作的文化、运动或惯例。透过自动化“软件交付”和“架构变更”的流程，来使得构建、测试、发布软件能够更加快捷、频繁和可靠。</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/17-18-16-10-%E6%88%AA%E5%B1%8F2023-03-17%2018.15.41.png"></p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/17-18-16-18-%E6%88%AA%E5%B1%8F2023-03-17%2018.15.50.png"></p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/17-18-17-04-%E6%88%AA%E5%B1%8F2023-03-17%2018.16.55.png"></p><p>CD的特点：自动化、持续、有效反馈</p><p>CD的主要问题：</p><ol><li><p>环境一致性问题</p></li><li><p>版本管理问题</p></li></ol><h2 id="通过容器镜像实现DevOps"><a href="#通过容器镜像实现DevOps" class="headerlink" title="通过容器镜像实现DevOps"></a>通过容器镜像实现DevOps</h2><h3 id="阿里云容器服务"><a href="#阿里云容器服务" class="headerlink" title="阿里云容器服务"></a>阿里云容器服务</h3><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/17-18-18-36-%E6%88%AA%E5%B1%8F2023-03-17%2018.18.27.png"></p><h2 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h2><h4 id="通过容器镜像实现DevOps-1"><a href="#通过容器镜像实现DevOps-1" class="headerlink" title="通过容器镜像实现DevOps"></a>通过容器镜像实现DevOps</h4><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/17-18-19-48-%E6%88%AA%E5%B1%8F2023-03-17%2018.19.20.png"> </p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/17-18-19-58-%E6%88%AA%E5%B1%8F2023-03-17%2018.19.26.png"></p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/17-18-20-06-%E6%88%AA%E5%B1%8F2023-03-17%2018.19.32.png"></p><h3 id="利用ACR搭建DevOps"><a href="#利用ACR搭建DevOps" class="headerlink" title="利用ACR搭建DevOps"></a>利用ACR搭建DevOps</h3><h4 id="构建镜像仓库"><a href="#构建镜像仓库" class="headerlink" title="构建镜像仓库"></a>构建镜像仓库</h4><ol><li><p>在镜像仓库页面单击创建镜像仓库</p></li><li><p>在创建镜像仓库对话框中，设置命名空间、仓库名称、摘要和仓库类型</p></li><li><p>在设置代码源对话框中，选择已绑定的代码源，然后单击闯将镜像仓库</p></li></ol><h4 id="设置构建规则"><a href="#设置构建规则" class="headerlink" title="设置构建规则"></a>设置构建规则</h4><ol><li><p>在镜像仓库页面单击目标仓库右侧操作列中的管理</p></li><li><p>安吉左侧导航栏中的构建，在构建规则设置区域的左侧单击添加规则</p></li><li><p>在添加构建规则对话框中设置构建规则，然后单击确认</p></li></ol><h4 id="构建镜像仓库-1"><a href="#构建镜像仓库-1" class="headerlink" title="构建镜像仓库"></a>构建镜像仓库</h4><ol><li><p>手工构建</p></li><li><p>自动构建</p></li></ol><h4 id="绑定容器服务触发器"><a href="#绑定容器服务触发器" class="headerlink" title="绑定容器服务触发器"></a>绑定容器服务触发器</h4><ul><li>镜像信息页面，单击左侧操作栏中的触发器，新建一个触发器，病填入触发器的名称、URL、触发方式</li></ul><h3 id="使用免密组件拉取容器镜像"><a href="#使用免密组件拉取容器镜像" class="headerlink" title="使用免密组件拉取容器镜像"></a>使用免密组件拉取容器镜像</h3><h4 id="背景信息"><a href="#背景信息" class="headerlink" title="背景信息"></a>背景信息</h4><p>免密组件通过读取ACK集群中的Kube-system命名空间中的acr-configation的配置，进行私有镜像拉取。当前支持针对私有镜像仓库使用以下三种权限之一的策略进行配置：</p><ul><li><p>使用默认的ACK Worker RAM角色权限进行拉取</p></li><li><p>使用自定义RAM角色的AccessKey ID和AccessKey Secret的权限进行拉取</p></li><li><p>通过配置RAM AssumeRole权限，使用其他用户的权限进行拉取</p></li></ul><h4 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h4><ul><li><p>容器镜像服务企业版实例和默认实例中的私有镜像</p></li><li><p>集群当前用户和其他用户容器镜像服务中的私有镜像</p></li><li><p>跨地域拉取容器镜像服务中的私有镜像</p></li></ul><h4 id="集群"><a href="#集群" class="headerlink" title="集群"></a>集群</h4><ul><li><p>多命名空间免密拉取</p></li><li><p>专有版Kubernetes集群</p></li><li><p>托管版Kubernetes集群</p></li></ul><h3 id="使用免密组件拉取容器镜像-1"><a href="#使用免密组件拉取容器镜像-1" class="headerlink" title="使用免密组件拉取容器镜像"></a>使用免密组件拉取容器镜像</h3><ol><li><p>升级组件</p><ol><li><p>在集群列表页面，单击目标集群操作列下的更多 - 系统组件管理</p></li><li><p>在组件列表区域中找到aliyun-acr-credential-helper，单击升级</p></li></ol></li><li><p>配置组件</p><ol><li><p>在集群信息页面左侧导航栏，选择应用配置管理 - 配置项</p></li><li><p>在配置项额面，选择命名空间：kube-system，单击创建天假新配置项，或单击目标配置项右侧编辑</p></li></ol></li></ol><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/17-18-31-18-%E6%88%AA%E5%B1%8F2023-03-17%2018.31.11.png"></p><ol start="3"><li><p>配置当前账号拉取权限</p><ol><li><p>在集群信息页面，单击集群资源页签，单击Worker RAM角色右侧链接</p></li><li><p>在RAM角色基本信息的权限管理页签，单击目标权限策略名称</p></li><li><p>单击修改策略内容</p></li><li><p>在策略内容区域增加以下字段后，单击确定</p></li></ol></li></ol><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul><li><p>了解DevOps和Continuous Delivery的概念</p></li><li><p>了解通过容器镜像实现DevOps的原理</p></li><li><p>了解搭建容器DevOps的流程</p></li><li><p>了解如何使用免密组件拉取容器镜像</p></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;DevOps&quot;&gt;&lt;a href=&quot;#DevOps&quot; class=&quot;headerlink&quot; title=&quot;DevOps&quot;&gt;&lt;/a&gt;DevOps&lt;/h2&gt;&lt;p&gt;DevOps是近年来非常火的概念，是一种重视开发人员和运维人员之间沟通合作的文化、运动或惯例。透过自动化“软</summary>
+      
+    
+    
+    
+    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="阿里云ACP认证" scheme="http://eryoung2.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91ACP%E8%AE%A4%E8%AF%81/"/>
+    
+  </entry>
   
   <entry>
     <title>ACP云原生容器工程师 - ACR概述与使用</title>
@@ -486,31 +510,6 @@
 &lt;li&gt;&lt;p&gt;在Kubernetes里最小的管理单元是Pod&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Pod中产生的数据都是临时的，Pod销毁</summary>
-      
-    
-    
-    
-    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
-    
-    
-    <category term="阿里云ACP认证" scheme="http://eryoung2.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91ACP%E8%AE%A4%E8%AF%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ACK云原生容器工程师-ACK网络(下)</title>
-    <link href="http://eryoung2.github.io/2023/02/13/ACK%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E7%BD%91%E7%BB%9C-%E4%B8%8B/"/>
-    <id>http://eryoung2.github.io/2023/02/13/ACK%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E7%BD%91%E7%BB%9C-%E4%B8%8B/</id>
-    <published>2023-02-13T07:07:42.000Z</published>
-    <updated>2023-02-13T07:17:23.825Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="容器网络规划"><a href="#容器网络规划" class="headerlink" title="容器网络规划"></a>容器网络规划</h2><ul><li><p>容器网络规划、VPC专有网络配置阶段、容器网络配置阶段、Service网络配置阶段</p></li><li><p>根据集群业务需求，实现容器网络的配置完成</p></li></ul><h2 id="容器网络实践"><a href="#容器网络实践" class="headerlink" title="容器网络实践"></a>容器网络实践</h2><h3 id="Flannel"><a href="#Flannel" class="headerlink" title="Flannel"></a>Flannel</h3><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/13-15-11-01-flannel1.png"></p><h3 id="Terway"><a href="#Terway" class="headerlink" title="Terway"></a>Terway</h3><h4 id="Terway网络规划注意事项"><a href="#Terway网络规划注意事项" class="headerlink" title="Terway网络规划注意事项"></a>Terway网络规划注意事项</h4><ul><li><p>建议选用高配ECS规格机型，如5代或6代的8G以上机型</p></li><li><p>共享ENI支持的最大Pod数&#x3D;(ECS支持的ENI数-1)×单个ENI支持的私有ip数</p></li><li><p>独占ENI支持的最大Pod数&#x3D;ECS支持的ENI数-1</p></li></ul><h4 id="Terway网络实践步骤"><a href="#Terway网络实践步骤" class="headerlink" title="Terway网络实践步骤"></a>Terway网络实践步骤</h4><h5 id="1-规划和准备集群网络"><a href="#1-规划和准备集群网络" class="headerlink" title="1. 规划和准备集群网络"></a>1. 规划和准备集群网络</h5><ul><li><p>在创建ACK Kubernetes集群时，需要指定VPC地址段、虚拟交换机、Pod地址段、Service地址段</p></li><li><p>需要先创建一个专有网络VPC，然后在VPC下创建两个虚拟交换机</p></li><li><p>虚拟交换机和Pod交换机需要在同一可用区下</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/13-15-11-17-terway1.png"></p><h5 id="2-创建专有网络"><a href="#2-创建专有网络" class="headerlink" title="2. 创建专有网络"></a>2. 创建专有网络</h5><ol><li><p>登录专有网络管理控制台</p></li><li><p>在顶部菜单栏，选择地域，然后创建专有网络</p></li><li><p>创建专有网络和虚拟交换机。</p></li></ol><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/02/13-15-11-26-terway2.png"></p><h5 id="3-创建ACK集群"><a href="#3-创建ACK集群" class="headerlink" title="3. 创建ACK集群"></a>3. 创建ACK集群</h5><ol><li><p>登录阿里云容器服务ACK管理控制台</p></li><li><p>创建集群</p></li><li><p>在选择集群模板页面，单机标准托管集群下的创建</p></li></ol><h5 id="4-配置Terway网络"><a href="#4-配置Terway网络" class="headerlink" title="4. 配置Terway网络"></a>4. 配置Terway网络</h5><ol><li><p>配置的关键信息：专有网络、虚拟交换机、网络插件选Terway</p></li><li><p>配置Terway模式：独占弹性网卡或者共享弹性网卡(IPVlan)，是否支持NetworkPolicy选项(仅在共享弹性网卡模式下可选)，Pod网段，Service网段</p></li></ol><h5 id="5-配置节点实例及创建集群"><a href="#5-配置节点实例及创建集群" class="headerlink" title="5. 配置节点实例及创建集群"></a>5. 配置节点实例及创建集群</h5><p>选择节点实例，点击创建</p><h4 id="Terway和Flannel模式的不同"><a href="#Terway和Flannel模式的不同" class="headerlink" title="Terway和Flannel模式的不同"></a>Terway和Flannel模式的不同</h4><ul><li><p>Pod需要通过弹性网卡(ENI)接入虚拟交换机，来组件Pod网络</p></li><li><p>不同ECS规格所能支持的弹性网卡数不同</p></li></ul><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul><li><p>容器网络规划步骤介绍</p></li><li><p>容器网络实践</p><ul><li><p>Flannel</p></li><li><p>Terway，主要介绍了ENI模式下如何创建集群网络</p></li></ul></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;容器网络规划&quot;&gt;&lt;a href=&quot;#容器网络规划&quot; class=&quot;headerlink&quot; title=&quot;容器网络规划&quot;&gt;&lt;/a&gt;容器网络规划&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;容器网络规划、VPC专有网络配置阶段、容器网络配置阶段、Service网络配置阶段&lt;/p&gt;</summary>
       
     
     
