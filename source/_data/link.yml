@@ -1,0 +1,27 @@
+class:
+  class_name: 个人链接
+  link_list:
+    1:
+      name: 博客园
+      link: https://www.cnblogs.com/young233/
+      avatar: /img/panda.png
+      descr: eryoung2的博客园账号
+    2:
+      name: Bilibili
+      link: https://space.bilibili.com/6955003?spm_id_from=333.1007.0.0
+      avatar: /img/panda.png
+      descr: eryoung2的B站账号  
+    3:
+      name: 知乎
+      link: https://www.zhihu.com/people/young-76-85-83
+      avatar: /img/panda.png
+      descr: eryoung2的知乎账号  
+
+class2:
+  class_name: 友链
+  link_list:
+    1:
+      name: Yian's blog
+      link: https://yian.me/blog/
+      avatar: https://segmentfault.com/u/yian
+      descr: 尧总的个人博客
