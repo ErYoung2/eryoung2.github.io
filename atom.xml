@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-03-18T06:49:45.843Z</updated>
+  <updated>2023-03-19T12:28:41.958Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mac mini使用iphone摄像头</title>
+    <link href="http://eryoung2.github.io/2023/03/19/Mac-mini%E4%BD%BF%E7%94%A8iphone%E6%91%84%E5%83%8F%E5%A4%B4/"/>
+    <id>http://eryoung2.github.io/2023/03/19/Mac-mini%E4%BD%BF%E7%94%A8iphone%E6%91%84%E5%83%8F%E5%A4%B4/</id>
+    <published>2023-03-19T12:21:46.000Z</published>
+    <updated>2023-03-19T12:28:41.958Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前段时间我将自己的Mac换成了M1芯片的Mac Mini，由于是个裸机，除了主机啥也没有，所以我都是需要自己diy配件的。键盘鼠标音响耳机啥的都好说，但是摄像头捏？</p><h2 id="正言"><a href="#正言" class="headerlink" title="正言"></a>正言</h2><p>之前就看到苹果的MacOS 13推出了一个功能，可以使用自己的iphone做为外置摄像头。</p><p>我试了很多次，姿势都不对，就很困惑。</p><p>后来查阅了很多资料之后，发现要满足以下条件：</p><ol><li><p>电脑和手机使用同一个apple id</p></li><li><p>手机开启接力功能</p></li><li><p>手机锁屏横放，后置摄像头对着自己（重要）</p></li><li><p>调整合理角度，打开相关软件即可使用</p></li></ol><p>已测试过的软件有：Facetime、Photo Booth、QuickTime Player、微信，配置正确且姿势合适即可调出摄像头使用。</p><h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>手机成像效果好于Mac摄像头，如果能持续使用的话都是不错的。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;前段时间我将自己的Mac换成了M1芯片的Mac Mini，由于是个裸机，除了主机啥也没有，所以我都是需要自己diy配件的。键盘鼠标音响耳机啥</summary>
+      
+    
+    
+    
+    <category term="操作系统" scheme="http://eryoung2.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+    <category term="Mac" scheme="http://eryoung2.github.io/tags/Mac/"/>
+    
+  </entry>
   
   <entry>
     <title>ACP云原生容器工程师 - 应用案例</title>
@@ -495,30 +519,6 @@
     
     
     <category term="阿里云ACP认证" scheme="http://eryoung2.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91ACP%E8%AE%A4%E8%AF%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo博客迁移 from mac to mac</title>
-    <link href="http://eryoung2.github.io/2023/03/08/hexo%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB-from-mac-to-mac/"/>
-    <id>http://eryoung2.github.io/2023/03/08/hexo%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB-from-mac-to-mac/</id>
-    <published>2023-03-08T15:34:54.000Z</published>
-    <updated>2023-03-17T14:39:46.106Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>前段时间我的MBP15留在家里给老妈做视频播放器了，这段时间重新收了一台Mac mini来使用。由于前一台电脑大部分内容均已备份，剩余的东西也就是此博客，所以我就把它放在iCloud里边，一并同步过来了。</p><p>但是我发现这个迁移也会遇到些蛋疼的问题，我们一个一个来说。</p><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="1-node-modules依赖太多"><a href="#1-node-modules依赖太多" class="headerlink" title="1. node_modules依赖太多"></a>1. node_modules依赖太多</h3><p>我们都知道，对于hexo来说，它是用nodejs来搭建的，所以会有超多的小文件在node_modules下面。而我遇到的第一个问题则是，iCloud同步小文件时非常、非常、非常慢。</p><p>这个问题也好解决，把博客打个包然后拷贝出来就行了。可以直接使用Mac的实用工具进行打包，做完以后是一个zip文件，然后将其拷贝出来即可。</p><h3 id="2-node没安装"><a href="#2-node没安装" class="headerlink" title="2. node没安装"></a>2. node没安装</h3><p>由于我只是备份了文档，应用并未安装，所以需要重新安装nodejs。</p><p>这里可以移步官网，自行下载相应版本并进行安装，安装之后在terminal输入<strong>node -v</strong>进行验证。</p><h3 id="3-hexo组件未安装"><a href="#3-hexo组件未安装" class="headerlink" title="3. hexo组件未安装"></a>3. hexo组件未安装</h3><p>在解压并进入博客目录后，会发现大部分的内容是在的，只是hexo相关组件还未安装。</p><p>可以删除掉node_modules文件夹和package-lock.json文件，并重新安装hexo插件。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm -rf node_modules package-lock.json</span><br><span class="line">sudo npm install --unsafe-perm --verbose -g hexo  </span><br></pre></td></tr></table></figure><p>安装完毕之后，可使用hexo g或者hexo s进行测试，一般就ok的了。</p><h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>此法用于Mac-&gt;Mac迁移，Mac-&gt;Windows会麻烦一些，之前我也做过一次，太蛋疼了，虽然成功了，但是还是不推荐这么迁移。</p><h2 id="引用与鸣谢"><a href="#引用与鸣谢" class="headerlink" title="引用与鸣谢"></a>引用与鸣谢</h2><blockquote><p>nodejs官网 <a href="https://nodejs.org/en/">Node.js</a></p><p><a href="https://gwang-cv.github.io/2017/08/25/%E5%AE%89%E8%A3%85Hexo%E7%9A%84%E9%97%AE%E9%A2%98/">安装Hexo的问题 | my lab</a></p></blockquote>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;前提&quot;&gt;&lt;a href=&quot;#前提&quot; class=&quot;headerlink&quot; title=&quot;前提&quot;&gt;&lt;/a&gt;前提&lt;/h2&gt;&lt;p&gt;前段时间我的MBP15留在家里给老妈做视频播放器了，这段时间重新收了一台Mac mini来使用。由于前一台电脑大部分内容均已备份，剩余的东西</summary>
-      
-    
-    
-    
-    <category term="博客迁移" scheme="http://eryoung2.github.io/categories/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB/"/>
-    
-    
-    <category term="hexo" scheme="http://eryoung2.github.io/tags/hexo/"/>
     
   </entry>
   
