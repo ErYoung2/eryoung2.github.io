@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://eryoung2.github.io/2023/03/20/python-if-name-main-%E7%9A%84%E8%AF%A6%E8%A7%A3/</loc>
+    
+    <lastmod>2023-03-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://eryoung2.github.io/2023/03/19/Mac-mini%E4%BD%BF%E7%94%A8iphone%E6%91%84%E5%83%8F%E5%A4%B4/</loc>
     
     <lastmod>2023-03-19</lastmod>
@@ -775,6 +784,13 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>http://eryoung2.github.io/tags/python/</loc>
+    <lastmod>2023-03-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -898,6 +914,13 @@
   
   <url>
     <loc>http://eryoung2.github.io/categories/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB/</loc>
+    <lastmod>2023-03-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://eryoung2.github.io/categories/%E6%A6%82%E5%BF%B5/</loc>
     <lastmod>2023-03-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

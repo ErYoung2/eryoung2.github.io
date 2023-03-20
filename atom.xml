@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-03-19T12:28:41.958Z</updated>
+  <updated>2023-03-20T08:57:54.163Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python if __name == __main__的详解</title>
+    <link href="http://eryoung2.github.io/2023/03/20/python-if-name-main-%E7%9A%84%E8%AF%A6%E8%A7%A3/"/>
+    <id>http://eryoung2.github.io/2023/03/20/python-if-name-main-%E7%9A%84%E8%AF%A6%E8%A7%A3/</id>
+    <published>2023-03-20T08:55:47.000Z</published>
+    <updated>2023-03-20T08:57:54.163Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>对于python来说，我们经常会见到一行代码：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    balabala</span><br></pre></td></tr></table></figure><p>那这句话是啥意思呢？</p><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>首先要明白__name__是python当中的一个属性，代表现在主模块的引用。</p><p>如果调用的是本模块(python文件相当于模块)，那么默认的name就是_main__了。如果不是的话，name就会设置为引用模块的名称。</p><p>例如我有两个py文件，cal.py和hello.py，其中hello.py会引用cal.py。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#cal.py</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">return_max</span>(<span class="params">num1, num2</span>):</span><br><span class="line">    <span class="keyword">if</span> num1 &gt;= num2:</span><br><span class="line">        <span class="keyword">return</span> num1</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> num2</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">num = return_max(<span class="number">3</span>,<span class="number">5</span>)</span><br><span class="line"><span class="built_in">print</span>(num)</span><br><span class="line"><span class="built_in">print</span>(__name__) <span class="comment">#显示为__main__</span></span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#hello.py</span></span><br><span class="line"><span class="keyword">import</span> cal</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(cal.__name__) <span class="comment">#显示为cal</span></span><br></pre></td></tr></table></figure><p>按照上面的说法，这时如果我们运行hello.py, 跑出来的就不是hello.py的内容而是cal.py内容了。</p><p>而如果我加了这行判断，就不会出现这个问题。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br></pre></td></tr></table></figure><h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>这个概念对于python是非常重要的，主要是为了防止引用混乱的问题。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;对于python来说，我们经常会见到一行代码：&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;t</summary>
+      
+    
+    
+    
+    <category term="概念" scheme="http://eryoung2.github.io/categories/%E6%A6%82%E5%BF%B5/"/>
+    
+    
+    <category term="python" scheme="http://eryoung2.github.io/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>Mac mini使用iphone摄像头</title>
@@ -483,34 +508,6 @@
 &lt;li&gt;&lt;p&gt;可以通过容器服务控制台，可视化升级集群的Kubernetes版本&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;可以在</summary>
-      
-    
-    
-    
-    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
-    
-    
-    <category term="阿里云ACP认证" scheme="http://eryoung2.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91ACP%E8%AE%A4%E8%AF%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ACP云原生容器工程师 - ACK自动伸缩</title>
-    <link href="http://eryoung2.github.io/2023/03/09/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E8%87%AA%E5%8A%A8%E4%BC%B8%E7%BC%A9/"/>
-    <id>http://eryoung2.github.io/2023/03/09/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E8%87%AA%E5%8A%A8%E4%BC%B8%E7%BC%A9/</id>
-    <published>2023-03-09T05:59:48.000Z</published>
-    <updated>2023-03-09T06:22:18.407Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>弹性伸缩是ACK特点功能之一，典型的场景包括：</p><ul><li><p>在线业务弹性</p></li><li><p>大规模计算训练</p></li><li><p>定时周期性负载变化等</p></li></ul><p>弹性伸缩分为两个维度：</p><ul><li><p>弹性调度层：主要负责修改负载的调度容量变化，在已有资源条件下进行pod调度</p></li><li><p>资源弹性层：主要负责扩充资源的方式调度容量的补充，对资源本社进行调度</p></li></ul><h2 id="资源层阶段弹性提供"><a href="#资源层阶段弹性提供" class="headerlink" title="资源层阶段弹性提供"></a>资源层阶段弹性提供</h2><ul><li><p>阿里云Kubernetes集群的一个重要特性，是集群的节点可以动态的增加或减少</p></li><li><p>有了这个特性，集群才能在计算资源不足的情况下扩充新的节点</p></li><li><p>同时，也可以在资源利用率降低的时候，释放节点以节省费用</p></li><li><p>资源层扩缩容可以分为：手动扩缩容、自动扩缩容</p></li></ul><h3 id="资源层弹性插件"><a href="#资源层弹性插件" class="headerlink" title="资源层弹性插件"></a>资源层弹性插件</h3><ul><li><p>Cluster-autoscaler: Kubernetes社区开源组件，节点水平伸缩软件，阿里云提供了独有的调度、弹性优化、成本优化的功能。</p></li><li><p>Virtual-node: ACK开源插件，提供无服务器运行时环境，开发者无需挂心节点资源，只需针对Pod按量付费即可。</p></li><li><p>Virtual-kubelet-autoscaler: ACK服务组件，提供无服务弹性伸缩能力</p></li></ul><h2 id="节点自动伸缩"><a href="#节点自动伸缩" class="headerlink" title="节点自动伸缩"></a>节点自动伸缩</h2><h3 id="节点自动伸缩机制"><a href="#节点自动伸缩机制" class="headerlink" title="节点自动伸缩机制"></a>节点自动伸缩机制</h3><p>定期检测集群中应用pod的状态，如果处于pending状态且日志中出现调度原因不足时，会触发cluster-autoscaler的模拟调度，会在各node中查询哪台机可以负载新的pod，如果有就分配；如果没有就触发资源调度，实现资源级别的自动伸缩。</p><h3 id="节点自动伸缩实现原理"><a href="#节点自动伸缩实现原理" class="headerlink" title="节点自动伸缩实现原理"></a>节点自动伸缩实现原理</h3><ul><li><p>阿里云容器服务ACK的自动伸缩能力，是通过节点自动伸缩组件(cluster-autoscaler)实现的。</p></li><li><p>可以按需弹出普通实例、GPU实例、竞价付费实例、支持多可用区、多实例规格、多种伸缩模式、满足不同的节点伸缩场景。</p><ul><li><p>伸缩配置：通过控制台配置伸缩节点的规格属性</p></li><li><p>自动伸缩组件监听：自动伸缩组件cluster-autoscaler，它以Pod的形式运行在K8S集群中、监听Pod状态，在Pod因为节点资源不足而不能被调度的状态时，启动自动伸缩规则</p></li><li><p>伸缩规则启动：根据伸缩配置的内容，启动ESS弹性伸缩服务</p></li><li><p>ESS弹性伸缩服务创建实例：通过ESS他行设所服务按照配置创建实例后，继续进行集群监听</p></li></ul></li></ul><h3 id="节点自动伸缩操作"><a href="#节点自动伸缩操作" class="headerlink" title="节点自动伸缩操作"></a>节点自动伸缩操作</h3><p>可分为3个步骤：</p><ul><li>执行自动伸缩</li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/09-14-20-58-%E6%88%AA%E5%B1%8F2023-03-09%2014.03.14.png"></p><ul><li>弹性伸缩服务ESS授权</li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/09-14-21-12-%E6%88%AA%E5%B1%8F2023-03-09%2014.03.33.png"></p><ul><li>配置自动伸缩</li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/09-14-21-29-%E6%88%AA%E5%B1%8F2023-03-09%2014.08.32.png"></p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/09-14-21-40-%E6%88%AA%E5%B1%8F2023-03-09%2014.04.24.png"></p><ul><li>查看结果</li></ul><h2 id="调度层弹性伸缩"><a href="#调度层弹性伸缩" class="headerlink" title="调度层弹性伸缩"></a>调度层弹性伸缩</h2><h3 id="调度层弹性介绍"><a href="#调度层弹性介绍" class="headerlink" title="调度层弹性介绍"></a>调度层弹性介绍</h3><ul><li><p>调度层弹性组件是指所有的弹性动作都是和pod相关的，并不关心具体的资源情况。</p></li><li><p>调度层弹性组件包括：容器水平伸缩(HPA)，容器垂直伸缩(VPA)，容器定时伸缩(CronHPA)</p></li></ul><h3 id="调度层弹性组件"><a href="#调度层弹性组件" class="headerlink" title="调度层弹性组件"></a>调度层弹性组件</h3><ul><li><p>HPA: Pod水平伸缩的组件</p><ul><li><p>除了社区支持的Resource Metrics和CustomMetrics，阿里云容器服务Kuberenetes还提供了external-metrics-adapter</p></li><li><p>支持云服务的指标作为弹性伸缩的判断条件</p></li><li><p>目前已经支持例如Ingress的QPS、RT等监控指标</p></li></ul></li><li><p>VPA：Pod的纵向伸缩的最贱，主要面向有状态服务的扩容和升级场景，用于大型单体应用</p></li><li><p>CronHPA：定时伸缩组件，主要面向的是周期性负载，通过资源画像可以预测有规律的负载周期，并通过周期性伸缩，实现资源成本的节约</p></li></ul><h3 id="调度层弹性组件使用场景及限制"><a href="#调度层弹性组件使用场景及限制" class="headerlink" title="调度层弹性组件使用场景及限制"></a>调度层弹性组件使用场景及限制</h3><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/09-14-21-52-%E6%88%AA%E5%B1%8F2023-03-09%2014.04.24.png"></p><p>通常使用HPA+AutoScaler进行两层扩容，HPA负载容量管理，AutoScaler负责资源池的所扩容</p><h2 id="ACK开启HPA"><a href="#ACK开启HPA" class="headerlink" title="ACK开启HPA"></a>ACK开启HPA</h2><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/09-14-22-05-%E6%88%AA%E5%B1%8F2023-03-09%2014.04.32.png"></p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/09-14-22-13-%E6%88%AA%E5%B1%8F2023-03-09%2014.04.38.png"></p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul><li><p>阿里云容器服务ACK弹性伸缩分为两个维度：</p><ul><li><p>调度层弹性：主要负责修改负载的调度容量变化</p></li><li><p>资源层调度：主要是集群的容量规划不能满足集群调度容量时，会通过扩充资源的方式进行调度容量的补充</p></li></ul></li><li><p>阿里云容器服务Kubernetes弹性调度资源：</p><p>通过调度与资源解耦的两层弹性模型来解决的，当集群的调度水位达到设置的阈值时会触发资源蹭的弹性扩容，当资源弹出后，无法调度的单元会自动调度到新弹出的节点上，从而降低整个应用的负载情况</p></li><li><p>阿里云容器服务ACK集群调度层弹性组件：</p><ul><li><p>容器水平伸缩(HPA)</p></li><li><p>容器垂直伸缩(VPA)</p></li><li><p>容器定时伸缩(CronHPA)</p></li></ul></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;p&gt;弹性伸缩是ACK特点功能之一，典型的场景包括：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;在线业务弹性&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;大规模计算训</summary>
       
     
     
