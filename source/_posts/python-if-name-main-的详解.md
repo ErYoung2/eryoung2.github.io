@@ -2,7 +2,7 @@
 title: python if __name == __main__的详解
 date: 2023-03-20 16:55:47
 tags: python
-categories: 概念
+categories: 编程语言
 ---
 
 ## 前言
