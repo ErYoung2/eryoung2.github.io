@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-03-20T08:57:54.163Z</updated>
+  <updated>2023-03-20T10:03:03.795Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://eryoung2.github.io/2023/03/20/python-if-name-main-%E7%9A%84%E8%AF%A6%E8%A7%A3/"/>
     <id>http://eryoung2.github.io/2023/03/20/python-if-name-main-%E7%9A%84%E8%AF%A6%E8%A7%A3/</id>
     <published>2023-03-20T08:55:47.000Z</published>
-    <updated>2023-03-20T08:57:54.163Z</updated>
+    <updated>2023-03-20T10:03:03.795Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>对于python来说，我们经常会见到一行代码：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    balabala</span><br></pre></td></tr></table></figure><p>那这句话是啥意思呢？</p><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>首先要明白__name__是python当中的一个属性，代表现在主模块的引用。</p><p>如果调用的是本模块(python文件相当于模块)，那么默认的name就是_main__了。如果不是的话，name就会设置为引用模块的名称。</p><p>例如我有两个py文件，cal.py和hello.py，其中hello.py会引用cal.py。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#cal.py</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">return_max</span>(<span class="params">num1, num2</span>):</span><br><span class="line">    <span class="keyword">if</span> num1 &gt;= num2:</span><br><span class="line">        <span class="keyword">return</span> num1</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> num2</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">num = return_max(<span class="number">3</span>,<span class="number">5</span>)</span><br><span class="line"><span class="built_in">print</span>(num)</span><br><span class="line"><span class="built_in">print</span>(__name__) <span class="comment">#显示为__main__</span></span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#hello.py</span></span><br><span class="line"><span class="keyword">import</span> cal</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(cal.__name__) <span class="comment">#显示为cal</span></span><br></pre></td></tr></table></figure><p>按照上面的说法，这时如果我们运行hello.py, 跑出来的就不是hello.py的内容而是cal.py内容了。</p><p>而如果我加了这行判断，就不会出现这个问题。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br></pre></td></tr></table></figure><h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>这个概念对于python是非常重要的，主要是为了防止引用混乱的问题。</p>]]></content>
     
@@ -34,7 +34,7 @@
     
     
     
-    <category term="概念" scheme="http://eryoung2.github.io/categories/%E6%A6%82%E5%BF%B5/"/>
+    <category term="编程语言" scheme="http://eryoung2.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
     
     
     <category term="python" scheme="http://eryoung2.github.io/tags/python/"/>
