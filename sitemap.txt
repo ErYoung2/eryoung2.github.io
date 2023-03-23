@@ -1,3 +1,4 @@
+http://eryoung2.github.io/2023/03/24/Sailing/
 http://eryoung2.github.io/2023/03/22/Mac%E8%BF%9E%E6%8E%A5Win%E7%9A%84%E6%96%B9%E6%B3%95/
 http://eryoung2.github.io/2023/03/20/python-if-name-main-%E7%9A%84%E8%AF%A6%E8%A7%A3/
 http://eryoung2.github.io/2023/03/19/Mac-mini%E4%BD%BF%E7%94%A8iphone%E6%91%84%E5%83%8F%E5%A4%B4/
@@ -93,6 +94,7 @@ http://eryoung2.github.io/tags/%E7%BD%91%E7%BB%9C/
 http://eryoung2.github.io/tags/Mac/
 http://eryoung2.github.io/tags/%E4%B8%89%E4%BD%93/
 http://eryoung2.github.io/tags/python/
+http://eryoung2.github.io/tags/Classic/
 http://eryoung2.github.io/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/
 http://eryoung2.github.io/categories/%E5%AE%B9%E5%99%A8/
 http://eryoung2.github.io/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/
