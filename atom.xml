@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-04-04T07:15:30.730Z</updated>
+  <updated>2023-04-06T18:19:00.454Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,43 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>各云厂商常见服务对比</title>
+    <link href="http://eryoung2.github.io/2023/04/07/%E5%90%84%E4%BA%91%E5%8E%82%E5%95%86%E5%B8%B8%E8%A7%81%E6%9C%8D%E5%8A%A1%E5%AF%B9%E6%AF%94/"/>
+    <id>http://eryoung2.github.io/2023/04/07/%E5%90%84%E4%BA%91%E5%8E%82%E5%95%86%E5%B8%B8%E8%A7%81%E6%9C%8D%E5%8A%A1%E5%AF%B9%E6%AF%94/</id>
+    <published>2023-04-06T18:14:50.000Z</published>
+    <updated>2023-04-06T18:19:00.454Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><table><thead><tr><th></th><th>AWS</th><th>AZure</th><th>GCP</th><th>阿里云</th></tr></thead><tbody><tr><td>服务器</td><td>EC2</td><td>VM</td><td>Compute Engine</td><td>ECS</td></tr><tr><td>对象存储</td><td>S3</td><td>AZure Blob Storage</td><td>Cloud Storage</td><td>OSS</td></tr><tr><td>网络</td><td>VPC</td><td>AZure Virtual Network</td><td>VPC</td><td>VPC</td></tr><tr><td>镜像服务</td><td>ECS</td><td>AZure Container Registry</td><td>Container Registry</td><td>ACR</td></tr><tr><td>容器服务(K8S)</td><td>EKS</td><td>AKS</td><td>GKE</td><td>ACK</td></tr><tr><td>容器服务(Serverless)</td><td>Lambda</td><td>AZure functions</td><td>KNative</td><td>ASK</td></tr><tr><td>队列</td><td>SQS</td><td>AZure Queue</td><td>Cloud Pub&#x2F;Sub</td><td>MNS</td></tr><tr><td>…</td><td></td><td></td><td></td><td></td></tr></tbody></table><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>服务太多了，仅仅列举最常见的几项。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;正文&quot;&gt;&lt;a href=&quot;#正文&quot; class=&quot;headerlink&quot; title=&quot;正文&quot;&gt;&lt;/a&gt;正文&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;AWS&lt;/th&gt;
+&lt;th&gt;AZure&lt;/th&gt;
+&lt;th&gt;GCP&lt;/th&gt;
+&lt;</summary>
+      
+    
+    
+    
+    <category term="云服务" scheme="http://eryoung2.github.io/categories/%E4%BA%91%E6%9C%8D%E5%8A%A1/"/>
+    
+    
+    <category term="AWS" scheme="http://eryoung2.github.io/tags/AWS/"/>
+    
+    <category term="AZure" scheme="http://eryoung2.github.io/tags/AZure/"/>
+    
+    <category term="GCP" scheme="http://eryoung2.github.io/tags/GCP/"/>
+    
+    <category term="阿里云" scheme="http://eryoung2.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
+    
+  </entry>
   
   <entry>
     <title>AWS IAM介绍</title>
@@ -478,30 +515,6 @@
       
     <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;我们都知道，ACK与ASK是阿里云两种不同的业务形态，那么它们有何异同呢？&lt;/p&gt;
 &lt;h2 id=&quot;ASK的容器是一等公民&quot;&gt;&lt;a href</summary>
-      
-    
-    
-    
-    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
-    
-    
-    <category term="阿里云ACP认证" scheme="http://eryoung2.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91ACP%E8%AE%A4%E8%AF%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ACP云原生容器工程师 - ASK概述与产品介绍</title>
-    <link href="http://eryoung2.github.io/2023/03/11/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ASK%E6%A6%82%E8%BF%B0%E4%B8%8E%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D/"/>
-    <id>http://eryoung2.github.io/2023/03/11/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ASK%E6%A6%82%E8%BF%B0%E4%B8%8E%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D/</id>
-    <published>2023-03-11T07:35:23.000Z</published>
-    <updated>2023-03-11T09:23:00.624Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="Serverless基本概念"><a href="#Serverless基本概念" class="headerlink" title="Serverless基本概念"></a>Serverless基本概念</h3><p>对于传统云服务来说，我们需要购买的基础设施是服务器节点ECS，然后在ECS上自行部署应用或者部署其余付费应用，但是我们为了更好地适应应用的使用情况，有时并不需要ECS支持，这样可以更轻量地部署应用，成本也会更低。这就是阿里云无服务Kubernetes(ASK)的基本概念。</p><ul><li><p>特点：</p><ul><li><p>用户无需购买和管理服务器</p></li><li><p>直接部署容器应用</p></li><li><p>提高容器应用部署的敏捷度和弹性能力</p></li><li><p>降低用户计算成本</p></li><li><p>让用户聚焦业务应用</p></li></ul></li><li><p>优势：</p><ul><li><p>敏捷部署、安全隔离、生态链接、高移植性</p></li><li><p>无需节点容量规划</p></li><li><p>无需OS和系统软件维护</p></li><li><p>零基础设施运维</p></li><li><p>“无限”容量、秒级扩容、基于容器扩容</p></li><li><p>更高的资源利用率、更低计算成本</p></li></ul></li></ul><h3 id="发展趋势"><a href="#发展趋势" class="headerlink" title="发展趋势"></a>发展趋势</h3><ul><li><p>两种技术趋势的整合</p><ul><li><p>云平台托管的后台服务BaaS</p></li><li><p>无状态计算模型：函数服务FaaS</p></li></ul></li><li><p>Gartner</p><ul><li>到2023年，70% AI任务会通过容器、Serverless等计算模型构建</li></ul></li><li><p>AWS</p><ul><li>在2019年 40%的ECS新客户采用Serverless Container</li></ul></li><li><p>采纳Serverless技术的行业广泛</p><ul><li>外包经济、金融业、服务业</li></ul></li><li><p>Serverless是云计算必经的一场革命，会越来越流行</p></li></ul><h3 id="架构思考"><a href="#架构思考" class="headerlink" title="架构思考"></a>架构思考</h3><ul><li><p>Serverless场景的容器不是部署在传统的ECS上，而是部署在ECI上。然而ECS和ECI并不冲突，可以混合使用</p></li><li><p>不同于标准K8s，Serverless K8s与IaaS基础设施深度融合，其产品模式更利于公有云厂商通过技术创新，提升规模、效率和能力</p></li><li><p>Serverless也分成容器编排和计算资源池两层。</p></li><li><p>Serverless的几个技术要点：声明式API、可扩展性架构、可移植性</p></li></ul><h3 id="架构设计"><a href="#架构设计" class="headerlink" title="架构设计"></a>架构设计</h3><ul><li><p>Serverless并不是一个单独的技术，必须兼容Kuubernetes生态，提供K8s的核心价值，此外要能和云的能力深度整合。</p></li><li><p>用户可以直接使用Kubernetes的声明式API，Deployment、StatefulSet、Job、Service等无需修改</p></li><li><p>全兼容Kuberenetes的扩展机制，这样才能让Serverless Kubernetes支持更多的工作负载，此外Serverless K8s自身的组件也是严格遵守K8s的状态逼近的控制模式</p></li><li><p>Kubernetes的能力尽可能充分利用云的能力来实现，比如资源的调度、负载均衡、服务发现等。根本性简化容器平台的设计，提升规模，降低用户运维复杂性</p></li><li><p>这些实现应该对用户透明，保证可移植性，让用户现有应用可以平滑部署在Serverless K8s之上，也应该允许用户应用混合部署在传统容器和Serverless容器之上</p></li></ul><h3 id="Nodeless"><a href="#Nodeless" class="headerlink" title="Nodeless"></a>Nodeless</h3><ul><li><p>对于传统的Kubernetes来说，采用以节点为中心的架构设计：</p><ul><li><p>节点是Pod的运行载体，Kubernetes调度器在工作节点池中选择合适的node来运行pod，并利用kubelet完成对pod进行生命周期管理和自动化运维</p></li><li><p>当节电池资源不够时，需要对节点池进行扩容，再对容器化应用进行扩容</p></li></ul></li><li><p>对于Serverless Kubernetes来说</p><ul><li><p>没有节点这个概念</p></li><li><p>容器化应用是一等公民</p></li><li><p>极大简化容器弹性实现，无需按照容量规划，按需创建容器应用pod即可</p></li><li><p>Serverless容器运行时可以被整个晕弹性计算基础设施所支撑，保障整体弹性的成本和规模</p></li></ul></li></ul><h3 id="现有产品的架构"><a href="#现有产品的架构" class="headerlink" title="现有产品的架构"></a>现有产品的架构</h3><h4 id="初始架构-Viking"><a href="#初始架构-Viking" class="headerlink" title="初始架构-Viking"></a>初始架构-Viking</h4><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/11-16-21-12-%E6%88%AA%E5%B1%8F2023-03-11%2016.20.47.png"></p><h4 id="优化方向"><a href="#优化方向" class="headerlink" title="优化方向"></a>优化方向</h4><ol><li><p>可伸缩性 - ECI</p></li><li><p>基于云的控制器实现 - PrivateZone、SLB、SLB&#x2F;ALB</p></li><li><p>面向负载的深度优化 - Knative、垂直优化</p></li></ol><h2 id="ASK产品介绍"><a href="#ASK产品介绍" class="headerlink" title="ASK产品介绍"></a>ASK产品介绍</h2><ul><li><p>是阿里云推出的无服务器Kubernetes容器服务</p></li><li><p>无需购买节点即可直接部署容器应用，无需对集群进行节点维护和容量规划，并且饿根据应用配置的CPU和内存资源量进行按需付费（非包年包月，因为没有制程规格的节点）</p></li><li><p>提供完善的Kubernetes兼容能力，同时降低了Kubernetes使用门槛，更专注于应用本身，而不是基础设施</p></li><li><p>ASK集群中的Pod给予阿里云弹性容器实例ECI运行在安全隔离的容器运行环境中</p></li><li><p>每个Pod容器实例底层通过轻量级虚拟化安全沙箱技术完全抢格力，容器实例间互不影响。</p></li></ul><h3 id="核心优势"><a href="#核心优势" class="headerlink" title="核心优势"></a>核心优势</h3><ol><li><p>简单易用：无门槛，秒级部署容器应用</p></li><li><p>秒级伸缩：无需担心集群容量规划</p></li><li><p>安全隔离：通敌底层沙箱进行强安全隔离</p></li><li><p>降低成本：按需计费，无资源闲置费用</p></li><li><p>原生兼容：支持原生k8s应用和生态，service、helm、ingress等</p></li><li><p>服务集成：支持与其他云组件(数据库、vpc中现有应用直接交汇)</p></li></ol><h3 id="无节点管理-nodeless"><a href="#无节点管理-nodeless" class="headerlink" title="无节点管理(nodeless)"></a>无节点管理(nodeless)</h3><ul><li><p>更多专注于应用的开发，而不是基础设施的维护。更多关注pod&#x2F;service&#x2F;ingress&#x2F;job等应用编排语义上，更少对底层node进行关注。</p></li><li><p>无需管理节点也可以显著降低集群的运维管理成本，比如node的安全管理、监控&#x2F;日志管理、基础系统软件的升级和维护</p></li><li><p>在ASK集群中，我们使用虚拟节点virtual-kubelet代替ECS节点，此virtual-kubelet节点的容量可以认为是“无限大”，用户无需为集群的容量担忧，无需预先做容量规划</p></li></ul><h3 id="Serverless-kubernetes-vs-Classic-Kubernetes"><a href="#Serverless-kubernetes-vs-Classic-Kubernetes" class="headerlink" title="Serverless kubernetes vs Classic Kubernetes"></a>Serverless kubernetes vs Classic Kubernetes</h3><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/11-16-38-33-%E6%88%AA%E5%B1%8F2023-03-11%2016.38.25.png"></p><h3 id="无Master管理与极简的K8s"><a href="#无Master管理与极简的K8s" class="headerlink" title="无Master管理与极简的K8s"></a>无Master管理与极简的K8s</h3><ul><li><p>与ACK托管版一样，ASK的Master等资源(apiserver, ccm, kcm等)被容器服务平台托管，用户无需管理这些核心组件的升级和运维，也不需要成本</p></li><li><p>ASK对Kubernetes进行大量简化，包括默认托管很多addon，用户无需在管理一些基础的addon，也不需要对此付费</p></li><li><p>依赖阿里元原生的网络和存储等能力，以及独特的托管架构设计，ASK提供了极简但功能完备的Kubernetes基础运行环境</p></li></ul><h3 id="简化弹性伸缩"><a href="#简化弹性伸缩" class="headerlink" title="简化弹性伸缩"></a>简化弹性伸缩</h3><ul><li><p>因为无需管理节点和容量规划，当集群需要扩容时也就不需要考虑节点层面的扩容，只需要关注pod的扩容，这对于扩容的速度和效率都是极大的提升</p></li><li><p>ASK&#x2F;ECI的方式被刻意用来快速应对业务流量高峰</p></li><li><p>当前ASK&#x2F;ECI支持30s完全启动500个pod，单个pod启动可以达到10s以内</p></li></ul><h3 id="更低的成本"><a href="#更低的成本" class="headerlink" title="更低的成本"></a>更低的成本</h3><ul><li><p>除去ASK集群本身的低成本创建外，pod的按需使用也让很多场景下资源利用率达到最优。对于很多Jobs或者数据计算场景而言，用户并不需要长期维护一个固定的资源池，这时ASK&#x2F;ECI可以很好地支持这些诉求</p></li><li><p>若pod一天运行少于16小时，使用ASK更加经济实惠；若超过16小时，使用ACK更加经济实惠。</p></li></ul><h3 id="ECI-快速交付容器资源的弹性计算服务"><a href="#ECI-快速交付容器资源的弹性计算服务" class="headerlink" title="ECI: 快速交付容器资源的弹性计算服务"></a>ECI: 快速交付容器资源的弹性计算服务</h3><ul><li><p>ECI是阿里云基于ECS IaaS资源池提供的稳定、高效、高弹性容器实例服务</p></li><li><p>ECI让容器成为了公有云的一等公民，用户无需购买和管理ECS就可以直接部署容器应用，这种假话的容器实例产品形态和ASK形成了一个完美地组合</p></li><li><p>用户可以直接使用ECI Open API创建容器资源实例，但在容器场景中用户普遍需要一个编排系统，来负责容器的调度、高可用编排等能力，而ASK正式这样的Kubernetes编排层。</p></li><li><p>对于ASK而言</p><ul><li><p>ECI让ASK容器服务免去了搭建后台计算资源池的必要，更不用为底层计算资源池的容量而担忧</p></li><li><p>基于ECI就意味着基于整个阿里云IaaS规模化资源池，天然拥有了库存和弹性优势</p></li><li><p>另外ECI和ECS复用资源池意味着 我们可以最大化释放规模化红利，给用户提供更低成本的计算服务</p></li></ul></li></ul><h3 id="容器生态支持"><a href="#容器生态支持" class="headerlink" title="容器生态支持"></a>容器生态支持</h3><ul><li><p>ASK比较适合的场景：</p><ul><li><p>CI&#x2F;CD</p></li><li><p>数据计算</p></li><li><p>AI</p></li><li><p>ServiceMesh</p></li><li><p>测试</p></li></ul></li><li><p>ASK集群不支持Helm v2，近期ACK&#x2F;ASK会发布Helm v3的支持，之后用户可以非常方便地在ASK集群中部署Charts</p></li></ul><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul><li><p>ASK基本概念</p></li><li><p>ASK产品介绍</p></li><li><p>ASK优势</p></li><li><p>ASK架构介绍与思考</p></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot; title=&quot;基本概念&quot;&gt;&lt;/a&gt;基本概念&lt;/h2&gt;&lt;h3 id=&quot;Serverless基本概念&quot;&gt;&lt;a href=&quot;#Serverless基本概念&quot; class=&quot;headerli</summary>
       
     
     
