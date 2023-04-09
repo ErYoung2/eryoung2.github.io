@@ -5,13 +5,9 @@ tags: AWS
 categories: 云服务
 ---
 
-
-
 ## 前言
 
 AWS是世界上最大的云服务提供商，它提供了很多组件供消费者使用，其中进行访问控制的组件叫做IAM(Identity and Access Management)， 用来进行身份验证和对AWS资源的访问控制。
-
-
 
 ## 功能
 
@@ -20,8 +16,6 @@ IAM的功能总结来看，主要分两种：
 * 验证身份(Authentication)
 
 * 授权访问(Authorization)
-
-
 
 ### 验证身份
 
@@ -35,15 +29,11 @@ IAM的功能总结来看，主要分两种：
 
 * 角色(role)，其余AWS资源，例如EC2实例、Lambda函数等
 
-
-
 对于用户来说，我们在控制台看到的是一个用户名，实际上在后台，它是一串资源字符串：
 
 ```shell
 arn:aws:iam::account-ID-without-hyphens:user/User-name
 ```
-
-
 
 确认方式有以下几种：
 
@@ -54,8 +44,6 @@ arn:aws:iam::account-ID-without-hyphens:user/User-name
 3. AWS产品开发包(SDK)，使用Access Key/Secret Key进行认证
 
 4. Restful API，使用Access Key/Secret Key进行认证
-
-
 
 ### 设定权限
 
@@ -115,8 +103,6 @@ Policy和Statement是一对多的关系，也就是说，一个Policy可以包�
 
 3. Resource，指明这次的Statement是对哪个资源做动作
 
-
-
 #### Resource-Based Policy
 
 这里的Policy是针对资源本身的层级。
@@ -133,15 +119,11 @@ Policy和Statement是一对多的关系，也就是说，一个Policy可以包�
 
 4. Principle，将自己的资源套用给谁
 
-
-
 #### Identified-Based Policy和Resource-Based Policy的区别
 
 1. Identified-Based Policy是Policy层级的，而Resource-Based Policy是Statement层级的，Identified-Based Policy比Resource-Based Policy高了一级
 
 2. Identified-Based Policy是从用户角度来看待权限管理的，而Resource-Based Policy是从资源角度来看待权限管理的。
-
-
 
 ## 小结
 
@@ -150,8 +132,6 @@ Policy和Statement是一对多的关系，也就是说，一个Policy可以包�
 2. 用户、用户组、角色的介绍
 
 3. Policy的介绍，Identified-Based Policy和Resource-Based Policy的介绍和对比
-
-
 
 ## 参考与鸣谢
 
