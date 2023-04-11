@@ -19,7 +19,7 @@ categories: 文档
 
 转发路由器的配置复杂度比较低，同时支持丰富的路由策略及QoS机制，可以实现复杂的组网及访问控制。然而，转发路由器自身具有带宽限制，同时也会收取流量处理费等费用，使用成本高于VPC对等连接。
 
-![](/Users/eryoung2/Library/Application%20Support/marktext/images/a728161555c13801aff00e30b8b92bdb3831abf9.png)
+![](https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/04/11-18-22-39-%E6%88%AA%E5%B1%8F2023-04-11%2018.15.35.png)
 
 ### VPC对等连接(Peer Connection)
 
@@ -27,7 +27,7 @@ categories: 文档
 
 通过VPC对等连接实现不同VPC私网互通时，由于VPC对等连接的配置方式以及点对点的路由配置，当需要互联的VPC数目增多时，相应地配置复杂度也会增大，因此不适合大量VPC全连通的场景。然而，VPC对等连接具备无带宽限制、延迟低、同地域不收费等优点。
 
-![](/Users/eryoung2/Library/Application%20Support/marktext/images/a126ebe654a5af9e3309a791b128e95ead59591c.png)
+![](https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/04/11-18-22-45-%E6%88%AA%E5%B1%8F2023-04-11%2018.15.46.png)
 
 ### 私网连接
 
@@ -37,7 +37,7 @@ categories: 文档
 
 通过私网连接实现不同VPC互通时，无需考虑地址冲突和路由配置，网络配置简单。且私网连接本身提供了较强的网络隔离和访问控制能力，安全可控。但私网连接仅支持单向访问，即只允许特定方向的连接请求。
 
-![](/Users/eryoung2/Library/Application%20Support/marktext/images/36e80f76a3090bb5f2cf4e5d282794e096d3531a.png)
+![](https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/04/11-18-22-50-%E6%88%AA%E5%B1%8F2023-04-11%2018.15.56.png)
 
 ### VPN网关
 
@@ -45,7 +45,7 @@ categories: 文档
 
 通过VPN网关实现不同VPC私网互通时，由于需要创建VPN网关、用户网关和IPSec连接，还需要为VPN网关配置路由，因此配置复杂度高，不适合大量VPC连通的场景。
 
-![](/Users/eryoung2/Library/Application%20Support/marktext/images/5886cc5b1f5caece294e352f4c8494b9e6ae01f7.png)
+![](https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/04/11-18-22-57-%E6%88%AA%E5%B1%8F2023-04-11%2018.16.04.png)
 
 ## 对比
 
