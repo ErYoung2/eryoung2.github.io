@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-04-06T18:19:00.454Z</updated>
+  <updated>2023-04-11T10:20:41.906Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>阿里云 连通不同VPC方案</title>
+    <link href="http://eryoung2.github.io/2023/04/11/%E9%98%BF%E9%87%8C%E4%BA%91-%E8%BF%9E%E9%80%9A%E4%B8%8D%E5%90%8CVPC%E6%96%B9%E6%A1%88/"/>
+    <id>http://eryoung2.github.io/2023/04/11/%E9%98%BF%E9%87%8C%E4%BA%91-%E8%BF%9E%E9%80%9A%E4%B8%8D%E5%90%8CVPC%E6%96%B9%E6%A1%88/</id>
+    <published>2023-04-11T10:09:24.000Z</published>
+    <updated>2023-04-11T10:20:41.906Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>阿里云不同VPC之间互通的方法，共4种，仅供参考。</p><h2 id="VPC互联"><a href="#VPC互联" class="headerlink" title="VPC互联"></a>VPC互联</h2><h3 id="云企业网-CEN"><a href="#云企业网-CEN" class="headerlink" title="云企业网(CEN)"></a>云企业网(CEN)</h3><p>在您使用云企业网进行跨VPC互联时，您需要提前做好网络规划，确保需要互通的网段没有重叠。</p><p>云企业网通过转发路由器帮助您在跨地域或同地域VPC之间搭建私网通信通道。转发路由器通过Hub-Spoke的连接方式，只需要VPC以网络连接的方式加入转发路由器，转发路由器便会自动同步路由。</p><p>转发路由器的配置复杂度比较低，同时支持丰富的路由策略及QoS机制，可以实现复杂的组网及访问控制。然而，转发路由器自身具有带宽限制，同时也会收取流量处理费等费用，使用成本高于VPC对等连接。</p><p><img src="/Users/eryoung2/Library/Application%20Support/marktext/images/a728161555c13801aff00e30b8b92bdb3831abf9.png"></p><h3 id="VPC对等连接-Peer-Connection"><a href="#VPC对等连接-Peer-Connection" class="headerlink" title="VPC对等连接(Peer Connection)"></a>VPC对等连接(Peer Connection)</h3><p>在您使用VPC对等连接进行跨VPC互联时，您需要提前做好网络规划，建议需要互通的CIDR地址段不要重叠。</p><p>通过VPC对等连接实现不同VPC私网互通时，由于VPC对等连接的配置方式以及点对点的路由配置，当需要互联的VPC数目增多时，相应地配置复杂度也会增大，因此不适合大量VPC全连通的场景。然而，VPC对等连接具备无带宽限制、延迟低、同地域不收费等优点。</p><p><img src="/Users/eryoung2/Library/Application%20Support/marktext/images/a126ebe654a5af9e3309a791b128e95ead59591c.png"></p><h3 id="私网连接"><a href="#私网连接" class="headerlink" title="私网连接"></a>私网连接</h3><p>私网连接能够将终端节点所在的VPC与终端节点服务所在VPC通过终端节点连接，建立安全稳定的私有连接，配置灵活，可满足不同的应用场景。私网连接不支持跨地域连接，只支持同可用区互联。</p><p>使用私网连接实现VPC互通时，需要互通的终端节点所在VPC与终端节点服务所在VPC的网段可以重叠且互不影响。</p><p>通过私网连接实现不同VPC互通时，无需考虑地址冲突和路由配置，网络配置简单。且私网连接本身提供了较强的网络隔离和访问控制能力，安全可控。但私网连接仅支持单向访问，即只允许特定方向的连接请求。</p><p><img src="/Users/eryoung2/Library/Application%20Support/marktext/images/36e80f76a3090bb5f2cf4e5d282794e096d3531a.png"></p><h3 id="VPN网关"><a href="#VPN网关" class="headerlink" title="VPN网关"></a>VPN网关</h3><p>在您使用VPN网关进行跨VPC互联时，您需要提前做好网络规划，确保需要互通的网段没有重叠。</p><p>通过VPN网关实现不同VPC私网互通时，由于需要创建VPN网关、用户网关和IPSec连接，还需要为VPN网关配置路由，因此配置复杂度高，不适合大量VPC连通的场景。</p><p><img src="/Users/eryoung2/Library/Application%20Support/marktext/images/5886cc5b1f5caece294e352f4c8494b9e6ae01f7.png"></p><h2 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h2><table><thead><tr><th>对比项</th><th>VPC对等连接</th><th>转发路由器</th><th>私网连接</th><th>VPN网关</th></tr></thead><tbody><tr><td>连接方式</td><td>Full Mesh全连接方式，VPC两两之间建立对等连接。</td><td>Hub-Spoke连接方式，VPC以网络连接方式加入转发路由器。</td><td>基于业务网元的连接，类似于物理网络中负载均衡、防火墙等设备的连接。</td><td>VPC两两之间通过VPN建立连接。</td></tr><tr><td>路由传播</td><td>不支持</td><td>支持</td><td>不支持</td><td>支持</td></tr><tr><td>带宽限制</td><td>带宽无限制</td><td>受限于转发路由器的处理能力。</td><td>受限于终端节点服务侧的带宽。</td><td>受限于VPN网关的ECS实例，最高支持1 Gbps。</td></tr><tr><td>配置复杂度</td><td>复杂度高，需要两两建立对等关系并相互配置对端路由。</td><td>复杂度低，VPC只需要加入转发路由器并配置路由指向转发路由器的网络连接即可。</td><td>复杂度低，私网连接无需考虑地址冲突和路由配置，网络配置简单。</td><td>配置复杂度高，需要创建VPN网关、用户网关和IPSec连接，并为VPN网关配置路由。</td></tr><tr><td>支持互联VPC数目</td><td>最多支持20个</td><td>最多支持200个</td><td>无限制，超出配额可申请提升。</td><td>最多支持10个</td></tr><tr><td>延迟</td><td>延迟低</td><td>由于流量经过转发路由器，会增加额外一跳的延迟。</td><td>延迟低，私网连接只支持同可用区互联。</td><td>延迟高，跨地域需要经过公网转发。</td></tr><tr><td>收费</td><td>同地域不收费，跨地域统一由云数据传输CDT（Cloud DataTransfer）收取出方向流量传输费。更多信息，请参见<a href="https://help.aliyun.com/document_detail/328643.htm#topic-2127154">什么是云数据传输</a>。</td><td>同地域收取连接费、流量处理费，跨地域收取带宽包实例费、连接费和流量处理费。更多信息，请参见<a href="https://help.aliyun.com/document_detail/189836.htm#concept-1985505">计费说明</a>。</td><td>私网连接开通时不产生费用。开通成功后，根据私网连接服务的实际使用量进行计费，按每小时出账。费用包含实例费和流量处理费。更多信息，请参见<a href="https://help.aliyun.com/document_detail/198081.htm#concept-2021702">计费说明</a>。</td><td>收取IPsec-VPN实例费、带宽费。更多信息，请参见 <a href="https://help.aliyun.com/document_detail/64984.htm#concept-c2z-svx-wdb">计费说明</a>。</td></tr></tbody></table><h2 id="所有VPC互联方案配置总结"><a href="#所有VPC互联方案配置总结" class="headerlink" title="所有VPC互联方案配置总结"></a>所有VPC互联方案配置总结</h2><table><thead><tr><th>方案分类</th><th>配置方法</th></tr></thead><tbody><tr><td>云企业网</td><td>- 同地域VPC互通<a href="https://help.aliyun.com/document_detail/208591.htm#task-2047481">使用云企业网实现同地域云上云下网络互通（企业版）</a><br>- 跨地域VPC互通<br>  - <a href="https://help.aliyun.com/document_detail/404839.htm#task-2293645">使用云企业网实现跨地域跨账号VPC互通（企业版）</a><br>  - <a href="https://help.aliyun.com/document_detail/65901.htm#task-2293645">使用云企业网实现跨地域跨账号VPC互通（基础版）</a></td></tr><tr><td>VPC对等连接</td><td>- <a href="https://help.aliyun.com/document_detail/418508.htm#task-2198119">创建和管理VPC对等连接</a><br>- <a href="https://help.aliyun.com/document_detail/450505.htm#task-2225667">VPC对等连接使用示例</a></td></tr><tr><td>私网连接</td><td>- 同账号VPC互通<br>  - <a href="https://help.aliyun.com/document_detail/174058.htm#task-1512598">私网连接支持将CLB作为服务资源</a><br>  - <a href="https://help.aliyun.com/document_detail/425746.htm#task-2206671">私网连接支持将ALB作为服务资源</a><br>- 跨账号VPC互通<a href="https://help.aliyun.com/document_detail/174059.htm#task-1512598">跨账号VPC间的私网访问服务</a></td></tr><tr><td>VPN网关</td><td><a href="https://help.aliyun.com/document_detail/65073.htm?spm=a2c4g.97766.0.0.10e57571NTnyta#concept-c4h-slz-wdb">建立VPC到VPC的连接</a></td></tr></tbody></table><h2 id="文档来源"><a href="#文档来源" class="headerlink" title="文档来源"></a>文档来源</h2><p><a href="https://help.aliyun.com/document_detail/97766.html">云企业网和VPN网关连接不同VPC的优势和方法_专有网络VPC-阿里云帮助中心</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;阿里云不同VPC之间互通的方法，共4种，仅供参考。&lt;/p&gt;
+&lt;h2 id=&quot;VPC互联&quot;&gt;&lt;a href=&quot;#VPC互联&quot; class=&quot;h</summary>
+      
+    
+    
+    
+    <category term="文档" scheme="http://eryoung2.github.io/categories/%E6%96%87%E6%A1%A3/"/>
+    
+    
+    <category term="阿里云" scheme="http://eryoung2.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
+    
+  </entry>
   
   <entry>
     <title>各云厂商常见服务对比</title>
@@ -490,31 +515,6 @@
       
     <summary type="html">&lt;h2 id=&quot;ECI概述&quot;&gt;&lt;a href=&quot;#ECI概述&quot; class=&quot;headerlink&quot; title=&quot;ECI概述&quot;&gt;&lt;/a&gt;ECI概述&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;弹性容器实例ECI是阿里云在云原生时代为用户提供的基础计算服务，是阿里云云原生时代下的云计算基础设</summary>
-      
-    
-    
-    
-    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
-    
-    
-    <category term="阿里云ACP认证" scheme="http://eryoung2.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91ACP%E8%AE%A4%E8%AF%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ACP云原生容器工程师 - ACK对比ASK</title>
-    <link href="http://eryoung2.github.io/2023/03/12/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E5%AF%B9%E6%AF%94ASK/"/>
-    <id>http://eryoung2.github.io/2023/03/12/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ACK%E5%AF%B9%E6%AF%94ASK/</id>
-    <published>2023-03-12T06:36:38.000Z</published>
-    <updated>2023-03-12T07:02:34.510Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我们都知道，ACK与ASK是阿里云两种不同的业务形态，那么它们有何异同呢？</p><h2 id="ASK的容器是一等公民"><a href="#ASK的容器是一等公民" class="headerlink" title="ASK的容器是一等公民"></a>ASK的容器是一等公民</h2><p>由于ACK需要先部署ECS，然后在ECS上部署应用容器，这时容器就是二等公民；</p><p>而ASK无需部署ECS，可以直接在ECI上部署应用容器，因此容器是一等公民。</p><h2 id="ASK适用场景"><a href="#ASK适用场景" class="headerlink" title="ASK适用场景"></a>ASK适用场景</h2><p>由于ASK的弹性伸缩能力较ACK更强更灵活，所以适用场景均为弹性相关。</p><ol><li><p>应用托管</p></li><li><p>在线业务弹性</p></li><li><p>数据计算</p></li><li><p>CI&#x2F;CD持续集成</p></li><li><p>定时任务</p></li><li><p>测试环境</p></li></ol><h2 id="ASK核心功能"><a href="#ASK核心功能" class="headerlink" title="ASK核心功能"></a>ASK核心功能</h2><h3 id="虚拟节点"><a href="#虚拟节点" class="headerlink" title="虚拟节点"></a>虚拟节点</h3><ul><li><p>ASK集群中基于虚拟节点创建Pod</p><ul><li>虚拟节点实现了Kubernetes与弹性容器实例ECI的无缝连接，让Kubernetes集群获得极大的弹性能力，而不必关心底层计算虚拟容量。可通过客户端查看服务情况，虚拟节点不占用任何计算资源。</li></ul></li></ul><h3 id="Pod安全隔离"><a href="#Pod安全隔离" class="headerlink" title="Pod安全隔离"></a>Pod安全隔离</h3><ul><li><p>ASK集群中的Pod基于阿里云弹性容器实例ECI运行在安全隔离的容器运行环境中。</p></li><li><p>每个容器实例底层通过轻量级虚拟化安全沙箱技术完全强隔离，容器实例间互不影响。</p></li><li><p>实例在调度时尽可能分布在不同的物理机上，进一步保障了高可用性。</p></li><li><p>ECI的容器实例底层运行在Allibaba Cloud Linux2操作系统之上，ASK集群作为Serverless容器服务，您无法访问ECI底层OS运行环境。另外，此系统可免费使用。</p></li></ul><h3 id="Pod配置"><a href="#Pod配置" class="headerlink" title="Pod配置"></a>Pod配置</h3><ul><li><p>Pod基于弹性容器实例ECI创建，支持原生的Kubernetes Pod功能，包括启动多个容器、设置启动多个容器、设置环境变量、设置RestartPolicy、设置健康检查命令和挂载Volume、preStop等。</p></li><li><p>同时支持执行命令kubectl logs访问容器日志和智行kubectl exec进入容器</p></li><li><p>ECI支持多种规格配置的方式来申请资源和计费</p><ul><li><p>制定CPU和Memory，包括容器和pod两种</p></li><li><p>制定Pod的ECS规格</p></li><li><p>抢占式实例</p></li></ul></li></ul><h3 id="应用负载管理"><a href="#应用负载管理" class="headerlink" title="应用负载管理"></a>应用负载管理</h3><ul><li><p>支持Deployment、StatefulSet、Job&#x2F;CronJob、Pod、CRD等原生Kubernetes负载类型。</p></li><li><p>不支持DaemonSet，Serverless集群中不支持节点相关的功能</p></li></ul><h3 id="弹性伸缩"><a href="#弹性伸缩" class="headerlink" title="弹性伸缩"></a>弹性伸缩</h3><ul><li><p>ASK集群中没有真实节点</p><ul><li><p>无需考虑节点的容量规划</p></li><li><p>无需考虑基于cluster-autoscaler的节点扩容</p></li><li><p>只考虑应用的按需扩容</p></li></ul></li><li><p>可配置HPA或CronHPA策略进行Pod的灵活按需扩容</p></li></ul><h3 id="网络管理"><a href="#网络管理" class="headerlink" title="网络管理"></a>网络管理</h3><ul><li><p>群众的ECI Pod默认使用Host网络模式，占用交换机VSwitch的一个弹性网卡ENI资源，与VPC内的ECS、RDS互联互通。</p><ul><li><p>Service：不支持Nodeport模式</p></li><li><p>Ingress：需要先安装Ingress Controller</p></li><li><p>服务发现：需要先开启PrivateZone</p></li><li><p>弹性公网：支持给ECI Node挂载EIP，或自动创建然后绑定到EIP实例上</p></li></ul></li></ul><h3 id="存储管理"><a href="#存储管理" class="headerlink" title="存储管理"></a>存储管理</h3><ul><li><p>Pod支持挂载阿里云块存储和文件存储</p><ul><li><p>阿里云块存储(EBS)，需要先创建DiskController</p></li><li><p>阿里云文件存储(NAS)，可使用NFS方式挂载NAS目录，无需安装flex-volume插件，可直接制定NAS目录</p></li></ul></li></ul><h3 id="日志管理"><a href="#日志管理" class="headerlink" title="日志管理"></a>日志管理</h3><ul><li><p>在ASK集群中无需部署logtail daemonset即可收集Pod的stdout和文件输出日志</p></li><li><p>在Serverless Kubernetes集群中将业务容器的标准输出和日志文件收集到阿里云日志服务</p></li><li><p>ECI模式下不支持DaemonSet，通过将Job类任务挂载NAS盘，把输出的日志存储在NAS盘，在通过另一个同样挂载NAS盘的Pod来采集Job任务标准输出到日志系统中</p></li><li><p>日志服务支持在ECI中通过Sidecar模式采集日志</p></li></ul><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/12-15-02-27-%E6%88%AA%E5%B1%8F2023-03-12%2015.02.04.png"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;我们都知道，ACK与ASK是阿里云两种不同的业务形态，那么它们有何异同呢？&lt;/p&gt;
-&lt;h2 id=&quot;ASK的容器是一等公民&quot;&gt;&lt;a href</summary>
       
     
     
