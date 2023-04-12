@@ -68,8 +68,6 @@ categories: 文档
 | 私网连接    | - 同账号VPC互通<br>  - [私网连接支持将CLB作为服务资源](https://help.aliyun.com/document_detail/174058.htm#task-1512598)<br>  - [私网连接支持将ALB作为服务资源](https://help.aliyun.com/document_detail/425746.htm#task-2206671)<br>- 跨账号VPC互通[跨账号VPC间的私网访问服务](https://help.aliyun.com/document_detail/174059.htm#task-1512598)                          |
 | VPN网关   | [建立VPC到VPC的连接](https://help.aliyun.com/document_detail/65073.htm?spm=a2c4g.97766.0.0.10e57571NTnyta#concept-c4h-slz-wdb)                                                                                                                                                                                                 |
 
-
-
 ## 文档来源
 
 [云企业网和VPN网关连接不同VPC的优势和方法_专有网络VPC-阿里云帮助中心](https://help.aliyun.com/document_detail/97766.html)
