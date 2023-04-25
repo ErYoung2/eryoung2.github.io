@@ -5,8 +5,6 @@ tags: git
 categories: 奇怪的东西
 ---
 
-
-
 ## 前言
 
 我们都知道，对于Github来说，当你选择你的账户时，可以看到自己的提交记录。
@@ -15,15 +13,11 @@ categories: 奇怪的东西
 
 有道理有道理，本文就来讲一下如何弄一条蛇出来。
 
-
-
 ## 创建步骤
 
 ### 创建个人仓库
 
 个人仓库是一个特殊的仓库，名字就是你的Github Account Name，比如我叫ErYoung2，我就建立一个叫做ErYoung2的仓库。
-
-
 
 ### 创建Github Actions
 
@@ -72,25 +66,17 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-
-
 ### 生成SVG文件
 
 点击Github Actions，选择上面添加的yml文件的workflow，进行构建。
 
 构建完毕之后，会发现仓库多了一个output分支，下面有两个SVG文件。
 
-
-
 ![](https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/04/12-10-39-14-%E6%88%AA%E5%B1%8F2023-04-12%2010.38.51.png)
-
-
 
 ### 添加README文件
 
 编辑README.md文件，添加你想添加的内容。在最后一行，可以添加SVG文件来运行贪吃蛇，可选择亮色或者暗色。
-
-
 
 ```markdown
 ![亮色](https://raw.githubusercontent.com/<你的账号名>/<你的仓库名>/output/github-contribution-grid-snake.svg)
@@ -98,8 +84,6 @@ jobs:
 
 ![暗色](https://raw.githubusercontent.com/<你的账号名>/<你的仓库名>/output/github-contribution-grid-snake-dark.svg)
 ```
-
-
 
 ## 运行
 
