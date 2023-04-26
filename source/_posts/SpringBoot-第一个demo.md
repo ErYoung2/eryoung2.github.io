@@ -5,8 +5,6 @@ tags: [java,spring]
 categories: 后端
 ---
 
-
-
 ## 前奏
 
 最近在面试，有一家公司在谈的时候，发了一份后端笔试题给我，是java的......
@@ -15,21 +13,13 @@ categories: 后端
 
 玛德现在都这么卷了吗，SRE要去卷java啦......
 
-
-
 ## SpringBoot
 
 对于Java的很多东西我并不懂，但是我知道写java的后端都会用到Spring全家桶，包括SpringBoot、SpringCloud、SpringSecurity等等。
 
-
-
 那怎么办呢，跟着卷呗。
 
-
-
 于是我就查了SpringBoot官网，写出了第一个demo -- helloworld
-
-
 
 ## HelloWorld
 
@@ -45,8 +35,6 @@ categories: 后端
 apt install openjdk-17-jre-headless -y
 ```
 
-
-
     如果机器上有多个jdk版本，需要将其设置为jdk17
 
 ```shell
@@ -61,8 +49,6 @@ There are 2 choices for the alternative java (providing /usr/bin/java).
 
 Press <enter> to keep the current choice[*], or type selection number: 0
 ```
-
-
 
 ### 正式步骤
 
@@ -93,8 +79,6 @@ Press <enter> to keep the current choice[*], or type selection number: 0
    }
    ```
 
-
-
 3. 运行，之后就会启动项目
    
    ```shell
@@ -121,22 +105,14 @@ Press <enter> to keep the current choice[*], or type selection number: 0
    2023-04-25T22:53:20.139+08:00  INFO 4040654 --- [           main] com.example.demo.DemoApplication         : Started DemoApplication in 1.34 seconds (process running for 1.725)
    ```
 
-
-
 4. 使用http://<server-ip>:8080/hello去访问8080端口
    
    ![](https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/04/25-22-55-44-%E6%88%AA%E5%B1%8F2023-04-25%2022.55.34.png)
 
-
-
 第一个项目就跑起来了。
-
-
 
 ## 后记
 
 目前这个就业环境真的很糟糕啊，裁员的裁员，降薪的降薪，作为一个小菜狗，能做的也只是提升自己的能力，扩展自己的眼界，开拓自己的心胸，保持良好的生活习惯，保持健康，保持向上，保持尊严。
-
-
 
 与诸君共勉！
