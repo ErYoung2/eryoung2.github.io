@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-04-26T08:22:46.263Z</updated>
+  <updated>2023-04-28T05:15:13.858Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>openwrt - 间歇性断网 - 解决方法</title>
+    <link href="http://eryoung2.github.io/2023/04/28/openwrt-%E9%97%B4%E6%AD%87%E6%80%A7%E6%96%AD%E7%BD%91-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    <id>http://eryoung2.github.io/2023/04/28/openwrt-%E9%97%B4%E6%AD%87%E6%80%A7%E6%96%AD%E7%BD%91-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</id>
+    <published>2023-04-28T05:07:02.000Z</published>
+    <updated>2023-04-28T05:15:13.858Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>由于自己家的路由器使用了openwrt作为系统，但是我发现一个问题，就是它时不时就会出现断网情况。</p><p>其实也不是断网，内网都是通的，但是如果连接公网的话，就会出现DNS解析不出来的情况，非常奇怪，而且贼烦。</p><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>经过查找，原因是openwrt里边有mwan3这个套件，这是一个分流助手，可以用来做多运营商的负载均衡功能。但是在这里，就会影响到openwrt的正常使用。</p><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>卸载mwan3这个套件，之后重启设备。</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[](<a href="https://laob.me/2436/">OpenWRT 间歇性断网&amp;#038;网络不稳定 的解决办法 | 毕扬博客</a>)</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;由于自己家的路由器使用了openwrt作为系统，但是我发现一个问题，就是它时不时就会出现断网情况。&lt;/p&gt;
+&lt;p&gt;其实也不是断网，内网都是通</summary>
+      
+    
+    
+    
+    <category term="工具使用" scheme="http://eryoung2.github.io/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    
+    
+    <category term="openwrt" scheme="http://eryoung2.github.io/tags/openwrt/"/>
+    
+  </entry>
   
   <entry>
     <title>SpringBoot 第一个demo</title>
@@ -488,31 +513,6 @@
       
       
     <summary type="html">&lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;h3 id=&quot;背景介绍&quot;&gt;&lt;a href=&quot;#背景介绍&quot; class=&quot;headerlink&quot; title=&quot;背景介绍&quot;&gt;&lt;/a&gt;背景介绍&lt;/h</summary>
-      
-    
-    
-    
-    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
-    
-    
-    <category term="阿里云ACP认证" scheme="http://eryoung2.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91ACP%E8%AE%A4%E8%AF%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ACP云原生容器工程师 - ASK网络、存储、日志、监控管理</title>
-    <link href="http://eryoung2.github.io/2023/03/14/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ASK%E7%BD%91%E7%BB%9C%E3%80%81%E5%AD%98%E5%82%A8%E3%80%81%E6%97%A5%E5%BF%97%E3%80%81%E7%9B%91%E6%8E%A7%E7%AE%A1%E7%90%86/"/>
-    <id>http://eryoung2.github.io/2023/03/14/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ASK%E7%BD%91%E7%BB%9C%E3%80%81%E5%AD%98%E5%82%A8%E3%80%81%E6%97%A5%E5%BF%97%E3%80%81%E7%9B%91%E6%8E%A7%E7%AE%A1%E7%90%86/</id>
-    <published>2023-03-14T15:33:36.000Z</published>
-    <updated>2023-03-14T16:07:14.139Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><p>包含网络容器CNI、服务Service、路由Ingress、安全组4项</p><h3 id="容器CNI"><a href="#容器CNI" class="headerlink" title="容器CNI"></a>容器CNI</h3><ul><li><p>阿里云Serverless Kubernetes服务、虚拟节点推出Pod挂载弹性公网ip功能，此功能使某些Serverless容器应用的部署和服务访问变得更加简单和便利</p><ul><li><p>无需创建VPC NAT网关即可让单个Pod访问公网</p></li><li><p>无需创建Service也可以让单个Pod暴露公网服务</p></li><li><p>可以更加灵活而且动态绑定Pod和EIP</p></li></ul></li></ul><h3 id="服务Service"><a href="#服务Service" class="headerlink" title="服务Service"></a>服务Service</h3><ul><li><p>Kubernetes Service定义了这样一种抽象：一个Pod的逻辑分组，一种可以访问它们的策略，通常称为微服务。</p></li><li><p>由于Pod会被频繁创建和删除，无法堆外直接进行服务，因此需要一个Pod的逻辑分组+访问策略，也就是Service</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/14-23-50-29-%E6%88%AA%E5%B1%8F2023-03-14%2023.49.14.png"></p><h3 id="路由Ingress"><a href="#路由Ingress" class="headerlink" title="路由Ingress"></a>路由Ingress</h3><ul><li><p>在kubernetes集群中，Ingress是Kubernetes中的一个资源对象，用来管理集群外部访问集群内部服务的方式</p></li><li><p>集群反向代理器，用ingress controller来解析转发规则，转发http&#x2F;https请求</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/14-23-52-14-%E6%88%AA%E5%B1%8F2023-03-14%2023.52.06.png"></p><h3 id="安全组"><a href="#安全组" class="headerlink" title="安全组"></a>安全组</h3><ul><li><p>安全组是一个逻辑上的分组，由同一地域内具有相同安全保护需求并相互信任的实例组成</p></li><li><p>一台ECI实例至少属于一个安全组</p></li><li><p>一个安全组可以管理同一个地域内的多台ECI实例</p></li><li><p>不同安全组内的ECI实例之间默认内网不通</p></li></ul><h2 id="管理配置"><a href="#管理配置" class="headerlink" title="管理配置"></a>管理配置</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><ul><li><p>容器服务ASK支持自动绑定阿里云云盘(EBS)、阿里云文件存储NAS、阿里云对象存储OSS存储服务</p></li><li><p>容器服务支持静态存储卷和动态存储卷，具体如下：</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/14-23-56-03-%E6%88%AA%E5%B1%8F2023-03-14%2023.55.42.png"></p><ul><li>阿里云容器服务ASK集群支持Flexolume和CSI两种存储插件</li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/14-23-57-37-%E6%88%AA%E5%B1%8F2023-03-14%2023.57.29.png"></p><h2 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h2><h3 id="通过阿里云日志服务采集日志"><a href="#通过阿里云日志服务采集日志" class="headerlink" title="通过阿里云日志服务采集日志"></a>通过阿里云日志服务采集日志</h3><ul><li><p>打开集群工作负载下无状态页面，点击使用模板创建</p></li><li><p>新建并部署YAML模板，通过环境变量创建采集配置，所有与配置相关的环境变量都采用aliyun_logs_作为前缀</p></li><li><p>当YAML编写完成后，单击创建，即可将相应的配置交由集群执行</p></li></ul><h3 id="查看日志"><a href="#查看日志" class="headerlink" title="查看日志"></a>查看日志</h3><ul><li><p>打开日志服务控制台，在Project列表区域选择Kubernetes集群对应的Project，进入日志库列表页签</p></li><li><p>在列表中找到相应的Logstore，打击，在下拉框中选择查询分析</p></li></ul><h2 id="监控"><a href="#监控" class="headerlink" title="监控"></a>监控</h2><h3 id="阿里云Prometheus监控"><a href="#阿里云Prometheus监控" class="headerlink" title="阿里云Prometheus监控"></a>阿里云Prometheus监控</h3><ul><li><p>阿里云Prometheus监控全面对接开源Prometheus生态</p></li><li><p>支持类型丰富的组件监控</p></li><li><p>提供多种开箱即用的预置监控大盘</p></li><li><p>提供全面托管的Proetheus服务</p></li><li><p>更轻量、更稳定、更准确的重试机制</p></li><li><p>数据量无上限</p></li><li><p>完全兼容开源生态</p></li><li><p>节省成本</p></li></ul><h3 id="开启阿里云Prometheus监控"><a href="#开启阿里云Prometheus监控" class="headerlink" title="开启阿里云Prometheus监控"></a>开启阿里云Prometheus监控</h3><ul><li><p>登录容器服务管理控制台</p></li><li><p>在控制台左侧导航栏中，选择市场 - 应用目录</p></li><li><p>在应用目录页面的阿里云应用页签中，搜索并单击ack-arms-prometheus</p></li><li><p>在右侧的创建区域中，选择目标集群，然后单击创建</p></li></ul><h3 id="执行结果"><a href="#执行结果" class="headerlink" title="执行结果"></a>执行结果</h3><ul><li>单击ARMS控制台右侧的Prometheus监控，找到目标集群并单击已安装的插件进入大盘查看监控数据</li></ul><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>ASK各个管理模块：</p><ul><li><p>网络管理</p></li><li><p>存储管理</p></li><li><p>日志管理</p></li><li><p>监控管理</p></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;网络&quot;&gt;&lt;a href=&quot;#网络&quot; class=&quot;headerlink&quot; title=&quot;网络&quot;&gt;&lt;/a&gt;网络&lt;/h2&gt;&lt;p&gt;包含网络容器CNI、服务Service、路由Ingress、安全组4项&lt;/p&gt;
-&lt;h3 id=&quot;容器CNI&quot;&gt;&lt;a href=&quot;#容器CNI</summary>
       
     
     
