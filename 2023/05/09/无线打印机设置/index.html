@@ -1,0 +1,268 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>无线打印机设置 | Eryoung2的个人博客</title><meta name="keywords" content="打印机"><meta name="author" content="ErYoung2"><meta name="copyright" content="ErYoung2"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="前言Emm，没错，最近需要打印的东西有点多，所以在某爹爹上买了一台激光打印机。之所以不买喷墨打印机，是因为之前吃过亏，这玩意儿贼麻烦，墨盒坏了就gg，双墨盒害得搁那儿加墨，搞一手花里胡哨，捞不着一点儿好。最后狠心50包邮了。 我这台是二手打印机，惠普的P1008无线版本。说是无线，我其实也是连着线用的，只不过确实有无线打印的功能，我将其连在了服务器上，然后通过无线控制，远程打印。 设置先讲配置环境">
+<meta property="og:type" content="article">
+<meta property="og:title" content="无线打印机设置">
+<meta property="og:url" content="http://eryoung2.github.io/2023/05/09/%E6%97%A0%E7%BA%BF%E6%89%93%E5%8D%B0%E6%9C%BA%E8%AE%BE%E7%BD%AE/index.html">
+<meta property="og:site_name" content="Eryoung2的个人博客">
+<meta property="og:description" content="前言Emm，没错，最近需要打印的东西有点多，所以在某爹爹上买了一台激光打印机。之所以不买喷墨打印机，是因为之前吃过亏，这玩意儿贼麻烦，墨盒坏了就gg，双墨盒害得搁那儿加墨，搞一手花里胡哨，捞不着一点儿好。最后狠心50包邮了。 我这台是二手打印机，惠普的P1008无线版本。说是无线，我其实也是连着线用的，只不过确实有无线打印的功能，我将其连在了服务器上，然后通过无线控制，远程打印。 设置先讲配置环境">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-05-09T14:29:46.000Z">
+<meta property="article:modified_time" content="2023-05-09T15:39:19.749Z">
+<meta property="article:author" content="ErYoung2">
+<meta property="article:tag" content="打印机">
+<meta name="twitter:card" content="summary"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://eryoung2.github.io/2023/05/09/%E6%97%A0%E7%BA%BF%E6%89%93%E5%8D%B0%E6%9C%BA%E8%AE%BE%E7%BD%AE/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '无线打印机设置',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-05-09 23:39:19'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Eryoung2的个人博客" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/panda.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">72</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">38</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">25</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Eryoung2的个人博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无线打印机设置</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-05-09T14:29:46.000Z" title="发表于 2023-05-09 22:29:46">2023-05-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-05-09T15:39:19.749Z" title="更新于 2023-05-09 23:39:19">2023-05-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%80%9A%E7%94%A8%E6%8A%80%E6%9C%AF/">通用技术</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">698</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Emm，没错，最近需要打印的东西有点多，所以在某爹爹上买了一台激光打印机。之所以不买喷墨打印机，是因为之前吃过亏，这玩意儿贼麻烦，墨盒坏了就gg，双墨盒害得搁那儿加墨，搞一手花里胡哨，捞不着一点儿好。最后狠心50包邮了。</p>
+<p>我这台是二手打印机，惠普的P1008无线版本。说是无线，我其实也是连着线用的，只不过确实有无线打印的功能，我将其连在了服务器上，然后通过无线控制，远程打印。</p>
+<h2 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h2><p>先讲配置环境，本次配置涉及3台设备：</p>
+<ul>
+<li><p>打印机（HP LaserJet P1008）</p>
+</li>
+<li><p>服务器（Win10系统）</p>
+</li>
+<li><p>远程客户端（MacOS）</p>
+</li>
+</ul>
+<p>该有的设备都有了，我们开始配置。</p>
+<h3 id="安装打印机"><a href="#安装打印机" class="headerlink" title="安装打印机"></a>安装打印机</h3><p>这一步跟配置无关，可以参考激光打印机安装矽鼓的过程，B站有详细视频解析，请自行翻阅：</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ze4y1f7bx/?spm_id_from=333.788.recommend_more_video.3&vd_source=27816c2400a8d15482b71cc9394e1c3a">安装&#x2F;更换打印机矽鼓</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Uv4y117nS/?spm_id_from=autoNext&vd_source=27816c2400a8d15482b71cc9394e1c3a">填充碳粉</a></p>
+<h3 id="连接windows主机、安装驱动、有线连接、设置共享"><a href="#连接windows主机、安装驱动、有线连接、设置共享" class="headerlink" title="连接windows主机、安装驱动、有线连接、设置共享"></a>连接windows主机、安装驱动、有线连接、设置共享</h3><p>将B2A线的B端连在打印机上，A端连在windows主机上，然后去HP官网现在相关版本驱动并安装。</p>
+<p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-22-50-32-win.jpg"></p>
+<p>安装就好。</p>
+<p>安装完毕之后，打开windows设置-设备-打印机与扫描仪-添加，刷新之后可以搜到，如果搜不到的话，可以手动添加。</p>
+<p>添加完毕之后可看到这个：</p>
+<p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-22-58-54-add.jpg"></p>
+<p>点击“管理”，可以打印测试页。</p>
+<p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-23-00-13-setup.jpg"></p>
+<p>选择“打印机属性”，设置共享。</p>
+<p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-23-01-26-share.jpg"></p>
+<p>设置其他共享配置：</p>
+<p>控制面板—&gt;网络和共享中心—&gt;选择家庭组和共享选项—&gt;更改高级共享设置</p>
+<p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-23-08-34-config.png"></p>
+<p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-23-10-07-config2.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-23-11-00-config3.jpg"></p>
+<p>添加特定账户，设置账户密码。</p>
+<p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-23-14-16-user.jpg"></p>
+<p>至此，windows端服务配置完毕。windows通过samba协议将其暴露出来，具体格式：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">samba://ip/&lt;Printer name&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Macos无线连接"><a href="#Macos无线连接" class="headerlink" title="Macos无线连接"></a>Macos无线连接</h3><p>安装Mac版驱动程序：</p>
+<p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-23-22-12-driver2.jpg"></p>
+<p>打开设置-打印机与扫描仪-添加打印机、扫描仪或传真机，下载并安装。</p>
+<p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-23-32-03-add2.jpg"></p>
+<p>添加完毕。</p>
+<h2 id="测试打印"><a href="#测试打印" class="headerlink" title="测试打印"></a>测试打印</h2><p>在Macos上打开一个PDF文件，使用Command+P，进行打印设置。</p>
+<p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-23-32-56-test.jpg"></p>
+<p>如果点击打印后，出现“保留以备认证”时，可以点击右侧更新按钮，重新使用上面建立的打印账户进行验证，并保存到钥匙串即可。</p>
+<p><a target="_blank" rel="noopener" href="https://www.feng.com/post/7744881">MacOS 解决“保留以备认证“问题</a></p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>本文图很多，但是也没截完全，不过大致过程如上，细微的系统差别也会有，但是不大，可根据自己版本进行配置。</p>
+<h2 id="参考-amp-鸣谢"><a href="#参考-amp-鸣谢" class="headerlink" title="参考 &amp; 鸣谢"></a>参考 &amp; 鸣谢</h2><p><a target="_blank" rel="noopener" href="https://support.hp.com/cn-zh/drivers/selfservice/hp-laserjet-p1008-printer/3435686">HP官网驱动下载</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ze4y1f7bx/?spm_id_from=333.788.recommend_more_video.3&vd_source=27816c2400a8d15482b71cc9394e1c3a">安装&#x2F;更换打印机矽鼓</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Uv4y117nS/?spm_id_from=autoNext&vd_source=27816c2400a8d15482b71cc9394e1c3a">填充碳粉</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.feng.com/post/7744881">MacOS 解决“保留以备认证“问题</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://eryoung2.github.io">ErYoung2</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://eryoung2.github.io/2023/05/09/%E6%97%A0%E7%BA%BF%E6%89%93%E5%8D%B0%E6%9C%BA%E8%AE%BE%E7%BD%AE/">http://eryoung2.github.io/2023/05/09/%E6%97%A0%E7%BA%BF%E6%89%93%E5%8D%B0%E6%9C%BA%E8%AE%BE%E7%BD%AE/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://eryoung2.github.io" target="_blank">Eryoung2的个人博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%89%93%E5%8D%B0%E6%9C%BA/">打印机</a></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/05/08/NBA-76%E4%BA%BAvs%E7%BB%BF%E5%86%9B/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">NBA 76人vs绿军</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/panda.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ErYoung2</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">72</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">38</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">25</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/ErYoung2"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">eryoung2写字的地方</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text">设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%89%93%E5%8D%B0%E6%9C%BA"><span class="toc-number">2.1.</span> <span class="toc-text">安装打印机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5windows%E4%B8%BB%E6%9C%BA%E3%80%81%E5%AE%89%E8%A3%85%E9%A9%B1%E5%8A%A8%E3%80%81%E6%9C%89%E7%BA%BF%E8%BF%9E%E6%8E%A5%E3%80%81%E8%AE%BE%E7%BD%AE%E5%85%B1%E4%BA%AB"><span class="toc-number">2.2.</span> <span class="toc-text">连接windows主机、安装驱动、有线连接、设置共享</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Macos%E6%97%A0%E7%BA%BF%E8%BF%9E%E6%8E%A5"><span class="toc-number">2.3.</span> <span class="toc-text">Macos无线连接</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E6%89%93%E5%8D%B0"><span class="toc-number">3.</span> <span class="toc-text">测试打印</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-number">4.</span> <span class="toc-text">后记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83-amp-%E9%B8%A3%E8%B0%A2"><span class="toc-number">5.</span> <span class="toc-text">参考 &amp; 鸣谢</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/05/09/%E6%97%A0%E7%BA%BF%E6%89%93%E5%8D%B0%E6%9C%BA%E8%AE%BE%E7%BD%AE/" title="无线打印机设置"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无线打印机设置"/></a><div class="content"><a class="title" href="/2023/05/09/%E6%97%A0%E7%BA%BF%E6%89%93%E5%8D%B0%E6%9C%BA%E8%AE%BE%E7%BD%AE/" title="无线打印机设置">无线打印机设置</a><time datetime="2023-05-09T14:29:46.000Z" title="发表于 2023-05-09 22:29:46">2023-05-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/08/NBA-76%E4%BA%BAvs%E7%BB%BF%E5%86%9B/" title="NBA 76人vs绿军"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="NBA 76人vs绿军"/></a><div class="content"><a class="title" href="/2023/05/08/NBA-76%E4%BA%BAvs%E7%BB%BF%E5%86%9B/" title="NBA 76人vs绿军">NBA 76人vs绿军</a><time datetime="2023-05-07T23:33:09.000Z" title="发表于 2023-05-08 07:33:09">2023-05-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/28/openwrt-%E9%97%B4%E6%AD%87%E6%80%A7%E6%96%AD%E7%BD%91-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" title="openwrt - 间歇性断网 - 解决方法"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="openwrt - 间歇性断网 - 解决方法"/></a><div class="content"><a class="title" href="/2023/04/28/openwrt-%E9%97%B4%E6%AD%87%E6%80%A7%E6%96%AD%E7%BD%91-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" title="openwrt - 间歇性断网 - 解决方法">openwrt - 间歇性断网 - 解决方法</a><time datetime="2023-04-28T05:07:02.000Z" title="发表于 2023-04-28 13:07:02">2023-04-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/25/SpringBoot-%E7%AC%AC%E4%B8%80%E4%B8%AAdemo/" title="SpringBoot 第一个demo"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringBoot 第一个demo"/></a><div class="content"><a class="title" href="/2023/04/25/SpringBoot-%E7%AC%AC%E4%B8%80%E4%B8%AAdemo/" title="SpringBoot 第一个demo">SpringBoot 第一个demo</a><time datetime="2023-04-25T14:36:26.000Z" title="发表于 2023-04-25 22:36:26">2023-04-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/17/github%E6%97%A0%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95/" title="github无提交记录"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="github无提交记录"/></a><div class="content"><a class="title" href="/2023/04/17/github%E6%97%A0%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95/" title="github无提交记录">github无提交记录</a><time datetime="2023-04-17T05:07:37.000Z" title="发表于 2023-04-17 13:07:37">2023-04-17</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By ErYoung2</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'http://eryoung2.github.io/2023/05/09/%E6%97%A0%E7%BA%BF%E6%89%93%E5%8D%B0%E6%9C%BA%E8%AE%BE%E7%BD%AE/'
+    this.page.identifier = '2023/05/09/无线打印机设置/'
+    this.page.title = '无线打印机设置'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+}
+
+if ('Valine' === 'Disqus' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-05-07T23:47:35.395Z</updated>
+  <updated>2023-05-09T15:39:19.749Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>无线打印机设置</title>
+    <link href="http://eryoung2.github.io/2023/05/09/%E6%97%A0%E7%BA%BF%E6%89%93%E5%8D%B0%E6%9C%BA%E8%AE%BE%E7%BD%AE/"/>
+    <id>http://eryoung2.github.io/2023/05/09/%E6%97%A0%E7%BA%BF%E6%89%93%E5%8D%B0%E6%9C%BA%E8%AE%BE%E7%BD%AE/</id>
+    <published>2023-05-09T14:29:46.000Z</published>
+    <updated>2023-05-09T15:39:19.749Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Emm，没错，最近需要打印的东西有点多，所以在某爹爹上买了一台激光打印机。之所以不买喷墨打印机，是因为之前吃过亏，这玩意儿贼麻烦，墨盒坏了就gg，双墨盒害得搁那儿加墨，搞一手花里胡哨，捞不着一点儿好。最后狠心50包邮了。</p><p>我这台是二手打印机，惠普的P1008无线版本。说是无线，我其实也是连着线用的，只不过确实有无线打印的功能，我将其连在了服务器上，然后通过无线控制，远程打印。</p><h2 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h2><p>先讲配置环境，本次配置涉及3台设备：</p><ul><li><p>打印机（HP LaserJet P1008）</p></li><li><p>服务器（Win10系统）</p></li><li><p>远程客户端（MacOS）</p></li></ul><p>该有的设备都有了，我们开始配置。</p><h3 id="安装打印机"><a href="#安装打印机" class="headerlink" title="安装打印机"></a>安装打印机</h3><p>这一步跟配置无关，可以参考激光打印机安装矽鼓的过程，B站有详细视频解析，请自行翻阅：</p><p><a href="https://www.bilibili.com/video/BV1ze4y1f7bx/?spm_id_from=333.788.recommend_more_video.3&vd_source=27816c2400a8d15482b71cc9394e1c3a">安装&#x2F;更换打印机矽鼓</a></p><p><a href="https://www.bilibili.com/video/BV1Uv4y117nS/?spm_id_from=autoNext&vd_source=27816c2400a8d15482b71cc9394e1c3a">填充碳粉</a></p><h3 id="连接windows主机、安装驱动、有线连接、设置共享"><a href="#连接windows主机、安装驱动、有线连接、设置共享" class="headerlink" title="连接windows主机、安装驱动、有线连接、设置共享"></a>连接windows主机、安装驱动、有线连接、设置共享</h3><p>将B2A线的B端连在打印机上，A端连在windows主机上，然后去HP官网现在相关版本驱动并安装。</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-22-50-32-win.jpg"></p><p>安装就好。</p><p>安装完毕之后，打开windows设置-设备-打印机与扫描仪-添加，刷新之后可以搜到，如果搜不到的话，可以手动添加。</p><p>添加完毕之后可看到这个：</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-22-58-54-add.jpg"></p><p>点击“管理”，可以打印测试页。</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-23-00-13-setup.jpg"></p><p>选择“打印机属性”，设置共享。</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-23-01-26-share.jpg"></p><p>设置其他共享配置：</p><p>控制面板—&gt;网络和共享中心—&gt;选择家庭组和共享选项—&gt;更改高级共享设置</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-23-08-34-config.png"></p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-23-10-07-config2.jpg"></p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-23-11-00-config3.jpg"></p><p>添加特定账户，设置账户密码。</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-23-14-16-user.jpg"></p><p>至此，windows端服务配置完毕。windows通过samba协议将其暴露出来，具体格式：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">samba://ip/&lt;Printer name&gt;</span><br></pre></td></tr></table></figure><h3 id="Macos无线连接"><a href="#Macos无线连接" class="headerlink" title="Macos无线连接"></a>Macos无线连接</h3><p>安装Mac版驱动程序：</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-23-22-12-driver2.jpg"></p><p>打开设置-打印机与扫描仪-添加打印机、扫描仪或传真机，下载并安装。</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-23-32-03-add2.jpg"></p><p>添加完毕。</p><h2 id="测试打印"><a href="#测试打印" class="headerlink" title="测试打印"></a>测试打印</h2><p>在Macos上打开一个PDF文件，使用Command+P，进行打印设置。</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-23-32-56-test.jpg"></p><p>如果点击打印后，出现“保留以备认证”时，可以点击右侧更新按钮，重新使用上面建立的打印账户进行验证，并保存到钥匙串即可。</p><p><a href="https://www.feng.com/post/7744881">MacOS 解决“保留以备认证“问题</a></p><h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>本文图很多，但是也没截完全，不过大致过程如上，细微的系统差别也会有，但是不大，可根据自己版本进行配置。</p><h2 id="参考-amp-鸣谢"><a href="#参考-amp-鸣谢" class="headerlink" title="参考 &amp; 鸣谢"></a>参考 &amp; 鸣谢</h2><p><a href="https://support.hp.com/cn-zh/drivers/selfservice/hp-laserjet-p1008-printer/3435686">HP官网驱动下载</a></p><p><a href="https://www.bilibili.com/video/BV1ze4y1f7bx/?spm_id_from=333.788.recommend_more_video.3&vd_source=27816c2400a8d15482b71cc9394e1c3a">安装&#x2F;更换打印机矽鼓</a></p><p><a href="https://www.bilibili.com/video/BV1Uv4y117nS/?spm_id_from=autoNext&vd_source=27816c2400a8d15482b71cc9394e1c3a">填充碳粉</a></p><p><a href="https://www.feng.com/post/7744881">MacOS 解决“保留以备认证“问题</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Emm，没错，最近需要打印的东西有点多，所以在某爹爹上买了一台激光打印机。之所以不买喷墨打印机，是因为之前吃过亏，这玩意儿贼麻烦，墨盒坏了就</summary>
+      
+    
+    
+    
+    <category term="通用技术" scheme="http://eryoung2.github.io/categories/%E9%80%9A%E7%94%A8%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="打印机" scheme="http://eryoung2.github.io/tags/%E6%89%93%E5%8D%B0%E6%9C%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>NBA 76人vs绿军</title>
@@ -493,30 +517,6 @@
       
       
     <summary type="html">&lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;h3 id=&quot;技术概要&quot;&gt;&lt;a href=&quot;#技术概要&quot; class=&quot;headerlink&quot; title=&quot;技术概要&quot;&gt;&lt;/a&gt;技术概要&lt;/h</summary>
-      
-    
-    
-    
-    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
-    
-    
-    <category term="阿里云ACP认证" scheme="http://eryoung2.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91ACP%E8%AE%A4%E8%AF%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ACP云原生容器工程师 - ASK应用场景</title>
-    <link href="http://eryoung2.github.io/2023/03/15/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ASK%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/"/>
-    <id>http://eryoung2.github.io/2023/03/15/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ASK%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/</id>
-    <published>2023-03-15T15:42:18.000Z</published>
-    <updated>2023-03-17T12:02:28.605Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="ASK在线业务弹性伸缩的概况"><a href="#ASK在线业务弹性伸缩的概况" class="headerlink" title="ASK在线业务弹性伸缩的概况"></a>ASK在线业务弹性伸缩的概况</h2><h3 id="弹性伸缩特性"><a href="#弹性伸缩特性" class="headerlink" title="弹性伸缩特性"></a>弹性伸缩特性</h3><ul><li><p>特性</p><ul><li><p>根据业务需求和策略</p></li><li><p>经济地自动调整弹性计算资源</p></li></ul></li><li><p>维度</p><ul><li><p>调度层弹性：修改负载的调度容量变化</p></li><li><p>资源层弹性：补充ECI和集群容量规划</p></li></ul></li><li><p>场景</p><ul><li><p>在线业务弹性</p></li><li><p>大规模计算训练</p></li><li><p>深度学习或共享GPU的训练与推理</p></li><li><p>定时周期性负载变化</p></li></ul></li></ul><h3 id="容器水平伸缩"><a href="#容器水平伸缩" class="headerlink" title="容器水平伸缩"></a>容器水平伸缩</h3><ul><li><p>容器水平伸缩制作步骤</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/16-00-09-08-%E6%88%AA%E5%B1%8F2023-03-16%2000.08.51.png"></p></li><li><p>查看应用详情，单击容器组水平伸缩，可在部署的详情中查看伸缩组信息</p></li><li><p>在实际使用环境中，应用汇根据CPU负载进行伸缩</p></li></ul><h3 id="容器定时伸缩"><a href="#容器定时伸缩" class="headerlink" title="容器定时伸缩"></a>容器定时伸缩</h3><ul><li><p>kubernetes-cronhpa-controller: 按照类似Crontab的策略，定时对容器服务进行扩缩容</p></li><li><p>kubernetes-cronhpa-controller包括三项参数</p><ul><li><p>scaleTargetRef: 制定扩缩容对象</p></li><li><p>excludeDates: 日期数组，分、时、日、月、周、要做的事情</p></li><li><p>jobs: 支持在一个spec中设定多个cronhpa任务，其中name为必填项</p></li></ul></li><li><p>kubernetes-cronhpa-controller组件安装</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/16-00-13-44-%E6%88%AA%E5%B1%8F2023-03-16%2000.13.35.png"></p></li></ul><h3 id="指标容器水平伸缩"><a href="#指标容器水平伸缩" class="headerlink" title="指标容器水平伸缩"></a>指标容器水平伸缩</h3><ul><li><p>alibaba-cloud-metrics-adapter: 由检测指标来直到集群的扩缩容</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/16-00-14-45-%E6%88%AA%E5%B1%8F2023-03-16%2000.14.37.png"></p></li></ul><h2 id="大数据Spark-on-Kubernetes"><a href="#大数据Spark-on-Kubernetes" class="headerlink" title="大数据Spark on Kubernetes"></a>大数据Spark on Kubernetes</h2><h3 id="Apache-Spark概述"><a href="#Apache-Spark概述" class="headerlink" title="Apache Spark概述"></a>Apache Spark概述</h3><ul><li><p>应用角色</p><ul><li><p>数据分析领域快速构建计算框架</p></li><li><p>大数据和机器学习工作负载</p></li></ul></li><li><p>应用架构</p><ul><li><p>Spark SQL&#x2F;DF: 处理结构化和半结构化数据</p></li><li><p>Spark Streaming: 处理实时流数据</p></li><li><p>Mlib: 机器学习库</p></li><li><p>GraphX: 图形计算库</p></li><li><p>Apache Spark Core API: 应用程序的平台</p></li></ul></li></ul><h3 id="ASK运行Spark的优势"><a href="#ASK运行Spark的优势" class="headerlink" title="ASK运行Spark的优势"></a>ASK运行Spark的优势</h3><ul><li><p>在Kubernetes上运行Spark工作负载</p><ul><li><p>应用的快速部署</p></li><li><p>集成化生命周期管理</p></li><li><p>解决版本匹配、兼容和依赖问题</p></li><li><p>重用基础架构、减少运维成本</p></li><li><p>支持多租户和用户力度的资源调度</p></li><li><p>基于Kubernetes的权限控制</p></li></ul></li><li><p>在ASK集群上运行Spark工作负载</p><ul><li><p>按需按量创建Pod</p></li><li><p>结束后停止计费</p></li><li><p>无需为Spark计算任务预留计算资源</p></li><li><p>无须担心集群计算力扩容问题</p></li></ul></li></ul><h3 id="运行Apache-Spark的工具"><a href="#运行Apache-Spark的工具" class="headerlink" title="运行Apache Spark的工具"></a>运行Apache Spark的工具</h3><ul><li><p>Spark Operator</p><ul><li><p>由Google官方支持的产品spark-on-k8s-operator</p></li><li><p>在Kubernetes上像其他工作负载一样用通用的方式方便地运行Spark应用</p></li><li><p>使用Kubernetes custom resource来配置、运行Spark应用，并展现其状态</p></li></ul></li><li><p>Alluxio</p><ul><li><p>面向云的数据分析和人工智能的开源的数据编排技术</p></li><li><p>为数据驱动型应用和存储系统构建桥梁，是数据更容易被访问</p></li></ul></li><li><p>TPC-DS Benchmark</p><ul><li>社区支持的第三方性能压测工具，协助确定解决方案的工业标准</li></ul></li></ul><h2 id="Knative-Serverless应用"><a href="#Knative-Serverless应用" class="headerlink" title="Knative Serverless应用"></a>Knative Serverless应用</h2><h3 id="Knative简介"><a href="#Knative简介" class="headerlink" title="Knative简介"></a>Knative简介</h3><ul><li><p>角色</p><ul><li><p>基于Kubernetes的Serverless解决方案</p></li><li><p>标准化Serverless技术架构</p></li><li><p>简化学习成本</p></li></ul></li><li><p>组件</p><ul><li><p>Build: 源到容器的构建和编排</p></li><li><p>Event: 消息传递层，事件交付管理 </p></li><li><p>Serving: 请求计算，基于负载自动伸缩</p></li></ul></li><li><p>优势</p><ul><li><p>便利性</p></li><li><p>标准化</p></li><li><p>服务间解耦</p></li><li><p>生态成熟</p></li><li><p>自动伸缩</p></li><li><p>应用监控</p></li></ul></li><li><p>Knative虽然开源，但是会称为Serverless的实施标准</p></li></ul><h3 id="ASK-Knative相比社区版优势"><a href="#ASK-Knative相比社区版优势" class="headerlink" title="ASK Knative相比社区版优势"></a>ASK Knative相比社区版优势</h3><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/16-00-31-00-%E6%88%AA%E5%B1%8F2023-03-16%2000.30.52.png"></p><h3 id="ASK-Knative最佳实践"><a href="#ASK-Knative最佳实践" class="headerlink" title="ASK Knative最佳实践"></a>ASK Knative最佳实践</h3><ul><li><p>观测服务的QPS、RT和Pod扩缩容趋势</p><ul><li><p>配置Logstore</p></li><li><p>配置QPS统计</p></li><li><p>配置RT统计</p></li><li><p>配置Pod扩缩容趋势统计</p></li><li><p>观测服务运行状况</p></li></ul></li><li><p>观测服务的CPU和Memory使用情况</p><ul><li><p>ASK集群已开通Knative功能</p></li><li><p>集群已开通阿里云Prometheus监控功能</p></li><li><p>配置Prometheus监控目标ASK集群</p></li></ul></li></ul><h2 id="CI-x2F-CD流水线解决方案"><a href="#CI-x2F-CD流水线解决方案" class="headerlink" title="CI&#x2F;CD流水线解决方案"></a>CI&#x2F;CD流水线解决方案</h2><h3 id="方案背景"><a href="#方案背景" class="headerlink" title="方案背景"></a>方案背景</h3><ul><li><p>场景需求</p><ul><li><p>基于Jenkins构建自动化CI&#x2F;CD集群系统</p></li><li><p>集群资源合理利用，控制成本</p></li><li><p>集群高可用性需求</p></li><li><p>集群资源快速弹性伸缩</p></li></ul></li><li><p>方案优势</p><ul><li><p>高可用服务</p></li><li><p>自动弹性伸缩，资源合理应用</p></li><li><p>可扩展性好</p></li></ul></li><li><p>解决问题</p><ul><li><p>集群Master节点单点故障</p></li><li><p>集群资源利用率低</p></li><li><p>资源集群可扩展性差</p></li></ul></li><li><p>方案流程</p><ul><li><p>Git源码上传</p></li><li><p>Jenkins自动构建</p></li><li><p>K8s测试环境</p></li><li><p>Registry镜像存储</p></li><li><p>生产环境部署</p></li></ul></li></ul><h3 id="方案架构"><a href="#方案架构" class="headerlink" title="方案架构"></a>方案架构</h3><ul><li><p>服务高可用</p><ul><li>避免Master单点故障导致集群流程不可用</li></ul></li><li><p>弹性伸缩</p><ul><li><p>每次运行Job时，自动构建Jenkins Slave</p></li><li><p>Job完成之后，自动注销并删除容器</p></li><li><p>资源自动释放，节省成本</p></li></ul></li><li><p>资源合理应用</p><ul><li><p>动态分配Slave到空闲节点</p></li><li><p>降低出现由于节点资源限制的排队等待情况</p></li></ul></li><li><p>扩展性好</p><ul><li><p>集群资源严重不足时，可以快速添加节点</p></li><li><p>降低集群资源不足导致Job排队等情况</p></li></ul></li></ul><h3 id="事件概要"><a href="#事件概要" class="headerlink" title="事件概要"></a>事件概要</h3><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/16-00-41-07-%E6%88%AA%E5%B1%8F2023-03-16%2000.40.59.png"></p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul><li><p>ASK弹性伸缩特性</p></li><li><p>ASK弹性伸缩部署流程</p></li><li><p>Apache Spark在ASK上的部署方案</p></li><li><p>ASK Knative的优势和最佳实践</p></li><li><p>ASK上部署CI&#x2F;CD流水线的解决方案</p></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;ASK在线业务弹性伸缩的概况&quot;&gt;&lt;a href=&quot;#ASK在线业务弹性伸缩的概况&quot; class=&quot;headerlink&quot; title=&quot;ASK在线业务弹性伸缩的概况&quot;&gt;&lt;/a&gt;ASK在线业务弹性伸缩的概况&lt;/h2&gt;&lt;h3 id=&quot;弹性伸缩特性&quot;&gt;&lt;a href=&quot;</summary>
       
     
     
