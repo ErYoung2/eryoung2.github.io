@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-05-15T04:59:41.563Z</updated>
+  <updated>2023-05-27T19:35:54.505Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>对“见怪不怪”的真实体会</title>
+    <link href="http://eryoung2.github.io/2023/05/28/%E5%AF%B9%E2%80%9C%E8%A7%81%E6%80%AA%E4%B8%8D%E6%80%AA%E2%80%9D%E7%9A%84%E7%9C%9F%E5%AE%9E%E4%BD%93%E4%BC%9A/"/>
+    <id>http://eryoung2.github.io/2023/05/28/%E5%AF%B9%E2%80%9C%E8%A7%81%E6%80%AA%E4%B8%8D%E6%80%AA%E2%80%9D%E7%9A%84%E7%9C%9F%E5%AE%9E%E4%BD%93%E4%BC%9A/</id>
+    <published>2023-05-27T19:19:55.000Z</published>
+    <updated>2023-05-27T19:35:54.505Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>2023年5月27号，是全国计算机资格考试（简称软考）开考的日子，笔者也参加了这次考试，科目为网络工程师。</p><h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><p>00:00～06:30 笔者彻夜未眠，主要是做着对考试的各种猜想，就这样到了6点半，出发去考场。</p><p>06:30～07:30 在地铁上刷了两套上午题，感觉不错</p><p>07:30～08:00 吃早餐，点了一个鸡蛋，其他的吃不下，进考场</p><p>08:00～09:00 进场、准备考试</p><p>09:00～11:00 上午场，做题、检查6遍、估分，估计低分飘过吧</p><p>11:00～13:00 午休，看了看历年下午的真题，看了看知识点，调整心态，依然没吃什么东西，天气太热没有胃口</p><p>13:00～14:00 进场、准备考试，在准考证背面写了“可不敢半场开香槟”</p><p>14:00～16:00 阴间旅游两小时，边骂边做题，答案全靠蒙，已然gg</p><p>16:00～16:30 吃东西，然后看到作弊相关动态，持续骂娘</p><p>17:00～18:00 回家，路上碰到一个作弊者，跟我说花4万块买的答案，准备了3份入场考试，作弊原因是为了积分入户，给小孩读书</p><p>18:00～23:00 睡了一觉</p><p>23:00～现在 持续逛群，持续输出c语言</p><h2 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h2><p>可能没有后续了，等到7月份再说吧，要不要继续备战网络规划设计师，网工是不继续考了，这种阴间考试性价比太低，不如搞一些实际的本事。</p><h2 id="再后续"><a href="#再后续" class="headerlink" title="再后续"></a>再后续</h2><p>这几年随着自己的成长，恶心的事情见太多，人心都麻了。现在的我只想躺平，对恶心的事情见怪不怪，最终就变了自己最讨厌的样子。</p><h2 id="再再后续"><a href="#再再后续" class="headerlink" title="再再后续"></a>再再后续</h2><p>只想活着，不敢奢求其他任何好运。</p><p align="right">--ErYoung作于2023年05月28日凌晨3点33分</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;2023年5月27号，是全国计算机资格考试（简称软考）开考的日子，笔者也参加了这次考试，科目为网络工程师。&lt;/p&gt;
+&lt;h2 id=&quot;过程&quot;&gt;</summary>
+      
+    
+    
+    
+    <category term="失眠随想" scheme="http://eryoung2.github.io/categories/%E5%A4%B1%E7%9C%A0%E9%9A%8F%E6%83%B3/"/>
+    
+    
+    <category term="杂谈" scheme="http://eryoung2.github.io/tags/%E6%9D%82%E8%B0%88/"/>
+    
+  </entry>
   
   <entry>
     <title>耻辱柱！</title>
@@ -492,33 +517,6 @@
       
       
     <summary type="html">&lt;h2 id=&quot;容器镜像基本概念&quot;&gt;&lt;a href=&quot;#容器镜像基本概念&quot; class=&quot;headerlink&quot; title=&quot;容器镜像基本概念&quot;&gt;&lt;/a&gt;容器镜像基本概念&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/Er</summary>
-      
-    
-    
-    
-    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
-    
-    
-    <category term="阿里云ACP认证" scheme="http://eryoung2.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91ACP%E8%AE%A4%E8%AF%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ACP云原生容器工程师 - ASM服务网格使用</title>
-    <link href="http://eryoung2.github.io/2023/03/16/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ASM%E6%9C%8D%E5%8A%A1%E7%BD%91%E6%A0%BC%E4%BD%BF%E7%94%A8/"/>
-    <id>http://eryoung2.github.io/2023/03/16/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-ASM%E6%9C%8D%E5%8A%A1%E7%BD%91%E6%A0%BC%E4%BD%BF%E7%94%A8/</id>
-    <published>2023-03-16T07:40:13.000Z</published>
-    <updated>2023-03-17T14:39:46.106Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="ASM入门指引"><a href="#ASM入门指引" class="headerlink" title="ASM入门指引"></a>ASM入门指引</h2><ul><li><p>部署ASM的基础环境</p><ul><li><p>阿里云ECS弹性计算云服务器</p></li><li><p>阿里云Kubernetes集群(ACK&#x2F;ASK)</p></li></ul></li><li><p>部署ASM的主要步骤</p><ul><li><p>创建一个服务网格ASM实例</p></li><li><p>添加一个Kubernetes集群到服务网格ASM实例中</p></li><li><p>为服务网格ASM实例中的集群部署入口网关</p></li><li><p>将应用部署到上述服务网格ASM实例的ACK Kubernetes集群中</p></li><li><p>为服务网格ASM实例定义虚拟服务和istio网关</p></li></ul></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/16-21-41-15-%E6%88%AA%E5%B1%8F2023-03-16%2021.40.21.png"></p><h2 id="部署过程"><a href="#部署过程" class="headerlink" title="部署过程"></a>部署过程</h2><h3 id="创建ASM实例"><a href="#创建ASM实例" class="headerlink" title="创建ASM实例"></a>创建ASM实例</h3><ul><li><p>前提条件</p><ul><li><p>已开通以下服务，服务网格ASM、容器服务、弹性伸缩服务、访问控制服务、链路追踪服务</p></li><li><p>已获得以下角色授权：AliyunServiceMeshDefaultRole、AliyunCSClusterRole、AliyunCSMagedKubernetesRole</p></li></ul></li><li><p>背景信息</p><ul><li><p>创建ASM可能会进行如下操作：</p><ul><li><p>创建安全组</p></li><li><p>创建VPC路由规则</p></li><li><p>创建弹性公网IP</p></li><li><p>创建专有网的负载均衡</p></li><li><p>暴露6443端口</p></li><li><p>暴露15011端口</p></li><li><p>收集被托管管控组件的日志信息</p></li></ul></li></ul></li><li><p>基本步骤</p><ol><li><p>登录ASM控制台</p></li><li><p>在左侧导航栏，选择服务网格 - 网格管理</p></li><li><p>在网格管理页面单击创建新网格</p></li><li><p>在创建新网格页面，完成网格配置</p><ul><li><p>设置网格基础选项</p></li><li><p>设置网格高级选项</p></li></ul></li><li><p>了解和接受服务协议</p></li><li><p>单击确定，开始创建</p></li></ol></li><li><p>执行结果</p><ul><li><p>网格实例页面显示实例列表</p></li><li><p>查看已创建的实例摘要信息</p></li><li><p>查看实例相关的日志细节</p></li><li><p>查看实例相关的管理细节</p><ul><li><p>基本信息</p></li><li><p>连接配置</p></li><li><p>数据平面集群信息</p></li><li><p>虚拟服务</p></li><li><p>目标规则</p></li><li><p>istio资源定义</p></li></ul></li></ul></li></ul><h3 id="添加集群"><a href="#添加集群" class="headerlink" title="添加集群"></a>添加集群</h3><ul><li><p>前提条件</p><ul><li><p>已创建至少一个ASM实例</p></li><li><p>已创建至少一个集群</p><ul><li><p>Kubernetes专有版集群</p></li><li><p>Kubernetes托管版集群</p></li><li><p>ECS虚拟机</p></li></ul></li><li><p>待添加的集群与ASM实例位于同一VPC</p></li></ul></li><li><p>操作步骤</p><ul><li><p>在网格管理页面单击目标ASM实例名称</p><ul><li>或目标ASM实例右侧操作列下的管理</li></ul></li><li><p>在数据平面区域，单击集群页签</p></li><li><p>在集群页签，单击添加</p></li><li><p>在弹出页选中需要添加的集群，并确定</p></li><li><p>在重要提示对话框中单击确定</p></li></ul></li><li><p>执行结果</p><ul><li><p>添加集群之后，ASM实例的状态变为更新中</p><ul><li><p>黄：更新中</p></li><li><p>青：运行中</p></li></ul></li><li><p>数秒之后，刷新信息，网格状态会变为运行中</p><ul><li>等待时长与添加的集群数量有关</li></ul></li><li><p>在数据平面区域，可以查看已添加集群的信息</p></li></ul></li></ul><h3 id="添加入口网关"><a href="#添加入口网关" class="headerlink" title="添加入口网关"></a>添加入口网关</h3><ul><li><p>前提条件</p><ul><li><p>已创建至少一个ASM实例</p></li><li><p>已添加至少一个集群到该实例中</p></li></ul></li><li><p>背景信息</p><ul><li><p>七层网关功能</p></li><li><p>对外提供一个统一的七层服务入欧</p></li><li><p>HTTP请求分发&#x2F;负载均衡</p></li></ul></li><li><p>操作步骤</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/16-22-55-00-%E6%88%AA%E5%B1%8F2023-03-16%2022.54.52.png"></p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/16-22-55-27-%E6%88%AA%E5%B1%8F2023-03-16%2022.55.19.png"></p><h3 id="部署应用"><a href="#部署应用" class="headerlink" title="部署应用"></a>部署应用</h3><ul><li><p>前提条件</p><ul><li><p>已创建至少一个ASM实例</p></li><li><p>已添加至少一个集群到该实例中</p></li><li><p>通过kubectl连接到ASM实例中新添加的集群</p></li><li><p>已添加入口网管到该集群</p></li></ul></li><li><p>背景信息案例：Bookinfo书评应用</p><ul><li><p>4个微服务构成</p></li><li><p>不同的技术栈</p></li><li><p>Reviews微服务有3个版本</p></li></ul></li><li><p>操作步骤</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/16-23-01-08-%E6%88%AA%E5%B1%8F2023-03-16%2023.00.43.png"></p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/16-23-01-38-%E6%88%AA%E5%B1%8F2023-03-16%2023.01.20.png"></p></li></ul><h3 id="定义资源"><a href="#定义资源" class="headerlink" title="定义资源"></a>定义资源</h3><ul><li><p>前提条件</p><ul><li><p>已创建至少一个ASM实例</p></li><li><p>已添加至少一个集群到该集群中</p></li><li><p>已添加入口网管到该集群</p></li><li><p>已部署应用到该集群</p></li></ul></li><li><p>背景信息</p><ul><li><p>定义istio资源的目的</p><ul><li><p>策略路由</p></li><li><p>流量治理</p></li><li><p>鉴权</p></li><li><p>安全保护</p></li></ul></li></ul></li><li><p>定义istio资源类型</p><ul><li><p>服务网关Gateway</p><ul><li><p>暴露服务</p></li><li><p>绑定端口、协议、域名</p></li></ul></li><li><p>虚拟服务VirtualService</p><ul><li><p>URL匹配</p></li><li><p>服务版本</p></li><li><p>流量权重</p></li></ul></li><li><p>目标规则DestinationRule</p><ul><li><p>负载均衡策略</p></li><li><p>流控规则</p></li></ul></li><li><p>服务入口ServiceEntry</p><ul><li><p>外部服务发现</p></li><li><p>流量拦截</p></li></ul></li></ul></li><li><p>部署步骤</p><ul><li>定义Gateway资源</li></ul><p><img src="https://cdn.nlark.com/yuque/0/2022/png/2393289/1665816978967-3e892183-2ef2-40d1-9022-1ca6548bccd5.png"></p><ul><li>定义虚拟服务</li></ul><p><img src="https://cdn.nlark.com/yuque/0/2022/png/2393289/1665816978967-3e892183-2ef2-40d1-9022-1ca6548bccd5.png"></p><ul><li>访问入口网管</li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/16-23-08-36-%E6%88%AA%E5%B1%8F2023-03-16%2023.08.29.png"></p><ul><li><p>定义目标规则</p><ul><li>负载均衡策略：轮询、最小连接数、随机</li></ul></li><li><p>增加新的虚拟服务</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/16-23-08-36-%E6%88%AA%E5%B1%8F2023-03-16%2023.08.29.png"></p><ul><li>执行结果</li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/16-23-10-54-%E6%88%AA%E5%B1%8F2023-03-16%2023.10.40.png"></p></li></ul><h3 id="流程总结"><a href="#流程总结" class="headerlink" title="流程总结"></a>流程总结</h3><ul><li><p>服务网格ASM的部署流程</p><ul><li><p>创建一个服务网格ASM实例</p></li><li><p>添加一个集群到服务网格ASM实例中</p></li><li><p>为服务网格ASM实例中的集群部署入口网关</p></li><li><p>将应用部署到上述服务网格ASM实例中的集群中</p></li><li><p>为服务网格ASM实例定义虚拟服务和istio服务网关</p></li></ul></li><li><p>服务网格ASM的移除流程</p><ul><li><p>在ASM实例管理页面移除所有关联的集群</p></li><li><p>集群中部署的入口网关服务将被自动卸载</p></li><li><p>在列表页面删除ASM实例</p></li></ul></li></ul><h3 id="ASM使用问题"><a href="#ASM使用问题" class="headerlink" title="ASM使用问题"></a>ASM使用问题</h3><ul><li><p>不能再ASM实例中部署应用</p><ul><li><p>控制台提供的配置用于连接ASM实例</p></li><li><p>istio资源在控制平面操作，无法在控制平面部署应用</p></li></ul></li><li><p>不能再ASM管理的集群中部署istio的虚拟服务等CRD资源</p><ul><li>istio资源在控制平面操作，连接的kubeconfig同样是控制平面提供的配置</li></ul></li><li><p>不直接使用集群的连接配置操作istio资源</p><ul><li>istio CRD对应的资源保存在控制平面，控制平面完成规则转换并应用</li></ul></li><li><p>服务网格控制平台的命名空间yu数据平面集群的命名空间的区别</p><ul><li><p>通过控制台或Kubeconfig定义的命名空间隶属于ASM实例</p></li><li><p>与该ASM实例管理的数据平面集群相互独立</p></li><li><p>在实例和数据平面集群中的管理与维护操作互不影响</p></li></ul></li></ul><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul><li><p>ASM入门指引</p></li><li><p>部署过程</p><ul><li><p>创建ASM实例</p></li><li><p>添加集群</p></li><li><p>添加入口网关</p></li><li><p>部署应用</p></li><li><p>定义资源</p></li></ul></li><li><p>流程总结</p></li><li><p>ASM使用问题</p></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;ASM入门指引&quot;&gt;&lt;a href=&quot;#ASM入门指引&quot; class=&quot;headerlink&quot; title=&quot;ASM入门指引&quot;&gt;&lt;/a&gt;ASM入门指引&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;部署ASM的基础环境&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;阿里云ECS弹性计算云服务器</summary>
       
     
     
