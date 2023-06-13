@@ -156,7 +156,7 @@ Starting wordpress_wordpress_1 ... done
 
 ## 参考
 
-[docker-compose官网]([Docker Compose overview | Docker Documentation](https://docs.docker.com/compose/))
+[Docker Compose overview | Docker Documentation](https://docs.docker.com/compose/)
 
 [解决docker-compose: command not found问题的两种常用方法-云社区-华为云](https://bbs.huaweicloud.com/blogs/286823)
 
