@@ -150,7 +150,7 @@ Starting wordpress_wordpress_1 ... done
 
 
 
-然后输入http://<ip>:80，查看是否已经正常启动即可。
+然后输入http://ip:80，查看是否已经正常启动即可。
 
 
 
