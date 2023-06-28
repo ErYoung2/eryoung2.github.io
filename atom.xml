@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-06-13T04:56:26.357Z</updated>
+  <updated>2023-06-28T07:26:14.310Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《知足》-- 五月天</title>
+    <link href="http://eryoung2.github.io/2023/06/28/%E3%80%8A%E7%9F%A5%E8%B6%B3%E3%80%8B-%E4%BA%94%E6%9C%88%E5%A4%A9/"/>
+    <id>http://eryoung2.github.io/2023/06/28/%E3%80%8A%E7%9F%A5%E8%B6%B3%E3%80%8B-%E4%BA%94%E6%9C%88%E5%A4%A9/</id>
+    <published>2023-06-28T07:25:16.000Z</published>
+    <updated>2023-06-28T07:26:14.310Z</updated>
+    
+    <content type="html"><![CDATA[<p>怎么去拥有，一道彩虹，<br>怎么去拥抱，一夏天的风。<br>天上的星星像地上的人，<br>总是不能懂，不能觉得足够。</p><p>    </p><p>如果我爱上，你的笑容，<br>要怎么收藏，要怎么拥有。<br>如果你快乐，不是为我，<br>会不会放手，其实才是拥有。</p><p>    </p><p>当一阵风吹来，风筝飞向天空，<br>为了你，而祈祷，而祝福，而感动。<br>终于你身影消失在，人海尽头，<br>才发现，笑着哭，最痛。</p><p>    </p><p>那年你和我，那个山丘，<br>那样的唱着，那一年的歌。<br>那年的回忆，那么足够，<br>足够我天天都，品尝着寂寞。</p><p>    </p><p>当一阵风吹来，风筝飞向天空，<br>为了你，而祈祷，而祝福，而感动。<br>终于你身影消失在，人海尽头，<br>才发现，笑着哭，最痛。</p><p>当一阵风吹来，风筝飞向天空，<br>为了你，而祈祷，而祝福，而感动。<br>终于你身影消失在，人海尽头，<br>才发现，笑着哭，最痛，喔~~</p><p>    </p><p> <br>如果我爱上，你的笑容，<br>要怎么收藏，要怎么拥有。<br>如果你快乐再不是为我，<br>会不会放手，其实才是拥有。</p><p>    </p><p> <br>知足的快乐，叫我忍受心痛，<br>知足的快乐，叫我忍受心痛。。。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;怎么去拥有，一道彩虹，&lt;br&gt;怎么去拥抱，一夏天的风。&lt;br&gt;天上的星星像地上的人，&lt;br&gt;总是不能懂，不能觉得足够。&lt;/p&gt;
+&lt;p&gt;    &lt;/p&gt;
+&lt;p&gt;如果我爱上，你的笑容，&lt;br&gt;要怎么收藏，要怎么拥有。&lt;br&gt;如果你快乐，不是为我，&lt;br&gt;会不会放手，其实才是拥有</summary>
+      
+    
+    
+    
+    <category term="歌词" scheme="http://eryoung2.github.io/categories/%E6%AD%8C%E8%AF%8D/"/>
+    
+    
+    <category term="五月天" scheme="http://eryoung2.github.io/tags/%E4%BA%94%E6%9C%88%E5%A4%A9/"/>
+    
+  </entry>
   
   <entry>
     <title>docker-compose搭建wordpress</title>
@@ -509,30 +535,6 @@
     
     
     <category term="Mac" scheme="http://eryoung2.github.io/tags/Mac/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ACP云原生容器工程师 - 应用案例</title>
-    <link href="http://eryoung2.github.io/2023/03/18/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-%E5%BA%94%E7%94%A8%E6%A1%88%E4%BE%8B/"/>
-    <id>http://eryoung2.github.io/2023/03/18/ACP%E4%BA%91%E5%8E%9F%E7%94%9F%E5%AE%B9%E5%99%A8%E5%B7%A5%E7%A8%8B%E5%B8%88-%E5%BA%94%E7%94%A8%E6%A1%88%E4%BE%8B/</id>
-    <published>2023-03-18T05:59:56.000Z</published>
-    <updated>2023-03-18T06:51:14.269Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="集群规划构建"><a href="#集群规划构建" class="headerlink" title="集群规划构建"></a>集群规划构建</h2><h3 id="容器部署中的ECS选型"><a href="#容器部署中的ECS选型" class="headerlink" title="容器部署中的ECS选型"></a>容器部署中的ECS选型</h3><ul><li>在创建Kubernetes实例时，物理部署实体的选型对上层应用的性能起着非常大的影响。通过大型客户在云容器部署实践的统计，很大一部分应用在容器部署中都没有采用正确的部署方式。</li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/18-14-11-13-%E6%88%AA%E5%B1%8F2023-03-18%2014.11.05.png"></p><h3 id="容器集群的高可靠配置"><a href="#容器集群的高可靠配置" class="headerlink" title="容器集群的高可靠配置"></a>容器集群的高可靠配置</h3><ul><li><p>在容器集群部署规划中，除了ECS选型之外，哎呦很多配置方式会直接影响集群的可靠性，可总结为以下5点：</p><ul><li><p>消灭SPOF：SPOF单点故障是高可靠性大敌，因此尽量直接使用Pod部署</p></li><li><p>单进程容器：单进程容器便于容器内进行监控以及容器重启操作</p></li><li><p>配置探活：通过探活和重启策略的配置监控容器内进程的健康状态</p></li><li><p>资源声明：Pod的资源声明可以保证K8s对Node资源的有效分配</p></li><li><p>多可用区：通过多可用区避免物理故障</p></li></ul></li></ul><h3 id="容器节点操作系统选择"><a href="#容器节点操作系统选择" class="headerlink" title="容器节点操作系统选择"></a>容器节点操作系统选择</h3><ul><li>Alibaba Cloud Linux2是新一代阿里云Linux操作系统，为云上应用程序提供安全、稳定、高性能的定制化运行环境，并针对云基础设施进行了深度优化，并提供更好的运行时体验</li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/18-14-10-32-%E6%88%AA%E5%B1%8F2023-03-18%2014.10.24.png"></p><h3 id="网络规划"><a href="#网络规划" class="headerlink" title="网络规划"></a>网络规划</h3><ul><li><p>在创建K8s集群时，根据网络插件的不同，需要指定专有网络VPC、虚拟交换机、Pod网络CIDR和Service CIDR，并做好ECS地址、K8s Pod地址和Service地址的规划工作</p></li><li><p>可选的网络插件：Flannel、Terway</p></li></ul><h3 id="集群接入服务网格ASM"><a href="#集群接入服务网格ASM" class="headerlink" title="集群接入服务网格ASM"></a>集群接入服务网格ASM</h3><ul><li>将部署容器集群中的应用接入阿里云服务网格ASM，可以简化服务的网格化治理，实现服务的可观测性，减轻开发与运维的工作负担</li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/18-14-14-19-%E6%88%AA%E5%B1%8F2023-03-18%2014.14.10.png"></p><h2 id="集群核心组件配置与优化"><a href="#集群核心组件配置与优化" class="headerlink" title="集群核心组件配置与优化"></a>集群核心组件配置与优化</h2><h3 id="混合云部署K8s集群"><a href="#混合云部署K8s集群" class="headerlink" title="混合云部署K8s集群"></a>混合云部署K8s集群</h3><ul><li>对于企业客户而言，出于数据主权和安全隐私的考虑，大多会考虑使用多云混合云方式开展业务，以K8s为代表的技术屏蔽了基础设施的差异性，推动了以应用多云混合云新架构的到来</li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/18-14-16-16-%E6%88%AA%E5%B1%8F2023-03-18%2014.16.09.png"></p><h3 id="使用Terraform创建K8s集群"><a href="#使用Terraform创建K8s集群" class="headerlink" title="使用Terraform创建K8s集群"></a>使用Terraform创建K8s集群</h3><ul><li>Terraform是HashiCorp公司提供的一种开源工具，用于安全高效地预览、配置、管理云基础架构和资源，帮助开发者自动化地创建、更新阿里云基础设施资源，并进行版本管理</li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/18-14-17-55-%E6%88%AA%E5%B1%8F2023-03-18%2014.17.48.png"></p><h3 id="Kubernetes对接ECI"><a href="#Kubernetes对接ECI" class="headerlink" title="Kubernetes对接ECI"></a>Kubernetes对接ECI</h3><ul><li><p>ECI为K8s提供一种层次化的解决方案，即ECI负责底层Pod容器资源的调度和管理工作，K8s在ECI之上作为PaaS层来管理Deployment、Service、StatefulSet、CronJob等业务负载</p></li><li><p>ECI克承载ACK集群或者ASK集群</p></li><li><p>混合使用ECI和传统服务器</p></li></ul><h3 id="容器集群的高弹性架构实现"><a href="#容器集群的高弹性架构实现" class="headerlink" title="容器集群的高弹性架构实现"></a>容器集群的高弹性架构实现</h3><ul><li><p>对于有波峰波谷的在线业务，或者机器学习、基因测序等对实时性要求不高、但是对成本敏感的应用，可以通过容器高弹性架构，全自动实现动态创建或释放实例，达到成本的最优控制</p></li><li><p>ECI方式高弹性架构：适用于秒杀、爬虫等短期高峰值应用场景</p></li><li><p>使用ECS+ECI混合部署方式，保持互通</p></li></ul><h3 id="Ingress最佳实践"><a href="#Ingress最佳实践" class="headerlink" title="Ingress最佳实践"></a>Ingress最佳实践</h3><ul><li>在K8s集群中，Ingress是授权入站连接到达集群服务的规则几何，可以提供七层负载均衡能力，通过Ingress可以实现滚动升级、分批暂停发布、蓝绿发布以及灰度发布等发布方式。以及不同集群之间的流量复制。作为集群流量接入层，Ingress的高可靠显得尤为重要</li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/18-14-23-52-%E6%88%AA%E5%B1%8F2023-03-18%2014.23.28.png"></p><h3 id="CoreDNS"><a href="#CoreDNS" class="headerlink" title="CoreDNS"></a>CoreDNS</h3><ul><li>容器集群中部署了CoreDNS作为内部DNS服务器，在集群中推荐使用Service名作为服务的访问地址，通过CoreDNS服务可以实现从Service到Service的ip地址的解析。同时Serverless集群中支持PrivateZone进行域名解析服务发现</li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/18-14-25-38-%E6%88%AA%E5%B1%8F2023-03-18%2014.25.31.png"></p><h2 id="使用案例-聚石塔"><a href="#使用案例-聚石塔" class="headerlink" title="使用案例 - 聚石塔"></a>使用案例 - 聚石塔</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><h4 id="聚石塔业务背景介绍"><a href="#聚石塔业务背景介绍" class="headerlink" title="聚石塔业务背景介绍"></a>聚石塔业务背景介绍</h4><ul><li>聚石塔最早上线于2012年，是阿里集团帮助商家打造的开放电商云工作平台。它汇聚包括淘宝、天猫、阿里云等整个平台资源和资源优势，同时依托于聚石塔，各种业务类型的服务商商家提供了如ERP、CRM、WMS等业务服务</li></ul><h4 id="聚石塔的业务痛点"><a href="#聚石塔的业务痛点" class="headerlink" title="聚石塔的业务痛点"></a>聚石塔的业务痛点</h4><ul><li><p>聚石塔的业务大致分为两部分：</p><ul><li><p>电商订单服务连路上的系统如ERP、CRM、WMS</p></li><li><p>电商行业中直接面向客户的小程序场景，如手淘与千牛的小程序</p></li></ul></li></ul><p>其业务痛点如下:</p><ul><li><p>标准化和稳定性问题</p></li><li><p>突发流量下的弹性问题</p></li><li><p>效率和成本问题</p></li></ul><h4 id="聚石塔技术特点-应用和发布标准化"><a href="#聚石塔技术特点-应用和发布标准化" class="headerlink" title="聚石塔技术特点 - 应用和发布标准化"></a>聚石塔技术特点 - 应用和发布标准化</h4><ul><li>K8s自带的滚动发布，虽然标准化了发布环节，但在发布期间无法暂停，即使服务起来了，可能功能和业务存在的问题，最终也会随着滚动不断扩大影响面；对此，聚石塔设计了支持暂停的分批发布，通过提前批的“金丝雀”发布，从而提升系统的稳定性</li></ul><h4 id="聚石塔技术特点-丰富的弹性扩容"><a href="#聚石塔技术特点-丰富的弹性扩容" class="headerlink" title="聚石塔技术特点 - 丰富的弹性扩容"></a>聚石塔技术特点 - 丰富的弹性扩容</h4><ul><li>对于电商等零流量波动较大的场景，用户一般会把集群资源维持在日常流量的规模，并在流量高峰再来林倩进行集群资源的扩容。ECI的价格与同等规格的ECS相近，且为按秒付费，秒级扩容</li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/18-14-33-11-%E6%88%AA%E5%B1%8F2023-03-18%2014.33.02.png"></p><h4 id="聚石塔技术特点-应用监控"><a href="#聚石塔技术特点-应用监控" class="headerlink" title="聚石塔技术特点 - 应用监控"></a>聚石塔技术特点 - 应用监控</h4><ul><li>与传统应用相比，基于K8s容器实例是动态调度的、生命周期短，Deployment、Service等容器上层抽象组件更是难以监控的，此外还需要底层ECS计算资源、实例生命周期、K8s集群自身以及集群核心组件的各个维度的监控</li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/18-14-35-08-%E6%88%AA%E5%B1%8F2023-03-18%2014.35.00.png"></p><h4 id="聚石塔技术特点-DNS生产环境优化"><a href="#聚石塔技术特点-DNS生产环境优化" class="headerlink" title="聚石塔技术特点 - DNS生产环境优化"></a>聚石塔技术特点 - DNS生产环境优化</h4><ul><li><p>聚石塔的用户大多是电商或小程序的场景，开发语言多样化，有些语言没有很好的连接池，导致DNS解析频繁。K8s默认的CoreDNS在高并发时会遇到性能瓶颈，因此聚石塔对DNS的性能做了深入的优化，优化的手段主要有两种，分别是Node Local DNS和SideCar DNS</p></li><li><p>Node Local DNS：通过DaemonSet方式在每个节点上运行一个DNS的Pod，设置相应转发规则，最大可能避免跨节点解析</p></li><li><p>SideCar DNS：在业务Pod中添加DNS解析服务容器，可当做DNS缓存，且只为当前Pod进行服务，做到资源隔离</p></li></ul><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/18-14-44-50-%E6%88%AA%E5%B1%8F2023-03-18%2014.44.42.png"></p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul><li><p>集群规划构建</p></li><li><p>集群核心组件配置及优化</p></li><li><p>使用案例介绍 - 聚石塔平台</p></li></ul><h2 id="完结"><a href="#完结" class="headerlink" title="完结"></a>完结</h2><p>ACP云原生容器工程师相关介绍自此完结，可以说这个证书相比云计算要困难一些，里边涉及到了大量云原生和K8s的内容，对于初学者并不友好，决定考取这个证书的同学也较少，但是我相信随着技术的不断发展、岗位不断内卷的大环境之下，这个与K8s高度相关的认证会有越来越多的人进行考取。</p><p>我这里也只是将自己的笔记整理之后进行的重新发布，如果对将来立志于此的同学们有些许帮助的话，那真是我莫大的荣幸！</p><p>以上，完结！</p><p>各位兄弟江湖再见~</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;集群规划构建&quot;&gt;&lt;a href=&quot;#集群规划构建&quot; class=&quot;headerlink&quot; title=&quot;集群规划构建&quot;&gt;&lt;/a&gt;集群规划构建&lt;/h2&gt;&lt;h3 id=&quot;容器部署中的ECS选型&quot;&gt;&lt;a href=&quot;#容器部署中的ECS选型&quot; class=&quot;header</summary>
-      
-    
-    
-    
-    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
-    
-    
-    <category term="阿里云ACP认证" scheme="http://eryoung2.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91ACP%E8%AE%A4%E8%AF%81/"/>
     
   </entry>
   
