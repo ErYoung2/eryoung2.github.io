@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-06-29T15:09:42.800Z</updated>
+  <updated>2023-06-30T14:18:52.381Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《盲婚哑嫁》-- 陈奕迅</title>
+    <link href="http://eryoung2.github.io/2023/06/30/%E3%80%8A%E7%9B%B2%E5%A9%9A%E5%93%91%E5%AB%81%E3%80%8B-%E9%99%88%E5%A5%95%E8%BF%85/"/>
+    <id>http://eryoung2.github.io/2023/06/30/%E3%80%8A%E7%9B%B2%E5%A9%9A%E5%93%91%E5%AB%81%E3%80%8B-%E9%99%88%E5%A5%95%E8%BF%85/</id>
+    <published>2023-06-30T14:07:56.000Z</published>
+    <updated>2023-06-30T14:18:52.381Z</updated>
+    
+    <content type="html"><![CDATA[<p>若，如若时辰未到，似水点散下落花，变朝露，</p><p>若，如若时来运到，水点经过瀑布，万人赞好。</p><p>    </p><p>缺一门，你尚有星门，</p><p>能不管，离合注定，你定悲欢。</p><p>    </p><p>忘记她，仿似遗忘密码， </p><p>无密码，方可以忘记她。</p><p>随镜花，一切如盲婚哑嫁，</p><p>由它去转化。</p><p>    </p><p>别，别去怀恨月老，</p><p>至少得到弹指间，那花渡。</p><p>苦，苦水随甜蜜续吐，</p><p>暗黑先会顿觉，夕阳那么好。</p><p>    </p><p>五七言，也是太多言，能肤浅，</p><p>忘掉对白，李白也是曲线。</p><p>    </p><p>忘记她，仿似遗忘密码，</p><p>无密码，方可以忘记她。</p><p>随镜花，一切如盲婚哑嫁，作得准吗，</p><p>无谓征婚转嫁，无谓招婚改嫁。</p><p>    </p><p>忘记她，抛弃遗传密码，</p><p>无密码，根生已忘记花。</p><p>忘记花，花瓣随盲婚哑嫁，</p><p>人非花，飞花与芽东与夏。</p><p>凡间的戏吗。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;若，如若时辰未到，似水点散下落花，变朝露，&lt;/p&gt;
+&lt;p&gt;若，如若时来运到，水点经过瀑布，万人赞好。&lt;/p&gt;
+&lt;p&gt;    &lt;/p&gt;
+&lt;p&gt;缺一门，你尚有星门，&lt;/p&gt;
+&lt;p&gt;能不管，离合注定，你定悲欢。&lt;/p&gt;
+&lt;p&gt;    &lt;/p&gt;
+&lt;p&gt;忘记她，仿似遗忘密码， &lt;/p</summary>
+      
+    
+    
+    
+    <category term="歌词" scheme="http://eryoung2.github.io/categories/%E6%AD%8C%E8%AF%8D/"/>
+    
+    
+    <category term="陈奕迅" scheme="http://eryoung2.github.io/tags/%E9%99%88%E5%A5%95%E8%BF%85/"/>
+    
+  </entry>
   
   <entry>
     <title>《知足》-- 五月天</title>
@@ -511,30 +541,6 @@
     
     
     <category term="python" scheme="http://eryoung2.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mac mini使用iphone摄像头</title>
-    <link href="http://eryoung2.github.io/2023/03/19/Mac-mini%E4%BD%BF%E7%94%A8iphone%E6%91%84%E5%83%8F%E5%A4%B4/"/>
-    <id>http://eryoung2.github.io/2023/03/19/Mac-mini%E4%BD%BF%E7%94%A8iphone%E6%91%84%E5%83%8F%E5%A4%B4/</id>
-    <published>2023-03-19T12:21:46.000Z</published>
-    <updated>2023-03-19T12:28:41.958Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前段时间我将自己的Mac换成了M1芯片的Mac Mini，由于是个裸机，除了主机啥也没有，所以我都是需要自己diy配件的。键盘鼠标音响耳机啥的都好说，但是摄像头捏？</p><h2 id="正言"><a href="#正言" class="headerlink" title="正言"></a>正言</h2><p>之前就看到苹果的MacOS 13推出了一个功能，可以使用自己的iphone做为外置摄像头。</p><p>我试了很多次，姿势都不对，就很困惑。</p><p>后来查阅了很多资料之后，发现要满足以下条件：</p><ol><li><p>电脑和手机使用同一个apple id</p></li><li><p>手机开启接力功能</p></li><li><p>手机锁屏横放，后置摄像头对着自己（重要）</p></li><li><p>调整合理角度，打开相关软件即可使用</p></li></ol><p>已测试过的软件有：Facetime、Photo Booth、QuickTime Player、微信，配置正确且姿势合适即可调出摄像头使用。</p><h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>手机成像效果好于Mac摄像头，如果能持续使用的话都是不错的。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;前段时间我将自己的Mac换成了M1芯片的Mac Mini，由于是个裸机，除了主机啥也没有，所以我都是需要自己diy配件的。键盘鼠标音响耳机啥</summary>
-      
-    
-    
-    
-    <category term="操作系统" scheme="http://eryoung2.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-    <category term="Mac" scheme="http://eryoung2.github.io/tags/Mac/"/>
     
   </entry>
   

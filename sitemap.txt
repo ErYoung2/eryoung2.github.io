@@ -1,3 +1,4 @@
+http://eryoung2.github.io/2023/06/30/%E3%80%8A%E7%9B%B2%E5%A9%9A%E5%93%91%E5%AB%81%E3%80%8B-%E9%99%88%E5%A5%95%E8%BF%85/
 http://eryoung2.github.io/2022/06/24/vim%E6%93%8D%E4%BD%9C-%E7%AC%AC%E4%B8%80%E5%BC%B9/
 http://eryoung2.github.io/2023/06/28/%E3%80%8A%E7%9F%A5%E8%B6%B3%E3%80%8B-%E4%BA%94%E6%9C%88%E5%A4%A9/
 http://eryoung2.github.io/2023/06/13/docker-compose%E6%90%AD%E5%BB%BAwordpress/
@@ -125,6 +126,7 @@ http://eryoung2.github.io/tags/%E5%86%85%E6%A0%B8/
 http://eryoung2.github.io/tags/namewee/
 http://eryoung2.github.io/tags/%E7%8E%8B%E5%8A%9B%E5%AE%8F/
 http://eryoung2.github.io/tags/%E6%9E%97%E5%A5%95%E5%8C%A1/
+http://eryoung2.github.io/tags/%E9%99%88%E5%A5%95%E8%BF%85/
 http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/
 http://eryoung2.github.io/categories/%E5%A5%87%E6%80%AA%E7%9A%84%E4%B8%9C%E8%A5%BF/
 http://eryoung2.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/
