@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-06-30T14:18:52.381Z</updated>
+  <updated>2023-06-30T17:13:46.019Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《四季》-- 陈奕迅</title>
+    <link href="http://eryoung2.github.io/2023/07/01/%E3%80%8A%E5%9B%9B%E5%AD%A3%E3%80%8B-%E9%99%88%E5%A5%95%E8%BF%85/"/>
+    <id>http://eryoung2.github.io/2023/07/01/%E3%80%8A%E5%9B%9B%E5%AD%A3%E3%80%8B-%E9%99%88%E5%A5%95%E8%BF%85/</id>
+    <published>2023-06-30T17:10:06.000Z</published>
+    <updated>2023-06-30T17:13:46.019Z</updated>
+    
+    <content type="html"><![CDATA[<p>我記起那年春天<br>得我一個不知的欺騙<br>如天空的污染 終於都上演</p><p>    </p><p>我記起那年暑天<br>友情愛情兩邊都發現虧欠<br>情路上跌損</p><p>    </p><p>最後已事過境遷<br>長街風景已變<br>再度回想誰的臉<br>往日哪位少年</p><p>    </p><p>又再路過事發景點<br>痛傷少不免<br>仍是會流淚失眠<br>尚記得當天貫心的一箭</p><p>    </p><p>我記起那年秋天<br>飛過一隻心酸小孤燕<br>半枯乾的枝節 於窗邊發展</p><p>    </p><p>我記起那年的冬天<br>半矇半矓困於繭裡面<br>兜轉 緣份未看穿</p><p>    </p><p>最後已事過境遷<br>長街風景已變<br>再度回想誰的臉<br>往日哪位少年</p><p>    </p><p>又再路過事發景點<br>痛傷少不免<br>仍是會流淚失眠<br>淚染穿心穿肺那一點</p><p>    </p><p>季度裡事過境遷<br>蝴蝶終於蛻變<br>再沒留戀誰的臉<br>往日兩位少年</p><p>    </p><p>就算讓世事再翻演<br>會否不改變<br>仍是會離別 糾纏<br>拔去穿心一箭 感恩不怨</p><p>    </p><p>我感激這年春天<br>花再開遍祝福相獻<br>待那邱比特放出新一箭</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;我記起那年春天&lt;br&gt;得我一個不知的欺騙&lt;br&gt;如天空的污染 終於都上演&lt;/p&gt;
+&lt;p&gt;    &lt;/p&gt;
+&lt;p&gt;我記起那年暑天&lt;br&gt;友情愛情兩邊都發現虧欠&lt;br&gt;情路上跌損&lt;/p&gt;
+&lt;p&gt;    &lt;/p&gt;
+&lt;p&gt;最後已事過境遷&lt;br&gt;長街風景已變&lt;br&gt;再度回想誰的臉&lt;b</summary>
+      
+    
+    
+    
+    <category term="歌词" scheme="http://eryoung2.github.io/categories/%E6%AD%8C%E8%AF%8D/"/>
+    
+    
+    <category term="陈奕迅" scheme="http://eryoung2.github.io/tags/%E9%99%88%E5%A5%95%E8%BF%85/"/>
+    
+  </entry>
   
   <entry>
     <title>《盲婚哑嫁》-- 陈奕迅</title>
@@ -516,31 +544,6 @@
     
     
     <category term="Mac" scheme="http://eryoung2.github.io/tags/Mac/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python if __name == __main__的详解</title>
-    <link href="http://eryoung2.github.io/2023/03/20/python-if-name-main-%E7%9A%84%E8%AF%A6%E8%A7%A3/"/>
-    <id>http://eryoung2.github.io/2023/03/20/python-if-name-main-%E7%9A%84%E8%AF%A6%E8%A7%A3/</id>
-    <published>2023-03-20T08:55:47.000Z</published>
-    <updated>2023-03-20T10:03:03.795Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>对于python来说，我们经常会见到一行代码：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    balabala</span><br></pre></td></tr></table></figure><p>那这句话是啥意思呢？</p><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>首先要明白__name__是python当中的一个属性，代表现在主模块的引用。</p><p>如果调用的是本模块(python文件相当于模块)，那么默认的name就是_main__了。如果不是的话，name就会设置为引用模块的名称。</p><p>例如我有两个py文件，cal.py和hello.py，其中hello.py会引用cal.py。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#cal.py</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">return_max</span>(<span class="params">num1, num2</span>):</span><br><span class="line">    <span class="keyword">if</span> num1 &gt;= num2:</span><br><span class="line">        <span class="keyword">return</span> num1</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> num2</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">num = return_max(<span class="number">3</span>,<span class="number">5</span>)</span><br><span class="line"><span class="built_in">print</span>(num)</span><br><span class="line"><span class="built_in">print</span>(__name__) <span class="comment">#显示为__main__</span></span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#hello.py</span></span><br><span class="line"><span class="keyword">import</span> cal</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(cal.__name__) <span class="comment">#显示为cal</span></span><br></pre></td></tr></table></figure><p>按照上面的说法，这时如果我们运行hello.py, 跑出来的就不是hello.py的内容而是cal.py内容了。</p><p>而如果我加了这行判断，就不会出现这个问题。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br></pre></td></tr></table></figure><h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>这个概念对于python是非常重要的，主要是为了防止引用混乱的问题。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;对于python来说，我们经常会见到一行代码：&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;t</summary>
-      
-    
-    
-    
-    <category term="编程语言" scheme="http://eryoung2.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    
-    <category term="python" scheme="http://eryoung2.github.io/tags/python/"/>
     
   </entry>
   
