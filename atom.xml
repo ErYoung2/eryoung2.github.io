@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-06-30T17:13:46.019Z</updated>
+  <updated>2023-07-15T17:12:52.076Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>jenkins流水线报错</title>
+    <link href="http://eryoung2.github.io/2023/07/16/jenkins%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%A5%E9%94%99/"/>
+    <id>http://eryoung2.github.io/2023/07/16/jenkins%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%A5%E9%94%99/</id>
+    <published>2023-07-15T17:08:19.000Z</published>
+    <updated>2023-07-15T17:12:52.076Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h2><p>今天在使用jenkins时，流水线有报错：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:</span><br><span class="line">WorkflowScript: 1: unable to resolve class Declarative </span><br></pre></td></tr></table></figure><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>正如报错所示，流水线的第一行内容不符合pipeline流水线的语法，因此将其注释即可。</p><p>例如，我们使用hello-world的流水线时，官方给出的pipeline如下，此时我们需要注释第一行，以使其可以符合pipeline语法：</p><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Jenkinsfile (Declarative Pipeline) 需要注释</span></span><br><span class="line">pipeline &#123;</span><br><span class="line">    agent any </span><br><span class="line">    stages &#123;</span><br><span class="line">        stage(<span class="string">&#x27;Stage 1&#x27;</span>) &#123;</span><br><span class="line">            steps &#123;</span><br><span class="line">                echo <span class="string">&#x27;Hello world!&#x27;</span> </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>然后问题解决。</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://cloud.tencent.com/developer/ask/sof/106548582/answer/117522876">用户对问题“Jenkins在构建Python脚本时“无法解决类声明性”错误”的回答 - 问答 - 腾讯云开发者社区-腾讯云</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;错误&quot;&gt;&lt;a href=&quot;#错误&quot; class=&quot;headerlink&quot; title=&quot;错误&quot;&gt;&lt;/a&gt;错误&lt;/h2&gt;&lt;p&gt;今天在使用jenkins时，流水线有报错：&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;</summary>
+      
+    
+    
+    
+    <category term="工具使用" scheme="http://eryoung2.github.io/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    
+    
+    <category term="jenkins" scheme="http://eryoung2.github.io/tags/jenkins/"/>
+    
+  </entry>
   
   <entry>
     <title>《四季》-- 陈奕迅</title>
@@ -49,7 +74,7 @@
     <link href="http://eryoung2.github.io/2023/06/30/%E3%80%8A%E7%9B%B2%E5%A9%9A%E5%93%91%E5%AB%81%E3%80%8B-%E9%99%88%E5%A5%95%E8%BF%85/"/>
     <id>http://eryoung2.github.io/2023/06/30/%E3%80%8A%E7%9B%B2%E5%A9%9A%E5%93%91%E5%AB%81%E3%80%8B-%E9%99%88%E5%A5%95%E8%BF%85/</id>
     <published>2023-06-30T14:07:56.000Z</published>
-    <updated>2023-06-30T14:18:52.381Z</updated>
+    <updated>2023-07-02T13:51:22.460Z</updated>
     
     <content type="html"><![CDATA[<p>若，如若时辰未到，似水点散下落花，变朝露，</p><p>若，如若时来运到，水点经过瀑布，万人赞好。</p><p>    </p><p>缺一门，你尚有星门，</p><p>能不管，离合注定，你定悲欢。</p><p>    </p><p>忘记她，仿似遗忘密码， </p><p>无密码，方可以忘记她。</p><p>随镜花，一切如盲婚哑嫁，</p><p>由它去转化。</p><p>    </p><p>别，别去怀恨月老，</p><p>至少得到弹指间，那花渡。</p><p>苦，苦水随甜蜜续吐，</p><p>暗黑先会顿觉，夕阳那么好。</p><p>    </p><p>五七言，也是太多言，能肤浅，</p><p>忘掉对白，李白也是曲线。</p><p>    </p><p>忘记她，仿似遗忘密码，</p><p>无密码，方可以忘记她。</p><p>随镜花，一切如盲婚哑嫁，作得准吗，</p><p>无谓征婚转嫁，无谓招婚改嫁。</p><p>    </p><p>忘记她，抛弃遗传密码，</p><p>无密码，根生已忘记花。</p><p>忘记花，花瓣随盲婚哑嫁，</p><p>人非花，飞花与芽东与夏。</p><p>凡间的戏吗。</p>]]></content>
     
@@ -186,7 +211,7 @@
     <link href="http://eryoung2.github.io/2023/05/28/%E5%AF%B9%E2%80%9C%E8%A7%81%E6%80%AA%E4%B8%8D%E6%80%AA%E2%80%9D%E7%9A%84%E7%9C%9F%E5%AE%9E%E4%BD%93%E4%BC%9A/"/>
     <id>http://eryoung2.github.io/2023/05/28/%E5%AF%B9%E2%80%9C%E8%A7%81%E6%80%AA%E4%B8%8D%E6%80%AA%E2%80%9D%E7%9A%84%E7%9C%9F%E5%AE%9E%E4%BD%93%E4%BC%9A/</id>
     <published>2023-05-27T19:19:55.000Z</published>
-    <updated>2023-05-27T19:35:54.505Z</updated>
+    <updated>2023-07-02T13:51:13.732Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>2023年5月27号，是全国计算机资格考试（简称软考）开考的日子，笔者也参加了这次考试，科目为网络工程师。</p><h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><p>00:00～06:30 笔者彻夜未眠，主要是做着对考试的各种猜想，就这样到了6点半，出发去考场。</p><p>06:30～07:30 在地铁上刷了两套上午题，感觉不错</p><p>07:30～08:00 吃早餐，点了一个鸡蛋，其他的吃不下，进考场</p><p>08:00～09:00 进场、准备考试</p><p>09:00～11:00 上午场，做题、检查6遍、估分，估计低分飘过吧</p><p>11:00～13:00 午休，看了看历年下午的真题，看了看知识点，调整心态，依然没吃什么东西，天气太热没有胃口</p><p>13:00～14:00 进场、准备考试，在准考证背面写了“可不敢半场开香槟”</p><p>14:00～16:00 阴间旅游两小时，边骂边做题，答案全靠蒙，已然gg</p><p>16:00～16:30 吃东西，然后看到作弊相关动态，持续骂娘</p><p>17:00～18:00 回家，路上碰到一个作弊者，跟我说花4万块买的答案，准备了3份入场考试，作弊原因是为了积分入户，给小孩读书</p><p>18:00～23:00 睡了一觉</p><p>23:00～现在 持续逛群，持续输出c语言</p><h2 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h2><p>可能没有后续了，等到7月份再说吧，要不要继续备战网络规划设计师，网工是不继续考了，这种阴间考试性价比太低，不如搞一些实际的本事。</p><h2 id="再后续"><a href="#再后续" class="headerlink" title="再后续"></a>再后续</h2><p>这几年随着自己的成长，恶心的事情见太多，人心都麻了。现在的我只想躺平，对恶心的事情见怪不怪，最终就变了自己最讨厌的样子。</p><h2 id="再再后续"><a href="#再再后续" class="headerlink" title="再再后续"></a>再再后续</h2><p>只想活着，不敢奢求其他任何好运。</p><p align="right">--ErYoung作于2023年05月28日凌晨3点33分</p>]]></content>
     
@@ -440,7 +465,7 @@
     <link href="http://eryoung2.github.io/2023/04/07/%E5%90%84%E4%BA%91%E5%8E%82%E5%95%86%E5%B8%B8%E8%A7%81%E6%9C%8D%E5%8A%A1%E5%AF%B9%E6%AF%94/"/>
     <id>http://eryoung2.github.io/2023/04/07/%E5%90%84%E4%BA%91%E5%8E%82%E5%95%86%E5%B8%B8%E8%A7%81%E6%9C%8D%E5%8A%A1%E5%AF%B9%E6%AF%94/</id>
     <published>2023-04-06T18:14:50.000Z</published>
-    <updated>2023-04-06T18:19:00.454Z</updated>
+    <updated>2023-07-02T13:51:19.894Z</updated>
     
     <content type="html"><![CDATA[<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><table><thead><tr><th></th><th>AWS</th><th>AZure</th><th>GCP</th><th>阿里云</th></tr></thead><tbody><tr><td>服务器</td><td>EC2</td><td>VM</td><td>Compute Engine</td><td>ECS</td></tr><tr><td>对象存储</td><td>S3</td><td>AZure Blob Storage</td><td>Cloud Storage</td><td>OSS</td></tr><tr><td>网络</td><td>VPC</td><td>AZure Virtual Network</td><td>VPC</td><td>VPC</td></tr><tr><td>镜像服务</td><td>ECS</td><td>AZure Container Registry</td><td>Container Registry</td><td>ACR</td></tr><tr><td>容器服务(K8S)</td><td>EKS</td><td>AKS</td><td>GKE</td><td>ACK</td></tr><tr><td>容器服务(Serverless)</td><td>Lambda</td><td>AZure functions</td><td>KNative</td><td>ASK</td></tr><tr><td>队列</td><td>SQS</td><td>AZure Queue</td><td>Cloud Pub&#x2F;Sub</td><td>MNS</td></tr><tr><td>…</td><td></td><td></td><td></td><td></td></tr></tbody></table><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>服务太多了，仅仅列举最常见的几项。</p>]]></content>
     
@@ -519,31 +544,6 @@
     
     
     <category term="Classic" scheme="http://eryoung2.github.io/tags/Classic/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mac连接Win的方法</title>
-    <link href="http://eryoung2.github.io/2023/03/22/Mac%E8%BF%9E%E6%8E%A5Win%E7%9A%84%E6%96%B9%E6%B3%95/"/>
-    <id>http://eryoung2.github.io/2023/03/22/Mac%E8%BF%9E%E6%8E%A5Win%E7%9A%84%E6%96%B9%E6%B3%95/</id>
-    <published>2023-03-22T14:43:50.000Z</published>
-    <updated>2023-03-22T15:13:43.256Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我们都知道，Mac和Win还是非常不一样的，作为Macdows双修选手，我今天给大家介绍一些从Mac连接Win的方法。</p><h2 id="Win的RDP"><a href="#Win的RDP" class="headerlink" title="Win的RDP"></a>Win的RDP</h2><p>由于Win默认未安装ssh，我们最常使用的连接方式则是使用RDP(Remote Desktop Protocol)，其在windows上开启的方法为：</p><p>右键文件管理器-属性-远程桌面，点击开启。</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/22-22-51-08-WX20230322-225022%402x.png"></p><p>这时Windows的3389端口启用，我们可以通过RDP协议进行连接。</p><h2 id="Mac连接Win"><a href="#Mac连接Win" class="headerlink" title="Mac连接Win"></a>Mac连接Win</h2><h3 id="不要用Mac平台的软件"><a href="#不要用Mac平台的软件" class="headerlink" title="不要用Mac平台的软件"></a>不要用Mac平台的软件</h3><p>由于Mac系统的封闭性，能使用的软件本来就少，还特娘的要钱，就不好用，就坑得要死。</p><p>因此我并不建议大家使用Mac平台的工具进行连接，很蠢。</p><p>尤其是这个，绝壁大蠢货。</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/22-22-54-42-WX20230322-225402%402x.png"></p><h3 id="可以曲线救国使用虚拟机来连接"><a href="#可以曲线救国使用虚拟机来连接" class="headerlink" title="可以曲线救国使用虚拟机来连接"></a>可以曲线救国使用虚拟机来连接</h3><p>还是由于Mac系统的封闭性，我们通常需要扩展虚拟机来实现更多的功能。通常的虚拟机就两种，Linux和Windows。Linux有很多发行版，比如Centos、Ubuntu、Debian等；Windows的话，如果你是ARM架构，目前能用的也就是Win11 on Arm。</p><h3 id="哪个系统好用捏？"><a href="#哪个系统好用捏？" class="headerlink" title="哪个系统好用捏？"></a>哪个系统好用捏？</h3><p>我猜，能看到我文章的各位彦祖冰冰们，你们都是贼厉害的那种。</p><h3 id="如果你用Windows"><a href="#如果你用Windows" class="headerlink" title="如果你用Windows"></a>如果你用Windows</h3><p>如果你用Windows的话，需要注意Win11 on ARM非常吃内存，一般能用到6G左右。而且毕竟是ARM架构的，使用起来总是有种阉割版的感觉。我个人不推荐ARM架构安装Windows虚拟机，或者你装了，偶尔开一下，不能做主力机用。</p><p>对于Windows连接Windows，各位应该很熟悉，使用mstsc就可以。但是我发现ARM架构的Windows，mstsc应该是被阉割过的，用起来不如X86架构用起来丝滑。</p><h3 id="如果你用Linux"><a href="#如果你用Linux" class="headerlink" title="如果你用Linux"></a>如果你用Linux</h3><p>对于Linux各发行版，我个人觉得Ubuntu的图形界面比较好康，而且CentOS 7有点老了，CentOS 8没几个人用，所以优先使用Ubuntu。我当时用PD装的时候，默认给了22.04版本。</p><p>在Ubuntu中，有一个很强的工具：<strong>Remmina</strong>，肥肠强！</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/22-23-05-38-WX20230322-230523%402x.png"></p><h3 id="Remmina"><a href="#Remmina" class="headerlink" title="Remmina"></a>Remmina</h3><p>打开Remmina后，可添加RDP或者VNC来连接其他服务器。比如本文中的连接Win，就添加RDP来做配置。</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/03/22-23-08-40-WX20230322-230826%402x.png"></p><p>填好信息之后，保存，连接即可。</p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ol><li><p>Mac平台的连接软件都十分辣鸡</p></li><li><p>Win11 on ARM十分鸡肋，mstsc更是被阉割过的</p></li><li><p>Ubuntu 22.04的Remmina十分给力！！！</p></li></ol>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;我们都知道，Mac和Win还是非常不一样的，作为Macdows双修选手，我今天给大家介绍一些从Mac连接Win的方法。&lt;/p&gt;
-&lt;h2 i</summary>
-      
-    
-    
-    
-    <category term="操作系统" scheme="http://eryoung2.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-    <category term="Mac" scheme="http://eryoung2.github.io/tags/Mac/"/>
     
   </entry>
   
