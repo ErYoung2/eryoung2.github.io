@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-07-15T17:12:52.076Z</updated>
+  <updated>2023-07-21T02:39:32.635Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,19 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>煞笔软考网工</title>
+    <link href="http://eryoung2.github.io/2023/07/21/%E7%85%9E%E7%AC%94%E8%BD%AF%E8%80%83%E7%BD%91%E5%B7%A5/"/>
+    <id>http://eryoung2.github.io/2023/07/21/%E7%85%9E%E7%AC%94%E8%BD%AF%E8%80%83%E7%BD%91%E5%B7%A5/</id>
+    <published>2023-07-21T02:39:32.000Z</published>
+    <updated>2023-07-21T02:39:32.635Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>jenkins流水线报错</title>
@@ -518,32 +531,6 @@
     
     
     <category term="AWS" scheme="http://eryoung2.github.io/tags/AWS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Sailing</title>
-    <link href="http://eryoung2.github.io/2023/03/24/Sailing/"/>
-    <id>http://eryoung2.github.io/2023/03/24/Sailing/</id>
-    <published>2023-03-23T16:01:53.000Z</published>
-    <updated>2023-03-23T18:04:33.498Z</updated>
-    
-    <content type="html"><![CDATA[<p>I am sailing, I am sailing, home again, cross the sea.</p><p>I am sailing, stormy waters, to be near you, to be free.</p><p>I am flying, I am flying, like a bird, cross the sky.</p><p>I am flying, passing high clouds, to be with you, to be free.</p><p>    </p><p>Can you hear me, can you hear me?</p><p>Through the dark night, far away.</p><p>I am dying, forever crying. to be with you, who can say?</p><p>    </p><p>Can you hear me, can you hear me?</p><p>Through the dark night, far away.</p><p>I am dying, forever crying. to be with you, who can say?</p><p>We are sailing, we are sailing, home again, cross the sea.</p><p>We are sailing, stormy waters, to be near you, to be free.</p><p>Oh lord, to be near you, to be free. </p><p>Oh lord, to be near you, to be free.</p><p>Oh lord, to be near you, to be free.</p><p>Oh lord！ </p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;I am sailing, I am sailing, home again, cross the sea.&lt;/p&gt;
-&lt;p&gt;I am sailing, stormy waters, to be near you, to be free.&lt;/p&gt;
-&lt;p&gt;I am flying</summary>
-      
-    
-    
-    
-    <category term="歌词" scheme="http://eryoung2.github.io/categories/%E6%AD%8C%E8%AF%8D/"/>
-    
-    
-    <category term="Classic" scheme="http://eryoung2.github.io/tags/Classic/"/>
     
   </entry>
   
