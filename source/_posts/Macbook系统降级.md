@@ -49,7 +49,7 @@ Command+Option+Shift+R: 恢复到出厂设置时的系统版本
    sudo /Applications/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume
    ```
 
- ![](/Users/eryoung2/Library/Application%20Support/marktext/images/2023-08-27-15-36-23-image.png)
+![](/Users/eryoung2/Library/Application%20Support/marktext/images/0f8704efdc60f34df37f5f6181bec28626dbd1ac.png)
 
 详情可以参考官方文档：[# 创建可引导的 macOS 安装器](https://support.apple.com/zh-cn/HT201372)
 
