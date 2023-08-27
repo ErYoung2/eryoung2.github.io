@@ -49,7 +49,7 @@ Command+Option+Shift+R: 恢复到出厂设置时的系统版本
    sudo /Applications/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume
    ```
 
-![](/Users/eryoung2/Library/Application%20Support/marktext/images/0f8704efdc60f34df37f5f6181bec28626dbd1ac.png)
+![](https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/08/27-15-54-50-downgrade.png)
 
 详情可以参考官方文档：[# 创建可引导的 macOS 安装器](https://support.apple.com/zh-cn/HT201372)
 
@@ -60,6 +60,8 @@ Command+Option+Shift+R: 恢复到出厂设置时的系统版本
 5. 将此U盘卸载后插入目标Mac，启动时长按Option，选择“Install xx”，从U盘启动，一步一步进行操作即可。
 
 6. 安装完毕之后，按照提示进行设置，进入系统后即可看到系统降级成功。
+   
+   如果此时遇到“应用副本已损坏”的报错，并不是我们的副本真的损坏，而是应用证书过期，我们可以参考这篇文章：[# macOS安装过程中“应用副本已损坏”的解决方案](https://zhuanlan.zhihu.com/p/91707695)
 
 
 
