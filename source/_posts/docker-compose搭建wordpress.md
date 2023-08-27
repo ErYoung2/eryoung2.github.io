@@ -5,13 +5,9 @@ tags: [docker,wordpress]
 categories: 容器
 ---
 
-
-
 ## 前言
 
 我们都知道，docker是一个运行容器的软件。同时它也配置了一个运行一组容器的软件，叫做docker-compose。当我们使用非常小规模容器化应用的时候，我们可以使用此docker-compose去做。
-
-
 
 ## docker-compose的介绍
 
@@ -50,8 +46,6 @@ Commands:
   version            Show the Docker-Compose version information
 ```
 
-
-
 ### 安装docker-compose(以Linux为例)
 
 ```shell
@@ -65,8 +59,6 @@ sudo chmod +x /usr/bin/docker-compose #需要root权限
 ```shell
 sudo docker-compose version
 ```
-
-
 
 ## docker-compose配置文件编写并启动
 
@@ -109,15 +101,11 @@ volumes:
   db_data:
 ```
 
-
-
 编辑完毕之后，使用以下命令来启动：
 
 ```shell
 sudo docker-compose up -d
 ```
-
-
 
 但是，
 
@@ -137,8 +125,6 @@ sysctl -w vm.compact_memory=1   #永久解决
 
 [Getting the final child's pid from pipe caused: EOF: unknown](https://www.jokerbai.com/archives/getting-the-final-childs-pid-from-pipe-caused)
 
-
-
 然后就会看到以下的结果：
 
 ```shell
@@ -148,11 +134,7 @@ Starting wordpress_wordpress_1 ...
 Starting wordpress_wordpress_1 ... done
 ```
 
-
-
 然后输入http://ip:80，查看是否已经正常启动即可。
-
-
 
 ## 参考
 
