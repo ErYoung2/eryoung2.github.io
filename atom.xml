@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-09-08T06:40:57.180Z</updated>
+  <updated>2023-09-10T16:42:16.711Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>xcrun missing问题</title>
+    <link href="http://eryoung2.github.io/2023/09/11/xcrun-missing%E9%97%AE%E9%A2%98/"/>
+    <id>http://eryoung2.github.io/2023/09/11/xcrun-missing%E9%97%AE%E9%A2%98/</id>
+    <published>2023-09-10T16:37:51.000Z</published>
+    <updated>2023-09-10T16:42:16.711Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天在安装brew的时候，发现以下问题：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun</span><br></pre></td></tr></table></figure><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ul><li><p>重装xcode command line</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xcode-select --install</span><br></pre></td></tr></table></figure></li><li><p>没解决的话，可以跑这条</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo xcode-select -switch /</span><br></pre></td></tr></table></figure></li></ul><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote><p><a href="https://www.jianshu.com/p/50b6771eb853">https://www.jianshu.com/p/50b6771eb853</a></p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;今天在安装brew的时候，发现以下问题：&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;t</summary>
+      
+    
+    
+    
+    <category term="环境配置" scheme="http://eryoung2.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    
+    <category term="Mac" scheme="http://eryoung2.github.io/tags/Mac/"/>
+    
+  </entry>
   
   <entry>
     <title>使用bat脚本激活office</title>
@@ -511,30 +536,6 @@
     
     
     <category term="git" scheme="http://eryoung2.github.io/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《晴天》-- 周杰伦</title>
-    <link href="http://eryoung2.github.io/2023/04/12/%E3%80%8A%E6%99%B4%E5%A4%A9%E3%80%8B-%E5%91%A8%E6%9D%B0%E4%BC%A6/"/>
-    <id>http://eryoung2.github.io/2023/04/12/%E3%80%8A%E6%99%B4%E5%A4%A9%E3%80%8B-%E5%91%A8%E6%9D%B0%E4%BC%A6/</id>
-    <published>2023-04-11T16:08:40.000Z</published>
-    <updated>2023-06-01T01:14:11.043Z</updated>
-    
-    <content type="html"><![CDATA[<p>故事的小黄花，从出生那年就飘着，<br>童年的荡秋千，随记忆一直晃到现在。<br>Rui sou sou xi dou xi la<br>Sou la xi xi xi xi la xi la sou<br>吹着前奏，望着天空，<br>我想起花瓣，试着掉落。    </p><p>    </p><p>为你翘课的那一天，花落的那一天，<br>教室的那一间，我怎么看不见。<br>消失的下雨天，我好想再淋一遍。</p><p>没想到失去的勇气，我还留着，好想再闻一遍，<br>你会等待，还是离开？</p><p>    </p><p>   </p><p>刮风这天，我试过握着你手，<br>但偏偏，雨渐渐，大到我看你不见。<br>还要多久，我才能在你身边，<br>等到放晴的那天，也许我会比较好一点。</p><p>    </p><p>从前从前，有个人爱你很久，<br>但偏偏，风渐渐，把距离吹得好远。<br>好不容易，又能在多爱一天，<br>但故事到最后，你好像还是说了，拜拜。</p><p>    </p><p>为你翘课的那一天，花落的那一天，<br>教室的那一间，我怎么看不见。<br>消失的下雨天，我好想再淋一遍。</p><p>没想到失去的勇气，我还留着，好想再闻一遍，<br>你会等待，还是离开？</p><p>    </p><p>刮风这天，我试过握着你手，<br>但偏偏，雨渐渐，大到我看你不见。</p><p>    </p><p>···················（大提琴声）···················</p><p>从前从前，有个人爱你很久，<br>偏偏，风渐渐，把距离吹得好远。<br>好不容易，又能在多爱一天，<br>但故事到最后，你好像还是说了，拜拜。</p><p>    </p><p>···················（RAP）···················</p><p>刮风这天，我试过握着你手，<br>但偏偏，雨渐渐，大到我看你不见。<br>还要多久，我才能在你身边，<br>等到放晴那天，也许我会比较好一点。</p><p>从前从前，有个人爱你很久，<br>但偏偏，风渐渐，把距离吹得好远。<br>好不容易，又能在多爱一天，<br>但故事到最后，你好像还是说了，拜。</p><p>    </p><p>···················（大提琴声）···················</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;故事的小黄花，从出生那年就飘着，&lt;br&gt;童年的荡秋千，随记忆一直晃到现在。&lt;br&gt;Rui sou sou xi dou xi la&lt;br&gt;Sou la xi xi xi xi la xi la sou&lt;br&gt;吹着前奏，望着天空，&lt;br&gt;我想起花瓣，试着掉落。    &lt;/p&gt;</summary>
-      
-    
-    
-    
-    <category term="歌词" scheme="http://eryoung2.github.io/categories/%E6%AD%8C%E8%AF%8D/"/>
-    
-    
-    <category term="周杰伦" scheme="http://eryoung2.github.io/tags/%E5%91%A8%E6%9D%B0%E4%BC%A6/"/>
     
   </entry>
   
