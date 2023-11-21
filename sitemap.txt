@@ -1,5 +1,6 @@
-http://eryoung2.github.io/2023/09/11/xcrun-missing%E9%97%AE%E9%A2%98/
+http://eryoung2.github.io/2023/11/21/%E3%80%8A%E6%BC%A0%E6%B2%B3%E8%88%9E%E5%8E%85%E3%80%8B-%E6%9F%B3%E7%88%BD/
 http://eryoung2.github.io/2023/09/08/%E4%BD%BF%E7%94%A8bat%E8%84%9A%E6%9C%AC%E6%BF%80%E6%B4%BBoffice/
+http://eryoung2.github.io/2023/09/11/xcrun-missing%E9%97%AE%E9%A2%98/
 http://eryoung2.github.io/2023/08/27/Macbook%E7%B3%BB%E7%BB%9F%E9%99%8D%E7%BA%A7/
 http://eryoung2.github.io/2023/06/13/docker-compose%E6%90%AD%E5%BB%BAwordpress/
 http://eryoung2.github.io/2023/05/09/%E6%97%A0%E7%BA%BF%E6%89%93%E5%8D%B0%E6%9C%BA%E8%AE%BE%E7%BD%AE/
@@ -137,6 +138,7 @@ http://eryoung2.github.io/tags/%E9%99%88%E5%A5%95%E8%BF%85/
 http://eryoung2.github.io/tags/%E8%AF%84%E8%AE%BA/
 http://eryoung2.github.io/tags/bat/
 http://eryoung2.github.io/tags/kms/
+http://eryoung2.github.io/tags/%E6%9F%B3%E7%88%BD/
 http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/
 http://eryoung2.github.io/categories/%E5%A5%87%E6%80%AA%E7%9A%84%E4%B8%9C%E8%A5%BF/
 http://eryoung2.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/

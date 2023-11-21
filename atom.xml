@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2023-09-10T16:42:16.711Z</updated>
+  <updated>2023-11-21T03:55:38.669Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《漠河舞厅》-- 柳爽</title>
+    <link href="http://eryoung2.github.io/2023/11/21/%E3%80%8A%E6%BC%A0%E6%B2%B3%E8%88%9E%E5%8E%85%E3%80%8B-%E6%9F%B3%E7%88%BD/"/>
+    <id>http://eryoung2.github.io/2023/11/21/%E3%80%8A%E6%BC%A0%E6%B2%B3%E8%88%9E%E5%8E%85%E3%80%8B-%E6%9F%B3%E7%88%BD/</id>
+    <published>2023-11-21T03:46:26.000Z</published>
+    <updated>2023-11-21T03:55:38.669Z</updated>
+    
+    <content type="html"><![CDATA[<p>我从没有见过极光出现的村落，也没有见过有人，在深夜放烟火。</p><p>晚风就像你的眼睛杀人又放火，你什么都没有说，野风惊扰我。</p><p>三千里，偶然见过你，花园里，有裙翩舞起。</p><p>灯光底，抖漏了晨曦，在1980的漠河舞厅。</p><p>如果有时间，你会来看一看我吧，</p><p>看时间如何衰老的，我的眼睛如何融化。</p><p>如果你看见我的话，请转过身去再惊讶，</p><p>我怕我的眼泪、我的白发，像羞耻的笑话。</p><p>我从没有见过极光出现的村落，也没有见过有人，在深夜放烟火。</p><p>晚风就像你的眼睛杀人又放火，你什么都没有说，野风惊扰我。</p><p>可是你，惹怒了神明，让你去，还那么年轻。</p><p>都怪你，野山冷冰冰，在一个人的漠河舞厅。</p><p>如果有时间，你会来看一看我吧，</p><p>看时间如何衰老的，我的眼睛如何融化。</p><p>如果你看见我的话，请转过身去再惊讶，</p><p>我怕我的眼泪、我的白发，像羞耻的笑话。</p><p>如果有一天，我的信念突然倒塌，</p><p>城市的花园没有花，广播里的声音嘶哑。</p><p>如果真有这天的话， 你会不会奔向我啊，</p><p>尘封入海吧，尘封入海吧！</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;我从没有见过极光出现的村落，也没有见过有人，在深夜放烟火。&lt;/p&gt;
+&lt;p&gt;晚风就像你的眼睛杀人又放火，你什么都没有说，野风惊扰我。&lt;/p&gt;
+&lt;p&gt;三千里，偶然见过你，花园里，有裙翩舞起。&lt;/p&gt;
+&lt;p&gt;灯光底，抖漏了晨曦，在1980的漠河舞厅。&lt;/p&gt;
+&lt;p&gt;如果有时间，你</summary>
+      
+    
+    
+    
+    <category term="歌词" scheme="http://eryoung2.github.io/categories/%E6%AD%8C%E8%AF%8D/"/>
+    
+    
+    <category term="柳爽" scheme="http://eryoung2.github.io/tags/%E6%9F%B3%E7%88%BD/"/>
+    
+  </entry>
   
   <entry>
     <title>xcrun missing问题</title>
@@ -46,9 +74,9 @@
     <link href="http://eryoung2.github.io/2023/09/08/%E4%BD%BF%E7%94%A8bat%E8%84%9A%E6%9C%AC%E6%BF%80%E6%B4%BBoffice/"/>
     <id>http://eryoung2.github.io/2023/09/08/%E4%BD%BF%E7%94%A8bat%E8%84%9A%E6%9C%AC%E6%BF%80%E6%B4%BBoffice/</id>
     <published>2023-09-08T06:25:46.000Z</published>
-    <updated>2023-09-08T06:40:57.180Z</updated>
+    <updated>2023-09-12T01:36:06.546Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在我们安装windows的时候，很重要的一个步骤就是激活。</p><p>安装windows的同时，通常也需要安装office，同样需要激活。</p><p>两个方法都是可以使用kms进行伪激活的，好处是免费，坏处是盗版，不过不care啦，对不起，微软哥，囊中是在羞射。。。</p><p>windows我之前写过一期：</p><blockquote><p><a href="https://www.cnblogs.com/young233/p/13112054.html">https://www.cnblogs.com/young233/p/13112054.html</a></p></blockquote><p>本文讨论office。</p><h2 id="office的kms"><a href="#office的kms" class="headerlink" title="office的kms"></a>office的kms</h2><p>我们可以使用kmsripo这个软件进行激活，当然要找到靠谱的软件，否则就容易被病毒侵入。</p><p>在此，我们可以使用以下脚本进行安装：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@echo off(cd /d &quot;%~dp0&quot;)&amp;&amp;(NET FILE||(powershell start-process -FilePath &#x27;%0&#x27; -verb runas)&amp;&amp;(exit /B)) &gt;NUL 2&gt;&amp;1title Office 2019 Activator r/Piracyecho Converting... &amp; mode 40,25(if exist &quot;%ProgramFiles%\Microsoft Office\Office16\ospp.vbs&quot; cd /d &quot;%ProgramFiles%\Microsoft Office\Office16&quot;)&amp;(if exist &quot;%ProgramFiles(x86)%\Microsoft Office\Office16\ospp.vbs&quot; cd /d &quot;%ProgramFiles(x86)%\Microsoft Office\Office16&quot;)&amp;(for /f %%x in (&#x27;dir /b ..\root\Licenses16\ProPlus2019VL*.xrm-ms&#x27;) do cscript ospp.vbs /inslic:&quot;..\root\Licenses16\%%x&quot; &gt;nul)&amp;(for /f %%x in (&#x27;dir /b ..\root\Licenses16\ProPlus2019VL*.xrm-ms&#x27;) do cscript ospp.vbs /inslic:&quot;..\root\Licenses16\%%x&quot; &gt;nul)cscript //nologo ospp.vbs /unpkey:6MWKP &gt;nul&amp;cscript //nologo ospp.vbs /inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP &gt;nul&amp;set i=1:serverif %i%==1 set KMS_Sev=kms7.MSGuides.comif %i%==2 set KMS_Sev=kms8.MSGuides.comif %i%==3 set KMS_Sev=kms9.MSGuides.comcscript //nologo ospp.vbs /sethst:%KMS_Sev% &gt;nulecho %KMS_Sev% &amp; echo Activating...cscript //nologo ospp.vbs /act | find /i &quot;successful&quot; &amp;&amp; (echo Complete) || (echo Trying another KMS Server &amp; set /a i+=1 &amp; goto server)pause &gt;nulexit</span><br></pre></td></tr></table></figure><p>复制以上内容，新建一个bat文件，写入之后，使用“管理员运行”即可。</p><p>然后就可以了，可以添加一个定时任务，每3个月跑一次，就不会过期了。</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在我们安装windows的时候，很重要的一个步骤就是激活。</p><p>安装windows的同时，通常也需要安装office，同样需要激活。</p><p>两个方法都是可以使用kms进行伪激活的，好处是免费，坏处是盗版，不过不care啦，对不起，微软哥，囊中是在羞射。。。</p><p>windows我之前写过一期：</p><blockquote><p><a href="https://www.cnblogs.com/young233/p/13112054.html">https://www.cnblogs.com/young233/p/13112054.html</a></p></blockquote><p>本文讨论office。</p><h2 id="office的kms"><a href="#office的kms" class="headerlink" title="office的kms"></a>office的kms</h2><p>我们可以使用kmsripo这个软件进行激活，当然要找到靠谱的软件，否则就容易被病毒侵入。</p><p>在此，我们可以使用以下脚本进行安装：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">(cd /d &quot;%~dp0&quot;)&amp;&amp;(NET FILE||(powershell start-process -FilePath &#x27;%0&#x27; -verb runas)&amp;&amp;(exit /B)) &gt;NUL 2&gt;&amp;1</span><br><span class="line">title Office 2019 Activator r/Piracy</span><br><span class="line">echo Converting... &amp; mode 40,25</span><br><span class="line">(if exist &quot;%ProgramFiles%\Microsoft Office\Office16\ospp.vbs&quot; cd /d &quot;%ProgramFiles%\Microsoft Office\Office16&quot;)&amp;(if exist &quot;%ProgramFiles(x86)%\Microsoft Office\Office16\ospp.vbs&quot; cd /d &quot;%ProgramFiles(x86)%\Microsoft Office\Office16&quot;)&amp;(for /f %%x in (&#x27;dir /b ..\root\Licenses16\ProPlus2019VL*.xrm-ms&#x27;) do cscript ospp.vbs /inslic:&quot;..\root\Licenses16\%%x&quot; &gt;nul)&amp;(for /f %%x in (&#x27;dir /b ..\root\Licenses16\ProPlus2019VL*.xrm-ms&#x27;) do cscript ospp.vbs /inslic:&quot;..\root\Licenses16\%%x&quot; &gt;nul)</span><br><span class="line">cscript //nologo ospp.vbs /unpkey:6MWKP &gt;nul&amp;cscript //nologo ospp.vbs /inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP &gt;nul&amp;set i=1</span><br><span class="line">:server</span><br><span class="line">if %i%==1 set KMS_Sev=kms7.MSGuides.com</span><br><span class="line">if %i%==2 set KMS_Sev=kms8.MSGuides.com</span><br><span class="line">if %i%==3 set KMS_Sev=kms9.MSGuides.com</span><br><span class="line">cscript //nologo ospp.vbs /sethst:%KMS_Sev% &gt;nul</span><br><span class="line">echo %KMS_Sev% &amp; echo Activating...</span><br><span class="line">cscript //nologo ospp.vbs /act | find /i &quot;successful&quot; &amp;&amp; (echo Complete) || (echo Trying another KMS Server &amp; set /a i+=1 &amp; goto server)</span><br><span class="line">pause &gt;nul</span><br><span class="line">exit</span><br></pre></td></tr></table></figure><p>复制以上内容，新建一个bat文件，写入之后，使用“管理员运行”即可。</p><p>然后就可以了，可以添加一个定时任务，每3个月跑一次，就不会过期了。</p>]]></content>
     
     
       
@@ -508,31 +536,6 @@
     
     
     <category term="版本控制" scheme="http://eryoung2.github.io/categories/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/"/>
-    
-    
-    <category term="git" scheme="http://eryoung2.github.io/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Github 添加贪吃蛇动画</title>
-    <link href="http://eryoung2.github.io/2023/04/12/Github-%E6%B7%BB%E5%8A%A0%E8%B4%AA%E5%90%83%E8%9B%87%E5%8A%A8%E7%94%BB/"/>
-    <id>http://eryoung2.github.io/2023/04/12/Github-%E6%B7%BB%E5%8A%A0%E8%B4%AA%E5%90%83%E8%9B%87%E5%8A%A8%E7%94%BB/</id>
-    <published>2023-04-12T02:23:01.000Z</published>
-    <updated>2023-04-20T15:23:33.462Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我们都知道，对于Github来说，当你选择你的账户时，可以看到自己的提交记录。</p><p>于是就有大神动脑筋了，这些commit记录都是一些豆，如果弄一条蛇来，不就可以搞个贪吃蛇了吗？</p><p>有道理有道理，本文就来讲一下如何弄一条蛇出来。</p><h2 id="创建步骤"><a href="#创建步骤" class="headerlink" title="创建步骤"></a>创建步骤</h2><h3 id="创建个人仓库"><a href="#创建个人仓库" class="headerlink" title="创建个人仓库"></a>创建个人仓库</h3><p>个人仓库是一个特殊的仓库，名字就是你的Github Account Name，比如我叫ErYoung2，我就建立一个叫做ErYoung2的仓库。</p><h3 id="创建Github-Actions"><a href="#创建Github-Actions" class="headerlink" title="创建Github Actions"></a>创建Github Actions</h3><p>创建.github&#x2F;workflow&#x2F;snake.yml文件，添加以下内容：</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">generate</span> <span class="string">animation</span></span><br><span class="line"></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="comment"># run automatically every 12 hours</span></span><br><span class="line">  <span class="attr">schedule:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">cron:</span> <span class="string">&quot;0 2 * * *&quot;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># allows to manually run the job at any time</span></span><br><span class="line">  <span class="attr">workflow_dispatch:</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># run on every push on the master branch</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">master</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">generate:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">timeout-minutes:</span> <span class="number">10</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="comment"># generates a snake game from a github user (&lt;github_user_name&gt;) contributions graph, output a svg animation at &lt;svg_out_path&gt;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">generate</span> <span class="string">github-contribution-grid-snake.svg</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">Platane/snk/svg-only@v2</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">github_user_name:</span> <span class="string">$&#123;&#123;</span> <span class="string">github.repository_owner</span> <span class="string">&#125;&#125;</span></span><br><span class="line">          <span class="attr">outputs:</span> <span class="string">|</span></span><br><span class="line"><span class="string">            dist/github-contribution-grid-snake.svg</span></span><br><span class="line"><span class="string">            dist/github-contribution-grid-snake-dark.svg?palette=github-dark</span></span><br><span class="line"><span class="string"></span>      <span class="comment"># push the content of &lt;build_dir&gt; to a branch</span></span><br><span class="line">      <span class="comment"># the content will be available at https://raw.githubusercontent.com/&lt;github_user&gt;/&lt;repository&gt;/&lt;target_branch&gt;/&lt;file&gt; , or as github page</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">push</span> <span class="string">github-contribution-grid-snake.svg</span> <span class="string">to</span> <span class="string">the</span> <span class="string">output</span> <span class="string">branch</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">crazy-max/ghaction-github-pages@v2.6.0</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">target_branch:</span> <span class="string">output</span></span><br><span class="line">          <span class="attr">build_dir:</span> <span class="string">dist</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">          <span class="attr">GITHUB_TOKEN:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.GITHUB_TOKEN</span> <span class="string">&#125;&#125;</span></span><br></pre></td></tr></table></figure><h3 id="生成SVG文件"><a href="#生成SVG文件" class="headerlink" title="生成SVG文件"></a>生成SVG文件</h3><p>点击Github Actions，选择上面添加的yml文件的workflow，进行构建。</p><p>构建完毕之后，会发现仓库多了一个output分支，下面有两个SVG文件。</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/04/12-10-39-14-%E6%88%AA%E5%B1%8F2023-04-12%2010.38.51.png"></p><h3 id="添加README文件"><a href="#添加README文件" class="headerlink" title="添加README文件"></a>添加README文件</h3><p>编辑README.md文件，添加你想添加的内容。在最后一行，可以添加SVG文件来运行贪吃蛇，可选择亮色或者暗色。</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">亮色</span>](<span class="link">https://raw.githubusercontent.com/&lt;你的账号名&gt;/&lt;你的仓库名&gt;/output/github-contribution-grid-snake.svg</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">![<span class="string">暗色</span>](<span class="link">https://raw.githubusercontent.com/&lt;你的账号名&gt;/&lt;你的仓库名&gt;/output/github-contribution-grid-snake-dark.svg</span>)</span><br></pre></td></tr></table></figure><h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>然后就跑起来了，是不是很不错捏？</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/04/12-10-47-46-%E6%88%AA%E5%B1%8F2023-04-12%2010.47.38.png"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;我们都知道，对于Github来说，当你选择你的账户时，可以看到自己的提交记录。&lt;/p&gt;
-&lt;p&gt;于是就有大神动脑筋了，这些commit记录都是</summary>
-      
-    
-    
-    
-    <category term="奇怪的东西" scheme="http://eryoung2.github.io/categories/%E5%A5%87%E6%80%AA%E7%9A%84%E4%B8%9C%E8%A5%BF/"/>
     
     
     <category term="git" scheme="http://eryoung2.github.io/tags/git/"/>
