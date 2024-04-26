@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2024-04-01T18:02:17.498Z</updated>
+  <updated>2024-04-26T17:46:52.980Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,79 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CKS真题 -- 默认网络策略</title>
+    <link href="http://eryoung2.github.io/2024/04/27/CKS%E7%9C%9F%E9%A2%98-%E9%BB%98%E8%AE%A4%E7%BD%91%E7%BB%9C%E7%AD%96%E7%95%A5/"/>
+    <id>http://eryoung2.github.io/2024/04/27/CKS%E7%9C%9F%E9%A2%98-%E9%BB%98%E8%AE%A4%E7%BD%91%E7%BB%9C%E7%AD%96%E7%95%A5/</id>
+    <published>2024-04-26T17:42:42.000Z</published>
+    <updated>2024-04-26T17:46:52.980Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>为所有类型为Ingress-+Egress的流量在namespace testing中创建一个名为denypolicy的新默认拒绝NetworkPolicy。<br>此新的NetworkPolicy必须拒绝namespace testing中的所有的Ingress+Egress流量。<br>将新创建的默认拒绝NetworkPolicy应用与在namespace testing中运行的所有Pod。</p><p>你可以在&#x2F;cks&#x2F;net&#x2F;p1.yaml找到一个模板清单文件。</p><h2 id="做题"><a href="#做题" class="headerlink" title="做题"></a>做题</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /cks/net/p1.yaml</span><br></pre></td></tr></table></figure><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">networking.k8s.io/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">NetworkPolicy</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">denypolicy</span></span><br><span class="line">  <span class="attr">namespace:</span> <span class="string">testing</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">podSelector:</span> &#123;&#125;                        <span class="comment">#拒绝所有pod</span></span><br><span class="line">  <span class="attr">policyTypes:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">Ingress</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">Egress</span></span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl apply -f /cks/net/p1.yaml</span><br></pre></td></tr></table></figure><h2 id="检查"><a href="#检查" class="headerlink" title="检查"></a>检查</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl describe networkpolicy denypolicy -n testing</span><br></pre></td></tr></table></figure><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote><p><a href="https://kubernetes.io/zh-cn/docs/concepts/services-networking/network-policies/#default-deny-all-ingress-traffic">https://kubernetes.io/zh-cn/docs/concepts/services-networking/network-policies/#default-deny-all-ingress-traffic</a></p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;为所有类型为Ingress-+Egress的流量在namespace testing中创建一个名为denypolicy的新默认拒绝Netwo</summary>
+      
+    
+    
+    
+    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="cks" scheme="http://eryoung2.github.io/tags/cks/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CKS真题 -- Pod指定ServiceAccount</title>
+    <link href="http://eryoung2.github.io/2024/04/27/CKS%E7%9C%9F%E9%A2%98-Pod%E6%8C%87%E5%AE%9AServiceAccount/"/>
+    <id>http://eryoung2.github.io/2024/04/27/CKS%E7%9C%9F%E9%A2%98-Pod%E6%8C%87%E5%AE%9AServiceAccount/</id>
+    <published>2024-04-26T17:31:17.000Z</published>
+    <updated>2024-04-26T17:43:28.101Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>清单文件&#x2F;cks&#x2F;sa&#x2F;pod1.yaml中指定的Pod由于ServiceAccount指定错误而无法调度。<br>请完成一下项目：</p><p>Task<br>1.在现有namespace ga中创建一个名为backend-sa的新ServiceAccount,<br>确保此ServiceAccount不自动挂载API凭据。<br>2.使用&#x2F;cks&#x2F;sa&#x2F;pod1.yaml中的清单文件来创建一个Pod。<br>3.最后，清理namespace ga中任何未使用的ServiceAccount。</p><h2 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h2><p>vim cks-02.yaml</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">ServiceAccount</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">backend-sa</span></span><br><span class="line">  <span class="attr">namespace:</span> <span class="string">qa</span></span><br><span class="line"><span class="attr">automountServiceAccountToken:</span> <span class="literal">false</span> <span class="comment">#添加这一行</span></span><br></pre></td></tr></table></figure><p>vim &#x2F;cks&#x2F;sa&#x2F;pod1.yaml</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Pod</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">backend</span></span><br><span class="line">  <span class="attr">namespace:</span> <span class="string">qa</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">serviceAccountName:</span> <span class="string">backend-sa</span>                  <span class="comment">#给pod配置serviceaccount</span></span><br><span class="line">  <span class="attr">containers:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">image:</span> <span class="string">nginx:alpine</span></span><br><span class="line">    <span class="attr">imagePullPolicy:</span> <span class="string">IfNotPresent</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">backend</span></span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">kubectl apply -f /cks/sa/pod1.yaml</span><br><span class="line"></span><br><span class="line">kubectl get sa -n qa</span><br><span class="line">kubectl get pod -n qa|grep -i &quot;serviceaccount&quot;</span><br><span class="line">kubectl -n qa delete xxx #没见到的serviceaccount</span><br></pre></td></tr></table></figure><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote><p><a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#opt-out-of-api-credential-automounting">https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#opt-out-of-api-credential-automounting</a></p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;清单文件&amp;#x2F;cks&amp;#x2F;sa&amp;#x2F;pod1.yaml中指定的Pod由于ServiceAccount指定错误而无法调度。&lt;</summary>
+      
+    
+    
+    
+    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="cks" scheme="http://eryoung2.github.io/tags/cks/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CKS真题 -- kube-bench修复不安全项</title>
+    <link href="http://eryoung2.github.io/2024/04/27/CKS%E7%9C%9F%E9%A2%98-kube-bench%E4%BF%AE%E5%A4%8D%E4%B8%8D%E5%AE%89%E5%85%A8%E9%A1%B9/"/>
+    <id>http://eryoung2.github.io/2024/04/27/CKS%E7%9C%9F%E9%A2%98-kube-bench%E4%BF%AE%E5%A4%8D%E4%B8%8D%E5%AE%89%E5%85%A8%E9%A1%B9/</id>
+    <published>2024-04-26T17:05:49.000Z</published>
+    <updated>2024-04-26T17:26:29.476Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>通过配置修复所有问题并重新启动受影响的组件以确保新的设置生效。</p><p>修复针对 API 服务器发现的所有以下违规行为：<br>1.2.7 Ensure that the –authorization-mode argument is not set to AlwaysAllow FAIL<br>1.2.8 Ensure that the –authorization-mode argument includes Node FAIL<br>1.2.9 Ensure that the –authorization-mode argument includes RBAC FAIL<br>1.2.18 Ensure that the –insecure-bind-address argument is not set FAIL （1.25中这项题目没给出，但最好也检查一下，模拟环境里需要改）<br>~~1.2.19 Ensure that the –insecure-port argument is set to 0 FAIL ~~（1.25中这项题目没给出，不需要再修改了）</p><p>修复针对kubelet发现的所有以下违规行为：<br>Fix all of the following violations that were found against the kubelet:<br>4.2.1 Ensure that the anonymous-auth argument is set to false FAIL<br>4.2.2 Ensure that the –authorization-mode argument is not set to AlwaysAllow FAIL<br>注意：尽可能使用 Webhook 身份验证&#x2F;授权。</p><p>修复针对etcd发现的所有以下违规行为：<br>Fix all of the following violations that were found against etcd:<br>2.2 Ensure that the –client-cert-auth argument is set to true FAIL</p><h2 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h2><ol><li><p>备份文件</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /opt/backup/01</span><br><span class="line">cp -f /etc/kubernetes/manifests/kube-apiserver.yaml /opt/backup/01</span><br><span class="line">cp -f /etc/kubernetes/manifests/etcd.yaml /opt/backup/01</span><br><span class="line">cp -f /var/lib/kubelet/config.yaml /opt/backup/01</span><br></pre></td></tr></table></figure></li><li><p>检查master的不安全项并修改<br>ssh hk8s-master<br>sudo kube-bench master<br>vim &#x2F;etc&#x2F;kubernetes&#x2F;manifests&#x2F;kube-apiserver.yaml</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">--authencation-mode=Node,RBAC</span> </span><br></pre></td></tr></table></figure></li></ol><p>vim &#x2F;etc&#x2F;kubernetes&#x2F;manifests&#x2F;etcd.yaml</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">--client-cert-auth=true</span></span><br></pre></td></tr></table></figure><p>vim &#x2F;var&#x2F;lib&#x2F;kubelet&#x2F;config.yaml</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">authentication:</span></span><br><span class="line">   <span class="attr">anonymous:</span></span><br><span class="line">     <span class="attr">enabled:</span> <span class="literal">false</span>     <span class="comment">#true修改成false</span></span><br><span class="line"><span class="string">...</span></span><br><span class="line"><span class="attr">authorization:</span></span><br><span class="line">   <span class="attr">mode:</span> <span class="string">Webhook</span>        <span class="comment">#把AlwaysAllow修改成Webhook</span></span><br></pre></td></tr></table></figure><ol start="3"><li><p>检查node的不安全项并修改，同master</p></li><li><p>重启kubelet</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart kubelet</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;通过配置修复所有问题并重新启动受影响的组件以确保新的设置生效。&lt;/p&gt;
+&lt;p&gt;修复针对 API 服务器发现的所有以下违规行为：&lt;br&gt;1.2</summary>
+      
+    
+    
+    
+    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="cks" scheme="http://eryoung2.github.io/tags/cks/"/>
+    
+  </entry>
   
   <entry>
     <title>cka真题</title>
@@ -458,84 +531,6 @@
     
     
     <category term="杂谈" scheme="http://eryoung2.github.io/tags/%E6%9D%82%E8%B0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>耻辱柱！</title>
-    <link href="http://eryoung2.github.io/2023/05/15/%E8%80%BB%E8%BE%B1%E6%9F%B1%EF%BC%81/"/>
-    <id>http://eryoung2.github.io/2023/05/15/%E8%80%BB%E8%BE%B1%E6%9F%B1%EF%BC%81/</id>
-    <published>2023-05-15T04:41:42.000Z</published>
-    <updated>2023-05-15T16:52:59.747Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天凌晨，76人和绿军的抢七战结束了，76人以一种近乎屈辱的方式丢掉了比赛，赛季结束，回家钓鱼。</p><p>76人的两位核心当家球星，哈登和恩比德，两个人合砍24分，两位MVP，砍分甚至不如对面塔图姆一个人的一半。当你看到这个分数差距的时候，费城能赢球才怪了。</p><p>今天要着重表扬塔图姆，虽然是对手，虽然常年被称拉胯，但是在关键比赛还是展现出自己的大心脏，拿了51分，破了库里上一轮抢七战的50分记录。</p><p>反观76人，角色球员三军用命，奈何球星已投敌。没错说的就是你，恩比德！史上最水MVP，史上最不要脸MVP！</p><p>另外一位MVP哈登，同样被钉在了耻辱柱上。虽然G1和G4天神下凡拿下比赛，但是这些都随着系列赛的失利而变得几无价值。</p><p>这二位MVP注定已经被钉上了NBA的耻辱柱，愿后人不要再重蹈覆辙了。</p><p>猪头里倒是一如既往地稳定，我一度怀疑他是不是绿军真正的主教练了。</p><p>总之，这场比赛我熬夜看了，熬夜吐了，我觉得就好像被灌了依托答辩，这种丑陋的比赛，为什么要出现呢？如果你在G1、G4、G5不胜，直接被淘汰，痛苦反而小得多。</p><p>非要先给人希望，最后给一个巨大的奥利给，真的……无语</p><p>登哥啊登哥，你这场的表现真的是，我知道你不满意球队打法，但是你也不该这么消极，把自己身价都打没了，把自己尊严都打没了，你下赛季怎么签球队呀！</p><p>有人说你可能去雄鹿、可能去太阳、可能去湖人，但我还是希望你回火箭，毕竟你的根儿在那里，在那里打球可以做自己，你旅居各队，低眉顺眼，只会让自己更郁闷，不开心，还拿不到总冠军。</p><p>反正都拿不到总冠军，你还何必让自己这么低三下四，伺候这个伺候那个呢？君不见你伺候过的球员，都在伺候别人了吗，何必做这种舔狗呢？</p><p>还不如做自己，打自己喜欢的篮球，真正活出自己的样子。做为球迷，我不在乎你有没有总冠军，主要还是喜欢你的精气神。现在你为了那狗屁总冠军，丢掉了自身独特的气质，这真的本末倒置了呀！</p><p>思绪很乱，就写到这里吧。如果有缘人看到的话，希望留下您的看法，谢谢！</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;今天凌晨，76人和绿军的抢七战结束了，76人以一种近乎屈辱的方式丢掉了比赛，赛季结束，回家钓鱼。&lt;/p&gt;
-&lt;p&gt;76人的两位核心当家球星，哈登和恩比德，两个人合砍24分，两位MVP，砍分甚至不如对面塔图姆一个人的一半。当你看到这个分数差距的时候，费城能赢球才怪了。&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    <category term="NBA" scheme="http://eryoung2.github.io/categories/NBA/"/>
-    
-    
-    <category term="詹姆斯·哈登" scheme="http://eryoung2.github.io/tags/%E8%A9%B9%E5%A7%86%E6%96%AF%C2%B7%E5%93%88%E7%99%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>无线打印机设置</title>
-    <link href="http://eryoung2.github.io/2023/05/09/%E6%97%A0%E7%BA%BF%E6%89%93%E5%8D%B0%E6%9C%BA%E8%AE%BE%E7%BD%AE/"/>
-    <id>http://eryoung2.github.io/2023/05/09/%E6%97%A0%E7%BA%BF%E6%89%93%E5%8D%B0%E6%9C%BA%E8%AE%BE%E7%BD%AE/</id>
-    <published>2023-05-09T14:29:46.000Z</published>
-    <updated>2023-08-27T07:17:12.515Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Emm，没错，最近需要打印的东西有点多，所以在某爹爹上买了一台激光打印机。之所以不买喷墨打印机，是因为之前吃过亏，这玩意儿贼麻烦，墨盒坏了就gg，双墨盒害得搁那儿加墨，搞一手花里胡哨，捞不着一点儿好。最后狠心50包邮了。</p><p>我这台是二手打印机，惠普的P1008无线版本。说是无线，我其实也是连着线用的，只不过确实有无线打印的功能，我将其连在了服务器上，然后通过无线控制，远程打印。</p><h2 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h2><p>先讲配置环境，本次配置涉及3台设备：</p><ul><li><p>打印机（HP LaserJet P1008）</p></li><li><p>服务器（Win10系统）</p></li><li><p>远程客户端（MacOS）</p></li></ul><p>该有的设备都有了，我们开始配置。</p><h3 id="安装打印机"><a href="#安装打印机" class="headerlink" title="安装打印机"></a>安装打印机</h3><p>这一步跟配置无关，可以参考激光打印机安装矽鼓的过程，B站有详细视频解析，请自行翻阅：</p><p><a href="https://www.bilibili.com/video/BV1ze4y1f7bx/?spm_id_from=333.788.recommend_more_video.3&vd_source=27816c2400a8d15482b71cc9394e1c3a">安装&#x2F;更换打印机矽鼓</a></p><p><a href="https://www.bilibili.com/video/BV1Uv4y117nS/?spm_id_from=autoNext&vd_source=27816c2400a8d15482b71cc9394e1c3a">填充碳粉</a></p><h3 id="连接windows主机、安装驱动、有线连接、设置共享"><a href="#连接windows主机、安装驱动、有线连接、设置共享" class="headerlink" title="连接windows主机、安装驱动、有线连接、设置共享"></a>连接windows主机、安装驱动、有线连接、设置共享</h3><p>将B2A线的B端连在打印机上，A端连在windows主机上，然后去HP官网现在相关版本驱动并安装。</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-22-50-32-win.jpg"></p><p>安装就好。</p><p>安装完毕之后，打开windows设置-设备-打印机与扫描仪-添加，刷新之后可以搜到，如果搜不到的话，可以手动添加。</p><p>添加完毕之后可看到这个：</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-22-58-54-add.jpg"></p><p>点击“管理”，可以打印测试页。</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-23-00-13-setup.jpg"></p><p>选择“打印机属性”，设置共享。</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-23-01-26-share.jpg"></p><p>设置其他共享配置：</p><p>控制面板—&gt;网络和共享中心—&gt;选择家庭组和共享选项—&gt;更改高级共享设置</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-23-08-34-config.png"></p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-23-10-07-config2.jpg"></p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-23-11-00-config3.jpg"></p><p>添加特定账户，设置账户密码。</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-23-14-16-user.jpg"></p><p>至此，windows端服务配置完毕。windows通过samba协议将其暴露出来，具体格式：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">samba://ip/&lt;Printer name&gt;</span><br></pre></td></tr></table></figure><h3 id="Macos无线连接"><a href="#Macos无线连接" class="headerlink" title="Macos无线连接"></a>Macos无线连接</h3><p>安装Mac版驱动程序：</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-23-22-12-driver2.jpg"></p><p>打开设置-打印机与扫描仪-添加打印机、扫描仪或传真机，下载并安装。</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-23-32-03-add2.jpg"></p><p>添加完毕。</p><h2 id="测试打印"><a href="#测试打印" class="headerlink" title="测试打印"></a>测试打印</h2><p>在Macos上打开一个PDF文件，使用Command+P，进行打印设置。</p><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/05/09-23-32-56-test.jpg"></p><p>如果点击打印后，出现“保留以备认证”时，可以点击右侧更新按钮，重新使用上面建立的打印账户进行验证，并保存到钥匙串即可。</p><p><a href="https://www.feng.com/post/7744881">MacOS 解决“保留以备认证“问题</a></p><h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>本文图很多，但是也没截完全，不过大致过程如上，细微的系统差别也会有，但是不大，可根据自己版本进行配置。</p><h2 id="参考-amp-鸣谢"><a href="#参考-amp-鸣谢" class="headerlink" title="参考 &amp; 鸣谢"></a>参考 &amp; 鸣谢</h2><p><a href="https://support.hp.com/cn-zh/drivers/selfservice/hp-laserjet-p1008-printer/3435686">HP官网驱动下载</a></p><p><a href="https://www.bilibili.com/video/BV1ze4y1f7bx/?spm_id_from=333.788.recommend_more_video.3&vd_source=27816c2400a8d15482b71cc9394e1c3a">安装&#x2F;更换打印机矽鼓</a></p><p><a href="https://www.bilibili.com/video/BV1Uv4y117nS/?spm_id_from=autoNext&vd_source=27816c2400a8d15482b71cc9394e1c3a">填充碳粉</a></p><p><a href="https://www.feng.com/post/7744881">MacOS 解决“保留以备认证“问题</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Emm，没错，最近需要打印的东西有点多，所以在某爹爹上买了一台激光打印机。之所以不买喷墨打印机，是因为之前吃过亏，这玩意儿贼麻烦，墨盒坏了就</summary>
-      
-    
-    
-    
-    <category term="通用技术" scheme="http://eryoung2.github.io/categories/%E9%80%9A%E7%94%A8%E6%8A%80%E6%9C%AF/"/>
-    
-    
-    <category term="打印机" scheme="http://eryoung2.github.io/tags/%E6%89%93%E5%8D%B0%E6%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>NBA 76人vs绿军</title>
-    <link href="http://eryoung2.github.io/2023/05/08/NBA-76%E4%BA%BAvs%E7%BB%BF%E5%86%9B/"/>
-    <id>http://eryoung2.github.io/2023/05/08/NBA-76%E4%BA%BAvs%E7%BB%BF%E5%86%9B/</id>
-    <published>2023-05-07T23:33:09.000Z</published>
-    <updated>2023-05-07T23:47:35.395Z</updated>
-    
-    <content type="html"><![CDATA[<p>G1 45分6助攻，客场带队赢球</p><p>G4 42分8板9助，艰难守下主场</p><p>两场赢球的比赛，登哥都爆发了。</p><p>我们也可以说，76人要想赢球，必须让登哥爆发。</p><p>作为登蜜，看到登哥爆发我很开心，但是也必须清楚地认识到，登哥在76人注定是一位客将，虽然表现上佳时会带领球队赢球，但是身份的差距表明了他只是一位客人，主将还得是软脚的恩比德。</p><p>登哥不可能场场超神，他的身体已经决定了他必然有低迷的时候，G2和G3就是例子。客将就是这样子，当一切顺风的时候，万事好说；一旦手风不顺，拿不下比赛，那么背锅的事大概率会给到客将。只能说这也是没办法的事情，身份所限。</p><p>登哥在76人不仅要carry球队拿下胜利，还要顶着球队老大和一个猪头教练的debuff，给我的话我早就崩了，而登哥还能带着球队赢球，没有强大的意志力以及对冠军的极度渴望，我真不知道他怎么顶下来的。</p><p>不愧是我喜欢的男人啊！</p><p>当然了，经典比赛能看到真的幸福，最后祝愿登哥本赛季得偿所愿，拿到那该死的总冠军！</p><p align="right">-----登哥首席带刀侍卫  生活不如意·中年男人·兔羊兔</p><p align="right">作于2023年5月8日</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;G1 45分6助攻，客场带队赢球&lt;/p&gt;
-&lt;p&gt;G4 42分8板9助，艰难守下主场&lt;/p&gt;
-&lt;p&gt;两场赢球的比赛，登哥都爆发了。&lt;/p&gt;
-&lt;p&gt;我们也可以说，76人要想赢球，必须让登哥爆发。&lt;/p&gt;
-&lt;p&gt;作为登蜜，看到登哥爆发我很开心，但是也必须清楚地认识到，登哥在76人</summary>
-      
-    
-    
-    
-    <category term="NBA" scheme="http://eryoung2.github.io/categories/NBA/"/>
-    
-    
-    <category term="詹姆斯·哈登" scheme="http://eryoung2.github.io/tags/%E8%A9%B9%E5%A7%86%E6%96%AF%C2%B7%E5%93%88%E7%99%BB/"/>
     
   </entry>
   
