@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2024-04-28T05:02:26.913Z</updated>
+  <updated>2024-04-28T07:51:10.395Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,153 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CKS真题 -- 无状态和不可变应用</title>
+    <link href="http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-%E6%97%A0%E7%8A%B6%E6%80%81%E5%92%8C%E4%B8%8D%E5%8F%AF%E5%8F%98%E5%BA%94%E7%94%A8/"/>
+    <id>http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-%E6%97%A0%E7%8A%B6%E6%80%81%E5%92%8C%E4%B8%8D%E5%8F%AF%E5%8F%98%E5%BA%94%E7%94%A8/</id>
+    <published>2024-04-28T07:40:46.000Z</published>
+    <updated>2024-04-28T07:51:10.395Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>检查在namespace development中运行的pod，并删除任何非无状态和非不可变的pod</p><p>名词解释：<br>无状态应用：指应用本身不依赖于持久化的状态数据，没有存储挂载，更强调每个请求的独立性。<br>不可变应用：一旦程序部署完成，其状态不会在运行时被直接修改，更强调pod的稳定性和不变性。</p><p>主要删除的就是两种pod:</p><ol><li>privileged: true的pod # 允许特权的pod</li><li>readOnlyRootFileSystem: false #只读文件系统为false的pod</li><li>有pvc、hostpath挂载的</li><li>ConfigMap、Secret、Download API、emptyDir不算。</li></ol><h2 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h2><ol><li><p>检查development下所有pod</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl get pod -n development</span><br></pre></td></tr></table></figure></li><li><p>挨个检查，如果发现非无状态应用和非不可变应用就删掉。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">kubectl get pod xxx -n development -oyaml |grep -E &quot;privileged|readOnlyRootFileSystem&quot; #检查非不可变应用</span><br><span class="line">kubectl get pod xxx -n development -oyaml|grep &quot;persistentvolumeclaim&quot; #检查非无状态应用</span><br><span class="line">kubectl get pod xxx -n development -oyaml|grep &quot;hostpath&quot;</span><br><span class="line"></span><br><span class="line">kubectl delete pod xxx -n development</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;检查在namespace development中运行的pod，并删除任何非无状态和非不可变的pod&lt;/p&gt;
+&lt;p&gt;名词解释：&lt;br&gt;无状态</summary>
+      
+    
+    
+    
+    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="cks" scheme="http://eryoung2.github.io/tags/cks/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CKS真题 -- ImagePolicyWebhook容器镜像扫描</title>
+    <link href="http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-ImagePolicyWebhook%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E6%89%AB%E6%8F%8F/"/>
+    <id>http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-ImagePolicyWebhook%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E6%89%AB%E6%8F%8F/</id>
+    <published>2024-04-28T06:51:22.000Z</published>
+    <updated>2024-04-28T07:17:43.816Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>注意：你必须在 cluster 的 master节点上完成整个考题，所有服务和文件都已被准备好并放置在该节点上。<br>给定一个目录 &#x2F;etc&#x2F;kubernetes&#x2F;epconfig中不完整的配置以及具有 HTTPS 端点 <a href="https://acme.local:8082/image_policy">https://acme.local:8082/image_policy</a> 的功能性容器镜像扫描器：<br>    1. 启用必要的插件来创建镜像策略<br>    2. 校验控制配置并将其更改为隐式拒绝（implicit deny）<br>    3. 编辑配置以正确指向提供的 HTTPS 端点<br>最后，通过尝试部署易受攻击的资源 &#x2F;cks&#x2F;img&#x2F;web1.yaml 来测试配置是否有效。<br>你可以在&#x2F;var&#x2F;log&#x2F;imagepolicy&#x2F;roadrunner.log 找到容器镜像扫描仪的日志文件。</p><h2 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h2><ol><li><p>修改&#x2F;etc&#x2F;kubernetes&#x2F;epconfig&#x2F;admission_configuration.json，将defaultAllow设置为false</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;defaultAllow&quot;:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure></li><li><p>修改&#x2F;etc&#x2F;kubernetes&#x2F;epconfig&#x2F;kubeconfig.yml，添加webhook server地址</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">cluster:</span></span><br><span class="line">    <span class="attr">certificate-authority:</span> <span class="string">/path/to/ca.pem</span>   </span><br><span class="line">    <span class="attr">server:</span> <span class="string">https://acme.local:8082/image_policy</span>  <span class="comment"># 增加该行</span></span><br></pre></td></tr></table></figure></li><li><p>备份配置文件</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">mkdir</span> <span class="string">-p</span> <span class="string">/opt/backup/16</span></span><br><span class="line"><span class="string">cp</span> <span class="string">-f</span> <span class="string">/etc/kubernetes/manifests/kube-apiserver.yaml</span> <span class="string">/opt/backup/16</span></span><br></pre></td></tr></table></figure></li><li><p>修改配置文件</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="string">--enable-admission-plugins=NodeRestriction,ImagePolicyWebhook</span> <span class="comment">#添加ImagePolicyWebhook</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">--admission-control-config-file=/etc/kubernetes/epconfig/admission_configuration.json</span> <span class="comment">#添加配置文件路径</span></span><br><span class="line"></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">mountPath:</span> <span class="string">/etc/kubernetes/epconfig</span> <span class="comment">#添加挂载，具体参考配置文件其他范例</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">epconfig</span></span><br><span class="line">    <span class="attr">readOnly:</span> <span class="literal">true</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">epconfig</span></span><br><span class="line">  <span class="attr">hostPath:</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">/etc/kubernetes/epconfig</span></span><br></pre></td></tr></table></figure></li><li><p>重启kubelet并检查</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart kubelet</span><br></pre></td></tr></table></figure></li><li><p>部署&#x2F;cks&#x2F;img&#x2F;web1.yaml进行测试检查</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">kubectl</span> <span class="string">apply</span> <span class="string">-f</span> <span class="string">/cks/img/web1.yaml</span></span><br></pre></td></tr></table></figure></li></ol><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote><p><a href="https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#imagepolicywebhook">https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#imagepolicywebhook</a></p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;注意：你必须在 cluster 的 master节点上完成整个考题，所有服务和文件都已被准备好并放置在该节点上。&lt;br&gt;给定一个目录 &amp;#x</summary>
+      
+    
+    
+    
+    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="cks" scheme="http://eryoung2.github.io/tags/cks/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CKS真题 -- 启用API server认证</title>
+    <link href="http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-%E5%90%AF%E7%94%A8API-server%E8%AE%A4%E8%AF%81/"/>
+    <id>http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-%E5%90%AF%E7%94%A8API-server%E8%AE%A4%E8%AF%81/</id>
+    <published>2024-04-28T06:45:27.000Z</published>
+    <updated>2024-04-28T06:50:47.160Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>重新配置 cluster 的Kubernetes APl 服务器，以确保只允许经过身份验证和授权的 REST 请求。<br>使用授权模式 Node,RBAC 和准入控制器NodeRestriction。<br>删除用户 system:anonymous 的 ClusterRoleBinding 来进行清理。</p><p>注意：所有 kubectl 配置环境&#x2F;文件也被配置使用未经身份验证和未经授权的访问。 你不必更改它，但请注意，一旦完成 cluster的安全加固， kubectl 的配置将无法工作。 您可以使用位于 cluster 的 master 节点上，cluster 原本的kubectl 配置文件 &#x2F;etc&#x2F;kubernetes&#x2F;admin.conf ，以确保经过身份验证的授权的请求仍然被允许。</p><h2 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h2><ol><li>备份并修改kube-apiserver配置<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">备份</span></span><br><span class="line">mkdir -p /opt/backup/15</span><br><span class="line">cp -f /etc/kubernetes/manifests/kube-apiserver.yaml /opt/backup/15</span><br></pre></td></tr></table></figure></li></ol><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="string">--authorization-mode=Node,RBAC</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">--enable-admission-plugins=NodeRestriction</span> <span class="comment">#添加准入控制器</span></span><br></pre></td></tr></table></figure><ol start="2"><li><p>重启kubelet</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart kubelet</span><br></pre></td></tr></table></figure></li><li><p>删除删除用户 system:anonymous 的 ClusterRoleBinding</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl delete rolebinding system:anonymous</span><br></pre></td></tr></table></figure></li></ol><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote><p><a href="https://kubernetes.io/zh-cn/docs/reference/access-authn-authz/node/#overview">https://kubernetes.io/zh-cn/docs/reference/access-authn-authz/node/#overview</a></p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;重新配置 cluster 的Kubernetes APl 服务器，以确保只允许经过身份验证和授权的 REST 请求。&lt;br&gt;使用授权模式 N</summary>
+      
+    
+    
+    
+    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="cks" scheme="http://eryoung2.github.io/tags/cks/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CKS真题 -- TLS通信增强</title>
+    <link href="http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-TLS%E9%80%9A%E4%BF%A1%E5%A2%9E%E5%BC%BA/"/>
+    <id>http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-TLS%E9%80%9A%E4%BF%A1%E5%A2%9E%E5%BC%BA/</id>
+    <published>2024-04-28T06:24:48.000Z</published>
+    <updated>2024-04-28T06:35:47.053Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>通过TLS加强kube-apiserver安全配置，要求<br>1、kube-apiserver除了VersionTLS13及以上的版本可以使用，其他版本都不允许使用。<br>2、密码套件（Cipher suite）为TLS_AES_128_GCM_SHA256</p><p>通过TLS加强ETCD安全配置，要求<br>1、密码套件（Cipher suite）为TLS_AES_128_GCM_SHA256</p><h2 id="做题"><a href="#做题" class="headerlink" title="做题"></a>做题</h2><ol><li><p>备份相关配置文件</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /opt/backup/14</span><br><span class="line">cp -f /etc/kubernetes/manifests/kube-apiserver.yaml /opt/backup/14</span><br><span class="line">cp -f /etc/kubernetes/manifests/etcd.yaml /opt/backup/14</span><br></pre></td></tr></table></figure></li><li><p>修改配置文件</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># kube-apiserver.yaml</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">containers:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">command:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">kube-apiserver</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">--tls-min-version=VersionTLS13</span> <span class="comment">#任务1</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">--tls-cipher-suites=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</span> <span class="comment">#任务2</span></span><br></pre></td></tr></table></figure></li></ol><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># etcd.yaml</span></span><br><span class="line">  <span class="attr">containers:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">command:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">etcd</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">--cipher-suites=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</span> <span class="comment">#任务3</span></span><br></pre></td></tr></table></figure><ol start="3"><li><p>重启kubelet</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart kubelet</span><br></pre></td></tr></table></figure></li><li><p>检查</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl get pods -A #观察kube-apiserver和etcd是否重启</span><br></pre></td></tr></table></figure></li></ol><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote><p><a href="https://kubernetes.io/zh-cn/docs/reference/command-line-tools-reference/kube-apiserver/">https://kubernetes.io/zh-cn/docs/reference/command-line-tools-reference/kube-apiserver/</a></p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;通过TLS加强kube-apiserver安全配置，要求&lt;br&gt;1、kube-apiserver除了VersionTLS13及以上的版本可以</summary>
+      
+    
+    
+    
+    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="cks" scheme="http://eryoung2.github.io/tags/cks/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CKS真题 -- Container安全上下文</title>
+    <link href="http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-Container%E5%AE%89%E5%85%A8%E4%B8%8A%E4%B8%8B%E6%96%87/"/>
+    <id>http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-Container%E5%AE%89%E5%85%A8%E4%B8%8A%E4%B8%8B%E6%96%87/</id>
+    <published>2024-04-28T06:20:03.000Z</published>
+    <updated>2024-04-28T06:23:44.583Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>按照如下要求修改sec-ns命名空间里的Deployment secdep<br>1、用ID为30000的用户启动容器（设置用户1D为：30000）<br>2、不允许进程获得超出其父进程的特权（禁止allowPrivilegeEscalation）<br>3、以只读方式加载容器的根文件系统（对根文件的只读权限）</p><h2 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h2><ol><li><p>修改deployment secdep，添加配置<br>kubectl edit deploy secdep -n sec-ns</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">securityContext:</span>                        <span class="comment">#增加这两行完成任务1</span></span><br><span class="line">    <span class="attr">runAsUser:</span> <span class="number">30000</span></span><br><span class="line">  <span class="string">...</span></span><br><span class="line">  <span class="attr">containers:</span>           </span><br><span class="line">    <span class="attr">securityContext:</span>                      <span class="comment">#增加这三行完成任务2，3</span></span><br><span class="line">      <span class="attr">allowPrivilegeEscalation:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">readOnlyRootFilesystem:</span> <span class="literal">true</span></span><br><span class="line">  <span class="string">...</span></span><br><span class="line">  <span class="attr">containers:</span>                             <span class="comment">#如果有多个容器，每个容器都要增加这三行</span></span><br><span class="line">    <span class="attr">securityContext:</span></span><br><span class="line">      <span class="attr">allowPrivilegeEscalation:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">readOnlyRootFilesystem:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></li><li><p>保存，检查是否添加成功，不成功说明没加对，需要重新添加<br>kubectl -n sec-ns get all</p></li></ol><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote><p><a href="https://kubernetes.io/zh-cn/docs/tasks/configure-pod-container/security-context/">https://kubernetes.io/zh-cn/docs/tasks/configure-pod-container/security-context/</a></p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;按照如下要求修改sec-ns命名空间里的Deployment secdep&lt;br&gt;1、用ID为30000的用户启动容器（设置用户1D为：30</summary>
+      
+    
+    
+    
+    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="cks" scheme="http://eryoung2.github.io/tags/cks/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CKS真题 -- Sysdig &amp; Falco</title>
+    <link href="http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-Sysdig-Falco/"/>
+    <id>http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-Sysdig-Falco/</id>
+    <published>2024-04-28T06:12:09.000Z</published>
+    <updated>2024-04-28T06:17:58.702Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>使用运行时检测工具来检测 Pod tomcat123 单个容器中频发生成和执行的异常进程。 </p><p>有两种工具可供使用： </p><ul><li>sysdig</li><li>falco<br>注： 这些工具只预装在 cluster 的工作节点node02，不在 master 节点。</li></ul><p>使用工具至少分析 30 秒，使用过滤器检查生成和执行的进程，将事件写到 &#x2F;opt&#x2F;KSR00101&#x2F;incidents&#x2F;summary 文 件中，其中包含检测的事件， 格式如下： [timestamp],[uid],[processName] 保持工具的原始时间戳格式不变。<br>注：确保事件文件存储在集群的工作节点上。</p><h2 id="做题"><a href="#做题" class="headerlink" title="做题"></a>做题</h2><ol><li><p>找到containerd的sock</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crictl info | grep sock</span><br><span class="line">&quot;containerdEndpoint&quot;: &quot;/run/containerd/containerd.sock&quot;,</span><br></pre></td></tr></table></figure></li><li><p>找到目标container</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crictl ps|grep tomcat123</span><br></pre></td></tr></table></figure></li><li><p>通过sysdig扫描容器并输出</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sysdig -l | grep time</span><br><span class="line">sysdig -l | grep uid</span><br><span class="line">sysdig -l | grep proc</span><br><span class="line">sysdig -M 30 -p &quot;%evt.time,%user.name,%proc.name&quot; --cri /run/containerd/containerd.sock container.name=tomcat123 &gt;&gt; /opt/KSR00101/incidents/summary</span><br></pre></td></tr></table></figure></li></ol><p>如果没检测到sysdig，就跑这一行：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysdig-probe-loader</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;使用运行时检测工具来检测 Pod tomcat123 单个容器中频发生成和执行的异常进程。 &lt;/p&gt;
+&lt;p&gt;有两种工具可供使用： &lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="cks" scheme="http://eryoung2.github.io/tags/cks/"/>
+    
+  </entry>
   
   <entry>
     <title>CKS真题 -- AppArmor应⽤程序⾏为限制</title>
@@ -354,162 +501,6 @@
     
     
     <category term="五月天" scheme="http://eryoung2.github.io/tags/%E4%BA%94%E6%9C%88%E5%A4%A9/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《漠河舞厅》-- 柳爽</title>
-    <link href="http://eryoung2.github.io/2023/11/21/%E3%80%8A%E6%BC%A0%E6%B2%B3%E8%88%9E%E5%8E%85%E3%80%8B-%E6%9F%B3%E7%88%BD/"/>
-    <id>http://eryoung2.github.io/2023/11/21/%E3%80%8A%E6%BC%A0%E6%B2%B3%E8%88%9E%E5%8E%85%E3%80%8B-%E6%9F%B3%E7%88%BD/</id>
-    <published>2023-11-21T03:46:26.000Z</published>
-    <updated>2023-11-21T03:58:48.436Z</updated>
-    
-    <content type="html"><![CDATA[<p>我从没有见过极光出现的村落，也没有见过有人，在深夜放烟火。</p><p>晚风就像你的眼睛杀人又放火，你什么都没有说，野风惊扰我。</p><p>    </p><p>三千里，偶然见过你，花园里，有裙翩舞起。</p><p>灯光底，抖漏了晨曦，在1980的漠河舞厅。</p><p>如果有时间，你会来看一看我吧，</p><p>看时间如何衰老的，我的眼睛如何融化。</p><p>如果你看见我的话，请转过身去再惊讶，</p><p>我怕我的眼泪、我的白发，像羞耻的笑话。</p><p>    </p><p>我从没有见过极光出现的村落，也没有见过有人，在深夜放烟火。</p><p>晚风就像你的眼睛杀人又放火，你什么都没有说，野风惊扰我。</p><p>    </p><p>可是你，惹怒了神明，让你去，还那么年轻。</p><p>都怪你，野山冷冰冰，在一个人的漠河舞厅。</p><p>    </p><p>如果有时间，你会来看一看我吧，</p><p>看时间如何衰老的，我的眼睛如何融化。</p><p>如果你看见我的话，请转过身去再惊讶，</p><p>我怕我的眼泪、我的白发，像羞耻的笑话。</p><p>    </p><p>如果有一天，我的信念突然倒塌，</p><p>城市的花园没有花，广播里的声音嘶哑。</p><p>如果真有这天的话， 你会不会奔向我啊，</p><p>尘封入海吧，尘封入海吧！</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;我从没有见过极光出现的村落，也没有见过有人，在深夜放烟火。&lt;/p&gt;
-&lt;p&gt;晚风就像你的眼睛杀人又放火，你什么都没有说，野风惊扰我。&lt;/p&gt;
-&lt;p&gt;    &lt;/p&gt;
-&lt;p&gt;三千里，偶然见过你，花园里，有裙翩舞起。&lt;/p&gt;
-&lt;p&gt;灯光底，抖漏了晨曦，在1980的漠河舞厅。&lt;/p</summary>
-      
-    
-    
-    
-    <category term="歌词" scheme="http://eryoung2.github.io/categories/%E6%AD%8C%E8%AF%8D/"/>
-    
-    
-    <category term="柳爽" scheme="http://eryoung2.github.io/tags/%E6%9F%B3%E7%88%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>xcrun missing问题</title>
-    <link href="http://eryoung2.github.io/2023/09/11/xcrun-missing%E9%97%AE%E9%A2%98/"/>
-    <id>http://eryoung2.github.io/2023/09/11/xcrun-missing%E9%97%AE%E9%A2%98/</id>
-    <published>2023-09-10T16:37:51.000Z</published>
-    <updated>2023-09-10T16:42:16.711Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天在安装brew的时候，发现以下问题：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun</span><br></pre></td></tr></table></figure><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ul><li><p>重装xcode command line</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xcode-select --install</span><br></pre></td></tr></table></figure></li><li><p>没解决的话，可以跑这条</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo xcode-select -switch /</span><br></pre></td></tr></table></figure></li></ul><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote><p><a href="https://www.jianshu.com/p/50b6771eb853">https://www.jianshu.com/p/50b6771eb853</a></p></blockquote>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;今天在安装brew的时候，发现以下问题：&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;t</summary>
-      
-    
-    
-    
-    <category term="环境配置" scheme="http://eryoung2.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    
-    
-    <category term="Mac" scheme="http://eryoung2.github.io/tags/Mac/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用bat脚本激活office</title>
-    <link href="http://eryoung2.github.io/2023/09/08/%E4%BD%BF%E7%94%A8bat%E8%84%9A%E6%9C%AC%E6%BF%80%E6%B4%BBoffice/"/>
-    <id>http://eryoung2.github.io/2023/09/08/%E4%BD%BF%E7%94%A8bat%E8%84%9A%E6%9C%AC%E6%BF%80%E6%B4%BBoffice/</id>
-    <published>2023-09-08T06:25:46.000Z</published>
-    <updated>2023-09-12T01:36:06.546Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在我们安装windows的时候，很重要的一个步骤就是激活。</p><p>安装windows的同时，通常也需要安装office，同样需要激活。</p><p>两个方法都是可以使用kms进行伪激活的，好处是免费，坏处是盗版，不过不care啦，对不起，微软哥，囊中是在羞射。。。</p><p>windows我之前写过一期：</p><blockquote><p><a href="https://www.cnblogs.com/young233/p/13112054.html">https://www.cnblogs.com/young233/p/13112054.html</a></p></blockquote><p>本文讨论office。</p><h2 id="office的kms"><a href="#office的kms" class="headerlink" title="office的kms"></a>office的kms</h2><p>我们可以使用kmsripo这个软件进行激活，当然要找到靠谱的软件，否则就容易被病毒侵入。</p><p>在此，我们可以使用以下脚本进行安装：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">(cd /d &quot;%~dp0&quot;)&amp;&amp;(NET FILE||(powershell start-process -FilePath &#x27;%0&#x27; -verb runas)&amp;&amp;(exit /B)) &gt;NUL 2&gt;&amp;1</span><br><span class="line">title Office 2019 Activator r/Piracy</span><br><span class="line">echo Converting... &amp; mode 40,25</span><br><span class="line">(if exist &quot;%ProgramFiles%\Microsoft Office\Office16\ospp.vbs&quot; cd /d &quot;%ProgramFiles%\Microsoft Office\Office16&quot;)&amp;(if exist &quot;%ProgramFiles(x86)%\Microsoft Office\Office16\ospp.vbs&quot; cd /d &quot;%ProgramFiles(x86)%\Microsoft Office\Office16&quot;)&amp;(for /f %%x in (&#x27;dir /b ..\root\Licenses16\ProPlus2019VL*.xrm-ms&#x27;) do cscript ospp.vbs /inslic:&quot;..\root\Licenses16\%%x&quot; &gt;nul)&amp;(for /f %%x in (&#x27;dir /b ..\root\Licenses16\ProPlus2019VL*.xrm-ms&#x27;) do cscript ospp.vbs /inslic:&quot;..\root\Licenses16\%%x&quot; &gt;nul)</span><br><span class="line">cscript //nologo ospp.vbs /unpkey:6MWKP &gt;nul&amp;cscript //nologo ospp.vbs /inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP &gt;nul&amp;set i=1</span><br><span class="line">:server</span><br><span class="line">if %i%==1 set KMS_Sev=kms7.MSGuides.com</span><br><span class="line">if %i%==2 set KMS_Sev=kms8.MSGuides.com</span><br><span class="line">if %i%==3 set KMS_Sev=kms9.MSGuides.com</span><br><span class="line">cscript //nologo ospp.vbs /sethst:%KMS_Sev% &gt;nul</span><br><span class="line">echo %KMS_Sev% &amp; echo Activating...</span><br><span class="line">cscript //nologo ospp.vbs /act | find /i &quot;successful&quot; &amp;&amp; (echo Complete) || (echo Trying another KMS Server &amp; set /a i+=1 &amp; goto server)</span><br><span class="line">pause &gt;nul</span><br><span class="line">exit</span><br></pre></td></tr></table></figure><p>复制以上内容，新建一个bat文件，写入之后，使用“管理员运行”即可。</p><p>然后就可以了，可以添加一个定时任务，每3个月跑一次，就不会过期了。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在我们安装windows的时候，很重要的一个步骤就是激活。&lt;/p&gt;
-&lt;p&gt;安装windows的同时，通常也需要安装office，同样需要激活</summary>
-      
-    
-    
-    
-    <category term="windows" scheme="http://eryoung2.github.io/categories/windows/"/>
-    
-    
-    <category term="bat" scheme="http://eryoung2.github.io/tags/bat/"/>
-    
-    <category term="kms" scheme="http://eryoung2.github.io/tags/kms/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Macbook系统降级</title>
-    <link href="http://eryoung2.github.io/2023/08/27/Macbook%E7%B3%BB%E7%BB%9F%E9%99%8D%E7%BA%A7/"/>
-    <id>http://eryoung2.github.io/2023/08/27/Macbook%E7%B3%BB%E7%BB%9F%E9%99%8D%E7%BA%A7/</id>
-    <published>2023-08-27T07:14:34.000Z</published>
-    <updated>2023-08-27T08:06:58.047Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>由于笔者有一台老Macbook Pro，是2015年款的，信仰灯还能亮，所以我始终不舍得卖掉；但是由于硬件限制，运行现在的Mac系统非常艰难，风扇狂转、反应太慢，就跟一个哮喘病人一样，我都替它难受。于是我想给它做个系统降级，然后就收藏起来了。</p><h2 id="制作启动盘-or-网络恢复？"><a href="#制作启动盘-or-网络恢复？" class="headerlink" title="制作启动盘 or 网络恢复？"></a>制作启动盘 or 网络恢复？</h2><p>两种方法我都有试过，网络恢复有三种选项：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Command+R: 恢复到现有系统版本</span><br><span class="line">Command+Option+R：恢复到现机器最新系统版本</span><br><span class="line">Command+Option+Shift+R: 恢复到出厂设置时的系统版本</span><br></pre></td></tr></table></figure><p>由于笔者在安装时抹掉了所有磁盘，在试图网络恢复时，总是遇到以下问题：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">准备安装时发生错误，请尝试重新运行此应用程序</span><br></pre></td></tr></table></figure><p>这个问题的原因有两个，一个是磁盘没抹除干净，一个是时间不对，需要手动设置到目前的时间。可以参考这个帖子：</p><blockquote><p><a href="https://www.jianshu.com/p/b4736f53c0d8">格式化苹果系统，重装系统提示“准备安装时发生错误，请尝试重新运行此应用程序” - 简书</a></p></blockquote><p>笔者花了一天时间试了很多次，均未安装成功。所以，我用了另一种方法–制作USB启动盘。</p><p>其实就是系统的刻录，但是需要一些其他的步骤：</p><ol><li><p>下载目标系统到电脑，并进行安装，使其进入Application目录。</p></li><li><p>插入目标U盘，进行格式化，使用“Mac OS扩展（日志）”格式，并将U盘重命名为MyVolume，此步骤为必须。</p></li><li><p>打开终端，运行相应版本的命令，进行刻录。笔者安装的是High Sierra系统，所以跑的是这个：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /Applications/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume</span><br></pre></td></tr></table></figure></li></ol><p><img src="https://raw.githubusercontent.com/ErYoung2/imgbed/master/2023/08/27-15-54-50-downgrade.png"></p><p>详情可以参考官方文档：<a href="https://support.apple.com/zh-cn/HT201372"># 创建可引导的 macOS 安装器</a></p><ol start="4"><li><p>进入目标Mac，将磁盘格式化为“Mac OS扩展（日志）”格式即可。</p></li><li><p>将此U盘卸载后插入目标Mac，启动时长按Option，选择“Install xx”，从U盘启动，一步一步进行操作即可。</p></li><li><p>安装完毕之后，按照提示进行设置，进入系统后即可看到系统降级成功。</p><p>如果此时遇到“应用副本已损坏”的报错，并不是我们的副本真的损坏，而是应用证书过期，我们可以参考这篇文章：<a href="https://zhuanlan.zhihu.com/p/91707695"># macOS安装过程中“应用副本已损坏”的解决方案</a></p></li></ol><h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>Mac的恢复较为复杂，还是推荐使用本地的恢复方式，即制作启动盘然后进行安装。我一开始被网络恢复带歪了，后来发现没什么用，尤其是所有磁盘彻底被格式化之后，我一度差点装个windows上去，真的挺麻烦的，不愧是你啊，苹果！</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;由于笔者有一台老Macbook Pro，是2015年款的，信仰灯还能亮，所以我始终不舍得卖掉；但是由于硬件限制，运行现在的Mac系统非常艰难</summary>
-      
-    
-    
-    
-    <category term="操作系统" scheme="http://eryoung2.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-    <category term="Mac" scheme="http://eryoung2.github.io/tags/Mac/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于日本排放核废水和普利戈金死掉的看法</title>
-    <link href="http://eryoung2.github.io/2023/08/25/%E5%85%B3%E4%BA%8E%E6%97%A5%E6%9C%AC%E6%8E%92%E6%94%BE%E6%A0%B8%E5%BA%9F%E6%B0%B4%E5%92%8C%E6%99%AE%E5%88%A9%E6%88%88%E9%87%91%E6%AD%BB%E6%8E%89%E7%9A%84%E7%9C%8B%E6%B3%95/"/>
-    <id>http://eryoung2.github.io/2023/08/25/%E5%85%B3%E4%BA%8E%E6%97%A5%E6%9C%AC%E6%8E%92%E6%94%BE%E6%A0%B8%E5%BA%9F%E6%B0%B4%E5%92%8C%E6%99%AE%E5%88%A9%E6%88%88%E9%87%91%E6%AD%BB%E6%8E%89%E7%9A%84%E7%9C%8B%E6%B3%95/</id>
-    <published>2023-08-25T08:42:02.000Z</published>
-    <updated>2023-08-25T09:05:25.370Z</updated>
-    
-    <content type="html"><![CDATA[<p>昨天是2023年8月24号，星期四，笔者所在的城市，天气晦暗不明。</p><p>这一天发生两件大事，一个是发生在遥远的、寒冷的俄罗斯，其瓦格纳首领普利戈金死掉了，乘坐的私人飞机被俄罗斯自己的导弹打掉了，动手的人除了普京，我想不出来第二个人；另一件事是发生在我们的邻邦日本，他们又又又又一次向海水里排放福岛核电站的废水，激起了国内同胞的一致指责。</p><p>我不太懂，但是我还是想就这两件事讲一讲自己的看法。</p><p>首先先说俄罗斯的事情，普里戈金在今年6月宣布清君侧，要杀掉国防部长绍伊古和国防参谋总长格拉西莫夫，这就是造反。但是很神奇的一件事是，他宣布造反之后，就不知道在做什么了。拖了将近两个月，又是去白俄罗斯，又是去非洲，总之造反的事情一件没干，乱七八糟的事情一件没少，最后被干掉几乎是必然的。造反就是把脑袋别在裤腰带上，不要bb就是干，结果厨子犯了大忌，死掉是必然的。这不禁让我想起了中国历史上的两次故事–其一是自己家族大权在握，手里握着皇帝这张牌，但是在造反派信誓旦旦、指水为誓的“优渥”条件下，还以为自己真的能做富家翁，结果葬送自家江山的事情；第二件事，其主将挟持中国领袖，逼其打乱自己的施政计划而又因为犹豫没做更进一步的事情，导致最后被囚禁很多年的事情。以史为鉴，想当然尔，老匹夫死得不冤。</p><p>然后是日本，我印象里日本也不是第一次排放核废水了，早在2011年311大地震那时候就已经有过核废水排放入海的事情了，而且中途也陆续发生过几次，怎么日本人没喊叫，我们国人却群情激愤呢？而且有个更加搞笑的情况，也不知道谁起的头，说买盐能防辐射，导致大批人去抢盐。</p><p>盐能不能防辐射我不知道，吃多了很难受这个事情是确定的。而且盐是一种瘾品，并不单单是一种调味料。吃多了会上瘾，就会死人。我不知道给人们宣称盐能防辐射的是一批什么人，也不知道真的信这种传言的又是什么人，古语有云，非蠢即坏，诸君可以自行对号入座。</p><p>另外，我们现在的世界充满了不确定和纷争，也时刻处在变化当中。能活着已经很不容易了，何苦再去操着卖白菜的钱，去操卖白粉的命呢？有这干劲，还不如先让自己吃得好一些，活得快乐一些，精神世界充实一些，也算自己奋斗过了。而不是盯着这种事，相信这种谣言，还给别人当韭菜割，属实无趣了。</p><p>以上，就酱。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;昨天是2023年8月24号，星期四，笔者所在的城市，天气晦暗不明。&lt;/p&gt;
-&lt;p&gt;这一天发生两件大事，一个是发生在遥远的、寒冷的俄罗斯，其瓦格纳首领普利戈金死掉了，乘坐的私人飞机被俄罗斯自己的导弹打掉了，动手的人除了普京，我想不出来第二个人；另一件事是发生在我们的邻邦日本，</summary>
-      
-    
-    
-    
-    <category term="失眠随想" scheme="http://eryoung2.github.io/categories/%E5%A4%B1%E7%9C%A0%E9%9A%8F%E6%83%B3/"/>
-    
-    
-    <category term="评论" scheme="http://eryoung2.github.io/tags/%E8%AF%84%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>煞笔软考网工</title>
-    <link href="http://eryoung2.github.io/2023/07/21/%E7%85%9E%E7%AC%94%E8%BD%AF%E8%80%83%E7%BD%91%E5%B7%A5/"/>
-    <id>http://eryoung2.github.io/2023/07/21/%E7%85%9E%E7%AC%94%E8%BD%AF%E8%80%83%E7%BD%91%E5%B7%A5/</id>
-    <published>2023-07-21T02:39:32.000Z</published>
-    <updated>2023-07-21T02:46:00.632Z</updated>
-    
-    <content type="html"><![CDATA[<p>2023年软考成绩出了，不出意料地没过。</p><p>没过就没过吧，中级而已，也就当做高级考试的一模考试了，但是我看了一下通过率，实在是低得不成样子，可能只有10%左右吧。</p><p>甚至有些IP、IE也考不过，做了很多年专业的网工也考不过，这就很成问题了。</p><p>再加上作弊门、煞笔CDN，答案也不公布，就是个纯纯的黑箱操作。</p><p>真黑，真黑！</p><p>但愿下半年考网规，我可以复习更努力些，涉猎更广博些，态度更认真些，争取通过它！</p><p>但愿网规可以正常一些吧，不然这考试真的烂透了！</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;2023年软考成绩出了，不出意料地没过。&lt;/p&gt;
-&lt;p&gt;没过就没过吧，中级而已，也就当做高级考试的一模考试了，但是我看了一下通过率，实在是低得不成样子，可能只有10%左右吧。&lt;/p&gt;
-&lt;p&gt;甚至有些IP、IE也考不过，做了很多年专业的网工也考不过，这就很成问题了。&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    <category term="失眠随想" scheme="http://eryoung2.github.io/categories/%E5%A4%B1%E7%9C%A0%E9%9A%8F%E6%83%B3/"/>
-    
-    
-    <category term="杂谈" scheme="http://eryoung2.github.io/tags/%E6%9D%82%E8%B0%88/"/>
     
   </entry>
   
