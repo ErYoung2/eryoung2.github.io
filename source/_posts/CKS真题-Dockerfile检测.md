@@ -25,9 +25,7 @@ USER nobody
 2. 修改Deployment文件
 vim /cks/docker/deployment.yaml
 ```yaml
-# 在安全内容里删除'SYS_ADMIN'；确保securityContext的privileged为False
-securityContext:
-  privileged: False
+# 在安全内容里删除'SYS_ADMIN'；确保securityContext的privileged为False;确保readOnlyFilesystem为True; runAsUser为65535
 # 内部的pod标签保持一致，具体参考环境
 ```
 3. 修改后无需重启
