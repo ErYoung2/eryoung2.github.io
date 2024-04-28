@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2024-04-28T03:46:45.528Z</updated>
+  <updated>2024-04-28T05:02:26.913Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -17,13 +17,109 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>CKS真题 -- AppArmor应⽤程序⾏为限制</title>
+    <link href="http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-AppArmor%E5%BA%94%E2%BD%A4%E7%A8%8B%E5%BA%8F%E2%BE%8F%E4%B8%BA%E9%99%90%E5%88%B6/"/>
+    <id>http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-AppArmor%E5%BA%94%E2%BD%A4%E7%A8%8B%E5%BA%8F%E2%BE%8F%E4%B8%BA%E9%99%90%E5%88%B6/</id>
+    <published>2024-04-28T04:30:51.000Z</published>
+    <updated>2024-04-28T05:02:26.913Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>在 cluster 的工作节点上，实施位于 &#x2F;etc&#x2F;apparmor.d&#x2F;nginx_apparmor 的现有 APPArmor配置文件。<br>编辑位于 &#x2F;home&#x2F;candidate&#x2F;KSSH00401&#x2F;nginx-deploy.yaml 的现有清单文件以应用AppArmor 配置文件。 最后，应用清单文件并创建其中指定的 Pod 。</p><h2 id="做题"><a href="#做题" class="headerlink" title="做题"></a>做题</h2><ol><li><p>在集群所有节点上加载apparmor策略，并检查</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apparmor_parser /etc/apparmor.d/nginx_apparmor</span><br><span class="line">apparmor_status|grep nginx-profile</span><br></pre></td></tr></table></figure></li><li><p>回到主节点，编辑清单文件，添加配置<br>vim &#x2F;home&#x2F;candidate&#x2F;KSSH00401&#x2F;nginx-deploy.yaml</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Pod</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">nginx-deploy</span></span><br><span class="line">  <span class="attr">annotations:</span> </span><br><span class="line">    <span class="comment"># 从官网复制，注意格式：container.apparmor.security.beta.kubernetes.io/&lt;container_name&gt;: &lt;profile_ref&gt;</span></span><br><span class="line">    <span class="comment"># &lt;container_name&gt; 的名称是配置文件所针对的容器的名称，&lt;profile_def&gt; 则设置要应用的配置文件。 &lt;profile_ref&gt; 可以是以下取值之一：</span></span><br><span class="line">        <span class="comment"># runtime/default 应用运行时的默认配置</span></span><br><span class="line">        <span class="comment"># localhost/&lt;profile_name&gt; 应用在主机上加载的名为 &lt;profile_name&gt; 的配置文件</span></span><br><span class="line">        <span class="comment"># unconfined 表示不加载配置文件</span></span><br><span class="line">    <span class="attr">container.apparmor.security.beta.kubernetes.io/nginx-deploy:</span> <span class="string">localhost/nginx-profile-1</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line"> <span class="attr">containers:</span></span><br><span class="line"> <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">nginx-deploy</span></span><br><span class="line">   <span class="attr">image:</span> <span class="string">busybox</span></span><br><span class="line">   <span class="attr">command:</span> [ <span class="string">&quot;sh&quot;</span>, <span class="string">&quot;-c&quot;</span>, <span class="string">&quot;echo &#x27;Hello AppArmor!&#x27; &amp;&amp; sleep 1h&quot;</span> ]</span><br></pre></td></tr></table></figure></li></ol><p>kubectl apply -f &#x2F;home&#x2F;candidate&#x2F;KSSH00401&#x2F;nginx-deploy.yaml</p><ol start="3"><li>检查<br>kubectl get pod<br>kubectl exec nginx-deploy – cat &#x2F;proc&#x2F;1&#x2F;attr&#x2F;current<br>kubectl exec nginx-deploy – touch &#x2F;tmp&#x2F;test</li></ol><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote><p><a href="https://kubernetes.io/zh-cn/docs/tutorials/security/apparmor/">https://kubernetes.io/zh-cn/docs/tutorials/security/apparmor/</a></p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;在 cluster 的工作节点上，实施位于 &amp;#x2F;etc&amp;#x2F;apparmor.d&amp;#x2F;nginx_apparmor 的现</summary>
+      
+    
+    
+    
+    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="cks" scheme="http://eryoung2.github.io/tags/cks/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CKS真题 -- Trivy 扫描镜像安全漏洞</title>
+    <link href="http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-Trivy-%E6%89%AB%E6%8F%8F%E9%95%9C%E5%83%8F%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E/"/>
+    <id>http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-Trivy-%E6%89%AB%E6%8F%8F%E9%95%9C%E5%83%8F%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E/</id>
+    <published>2024-04-28T04:21:03.000Z</published>
+    <updated>2024-04-28T04:27:20.898Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>使用 Trivy 开源容器扫描器检测 namespace kamino 中 具有严重漏洞的镜像 的 Pod。<br>查找具有 High 或 Critical 严重性漏洞的镜像，并删除使用这些镜像的 Pod 。<br>注意：Trivy 仅安装在 cluster 的 master 节点上， 在工作节点上不可使用。 你必须切换到 cluster 的 master 节点才能使用 Trivy</p><h2 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h2><ol><li><p>登录到相应的master节点，查看kamino namespace下的pod</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh xxx-master</span><br><span class="line">kubectl get pod -n kamino -oyaml|grep &quot;image:&quot;</span><br></pre></td></tr></table></figure></li><li><p>使用Trivy工具挨个扫描，观察是否有HIGH或者CRITICAL（过程有点久，可以在扫描的时候新开一个terminal做其他题目，扫描完毕之后再看）</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">trivy image -s &quot;HIGH,CRITICAL&quot; xxx|grep -i &quot;Total&quot;</span><br></pre></td></tr></table></figure></li><li><p>删除有HIGH或者CRITICAL漏洞的pod</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl delete pod xxx -n kamino --force</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;使用 Trivy 开源容器扫描器检测 namespace kamino 中 具有严重漏洞的镜像 的 Pod。&lt;br&gt;查找具有 High 或 </summary>
+      
+    
+    
+    
+    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="cks" scheme="http://eryoung2.github.io/tags/cks/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CKS真题 -- 网络策略NetworkPolicy</title>
+    <link href="http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-%E7%BD%91%E7%BB%9C%E7%AD%96%E7%95%A5NetworkPolicy/"/>
+    <id>http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-%E7%BD%91%E7%BB%9C%E7%AD%96%E7%95%A5NetworkPolicy/</id>
+    <published>2024-04-28T04:00:27.000Z</published>
+    <updated>2024-04-28T04:20:03.132Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>创建一个名为 pod-restriction 的 NetworkPolicy 来限制对在 namespace dev-team 中运行的 Pod products-service 的访问。 只允许以下 Pod 连接到 Pod products-service </p><ul><li>namespace qaqa 中的 Pod</li><li>位于任何 namespace，带有标签 environment: testing 的 Pod 注意：确保应用 NetworkPolicy。<br>你可以在 &#x2F;cks&#x2F;net&#x2F;po.yaml 找到一个模板清单文件。</li></ul><h2 id="做题"><a href="#做题" class="headerlink" title="做题"></a>做题</h2><ol><li><p>检查相关namespace的标签， 没有就打一个</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查标签</span></span><br><span class="line">kubectl get ns products-service --show-labels</span><br><span class="line">kubectl get ns qaqa --show-labels</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">打标签</span></span><br><span class="line">kubectl label ns xxx name=xxx</span><br></pre></td></tr></table></figure></li><li><p>编辑网络策略的yaml文件<br>vim cks-09.yaml</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">networking.k8s.io/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">NetworkPolicy</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">pod-restriction</span></span><br><span class="line">  <span class="attr">namespace:</span> <span class="string">dev-team</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">podSelector:</span></span><br><span class="line">    <span class="attr">matchLabels:</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">products-service</span> <span class="comment">#目标pod的标签</span></span><br><span class="line">  <span class="attr">policyTypes:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Ingress</span></span><br><span class="line">  <span class="attr">ingress:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">from:</span> <span class="comment">#第一个from，选中namespace为qaqa的所有pod</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">namespaceSelector:</span></span><br><span class="line">        <span class="attr">matchLabels:</span></span><br><span class="line">          <span class="attr">name:</span> <span class="string">qaqa</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">from:</span> <span class="comment">#第二个from，选中所有namespace中标签符合enviroment=testing的pod，注意podSelector前面没有横线，表示与namespaceSelector为并列关系。</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">namespaceSelector:</span> &#123;&#125;</span><br><span class="line">      <span class="attr">podSelector:</span></span><br><span class="line">        <span class="attr">matchLabels:</span></span><br><span class="line">          <span class="attr">environment:</span> <span class="string">testing</span></span><br></pre></td></tr></table></figure></li><li><p>生效<br>kubectl apply -f cks-09.yaml</p></li><li><p>检查<br>kubectl describe networkpolicy pod-restriction -n dev-team</p></li></ol><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote><p><a href="https://kubernetes.io/zh/docs/concepts/services-networking/network-policies/#networkpolicy-resource">https://kubernetes.io/zh/docs/concepts/services-networking/network-policies/#networkpolicy-resource</a></p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;创建一个名为 pod-restriction 的 NetworkPolicy 来限制对在 namespace dev-team 中运行的 P</summary>
+      
+    
+    
+    
+    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="cks" scheme="http://eryoung2.github.io/tags/cks/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CKS真题 -- 沙箱运行容器gVisor</title>
+    <link href="http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-%E6%B2%99%E7%AE%B1%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8gVisor/"/>
+    <id>http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-%E6%B2%99%E7%AE%B1%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8gVisor/</id>
+    <published>2024-04-28T03:53:00.000Z</published>
+    <updated>2024-04-28T03:57:44.052Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>使用名为runsc的现有运行时处理程序，创建一个名为untrusted的RuntimeClass。<br>更新namespace server中的所有Pod以在gVisor上运行。<br>您可以在&#x2F;cks&#x2F;gVisor&#x2F;rc.yaml中找到一个模版清单。</p><h2 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h2><ol><li><p>创建名为untrusted的RuntimeClass<br> vim cks-08.yaml</p> <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> <span class="attr">apiVersion:</span> <span class="string">node.k8s.io/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">RuntimeClass</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">untrusted</span></span><br><span class="line"><span class="attr">handler:</span> <span class="string">runsc</span></span><br></pre></td></tr></table></figure><p>kubectl apply -f cks-08.yaml</p></li><li><p>更新namespace server下的所有pod，使其在gVisor下运行</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">kubectl get pods -n server</span><br><span class="line">kubectl edit pod xxx</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">在spec下添加runtimeClassName: untrusted</span></span><br></pre></td></tr></table></figure></li></ol><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote><p><a href="https://kubernetes.io/zh-cn/docs/concepts/containers/runtime-class/">https://kubernetes.io/zh-cn/docs/concepts/containers/runtime-class/</a></p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;使用名为runsc的现有运行时处理程序，创建一个名为untrusted的RuntimeClass。&lt;br&gt;更新namespace serve</summary>
+      
+    
+    
+    
+    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
+    
+    
+    <category term="cks" scheme="http://eryoung2.github.io/tags/cks/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CKS真题 -- Dockerfile检测</title>
     <link href="http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-Dockerfile%E6%A3%80%E6%B5%8B/"/>
     <id>http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-Dockerfile%E6%A3%80%E6%B5%8B/</id>
     <published>2024-04-28T03:40:24.000Z</published>
-    <updated>2024-04-28T03:46:45.528Z</updated>
+    <updated>2024-04-28T03:52:28.687Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>分析和编辑给定的Dockerfile &#x2F;cks&#x2F;docker&#x2F;Dockerfile（基于ubuntu:16.04 镜像）， 并修复在文件中拥有的突出的安全&#x2F;最佳实践问题的两个指令。<br>分析和编辑给定的清单文件 &#x2F;cks&#x2F;docker&#x2F;deployment.yaml ， 并修复在文件中拥有突出的安全&#x2F;最佳实践问题的两个字段。<br>注意：请勿添加或删除配置设置；只需修改现有的配置设置让以上两个配置设置都不再有安全&#x2F;最佳实践问题。<br>注意：如果您需要非特权用户来执行任何项目，请使用用户ID 65535 的用户 nobody 。<br>只修改即可，不需要创建。</p><h2 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h2><ol><li><p>修改Dockerfile</p><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#修改基础镜像为题目要求的 ubuntu:16.04</span></span><br><span class="line"><span class="keyword">FROM</span> ubuntu:<span class="number">16.04</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#仅将CMD上面的USER root修改为USER nobody，不要改其他的USER root。</span></span><br><span class="line"><span class="keyword">USER</span> nobody</span><br></pre></td></tr></table></figure></li><li><p>修改Deployment文件<br>vim &#x2F;cks&#x2F;docker&#x2F;deployment.yaml</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在安全内容里删除&#x27;SYS_ADMIN&#x27;；确保securityContext的privileged为False</span></span><br><span class="line"><span class="attr">securityContext:</span></span><br><span class="line">  <span class="attr">privileged:</span> <span class="literal">False</span></span><br><span class="line"><span class="comment"># 内部的pod标签保持一致，具体参考环境</span></span><br></pre></td></tr></table></figure></li><li><p>修改后无需重启</p></li></ol><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote><p><a href="https://kubernetes.io/zh/docs/concepts/security/pod-security-standards/#restricted">https://kubernetes.io/zh/docs/concepts/security/pod-security-standards/#restricted</a></p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>分析和编辑给定的Dockerfile &#x2F;cks&#x2F;docker&#x2F;Dockerfile（基于ubuntu:16.04 镜像）， 并修复在文件中拥有的突出的安全&#x2F;最佳实践问题的两个指令。<br>分析和编辑给定的清单文件 &#x2F;cks&#x2F;docker&#x2F;deployment.yaml ， 并修复在文件中拥有突出的安全&#x2F;最佳实践问题的两个字段。<br>注意：请勿添加或删除配置设置；只需修改现有的配置设置让以上两个配置设置都不再有安全&#x2F;最佳实践问题。<br>注意：如果您需要非特权用户来执行任何项目，请使用用户ID 65535 的用户 nobody 。<br>只修改即可，不需要创建。</p><h2 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h2><ol><li><p>修改Dockerfile</p><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#修改基础镜像为题目要求的 ubuntu:16.04</span></span><br><span class="line"><span class="keyword">FROM</span> ubuntu:<span class="number">16.04</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#仅将CMD上面的USER root修改为USER nobody，不要改其他的USER root。</span></span><br><span class="line"><span class="keyword">USER</span> nobody</span><br></pre></td></tr></table></figure></li><li><p>修改Deployment文件<br>vim &#x2F;cks&#x2F;docker&#x2F;deployment.yaml</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在安全内容里删除&#x27;SYS_ADMIN&#x27;；确保securityContext的privileged为False;确保readOnlyFilesystem为True; runAsUser为65535</span></span><br><span class="line"><span class="comment"># 内部的pod标签保持一致，具体参考环境</span></span><br></pre></td></tr></table></figure></li><li><p>修改后无需重启</p></li></ol><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote><p><a href="https://kubernetes.io/zh/docs/concepts/security/pod-security-standards/#restricted">https://kubernetes.io/zh/docs/concepts/security/pod-security-standards/#restricted</a></p></blockquote>]]></content>
     
     
       
@@ -414,115 +510,6 @@
     
     
     <category term="杂谈" scheme="http://eryoung2.github.io/tags/%E6%9D%82%E8%B0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>jenkins流水线报错</title>
-    <link href="http://eryoung2.github.io/2023/07/16/jenkins%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%A5%E9%94%99/"/>
-    <id>http://eryoung2.github.io/2023/07/16/jenkins%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%A5%E9%94%99/</id>
-    <published>2023-07-15T17:08:19.000Z</published>
-    <updated>2023-07-15T17:12:52.076Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h2><p>今天在使用jenkins时，流水线有报错：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:</span><br><span class="line">WorkflowScript: 1: unable to resolve class Declarative </span><br></pre></td></tr></table></figure><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>正如报错所示，流水线的第一行内容不符合pipeline流水线的语法，因此将其注释即可。</p><p>例如，我们使用hello-world的流水线时，官方给出的pipeline如下，此时我们需要注释第一行，以使其可以符合pipeline语法：</p><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Jenkinsfile (Declarative Pipeline) 需要注释</span></span><br><span class="line">pipeline &#123;</span><br><span class="line">    agent any </span><br><span class="line">    stages &#123;</span><br><span class="line">        stage(<span class="string">&#x27;Stage 1&#x27;</span>) &#123;</span><br><span class="line">            steps &#123;</span><br><span class="line">                echo <span class="string">&#x27;Hello world!&#x27;</span> </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>然后问题解决。</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://cloud.tencent.com/developer/ask/sof/106548582/answer/117522876">用户对问题“Jenkins在构建Python脚本时“无法解决类声明性”错误”的回答 - 问答 - 腾讯云开发者社区-腾讯云</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;错误&quot;&gt;&lt;a href=&quot;#错误&quot; class=&quot;headerlink&quot; title=&quot;错误&quot;&gt;&lt;/a&gt;错误&lt;/h2&gt;&lt;p&gt;今天在使用jenkins时，流水线有报错：&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;</summary>
-      
-    
-    
-    
-    <category term="工具使用" scheme="http://eryoung2.github.io/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
-    
-    
-    <category term="jenkins" scheme="http://eryoung2.github.io/tags/jenkins/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《四季》-- 陈奕迅</title>
-    <link href="http://eryoung2.github.io/2023/07/01/%E3%80%8A%E5%9B%9B%E5%AD%A3%E3%80%8B-%E9%99%88%E5%A5%95%E8%BF%85/"/>
-    <id>http://eryoung2.github.io/2023/07/01/%E3%80%8A%E5%9B%9B%E5%AD%A3%E3%80%8B-%E9%99%88%E5%A5%95%E8%BF%85/</id>
-    <published>2023-06-30T17:10:06.000Z</published>
-    <updated>2023-06-30T17:13:46.019Z</updated>
-    
-    <content type="html"><![CDATA[<p>我記起那年春天<br>得我一個不知的欺騙<br>如天空的污染 終於都上演</p><p>    </p><p>我記起那年暑天<br>友情愛情兩邊都發現虧欠<br>情路上跌損</p><p>    </p><p>最後已事過境遷<br>長街風景已變<br>再度回想誰的臉<br>往日哪位少年</p><p>    </p><p>又再路過事發景點<br>痛傷少不免<br>仍是會流淚失眠<br>尚記得當天貫心的一箭</p><p>    </p><p>我記起那年秋天<br>飛過一隻心酸小孤燕<br>半枯乾的枝節 於窗邊發展</p><p>    </p><p>我記起那年的冬天<br>半矇半矓困於繭裡面<br>兜轉 緣份未看穿</p><p>    </p><p>最後已事過境遷<br>長街風景已變<br>再度回想誰的臉<br>往日哪位少年</p><p>    </p><p>又再路過事發景點<br>痛傷少不免<br>仍是會流淚失眠<br>淚染穿心穿肺那一點</p><p>    </p><p>季度裡事過境遷<br>蝴蝶終於蛻變<br>再沒留戀誰的臉<br>往日兩位少年</p><p>    </p><p>就算讓世事再翻演<br>會否不改變<br>仍是會離別 糾纏<br>拔去穿心一箭 感恩不怨</p><p>    </p><p>我感激這年春天<br>花再開遍祝福相獻<br>待那邱比特放出新一箭</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;我記起那年春天&lt;br&gt;得我一個不知的欺騙&lt;br&gt;如天空的污染 終於都上演&lt;/p&gt;
-&lt;p&gt;    &lt;/p&gt;
-&lt;p&gt;我記起那年暑天&lt;br&gt;友情愛情兩邊都發現虧欠&lt;br&gt;情路上跌損&lt;/p&gt;
-&lt;p&gt;    &lt;/p&gt;
-&lt;p&gt;最後已事過境遷&lt;br&gt;長街風景已變&lt;br&gt;再度回想誰的臉&lt;b</summary>
-      
-    
-    
-    
-    <category term="歌词" scheme="http://eryoung2.github.io/categories/%E6%AD%8C%E8%AF%8D/"/>
-    
-    
-    <category term="陈奕迅" scheme="http://eryoung2.github.io/tags/%E9%99%88%E5%A5%95%E8%BF%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《盲婚哑嫁》-- 陈奕迅</title>
-    <link href="http://eryoung2.github.io/2023/06/30/%E3%80%8A%E7%9B%B2%E5%A9%9A%E5%93%91%E5%AB%81%E3%80%8B-%E9%99%88%E5%A5%95%E8%BF%85/"/>
-    <id>http://eryoung2.github.io/2023/06/30/%E3%80%8A%E7%9B%B2%E5%A9%9A%E5%93%91%E5%AB%81%E3%80%8B-%E9%99%88%E5%A5%95%E8%BF%85/</id>
-    <published>2023-06-30T14:07:56.000Z</published>
-    <updated>2023-07-02T13:51:22.460Z</updated>
-    
-    <content type="html"><![CDATA[<p>若，如若时辰未到，似水点散下落花，变朝露，</p><p>若，如若时来运到，水点经过瀑布，万人赞好。</p><p>    </p><p>缺一门，你尚有星门，</p><p>能不管，离合注定，你定悲欢。</p><p>    </p><p>忘记她，仿似遗忘密码， </p><p>无密码，方可以忘记她。</p><p>随镜花，一切如盲婚哑嫁，</p><p>由它去转化。</p><p>    </p><p>别，别去怀恨月老，</p><p>至少得到弹指间，那花渡。</p><p>苦，苦水随甜蜜续吐，</p><p>暗黑先会顿觉，夕阳那么好。</p><p>    </p><p>五七言，也是太多言，能肤浅，</p><p>忘掉对白，李白也是曲线。</p><p>    </p><p>忘记她，仿似遗忘密码，</p><p>无密码，方可以忘记她。</p><p>随镜花，一切如盲婚哑嫁，作得准吗，</p><p>无谓征婚转嫁，无谓招婚改嫁。</p><p>    </p><p>忘记她，抛弃遗传密码，</p><p>无密码，根生已忘记花。</p><p>忘记花，花瓣随盲婚哑嫁，</p><p>人非花，飞花与芽东与夏。</p><p>凡间的戏吗。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;若，如若时辰未到，似水点散下落花，变朝露，&lt;/p&gt;
-&lt;p&gt;若，如若时来运到，水点经过瀑布，万人赞好。&lt;/p&gt;
-&lt;p&gt;    &lt;/p&gt;
-&lt;p&gt;缺一门，你尚有星门，&lt;/p&gt;
-&lt;p&gt;能不管，离合注定，你定悲欢。&lt;/p&gt;
-&lt;p&gt;    &lt;/p&gt;
-&lt;p&gt;忘记她，仿似遗忘密码， &lt;/p</summary>
-      
-    
-    
-    
-    <category term="歌词" scheme="http://eryoung2.github.io/categories/%E6%AD%8C%E8%AF%8D/"/>
-    
-    
-    <category term="陈奕迅" scheme="http://eryoung2.github.io/tags/%E9%99%88%E5%A5%95%E8%BF%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《知足》-- 五月天</title>
-    <link href="http://eryoung2.github.io/2023/06/28/%E3%80%8A%E7%9F%A5%E8%B6%B3%E3%80%8B-%E4%BA%94%E6%9C%88%E5%A4%A9/"/>
-    <id>http://eryoung2.github.io/2023/06/28/%E3%80%8A%E7%9F%A5%E8%B6%B3%E3%80%8B-%E4%BA%94%E6%9C%88%E5%A4%A9/</id>
-    <published>2023-06-28T07:25:16.000Z</published>
-    <updated>2023-06-29T15:09:42.800Z</updated>
-    
-    <content type="html"><![CDATA[<p>怎么去拥有，一道彩虹，<br>怎么去拥抱，一夏天的风。<br>天上的星星像地上的人，<br>总是不能懂，不能觉得足够。</p><p>    </p><p>如果我爱上，你的笑容，<br>要怎么收藏，要怎么拥有。<br>如果你快乐，不是为我，<br>会不会放手，其实才是拥有。</p><p>    </p><p>当一阵风吹来，风筝飞向天空，<br>为了你，而祈祷，而祝福，而感动。<br>终于你身影消失在，人海尽头，<br>才发现，笑着哭，最痛。</p><p>    </p><p>那年你和我，那个山丘，<br>那样的唱着，那一年的歌。<br>那年的回忆，那么足够，<br>足够我天天都，品尝着寂寞。</p><p>    </p><p>当一阵风吹来，风筝飞向天空，<br>为了你，而祈祷，而祝福，而感动。<br>终于你身影消失在，人海尽头，<br>才发现，笑着哭，最痛。</p><p>当一阵风吹来，风筝飞向天空，<br>为了你，而祈祷，而祝福，而感动。<br>终于你身影消失在，人海尽头，<br>才发现，笑着哭，最痛，喔~~</p><p>    </p><p> <br>如果我爱上，你的笑容，<br>要怎么收藏，要怎么拥有。<br>如果你快乐再不是为我，<br>会不会放手，其实才是拥有。</p><p>    </p><p> <br>知足的快乐，叫我忍受心痛，<br>知足的快乐，叫我忍受心痛。。。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;怎么去拥有，一道彩虹，&lt;br&gt;怎么去拥抱，一夏天的风。&lt;br&gt;天上的星星像地上的人，&lt;br&gt;总是不能懂，不能觉得足够。&lt;/p&gt;
-&lt;p&gt;    &lt;/p&gt;
-&lt;p&gt;如果我爱上，你的笑容，&lt;br&gt;要怎么收藏，要怎么拥有。&lt;br&gt;如果你快乐，不是为我，&lt;br&gt;会不会放手，其实才是拥有</summary>
-      
-    
-    
-    
-    <category term="歌词" scheme="http://eryoung2.github.io/categories/%E6%AD%8C%E8%AF%8D/"/>
-    
-    
-    <category term="五月天" scheme="http://eryoung2.github.io/tags/%E4%BA%94%E6%9C%88%E5%A4%A9/"/>
     
   </entry>
   
