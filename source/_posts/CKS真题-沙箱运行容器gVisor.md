@@ -26,7 +26,7 @@ kubectl apply -f cks-08.yaml
 ```shell
 kubectl get pods -n server
 kubectl edit pod xxx
-# 在spec下添加runtimeClassName: untrusted
+# 在spec下添加runtimeClassName: untrusted, 此runtimeClassName与container同级
 ```
 
 ## 参考
