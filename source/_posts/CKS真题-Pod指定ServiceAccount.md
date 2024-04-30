@@ -6,10 +6,6 @@ categories: 考试
 ---
 
 ## 任务
-清单文件/cks/sa/pod1.yaml中指定的Pod由于ServiceAccount指定错误而无法调度。
-请完成一下项目：
-
-Task
 1.在现有namespace ga中创建一个名为backend-sa的新ServiceAccount,
 确保此ServiceAccount不自动挂载API凭据。
 2.使用/cks/sa/pod1.yaml中的清单文件来创建一个Pod。
