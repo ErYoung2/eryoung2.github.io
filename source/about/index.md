@@ -18,5 +18,3 @@ date: 2022-06-06 12:39:20
 Just believe and take action, 希望可以有一个光明的未来！
 
 
-
-Go Sixers Go Harden!!!
