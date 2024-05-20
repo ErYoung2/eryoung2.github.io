@@ -57,7 +57,7 @@ hint: See PEP 668 for the detailed specification.
 
 2. 安装pipx
 ```zsh
-brew install pipx
+    brew install pipx
 ```
 
 安装完毕之后就可以使用pipx install xxx来管理依赖包了。
