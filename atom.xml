@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2024-06-01T08:15:47.113Z</updated>
+  <updated>2024-06-12T08:48:44.372Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《水果店的老板娘》-- 宋冬野</title>
+    <link href="http://eryoung2.github.io/2024/06/12/%E3%80%8A%E6%B0%B4%E6%9E%9C%E5%BA%97%E7%9A%84%E8%80%81%E6%9D%BF%E5%A8%98%E3%80%8B-%E5%AE%8B%E5%86%AC%E9%87%8E/"/>
+    <id>http://eryoung2.github.io/2024/06/12/%E3%80%8A%E6%B0%B4%E6%9E%9C%E5%BA%97%E7%9A%84%E8%80%81%E6%9D%BF%E5%A8%98%E3%80%8B-%E5%AE%8B%E5%86%AC%E9%87%8E/</id>
+    <published>2024-06-12T08:47:43.000Z</published>
+    <updated>2024-06-12T08:48:44.372Z</updated>
+    
+    <content type="html"><![CDATA[<p>她不是她 你不是你<br>水果店的老闆娘 你好 再見</p><p>她的目光 從遠方趕來<br>誰都找不到 那眼睛的主人<br>而她只是一個 平凡的姑娘<br>卻能讓你 徹底的悲傷</p><p>她山那邊的水果店 閃閃發亮<br>可你卻喝著啤酒 住在海上<br>有另一個人 每天都把水果吃光<br>而你只是偶然路過這地方</p><p>她不喝啤酒 也不會停留<br>更不會對你訴說她的悲傷<br>而你只是一個 酒肉之徒<br>眼前只有一片污濁<br>她山那邊的水果店 閃閃發亮<br>可你卻喝著啤酒 住在海上<br>有另一個人 每天都把水果吃光<br>而你只是偶然路過這地方</p><p>山那邊的水果店人來人往<br>而你的歌謠太過空曠<br>在年華之後你還會不停的歌唱<br>還是會對著這些失望<br>她山那邊的水果店 閃閃發亮<br>還是會對著那些失望</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;她不是她 你不是你&lt;br&gt;水果店的老闆娘 你好 再見&lt;/p&gt;
+&lt;p&gt;她的目光 從遠方趕來&lt;br&gt;誰都找不到 那眼睛的主人&lt;br&gt;而她只是一個 平凡的姑娘&lt;br&gt;卻能讓你 徹底的悲傷&lt;/p&gt;
+&lt;p&gt;她山那邊的水果店 閃閃發亮&lt;br&gt;可你卻喝著啤酒 住在海上&lt;br&gt;有另一個人 </summary>
+      
+    
+    
+    
+    <category term="歌词" scheme="http://eryoung2.github.io/categories/%E6%AD%8C%E8%AF%8D/"/>
+    
+    
+    <category term="宋冬野" scheme="http://eryoung2.github.io/tags/%E5%AE%8B%E5%86%AC%E9%87%8E/"/>
+    
+  </entry>
   
   <entry>
     <title>《童年》-- 罗大佑</title>
@@ -467,31 +493,6 @@
       
       
     <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;1.在现有namespace ga中创建一个名为backend-sa的新ServiceAccount,&lt;br&gt;确保此ServiceAccou</summary>
-      
-    
-    
-    
-    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
-    
-    
-    <category term="cks" scheme="http://eryoung2.github.io/tags/cks/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CKS真题 -- kube-bench修复不安全项</title>
-    <link href="http://eryoung2.github.io/2024/04/27/CKS%E7%9C%9F%E9%A2%98-kube-bench%E4%BF%AE%E5%A4%8D%E4%B8%8D%E5%AE%89%E5%85%A8%E9%A1%B9/"/>
-    <id>http://eryoung2.github.io/2024/04/27/CKS%E7%9C%9F%E9%A2%98-kube-bench%E4%BF%AE%E5%A4%8D%E4%B8%8D%E5%AE%89%E5%85%A8%E9%A1%B9/</id>
-    <published>2024-04-26T17:05:49.000Z</published>
-    <updated>2024-04-26T17:26:29.476Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>通过配置修复所有问题并重新启动受影响的组件以确保新的设置生效。</p><p>修复针对 API 服务器发现的所有以下违规行为：<br>1.2.7 Ensure that the –authorization-mode argument is not set to AlwaysAllow FAIL<br>1.2.8 Ensure that the –authorization-mode argument includes Node FAIL<br>1.2.9 Ensure that the –authorization-mode argument includes RBAC FAIL<br>1.2.18 Ensure that the –insecure-bind-address argument is not set FAIL （1.25中这项题目没给出，但最好也检查一下，模拟环境里需要改）<br>~~1.2.19 Ensure that the –insecure-port argument is set to 0 FAIL ~~（1.25中这项题目没给出，不需要再修改了）</p><p>修复针对kubelet发现的所有以下违规行为：<br>Fix all of the following violations that were found against the kubelet:<br>4.2.1 Ensure that the anonymous-auth argument is set to false FAIL<br>4.2.2 Ensure that the –authorization-mode argument is not set to AlwaysAllow FAIL<br>注意：尽可能使用 Webhook 身份验证&#x2F;授权。</p><p>修复针对etcd发现的所有以下违规行为：<br>Fix all of the following violations that were found against etcd:<br>2.2 Ensure that the –client-cert-auth argument is set to true FAIL</p><h2 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h2><ol><li><p>备份文件</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /opt/backup/01</span><br><span class="line">cp -f /etc/kubernetes/manifests/kube-apiserver.yaml /opt/backup/01</span><br><span class="line">cp -f /etc/kubernetes/manifests/etcd.yaml /opt/backup/01</span><br><span class="line">cp -f /var/lib/kubelet/config.yaml /opt/backup/01</span><br></pre></td></tr></table></figure></li><li><p>检查master的不安全项并修改<br>ssh hk8s-master<br>sudo kube-bench master<br>vim &#x2F;etc&#x2F;kubernetes&#x2F;manifests&#x2F;kube-apiserver.yaml</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">--authencation-mode=Node,RBAC</span> </span><br></pre></td></tr></table></figure></li></ol><p>vim &#x2F;etc&#x2F;kubernetes&#x2F;manifests&#x2F;etcd.yaml</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">--client-cert-auth=true</span></span><br></pre></td></tr></table></figure><p>vim &#x2F;var&#x2F;lib&#x2F;kubelet&#x2F;config.yaml</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">authentication:</span></span><br><span class="line">   <span class="attr">anonymous:</span></span><br><span class="line">     <span class="attr">enabled:</span> <span class="literal">false</span>     <span class="comment">#true修改成false</span></span><br><span class="line"><span class="string">...</span></span><br><span class="line"><span class="attr">authorization:</span></span><br><span class="line">   <span class="attr">mode:</span> <span class="string">Webhook</span>        <span class="comment">#把AlwaysAllow修改成Webhook</span></span><br></pre></td></tr></table></figure><ol start="3"><li><p>检查node的不安全项并修改，同master</p></li><li><p>重启kubelet</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart kubelet</span><br></pre></td></tr></table></figure></li></ol>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;通过配置修复所有问题并重新启动受影响的组件以确保新的设置生效。&lt;/p&gt;
-&lt;p&gt;修复针对 API 服务器发现的所有以下违规行为：&lt;br&gt;1.2</summary>
       
     
     
