@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2024-06-12T08:51:21.380Z</updated>
+  <updated>2024-07-07T14:29:23.284Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《程艾影》—赵雷</title>
+    <link href="http://eryoung2.github.io/2024/07/07/%E3%80%8A%E7%A8%8B%E8%89%BE%E5%BD%B1%E3%80%8B-%E2%80%94-%E8%B5%B5%E9%9B%B7/"/>
+    <id>http://eryoung2.github.io/2024/07/07/%E3%80%8A%E7%A8%8B%E8%89%BE%E5%BD%B1%E3%80%8B-%E2%80%94-%E8%B5%B5%E9%9B%B7/</id>
+    <published>2024-07-07T14:28:41.000Z</published>
+    <updated>2024-07-07T14:29:23.284Z</updated>
+    
+    <content type="html"><![CDATA[<p>伍岚正和程艾影从上海到武汉，他们要坐十天马车三天两夜的轮船。<br>泥路上艾影含着糖靠着岚正的肩膀， 马车经过村庄、石路颠簸不渝的情肠。</p><p>一路望、跌跌撞、午夜流星何去何往，<br>路海长、青野旷、越过群山追斜阳。</p><p>拨开面纱回望故乡， 只见潮湿的月亮，<br>雨水冲不掉常德路上爬满蛛网的门窗。</p><p>梦里回到他的身旁，蜜语中风不再凉，<br>永远都像初次见你那样，使我心荡漾。</p><p>没有奇迹、没有惊喜，尘埃里花不会哭泣，<br>没有质疑，没有道理，皱褶的信乘飞雨。</p><p>一路望、跌跌撞、午夜流星何去何往，<br>路海长、青野旷、越过群山追斜阳。</p><p>没有奇迹、没有惊喜，尘埃里花不会哭泣，<br>没有质疑，没有道理，皱褶的信乘飞雨。</p><p>漫山遍野你的脸庞，唯有遗忘是最漫长，<br>这是一条必经的路，没有指引出口的光。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;伍岚正和程艾影从上海到武汉，他们要坐十天马车三天两夜的轮船。&lt;br&gt;泥路上艾影含着糖靠着岚正的肩膀， 马车经过村庄、石路颠簸不渝的情肠。&lt;/p&gt;
+&lt;p&gt;一路望、跌跌撞、午夜流星何去何往，&lt;br&gt;路海长、青野旷、越过群山追斜阳。&lt;/p&gt;
+&lt;p&gt;拨开面纱回望故乡， 只见潮湿的月</summary>
+      
+    
+    
+    
+    <category term="歌词" scheme="http://eryoung2.github.io/categories/%E6%AD%8C%E8%AF%8D/"/>
+    
+    
+    <category term="赵雷" scheme="http://eryoung2.github.io/tags/%E8%B5%B5%E9%9B%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>《水果店的老板娘》-- 宋冬野</title>
@@ -469,30 +495,6 @@
       
       
     <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;为所有类型为Ingress-+Egress的流量在namespace testing中创建一个名为denypolicy的新默认拒绝Netwo</summary>
-      
-    
-    
-    
-    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
-    
-    
-    <category term="cks" scheme="http://eryoung2.github.io/tags/cks/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CKS真题 -- Pod指定ServiceAccount</title>
-    <link href="http://eryoung2.github.io/2024/04/27/CKS%E7%9C%9F%E9%A2%98-Pod%E6%8C%87%E5%AE%9AServiceAccount/"/>
-    <id>http://eryoung2.github.io/2024/04/27/CKS%E7%9C%9F%E9%A2%98-Pod%E6%8C%87%E5%AE%9AServiceAccount/</id>
-    <published>2024-04-26T17:31:17.000Z</published>
-    <updated>2024-04-28T17:50:08.206Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>1.在现有namespace ga中创建一个名为backend-sa的新ServiceAccount,<br>确保此ServiceAccount不自动挂载API凭据。<br>2.使用&#x2F;cks&#x2F;sa&#x2F;pod1.yaml中的清单文件来创建一个Pod。<br>3.最后，清理namespace ga中任何未使用的ServiceAccount。</p><h2 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h2><p>vim cks-02.yaml</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">ServiceAccount</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">backend-sa</span></span><br><span class="line">  <span class="attr">namespace:</span> <span class="string">qa</span></span><br><span class="line"><span class="attr">automountServiceAccountToken:</span> <span class="literal">false</span> <span class="comment">#添加这一行</span></span><br></pre></td></tr></table></figure><p>vim &#x2F;cks&#x2F;sa&#x2F;pod1.yaml</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Pod</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">backend</span></span><br><span class="line">  <span class="attr">namespace:</span> <span class="string">qa</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">serviceAccountName:</span> <span class="string">backend-sa</span>                  <span class="comment">#给pod配置serviceaccount</span></span><br><span class="line">  <span class="attr">containers:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">image:</span> <span class="string">nginx:alpine</span></span><br><span class="line">    <span class="attr">imagePullPolicy:</span> <span class="string">IfNotPresent</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">backend</span></span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">kubectl apply -f /cks/sa/pod1.yaml</span><br><span class="line"></span><br><span class="line">kubectl get sa -n qa</span><br><span class="line">kubectl get pod -n qa|grep -i &quot;serviceaccount&quot;</span><br><span class="line">kubectl -n qa delete xxx #没见到的serviceaccount</span><br></pre></td></tr></table></figure><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote><p><a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#opt-out-of-api-credential-automounting">https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#opt-out-of-api-credential-automounting</a></p></blockquote>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;1.在现有namespace ga中创建一个名为backend-sa的新ServiceAccount,&lt;br&gt;确保此ServiceAccou</summary>
       
     
     
