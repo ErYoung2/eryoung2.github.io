@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2024-09-15T15:20:28.628Z</updated>
+  <updated>2024-11-30T22:39:35.985Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,19 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>出坑了</title>
+    <link href="http://eryoung2.github.io/2024/12/01/%E5%87%BA%E5%9D%91%E4%BA%86/"/>
+    <id>http://eryoung2.github.io/2024/12/01/%E5%87%BA%E5%9D%91%E4%BA%86/</id>
+    <published>2024-11-30T22:39:35.000Z</published>
+    <updated>2024-11-30T22:39:35.985Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Hyper-v 关闭动态内存</title>
@@ -474,31 +487,6 @@
       
     <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;在namespace istio-system中获取名为db1-test的现有secret的内容&lt;/p&gt;
 &lt;p&gt;将username字段存储在</summary>
-      
-    
-    
-    
-    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
-    
-    
-    <category term="cks" scheme="http://eryoung2.github.io/tags/cks/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CKS真题 -- 日志审计Audit</title>
-    <link href="http://eryoung2.github.io/2024/04/27/CKS%E7%9C%9F%E9%A2%98-%E6%97%A5%E5%BF%97%E5%AE%A1%E8%AE%A1Audit/"/>
-    <id>http://eryoung2.github.io/2024/04/27/CKS%E7%9C%9F%E9%A2%98-%E6%97%A5%E5%BF%97%E5%AE%A1%E8%AE%A1Audit/</id>
-    <published>2024-04-26T18:25:30.000Z</published>
-    <updated>2024-04-27T15:52:33.540Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>在cluster中启用审计日志。为此，请启用日志后端，并确保：</p><p>日志存储在 &#x2F;var&#x2F;log&#x2F;kubernetes&#x2F;audit-logs.txt<br>日志文件能保留 10 天<br>最多保留 2 个旧审计日志文件<br>&#x2F;etc&#x2F;kubernetes&#x2F;logpolicy&#x2F;sample-policy.yaml 提供了基本策略。它仅指定不记录的内容。</p><p>注意：基本策略位于 cluster 的 master 节点上。</p><p>编辑和扩展基本策略以记录：</p><p>RequestResponse 级别的 persistentvolumes 更改<br>namespace front-apps 中 configmaps 更改的请求体<br>Metadata 级别的所有 namespace 中的 ConfigMap 和 Secret 的更改<br>此外，添加一个全方位的规则以在 Metadata 级别记录所有其他请求。</p><p>注意：不要忘记应用修改后的策略。</p><h2 id="做题"><a href="#做题" class="headerlink" title="做题"></a>做题</h2><ol><li>备份并修改配置<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ssh master01</span><br><span class="line">sudo -i</span><br><span class="line">cp /etc/kubernetes/logpolicy/sample-policy.yaml /opt/bak1/</span><br><span class="line">vim /etc/kubernetes/logpolicy/sample-policy.yaml</span><br></pre></td></tr></table></figure></li></ol><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">audit.k8s.io/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Policy</span></span><br><span class="line"><span class="attr">omitStages:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&quot;RequestReceived&quot;</span></span><br><span class="line"><span class="attr">rules:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">level:</span> <span class="string">RequestResponse</span></span><br><span class="line">    <span class="attr">resources:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">group:</span> <span class="string">&quot;&quot;</span></span><br><span class="line">      <span class="attr">resources:</span> [<span class="string">&quot;persistentvolumes&quot;</span>] <span class="comment">#根据题目要求修改，比如题目要求的是namespaces。</span></span><br><span class="line"></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">level:</span> <span class="string">Request</span></span><br><span class="line">    <span class="attr">resources:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">group:</span> <span class="string">&quot;&quot;</span></span><br><span class="line">      <span class="attr">resources:</span> [<span class="string">&quot;configmaps&quot;</span>] <span class="comment">#根据题目要求修改，比如题目要求的是persistentvolumes或者pods。</span></span><br><span class="line">    <span class="attr">namespaces:</span> [<span class="string">&quot;front-apps&quot;</span>]</span><br><span class="line"></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">level:</span> <span class="string">Metadata</span></span><br><span class="line">    <span class="attr">resources:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">group:</span> <span class="string">&quot;&quot;</span></span><br><span class="line">      <span class="attr">resources:</span> [<span class="string">&quot;secrets&quot;</span>, <span class="string">&quot;configmaps&quot;</span>]</span><br><span class="line"></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">level:</span> <span class="string">Metadata</span></span><br><span class="line">    <span class="attr">omitStages:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;RequestReceived&quot;</span></span><br></pre></td></tr></table></figure><ol start="2"><li>备份并修改配置文件<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /opt/backup/05</span><br><span class="line">cp -f /etc/kubernetes/manifests/kube-apiserver.yaml /opt/backup/05</span><br><span class="line">vim /etc/kubernetes/manifests/kube-apiserver.yaml</span><br></pre></td></tr></table></figure></li></ol><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spec:</span> </span><br><span class="line">  <span class="attr">container:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">commands:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">kube-apiserver</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">--audit-log-path=/var/log/kubernetes/audit-logs.txt</span> <span class="comment">#日志文件</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">--audit-log-maxage=10</span> <span class="comment">#文件保留最大日期</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">--audit-log-maxbackup=2</span> <span class="comment">#最多保留文件数</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">--aufit-policy-file=/etc/kubernetes/logpolicy/sample-policy.yaml</span> <span class="comment">#日志审计配置文件</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">volumeMounts:</span> <span class="comment">#确保volumeMounts和Volumes添加正确，否则kube-apiserver会挂</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">mountPath:</span> <span class="string">/etc/kubernetes/logpolicy/</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">audit</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">mountPath:</span> <span class="string">/var/log/kubernetes/</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">audit-log</span></span><br><span class="line"><span class="attr">volumes:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">audit</span></span><br><span class="line">  <span class="attr">hostPath:</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">/etc/kubernetes/logpolicy/</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">audit-log</span></span><br><span class="line">  <span class="attr">hostPath:</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">/var/log/kubernetes/</span></span><br></pre></td></tr></table></figure><ol start="3"><li><p>重启kubelet</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart kubelet</span><br></pre></td></tr></table></figure></li><li><p>检查</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -f /var/log/kubernetes/audit-log.txt</span><br></pre></td></tr></table></figure></li></ol><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote><p><a href="https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/">https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/</a></p></blockquote>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;在cluster中启用审计日志。为此，请启用日志后端，并确保：&lt;/p&gt;
-&lt;p&gt;日志存储在 &amp;#x2F;var&amp;#x2F;log&amp;#x2F;k</summary>
       
     
     
