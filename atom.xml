@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2025-01-05T10:59:13.968Z</updated>
+  <updated>2025-04-22T23:27:35.757Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>卡乔丹！</title>
+    <link href="http://eryoung2.github.io/2025/04/23/%E5%8D%A1%E4%B9%94%E4%B8%B9%EF%BC%81/"/>
+    <id>http://eryoung2.github.io/2025/04/23/%E5%8D%A1%E4%B9%94%E4%B8%B9%EF%BC%81/</id>
+    <published>2025-04-22T23:26:19.000Z</published>
+    <updated>2025-04-22T23:27:35.757Z</updated>
+    
+    <content type="html"><![CDATA[<p>昨天进行的NBA季后赛，快船vs掘金G2，卡哇伊·莱昂纳德爆发了，曾经的他被称作卡乔丹，但是我们已经多久没有在季后赛见到这样的他了，无差别单打，个个都是硬解球， 高效19中15，怎么打怎么有，在球队其他人发挥并不好的情况下，carry下了这场胜利。</p><p>在掘金主场，丹佛高原，啃下一场宝贵的客场取胜，那么回到主场洛杉矶，快船只会更猛！</p><p>系列赛彻底逆转了，莱昂纳德这么打，丹佛众将根本无解！此种表现可以讲，杀人诛心，太！强！了！</p><p>这真是我登合作过的最好的搭档，以前从没有这么安心的感觉，今年很有希望拿下总冠军！快船加油！！！</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;昨天进行的NBA季后赛，快船vs掘金G2，卡哇伊·莱昂纳德爆发了，曾经的他被称作卡乔丹，但是我们已经多久没有在季后赛见到这样的他了，无差别单打，个个都是硬解球， 高效19中15，怎么打怎么有，在球队其他人发挥并不好的情况下，carry下了这场胜利。&lt;/p&gt;
+&lt;p&gt;在掘金主场</summary>
+      
+    
+    
+    
+    <category term="失眠杂想" scheme="http://eryoung2.github.io/categories/%E5%A4%B1%E7%9C%A0%E6%9D%82%E6%83%B3/"/>
+    
+    
+    <category term="NBA" scheme="http://eryoung2.github.io/tags/NBA/"/>
+    
+  </entry>
   
   <entry>
     <title>《世间美好与你环环相扣》-- 柏松</title>
@@ -474,30 +499,6 @@
       
       
     <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;使用名为runsc的现有运行时处理程序，创建一个名为untrusted的RuntimeClass。&lt;br&gt;更新namespace serve</summary>
-      
-    
-    
-    
-    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
-    
-    
-    <category term="cks" scheme="http://eryoung2.github.io/tags/cks/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CKS真题 -- Dockerfile检测</title>
-    <link href="http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-Dockerfile%E6%A3%80%E6%B5%8B/"/>
-    <id>http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-Dockerfile%E6%A3%80%E6%B5%8B/</id>
-    <published>2024-04-28T03:40:24.000Z</published>
-    <updated>2024-04-28T03:52:28.687Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>分析和编辑给定的Dockerfile &#x2F;cks&#x2F;docker&#x2F;Dockerfile（基于ubuntu:16.04 镜像）， 并修复在文件中拥有的突出的安全&#x2F;最佳实践问题的两个指令。<br>分析和编辑给定的清单文件 &#x2F;cks&#x2F;docker&#x2F;deployment.yaml ， 并修复在文件中拥有突出的安全&#x2F;最佳实践问题的两个字段。<br>注意：请勿添加或删除配置设置；只需修改现有的配置设置让以上两个配置设置都不再有安全&#x2F;最佳实践问题。<br>注意：如果您需要非特权用户来执行任何项目，请使用用户ID 65535 的用户 nobody 。<br>只修改即可，不需要创建。</p><h2 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h2><ol><li><p>修改Dockerfile</p><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#修改基础镜像为题目要求的 ubuntu:16.04</span></span><br><span class="line"><span class="keyword">FROM</span> ubuntu:<span class="number">16.04</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#仅将CMD上面的USER root修改为USER nobody，不要改其他的USER root。</span></span><br><span class="line"><span class="keyword">USER</span> nobody</span><br></pre></td></tr></table></figure></li><li><p>修改Deployment文件<br>vim &#x2F;cks&#x2F;docker&#x2F;deployment.yaml</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在安全内容里删除&#x27;SYS_ADMIN&#x27;；确保securityContext的privileged为False;确保readOnlyFilesystem为True; runAsUser为65535</span></span><br><span class="line"><span class="comment"># 内部的pod标签保持一致，具体参考环境</span></span><br></pre></td></tr></table></figure></li><li><p>修改后无需重启</p></li></ol><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote><p><a href="https://kubernetes.io/zh/docs/concepts/security/pod-security-standards/#restricted">https://kubernetes.io/zh/docs/concepts/security/pod-security-standards/#restricted</a></p></blockquote>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;分析和编辑给定的Dockerfile &amp;#x2F;cks&amp;#x2F;docker&amp;#x2F;Dockerfile（基于ubuntu:16.0</summary>
       
     
     
