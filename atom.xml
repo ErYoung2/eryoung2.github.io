@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2025-04-22T23:27:35.757Z</updated>
+  <updated>2025-05-28T14:33:55.922Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,19 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>心烦</title>
+    <link href="http://eryoung2.github.io/2025/05/28/%E5%BF%83%E7%83%A6/"/>
+    <id>http://eryoung2.github.io/2025/05/28/%E5%BF%83%E7%83%A6/</id>
+    <published>2025-05-28T14:33:55.000Z</published>
+    <updated>2025-05-28T14:33:55.922Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>卡乔丹！</title>
@@ -475,30 +488,6 @@
       
       
     <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;创建一个名为 pod-restriction 的 NetworkPolicy 来限制对在 namespace dev-team 中运行的 P</summary>
-      
-    
-    
-    
-    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
-    
-    
-    <category term="cks" scheme="http://eryoung2.github.io/tags/cks/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CKS真题 -- 沙箱运行容器gVisor</title>
-    <link href="http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-%E6%B2%99%E7%AE%B1%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8gVisor/"/>
-    <id>http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-%E6%B2%99%E7%AE%B1%E8%BF%90%E8%A1%8C%E5%AE%B9%E5%99%A8gVisor/</id>
-    <published>2024-04-28T03:53:00.000Z</published>
-    <updated>2024-04-28T17:37:25.008Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>使用名为runsc的现有运行时处理程序，创建一个名为untrusted的RuntimeClass。<br>更新namespace server中的所有Pod以在gVisor上运行。<br>您可以在&#x2F;cks&#x2F;gVisor&#x2F;rc.yaml中找到一个模版清单。</p><h2 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h2><ol><li><p>创建名为untrusted的RuntimeClass<br> vim cks-08.yaml</p> <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> <span class="attr">apiVersion:</span> <span class="string">node.k8s.io/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">RuntimeClass</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">untrusted</span></span><br><span class="line"><span class="attr">handler:</span> <span class="string">runsc</span></span><br></pre></td></tr></table></figure><p>kubectl apply -f cks-08.yaml</p></li><li><p>更新namespace server下的所有pod，使其在gVisor下运行</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">kubectl get pods -n server</span><br><span class="line">kubectl edit pod xxx</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">在spec下添加runtimeClassName: untrusted, 此runtimeClassName与container同级</span></span><br></pre></td></tr></table></figure></li></ol><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote><p><a href="https://kubernetes.io/zh-cn/docs/concepts/containers/runtime-class/">https://kubernetes.io/zh-cn/docs/concepts/containers/runtime-class/</a></p></blockquote>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;使用名为runsc的现有运行时处理程序，创建一个名为untrusted的RuntimeClass。&lt;br&gt;更新namespace serve</summary>
       
     
     
