@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2025-05-28T14:38:47.500Z</updated>
+  <updated>2025-06-07T15:38:37.921Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,19 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我心态真的很差</title>
+    <link href="http://eryoung2.github.io/2025/06/07/%E6%88%91%E5%BF%83%E6%80%81%E7%9C%9F%E7%9A%84%E5%BE%88%E5%B7%AE/"/>
+    <id>http://eryoung2.github.io/2025/06/07/%E6%88%91%E5%BF%83%E6%80%81%E7%9C%9F%E7%9A%84%E5%BE%88%E5%B7%AE/</id>
+    <published>2025-06-07T15:38:37.000Z</published>
+    <updated>2025-06-07T15:38:37.921Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>心烦</title>
@@ -478,30 +491,6 @@
       
       
     <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;使用 Trivy 开源容器扫描器检测 namespace kamino 中 具有严重漏洞的镜像 的 Pod。&lt;br&gt;查找具有 High 或 </summary>
-      
-    
-    
-    
-    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
-    
-    
-    <category term="cks" scheme="http://eryoung2.github.io/tags/cks/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CKS真题 -- 网络策略NetworkPolicy</title>
-    <link href="http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-%E7%BD%91%E7%BB%9C%E7%AD%96%E7%95%A5NetworkPolicy/"/>
-    <id>http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-%E7%BD%91%E7%BB%9C%E7%AD%96%E7%95%A5NetworkPolicy/</id>
-    <published>2024-04-28T04:00:27.000Z</published>
-    <updated>2024-04-28T04:20:03.132Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>创建一个名为 pod-restriction 的 NetworkPolicy 来限制对在 namespace dev-team 中运行的 Pod products-service 的访问。 只允许以下 Pod 连接到 Pod products-service </p><ul><li>namespace qaqa 中的 Pod</li><li>位于任何 namespace，带有标签 environment: testing 的 Pod 注意：确保应用 NetworkPolicy。<br>你可以在 &#x2F;cks&#x2F;net&#x2F;po.yaml 找到一个模板清单文件。</li></ul><h2 id="做题"><a href="#做题" class="headerlink" title="做题"></a>做题</h2><ol><li><p>检查相关namespace的标签， 没有就打一个</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查标签</span></span><br><span class="line">kubectl get ns products-service --show-labels</span><br><span class="line">kubectl get ns qaqa --show-labels</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">打标签</span></span><br><span class="line">kubectl label ns xxx name=xxx</span><br></pre></td></tr></table></figure></li><li><p>编辑网络策略的yaml文件<br>vim cks-09.yaml</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">networking.k8s.io/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">NetworkPolicy</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">pod-restriction</span></span><br><span class="line">  <span class="attr">namespace:</span> <span class="string">dev-team</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">podSelector:</span></span><br><span class="line">    <span class="attr">matchLabels:</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">products-service</span> <span class="comment">#目标pod的标签</span></span><br><span class="line">  <span class="attr">policyTypes:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Ingress</span></span><br><span class="line">  <span class="attr">ingress:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">from:</span> <span class="comment">#第一个from，选中namespace为qaqa的所有pod</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">namespaceSelector:</span></span><br><span class="line">        <span class="attr">matchLabels:</span></span><br><span class="line">          <span class="attr">name:</span> <span class="string">qaqa</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">from:</span> <span class="comment">#第二个from，选中所有namespace中标签符合enviroment=testing的pod，注意podSelector前面没有横线，表示与namespaceSelector为并列关系。</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">namespaceSelector:</span> &#123;&#125;</span><br><span class="line">      <span class="attr">podSelector:</span></span><br><span class="line">        <span class="attr">matchLabels:</span></span><br><span class="line">          <span class="attr">environment:</span> <span class="string">testing</span></span><br></pre></td></tr></table></figure></li><li><p>生效<br>kubectl apply -f cks-09.yaml</p></li><li><p>检查<br>kubectl describe networkpolicy pod-restriction -n dev-team</p></li></ol><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote><p><a href="https://kubernetes.io/zh/docs/concepts/services-networking/network-policies/#networkpolicy-resource">https://kubernetes.io/zh/docs/concepts/services-networking/network-policies/#networkpolicy-resource</a></p></blockquote>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;创建一个名为 pod-restriction 的 NetworkPolicy 来限制对在 namespace dev-team 中运行的 P</summary>
       
     
     
