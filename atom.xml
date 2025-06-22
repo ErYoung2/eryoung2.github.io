@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2025-06-12T22:24:13.947Z</updated>
+  <updated>2025-06-22T14:27:21.806Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>真的烦躁</title>
+    <link href="http://eryoung2.github.io/2025/06/22/%E7%9C%9F%E7%9A%84%E7%83%A6%E8%BA%81/"/>
+    <id>http://eryoung2.github.io/2025/06/22/%E7%9C%9F%E7%9A%84%E7%83%A6%E8%BA%81/</id>
+    <published>2025-06-22T14:21:57.000Z</published>
+    <updated>2025-06-22T14:27:21.806Z</updated>
+    
+    <content type="html"><![CDATA[<p>这几天非常热，又潮湿又热，搞得整个人都非常烦躁，每天睡不着觉，上班也没精神，下班立马完蛋。</p><p>以前以为有些好事情发生，自己会好一些，但现在看起来，都一个样，还是自己心态的问题，还是跟自己怄气。</p><p>怄气就怄气吧，不然怎么办呢？</p><p>今天又是周日，又混了一周，啥也没干，文章也没更新，学习也没学习，社交也没社交，每天被家人骂，骂就骂吧，能咋地。</p><p>希望下一周能好一些，虽然只是一种安慰。</p><p>今晚早点睡，下周还要继续战斗。没有人支持就没有吧，本来也就是一个人而已。</p><p>Go independently, with firm heart.</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;这几天非常热，又潮湿又热，搞得整个人都非常烦躁，每天睡不着觉，上班也没精神，下班立马完蛋。&lt;/p&gt;
+&lt;p&gt;以前以为有些好事情发生，自己会好一些，但现在看起来，都一个样，还是自己心态的问题，还是跟自己怄气。&lt;/p&gt;
+&lt;p&gt;怄气就怄气吧，不然怎么办呢？&lt;/p&gt;
+&lt;p&gt;今天又是周</summary>
+      
+    
+    
+    
+    <category term="失眠随想" scheme="http://eryoung2.github.io/categories/%E5%A4%B1%E7%9C%A0%E9%9A%8F%E6%83%B3/"/>
+    
+    
+    <category term="评论" scheme="http://eryoung2.github.io/tags/%E8%AF%84%E8%AE%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>《六爻》-- 揽佬</title>
@@ -485,32 +512,6 @@
       
       
     <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;按照如下要求修改sec-ns命名空间里的Deployment secdep&lt;br&gt;1、用ID为30000的用户启动容器（设置用户1D为：30</summary>
-      
-    
-    
-    
-    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
-    
-    
-    <category term="cks" scheme="http://eryoung2.github.io/tags/cks/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CKS真题 -- Sysdig &amp; Falco</title>
-    <link href="http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-Sysdig-Falco/"/>
-    <id>http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-Sysdig-Falco/</id>
-    <published>2024-04-28T06:12:09.000Z</published>
-    <updated>2024-04-28T06:17:58.702Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>使用运行时检测工具来检测 Pod tomcat123 单个容器中频发生成和执行的异常进程。 </p><p>有两种工具可供使用： </p><ul><li>sysdig</li><li>falco<br>注： 这些工具只预装在 cluster 的工作节点node02，不在 master 节点。</li></ul><p>使用工具至少分析 30 秒，使用过滤器检查生成和执行的进程，将事件写到 &#x2F;opt&#x2F;KSR00101&#x2F;incidents&#x2F;summary 文 件中，其中包含检测的事件， 格式如下： [timestamp],[uid],[processName] 保持工具的原始时间戳格式不变。<br>注：确保事件文件存储在集群的工作节点上。</p><h2 id="做题"><a href="#做题" class="headerlink" title="做题"></a>做题</h2><ol><li><p>找到containerd的sock</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crictl info | grep sock</span><br><span class="line">&quot;containerdEndpoint&quot;: &quot;/run/containerd/containerd.sock&quot;,</span><br></pre></td></tr></table></figure></li><li><p>找到目标container</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crictl ps|grep tomcat123</span><br></pre></td></tr></table></figure></li><li><p>通过sysdig扫描容器并输出</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sysdig -l | grep time</span><br><span class="line">sysdig -l | grep uid</span><br><span class="line">sysdig -l | grep proc</span><br><span class="line">sysdig -M 30 -p &quot;%evt.time,%user.name,%proc.name&quot; --cri /run/containerd/containerd.sock container.name=tomcat123 &gt;&gt; /opt/KSR00101/incidents/summary</span><br></pre></td></tr></table></figure></li></ol><p>如果没检测到sysdig，就跑这一行：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysdig-probe-loader</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;使用运行时检测工具来检测 Pod tomcat123 单个容器中频发生成和执行的异常进程。 &lt;/p&gt;
-&lt;p&gt;有两种工具可供使用： &lt;/p&gt;
-</summary>
       
     
     
