@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2025-06-22T14:27:21.806Z</updated>
+  <updated>2025-06-30T15:03:24.867Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2025上半年总结</title>
+    <link href="http://eryoung2.github.io/2025/06/30/2025%E4%B8%8A%E5%8D%8A%E5%B9%B4%E6%80%BB%E7%BB%93/"/>
+    <id>http://eryoung2.github.io/2025/06/30/2025%E4%B8%8A%E5%8D%8A%E5%B9%B4%E6%80%BB%E7%BB%93/</id>
+    <published>2025-06-30T14:54:08.000Z</published>
+    <updated>2025-06-30T15:03:24.867Z</updated>
+    
+    <content type="html"><![CDATA[<p>不知不觉，2025年的上半年已经过去了，在这半年里发生了很多事情，颇有感慨。</p><p>首先，我首次搬家出来住，并将房子租出去，短暂做了半年包租公，但是没多久就停了，因为租客跑路，现在处于两头出血的状态；在可见的下半年仍会维持这样的状态。</p><p>第二，工作渐渐走入正轨，自己也没那么忙了，不过有时候还是会很累。</p><p>第三，由于搬家来公司附近，所以周六日出门的意愿就很低，基本都是在家里休息，原因是没有心情出门，也非常懒得出门。</p><p>第四，上半年回了一趟老家，感觉是非常好的，是难得的惬意时光。</p><p>第五，我开始接触股票，每天会研究股市，但是还没多少输出，自己也刚刚把帐户做成盈利状态，还在学习当中。</p><p>第六，自己的小账户总算有钱了，但不多，但是下半年肉眼可见，手头的金钱会变得更多，但是能多多少，心中并没有底。</p><p>总结：虽然个人经济压力减弱，但是依然承压；不过前景光明，需要调整自己心态，不要过于消极与被动，这样才可能有一些转机。</p><p>就酱紫，睡觉，下半年见～</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;不知不觉，2025年的上半年已经过去了，在这半年里发生了很多事情，颇有感慨。&lt;/p&gt;
+&lt;p&gt;首先，我首次搬家出来住，并将房子租出去，短暂做了半年包租公，但是没多久就停了，因为租客跑路，现在处于两头出血的状态；在可见的下半年仍会维持这样的状态。&lt;/p&gt;
+&lt;p&gt;第二，工作渐渐走</summary>
+      
+    
+    
+    
+    <category term="失眠杂想" scheme="http://eryoung2.github.io/categories/%E5%A4%B1%E7%9C%A0%E6%9D%82%E6%83%B3/"/>
+    
+    
+    <category term="碎碎念" scheme="http://eryoung2.github.io/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+  </entry>
   
   <entry>
     <title>真的烦躁</title>
@@ -488,30 +514,6 @@
       
       
     <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;通过TLS加强kube-apiserver安全配置，要求&lt;br&gt;1、kube-apiserver除了VersionTLS13及以上的版本可以</summary>
-      
-    
-    
-    
-    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
-    
-    
-    <category term="cks" scheme="http://eryoung2.github.io/tags/cks/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CKS真题 -- Container安全上下文</title>
-    <link href="http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-Container%E5%AE%89%E5%85%A8%E4%B8%8A%E4%B8%8B%E6%96%87/"/>
-    <id>http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-Container%E5%AE%89%E5%85%A8%E4%B8%8A%E4%B8%8B%E6%96%87/</id>
-    <published>2024-04-28T06:20:03.000Z</published>
-    <updated>2024-04-28T06:23:44.583Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>按照如下要求修改sec-ns命名空间里的Deployment secdep<br>1、用ID为30000的用户启动容器（设置用户1D为：30000）<br>2、不允许进程获得超出其父进程的特权（禁止allowPrivilegeEscalation）<br>3、以只读方式加载容器的根文件系统（对根文件的只读权限）</p><h2 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h2><ol><li><p>修改deployment secdep，添加配置<br>kubectl edit deploy secdep -n sec-ns</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">securityContext:</span>                        <span class="comment">#增加这两行完成任务1</span></span><br><span class="line">    <span class="attr">runAsUser:</span> <span class="number">30000</span></span><br><span class="line">  <span class="string">...</span></span><br><span class="line">  <span class="attr">containers:</span>           </span><br><span class="line">    <span class="attr">securityContext:</span>                      <span class="comment">#增加这三行完成任务2，3</span></span><br><span class="line">      <span class="attr">allowPrivilegeEscalation:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">readOnlyRootFilesystem:</span> <span class="literal">true</span></span><br><span class="line">  <span class="string">...</span></span><br><span class="line">  <span class="attr">containers:</span>                             <span class="comment">#如果有多个容器，每个容器都要增加这三行</span></span><br><span class="line">    <span class="attr">securityContext:</span></span><br><span class="line">      <span class="attr">allowPrivilegeEscalation:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">readOnlyRootFilesystem:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></li><li><p>保存，检查是否添加成功，不成功说明没加对，需要重新添加<br>kubectl -n sec-ns get all</p></li></ol><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote><p><a href="https://kubernetes.io/zh-cn/docs/tasks/configure-pod-container/security-context/">https://kubernetes.io/zh-cn/docs/tasks/configure-pod-container/security-context/</a></p></blockquote>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;按照如下要求修改sec-ns命名空间里的Deployment secdep&lt;br&gt;1、用ID为30000的用户启动容器（设置用户1D为：30</summary>
       
     
     
