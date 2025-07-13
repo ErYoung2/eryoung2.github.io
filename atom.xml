@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2025-06-30T15:03:24.867Z</updated>
+  <updated>2025-07-13T19:35:05.033Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>最近很狒狒</title>
+    <link href="http://eryoung2.github.io/2025/07/14/%E6%9C%80%E8%BF%91%E5%BE%88%E7%8B%92%E7%8B%92/"/>
+    <id>http://eryoung2.github.io/2025/07/14/%E6%9C%80%E8%BF%91%E5%BE%88%E7%8B%92%E7%8B%92/</id>
+    <published>2025-07-13T19:29:40.000Z</published>
+    <updated>2025-07-13T19:35:05.033Z</updated>
+    
+    <content type="html"><![CDATA[<p>本周状态很奇怪，可能因为天气很热，导致中暑了，整个人病怏怏的，什么也不想做，就想躺着，也不想上班，也不想学习，整个人的状态很差很差。</p><p>今天跟朋友聊天，我跟他说废废了，哦那就是废废了。</p><p>什么也不想做，这是为什么呢，明明很多事情需要做，但就是不想做。</p><p>这个状态可不好，还是要有点目标才好。。。</p><p>希望下周好一些，人也不要那么颓废。。。</p><p>Cheers！</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;本周状态很奇怪，可能因为天气很热，导致中暑了，整个人病怏怏的，什么也不想做，就想躺着，也不想上班，也不想学习，整个人的状态很差很差。&lt;/p&gt;
+&lt;p&gt;今天跟朋友聊天，我跟他说废废了，哦那就是废废了。&lt;/p&gt;
+&lt;p&gt;什么也不想做，这是为什么呢，明明很多事情需要做，但就是不想做。</summary>
+      
+    
+    
+    
+    <category term="失眠杂想" scheme="http://eryoung2.github.io/categories/%E5%A4%B1%E7%9C%A0%E6%9D%82%E6%83%B3/"/>
+    
+    
+    <category term="碎碎念" scheme="http://eryoung2.github.io/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+  </entry>
   
   <entry>
     <title>2025上半年总结</title>
@@ -490,30 +516,6 @@
       
       
     <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;重新配置 cluster 的Kubernetes APl 服务器，以确保只允许经过身份验证和授权的 REST 请求。&lt;br&gt;使用授权模式 N</summary>
-      
-    
-    
-    
-    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
-    
-    
-    <category term="cks" scheme="http://eryoung2.github.io/tags/cks/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CKS真题 -- TLS通信增强</title>
-    <link href="http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-TLS%E9%80%9A%E4%BF%A1%E5%A2%9E%E5%BC%BA/"/>
-    <id>http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-TLS%E9%80%9A%E4%BF%A1%E5%A2%9E%E5%BC%BA/</id>
-    <published>2024-04-28T06:24:48.000Z</published>
-    <updated>2024-04-28T06:35:47.053Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>通过TLS加强kube-apiserver安全配置，要求<br>1、kube-apiserver除了VersionTLS13及以上的版本可以使用，其他版本都不允许使用。<br>2、密码套件（Cipher suite）为TLS_AES_128_GCM_SHA256</p><p>通过TLS加强ETCD安全配置，要求<br>1、密码套件（Cipher suite）为TLS_AES_128_GCM_SHA256</p><h2 id="做题"><a href="#做题" class="headerlink" title="做题"></a>做题</h2><ol><li><p>备份相关配置文件</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /opt/backup/14</span><br><span class="line">cp -f /etc/kubernetes/manifests/kube-apiserver.yaml /opt/backup/14</span><br><span class="line">cp -f /etc/kubernetes/manifests/etcd.yaml /opt/backup/14</span><br></pre></td></tr></table></figure></li><li><p>修改配置文件</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># kube-apiserver.yaml</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">containers:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">command:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">kube-apiserver</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">--tls-min-version=VersionTLS13</span> <span class="comment">#任务1</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">--tls-cipher-suites=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</span> <span class="comment">#任务2</span></span><br></pre></td></tr></table></figure></li></ol><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># etcd.yaml</span></span><br><span class="line">  <span class="attr">containers:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">command:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">etcd</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">--cipher-suites=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</span> <span class="comment">#任务3</span></span><br></pre></td></tr></table></figure><ol start="3"><li><p>重启kubelet</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart kubelet</span><br></pre></td></tr></table></figure></li><li><p>检查</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl get pods -A #观察kube-apiserver和etcd是否重启</span><br></pre></td></tr></table></figure></li></ol><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote><p><a href="https://kubernetes.io/zh-cn/docs/reference/command-line-tools-reference/kube-apiserver/">https://kubernetes.io/zh-cn/docs/reference/command-line-tools-reference/kube-apiserver/</a></p></blockquote>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;通过TLS加强kube-apiserver安全配置，要求&lt;br&gt;1、kube-apiserver除了VersionTLS13及以上的版本可以</summary>
       
     
     
