@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2025-07-13T19:35:05.033Z</updated>
+  <updated>2025-09-21T17:54:30.475Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>抉择前夕</title>
+    <link href="http://eryoung2.github.io/2025/09/22/%E6%8A%89%E6%8B%A9%E5%89%8D%E5%A4%95/"/>
+    <id>http://eryoung2.github.io/2025/09/22/%E6%8A%89%E6%8B%A9%E5%89%8D%E5%A4%95/</id>
+    <published>2025-09-21T17:48:54.000Z</published>
+    <updated>2025-09-21T17:54:30.475Z</updated>
+    
+    <content type="html"><![CDATA[<p>经过4年半的努力，我总算要洗刷一些东西了，可以好好做人，同时也完成阶段性目标。</p><p>也意味着我要切换目标了，人在没有明确目标的时候，就会迷茫且无助，看起来像个智障一样。</p><p>我最近就是这种状态，失去了目标，也失去了前进的动力，变成了一个混子，每天都在混吃等死。</p><p>这种状态讲好听叫安逸，讲不好听就是废物，进舒适区了。</p><p>我还是不能做废物，我毕竟还年轻，广阔天空大有可为。</p><p>加油吧，希望多年之后的我会感谢当前的我，没有继续做废物下去。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;经过4年半的努力，我总算要洗刷一些东西了，可以好好做人，同时也完成阶段性目标。&lt;/p&gt;
+&lt;p&gt;也意味着我要切换目标了，人在没有明确目标的时候，就会迷茫且无助，看起来像个智障一样。&lt;/p&gt;
+&lt;p&gt;我最近就是这种状态，失去了目标，也失去了前进的动力，变成了一个混子，每天都在混吃</summary>
+      
+    
+    
+    
+    <category term="失眠杂想" scheme="http://eryoung2.github.io/categories/%E5%A4%B1%E7%9C%A0%E6%9D%82%E6%83%B3/"/>
+    
+    
+    <category term="碎碎念" scheme="http://eryoung2.github.io/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+  </entry>
   
   <entry>
     <title>最近很狒狒</title>
@@ -492,30 +518,6 @@
       
       
     <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;注意：你必须在 cluster 的 master节点上完成整个考题，所有服务和文件都已被准备好并放置在该节点上。&lt;br&gt;给定一个目录 &amp;#x</summary>
-      
-    
-    
-    
-    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
-    
-    
-    <category term="cks" scheme="http://eryoung2.github.io/tags/cks/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CKS真题 -- 启用API server认证</title>
-    <link href="http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-%E5%90%AF%E7%94%A8API-server%E8%AE%A4%E8%AF%81/"/>
-    <id>http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-%E5%90%AF%E7%94%A8API-server%E8%AE%A4%E8%AF%81/</id>
-    <published>2024-04-28T06:45:27.000Z</published>
-    <updated>2024-04-28T06:50:47.160Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>重新配置 cluster 的Kubernetes APl 服务器，以确保只允许经过身份验证和授权的 REST 请求。<br>使用授权模式 Node,RBAC 和准入控制器NodeRestriction。<br>删除用户 system:anonymous 的 ClusterRoleBinding 来进行清理。</p><p>注意：所有 kubectl 配置环境&#x2F;文件也被配置使用未经身份验证和未经授权的访问。 你不必更改它，但请注意，一旦完成 cluster的安全加固， kubectl 的配置将无法工作。 您可以使用位于 cluster 的 master 节点上，cluster 原本的kubectl 配置文件 &#x2F;etc&#x2F;kubernetes&#x2F;admin.conf ，以确保经过身份验证的授权的请求仍然被允许。</p><h2 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h2><ol><li>备份并修改kube-apiserver配置<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">备份</span></span><br><span class="line">mkdir -p /opt/backup/15</span><br><span class="line">cp -f /etc/kubernetes/manifests/kube-apiserver.yaml /opt/backup/15</span><br></pre></td></tr></table></figure></li></ol><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="string">--authorization-mode=Node,RBAC</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">--enable-admission-plugins=NodeRestriction</span> <span class="comment">#添加准入控制器</span></span><br></pre></td></tr></table></figure><ol start="2"><li><p>重启kubelet</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart kubelet</span><br></pre></td></tr></table></figure></li><li><p>删除删除用户 system:anonymous 的 ClusterRoleBinding</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl delete rolebinding system:anonymous</span><br></pre></td></tr></table></figure></li></ol><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote><p><a href="https://kubernetes.io/zh-cn/docs/reference/access-authn-authz/node/#overview">https://kubernetes.io/zh-cn/docs/reference/access-authn-authz/node/#overview</a></p></blockquote>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;重新配置 cluster 的Kubernetes APl 服务器，以确保只允许经过身份验证和授权的 REST 请求。&lt;br&gt;使用授权模式 N</summary>
       
     
     
