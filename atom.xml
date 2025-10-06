@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2025-09-21T17:54:30.475Z</updated>
+  <updated>2025-10-06T06:26:04.191Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -17,13 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>人生新阶段</title>
+    <link href="http://eryoung2.github.io/2025/10/06/%E4%BA%BA%E7%94%9F%E6%96%B0%E9%98%B6%E6%AE%B5/"/>
+    <id>http://eryoung2.github.io/2025/10/06/%E4%BA%BA%E7%94%9F%E6%96%B0%E9%98%B6%E6%AE%B5/</id>
+    <published>2025-10-06T06:23:00.000Z</published>
+    <updated>2025-10-06T06:26:04.191Z</updated>
+    
+    <content type="html"><![CDATA[<p>接上一片文章，我结束了一段痛苦的日子，历时4年半，鬼知道我怎么过来的。。</p><p>现在，此时此刻，我的心情还是挺不错的，正所谓“那些未曾打垮你的，都会让你变得更强大”。</p><p>我相信如此，我相信前路光明，一定会好起来，更好。</p><p>今天是中秋节，好日子，祝大家节日快乐～</p><p>就酱，祝好～</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;接上一片文章，我结束了一段痛苦的日子，历时4年半，鬼知道我怎么过来的。。&lt;/p&gt;
+&lt;p&gt;现在，此时此刻，我的心情还是挺不错的，正所谓“那些未曾打垮你的，都会让你变得更强大”。&lt;/p&gt;
+&lt;p&gt;我相信如此，我相信前路光明，一定会好起来，更好。&lt;/p&gt;
+&lt;p&gt;今天是中秋节，好日子</summary>
+      
+    
+    
+    
+    <category term="失眠杂想" scheme="http://eryoung2.github.io/categories/%E5%A4%B1%E7%9C%A0%E6%9D%82%E6%83%B3/"/>
+    
+    
+    <category term="碎碎念" scheme="http://eryoung2.github.io/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+  </entry>
+  
+  <entry>
     <title>抉择前夕</title>
     <link href="http://eryoung2.github.io/2025/09/22/%E6%8A%89%E6%8B%A9%E5%89%8D%E5%A4%95/"/>
     <id>http://eryoung2.github.io/2025/09/22/%E6%8A%89%E6%8B%A9%E5%89%8D%E5%A4%95/</id>
     <published>2025-09-21T17:48:54.000Z</published>
-    <updated>2025-09-21T17:54:30.475Z</updated>
+    <updated>2025-09-21T17:58:16.127Z</updated>
     
-    <content type="html"><![CDATA[<p>经过4年半的努力，我总算要洗刷一些东西了，可以好好做人，同时也完成阶段性目标。</p><p>也意味着我要切换目标了，人在没有明确目标的时候，就会迷茫且无助，看起来像个智障一样。</p><p>我最近就是这种状态，失去了目标，也失去了前进的动力，变成了一个混子，每天都在混吃等死。</p><p>这种状态讲好听叫安逸，讲不好听就是废物，进舒适区了。</p><p>我还是不能做废物，我毕竟还年轻，广阔天空大有可为。</p><p>加油吧，希望多年之后的我会感谢当前的我，没有继续做废物下去。</p>]]></content>
+    <content type="html"><![CDATA[<p>经过4年半的努力，我总算要洗刷一些东西了，可以好好做人，同时也完成阶段性目标。</p><p>也意味着我要切换目标了，人在没有明确目标的时候，就会迷茫且无助，看起来像个智障一样。</p><p>我最近就是这种状态，失去了目标，也失去了前进的动力，变成了一个混子，每天都在混吃等死。</p><p>这种状态讲好听叫安逸，讲不好听就是废物，进舒适区了。</p><p>我还是不能做废物，我毕竟还年轻，广阔天空大有可为。</p><p>加油吧，希望多年之后的我会感谢当前的我，没有继续做废物下去。</p><p>这几天肚子不舒服，还是先把身体调理好才行。。。</p>]]></content>
     
     
       
@@ -494,30 +521,6 @@
       
     <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;检查在namespace development中运行的pod，并删除任何非无状态和非不可变的pod&lt;/p&gt;
 &lt;p&gt;名词解释：&lt;br&gt;无状态</summary>
-      
-    
-    
-    
-    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
-    
-    
-    <category term="cks" scheme="http://eryoung2.github.io/tags/cks/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CKS真题 -- ImagePolicyWebhook容器镜像扫描</title>
-    <link href="http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-ImagePolicyWebhook%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E6%89%AB%E6%8F%8F/"/>
-    <id>http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-ImagePolicyWebhook%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F%E6%89%AB%E6%8F%8F/</id>
-    <published>2024-04-28T06:51:22.000Z</published>
-    <updated>2024-04-28T07:17:43.816Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>注意：你必须在 cluster 的 master节点上完成整个考题，所有服务和文件都已被准备好并放置在该节点上。<br>给定一个目录 &#x2F;etc&#x2F;kubernetes&#x2F;epconfig中不完整的配置以及具有 HTTPS 端点 <a href="https://acme.local:8082/image_policy">https://acme.local:8082/image_policy</a> 的功能性容器镜像扫描器：<br>    1. 启用必要的插件来创建镜像策略<br>    2. 校验控制配置并将其更改为隐式拒绝（implicit deny）<br>    3. 编辑配置以正确指向提供的 HTTPS 端点<br>最后，通过尝试部署易受攻击的资源 &#x2F;cks&#x2F;img&#x2F;web1.yaml 来测试配置是否有效。<br>你可以在&#x2F;var&#x2F;log&#x2F;imagepolicy&#x2F;roadrunner.log 找到容器镜像扫描仪的日志文件。</p><h2 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h2><ol><li><p>修改&#x2F;etc&#x2F;kubernetes&#x2F;epconfig&#x2F;admission_configuration.json，将defaultAllow设置为false</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;defaultAllow&quot;:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure></li><li><p>修改&#x2F;etc&#x2F;kubernetes&#x2F;epconfig&#x2F;kubeconfig.yml，添加webhook server地址</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">cluster:</span></span><br><span class="line">    <span class="attr">certificate-authority:</span> <span class="string">/path/to/ca.pem</span>   </span><br><span class="line">    <span class="attr">server:</span> <span class="string">https://acme.local:8082/image_policy</span>  <span class="comment"># 增加该行</span></span><br></pre></td></tr></table></figure></li><li><p>备份配置文件</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">mkdir</span> <span class="string">-p</span> <span class="string">/opt/backup/16</span></span><br><span class="line"><span class="string">cp</span> <span class="string">-f</span> <span class="string">/etc/kubernetes/manifests/kube-apiserver.yaml</span> <span class="string">/opt/backup/16</span></span><br></pre></td></tr></table></figure></li><li><p>修改配置文件</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="string">--enable-admission-plugins=NodeRestriction,ImagePolicyWebhook</span> <span class="comment">#添加ImagePolicyWebhook</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">--admission-control-config-file=/etc/kubernetes/epconfig/admission_configuration.json</span> <span class="comment">#添加配置文件路径</span></span><br><span class="line"></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">mountPath:</span> <span class="string">/etc/kubernetes/epconfig</span> <span class="comment">#添加挂载，具体参考配置文件其他范例</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">epconfig</span></span><br><span class="line">    <span class="attr">readOnly:</span> <span class="literal">true</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">epconfig</span></span><br><span class="line">  <span class="attr">hostPath:</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">/etc/kubernetes/epconfig</span></span><br></pre></td></tr></table></figure></li><li><p>重启kubelet并检查</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart kubelet</span><br></pre></td></tr></table></figure></li><li><p>部署&#x2F;cks&#x2F;img&#x2F;web1.yaml进行测试检查</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">kubectl</span> <span class="string">apply</span> <span class="string">-f</span> <span class="string">/cks/img/web1.yaml</span></span><br></pre></td></tr></table></figure></li></ol><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote><p><a href="https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#imagepolicywebhook">https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#imagepolicywebhook</a></p></blockquote>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;注意：你必须在 cluster 的 master节点上完成整个考题，所有服务和文件都已被准备好并放置在该节点上。&lt;br&gt;给定一个目录 &amp;#x</summary>
       
     
     
