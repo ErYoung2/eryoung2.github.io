@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2025-10-06T06:26:04.191Z</updated>
+  <updated>2025-10-21T16:37:56.230Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>前路光明</title>
+    <link href="http://eryoung2.github.io/2025/10/22/%E5%89%8D%E8%B7%AF%E5%85%89%E6%98%8E/"/>
+    <id>http://eryoung2.github.io/2025/10/22/%E5%89%8D%E8%B7%AF%E5%85%89%E6%98%8E/</id>
+    <published>2025-10-21T16:35:28.000Z</published>
+    <updated>2025-10-21T16:37:56.230Z</updated>
+    
+    <content type="html"><![CDATA[<p>经过过去4年半的蛰伏，我现在终于回到了正轨。生活上、心态上，都回到了正轨。</p><p>原来过平凡的日子都这么奢侈，看来要珍惜每一天了。</p><p>目前的情绪还是比较稳定，蛮好的，用这种心态去生活，好运一定回来。</p><p>前路一定很光明，加油～</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;经过过去4年半的蛰伏，我现在终于回到了正轨。生活上、心态上，都回到了正轨。&lt;/p&gt;
+&lt;p&gt;原来过平凡的日子都这么奢侈，看来要珍惜每一天了。&lt;/p&gt;
+&lt;p&gt;目前的情绪还是比较稳定，蛮好的，用这种心态去生活，好运一定回来。&lt;/p&gt;
+&lt;p&gt;前路一定很光明，加油～&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="失眠杂想" scheme="http://eryoung2.github.io/categories/%E5%A4%B1%E7%9C%A0%E6%9D%82%E6%83%B3/"/>
+    
+    
+    <category term="碎碎念" scheme="http://eryoung2.github.io/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+  </entry>
   
   <entry>
     <title>人生新阶段</title>
@@ -504,31 +532,6 @@
     
     
     <category term="评论" scheme="http://eryoung2.github.io/tags/%E8%AF%84%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CKS真题 -- 无状态和不可变应用</title>
-    <link href="http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-%E6%97%A0%E7%8A%B6%E6%80%81%E5%92%8C%E4%B8%8D%E5%8F%AF%E5%8F%98%E5%BA%94%E7%94%A8/"/>
-    <id>http://eryoung2.github.io/2024/04/28/CKS%E7%9C%9F%E9%A2%98-%E6%97%A0%E7%8A%B6%E6%80%81%E5%92%8C%E4%B8%8D%E5%8F%AF%E5%8F%98%E5%BA%94%E7%94%A8/</id>
-    <published>2024-04-28T07:40:46.000Z</published>
-    <updated>2024-04-28T07:51:10.395Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>检查在namespace development中运行的pod，并删除任何非无状态和非不可变的pod</p><p>名词解释：<br>无状态应用：指应用本身不依赖于持久化的状态数据，没有存储挂载，更强调每个请求的独立性。<br>不可变应用：一旦程序部署完成，其状态不会在运行时被直接修改，更强调pod的稳定性和不变性。</p><p>主要删除的就是两种pod:</p><ol><li>privileged: true的pod # 允许特权的pod</li><li>readOnlyRootFileSystem: false #只读文件系统为false的pod</li><li>有pvc、hostpath挂载的</li><li>ConfigMap、Secret、Download API、emptyDir不算。</li></ol><h2 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h2><ol><li><p>检查development下所有pod</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl get pod -n development</span><br></pre></td></tr></table></figure></li><li><p>挨个检查，如果发现非无状态应用和非不可变应用就删掉。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">kubectl get pod xxx -n development -oyaml |grep -E &quot;privileged|readOnlyRootFileSystem&quot; #检查非不可变应用</span><br><span class="line">kubectl get pod xxx -n development -oyaml|grep &quot;persistentvolumeclaim&quot; #检查非无状态应用</span><br><span class="line">kubectl get pod xxx -n development -oyaml|grep &quot;hostpath&quot;</span><br><span class="line"></span><br><span class="line">kubectl delete pod xxx -n development</span><br></pre></td></tr></table></figure></li></ol>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;任务&quot;&gt;&lt;a href=&quot;#任务&quot; class=&quot;headerlink&quot; title=&quot;任务&quot;&gt;&lt;/a&gt;任务&lt;/h2&gt;&lt;p&gt;检查在namespace development中运行的pod，并删除任何非无状态和非不可变的pod&lt;/p&gt;
-&lt;p&gt;名词解释：&lt;br&gt;无状态</summary>
-      
-    
-    
-    
-    <category term="考试" scheme="http://eryoung2.github.io/categories/%E8%80%83%E8%AF%95/"/>
-    
-    
-    <category term="cks" scheme="http://eryoung2.github.io/tags/cks/"/>
     
   </entry>
   
