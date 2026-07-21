@@ -1,12 +1,12 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Splunk和Elasticsearch异同 | Eryoung2的个人博客</title><meta name="keywords" content="Splunk,Elasticsearch"><meta name="author" content="ErYoung2"><meta name="copyright" content="ErYoung2"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="核心区别一览表   对比维度 Splunk Elasticsearch (Elastic &#x2F; ELK)    核心定位 企业级日志分析、SIEM 安全与可观测性平台 开源&#x2F;弹性搜索引擎、日志与可观测性生态   数据解析模式 读时模式 (Schema-on-Read)    查询时才解析字段 | 写时模式 (Schema-on-Write) 写入&#x2F;入库时就必须结构化">
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Splunk和Elasticsearch异同 | Eryoung2的个人博客</title><meta name="keywords" content="Splunk,Elasticsearch"><meta name="author" content="ErYoung2"><meta name="copyright" content="ErYoung2"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="核心区别一览表   对比维度 Splunk Elasticsearch (Elastic &#x2F; ELK)    核心定位 企业级日志分析、SIEM 安全与可观测性平台 开源&#x2F;弹性搜索引擎、日志与可观测性生态   数据解析模式 读时模式 (Schema-on-Read)查询时才解析字段 写时模式 (Schema-on-Write)写入&#x2F;入库时就必须结构化 (JSON)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Splunk和Elasticsearch异同">
 <meta property="og:url" content="http://eryoung2.github.io/2026/07/21/Splunk%E5%92%8CElasticsearch%E5%BC%82%E5%90%8C/index.html">
 <meta property="og:site_name" content="Eryoung2的个人博客">
-<meta property="og:description" content="核心区别一览表   对比维度 Splunk Elasticsearch (Elastic &#x2F; ELK)    核心定位 企业级日志分析、SIEM 安全与可观测性平台 开源&#x2F;弹性搜索引擎、日志与可观测性生态   数据解析模式 读时模式 (Schema-on-Read)    查询时才解析字段 | 写时模式 (Schema-on-Write) 写入&#x2F;入库时就必须结构化">
+<meta property="og:description" content="核心区别一览表   对比维度 Splunk Elasticsearch (Elastic &#x2F; ELK)    核心定位 企业级日志分析、SIEM 安全与可观测性平台 开源&#x2F;弹性搜索引擎、日志与可观测性生态   数据解析模式 读时模式 (Schema-on-Read)查询时才解析字段 写时模式 (Schema-on-Write)写入&#x2F;入库时就必须结构化 (JSON)">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-07-21T06:09:51.000Z">
-<meta property="article:modified_time" content="2026-07-21T06:16:14.043Z">
+<meta property="article:modified_time" content="2026-07-21T06:21:35.284Z">
 <meta property="article:author" content="ErYoung2">
 <meta property="article:tag" content="Splunk">
 <meta property="article:tag" content="Elasticsearch">
@@ -52,7 +52,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2026-07-21 14:16:14'
+  postUpdate: '2026-07-21 14:21:35'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -142,28 +142,41 @@
     }
     detectApple()
     })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Eryoung2的个人博客" type="application/atom+xml">
-</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/panda.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">133</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">63</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">29</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Eryoung2的个人博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Splunk和Elasticsearch异同</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-07-21T06:09:51.000Z" title="发表于 2026-07-21 14:09:51">2026-07-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-07-21T06:16:14.043Z" title="更新于 2026-07-21 14:16:14">2026-07-21</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/">搜索引擎</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">753</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/panda.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">133</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">63</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">29</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Eryoung2的个人博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Splunk和Elasticsearch异同</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-07-21T06:09:51.000Z" title="发表于 2026-07-21 14:09:51">2026-07-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-07-21T06:21:35.284Z" title="更新于 2026-07-21 14:21:35">2026-07-21</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/">搜索引擎</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">753</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><hr>
 <h2 id="核心区别一览表"><a href="#核心区别一览表" class="headerlink" title="核心区别一览表"></a>核心区别一览表</h2><table>
 <thead>
 <tr>
-<th>对比维度</th>
-<th>Splunk</th>
-<th>Elasticsearch (Elastic &#x2F; ELK)</th>
+<th align="left">对比维度</th>
+<th align="left">Splunk</th>
+<th align="left">Elasticsearch (Elastic &#x2F; ELK)</th>
 </tr>
 </thead>
 <tbody><tr>
-<td><strong>核心定位</strong></td>
-<td>企业级日志分析、SIEM 安全与可观测性平台</td>
-<td>开源&#x2F;弹性搜索引擎、日志与可观测性生态</td>
+<td align="left"><strong>核心定位</strong></td>
+<td align="left">企业级日志分析、SIEM 安全与可观测性平台</td>
+<td align="left">开源&#x2F;弹性搜索引擎、日志与可观测性生态</td>
 </tr>
 <tr>
-<td><strong>数据解析模式</strong></td>
-<td><strong>读时模式 (Schema-on-Read)</strong><br></td>
-<td></td>
+<td align="left"><strong>数据解析模式</strong></td>
+<td align="left"><strong>读时模式 (Schema-on-Read)</strong><br>查询时才解析字段</td>
+<td align="left"><strong>写时模式 (Schema-on-Write)</strong><br>写入&#x2F;入库时就必须结构化 (JSON)</td>
+</tr>
+<tr>
+<td align="left"><strong>查询语言</strong></td>
+<td align="left"><strong>SPL</strong> (功能极强，支持管道式复杂统计与关联)</td>
+<td align="left"><strong>KQL &#x2F; ESQL</strong> (偏向快速检索与 JSON 聚合)</td>
+</tr>
+<tr>
+<td align="left"><strong>计费与成本</strong></td>
+<td align="left"><strong>昂贵</strong> (按每日写入数据量或 SVC 算力授权)</td>
+<td align="left"><strong>相对便宜&#x2F;灵活</strong> (按硬件&#x2F;节点资源计费；开源版免费)</td>
+</tr>
+<tr>
+<td align="left"><strong>运维与上手</strong></td>
+<td align="left">上手快，开箱即用，开销主要在费用</td>
+<td align="left">自建需投入运维精力 (分片管理、JVM 调优等)</td>
 </tr>
 </tbody></table>
-<p><br>查询时才解析字段 | <strong>写时模式 (Schema-on-Write)</strong><br></p>
-<p><br>写入&#x2F;入库时就必须结构化 (JSON) |<br>| <strong>查询语言</strong> | <strong>SPL</strong> (功能极强，支持管道式复杂统计与关联) | <strong>KQL &#x2F; ESQL</strong> (偏向快速检索与 JSON 聚合) |<br>| <strong>计费与成本</strong> | <strong>昂贵</strong>（按每日写入数据量或 SVC 算力授权） | <strong>相对便宜&#x2F;灵活</strong>（按硬件&#x2F;节点资源计费；开源版免费） |<br>| <strong>运维与上手</strong> | 上手快，开箱即用，开销主要在费用 | 自建需投入运维精力（分片管理、JVM 调优等） |</p>
 <hr>
 <h2 id="两者的相同点"><a href="#两者的相同点" class="headerlink" title="两者的相同点"></a>两者的相同点</h2><ol>
 <li><strong>核心功能一致：</strong> 都能处理海量机器日志、指标（Metrics）和链路（Traces）的收集、存储与检索。</li>
