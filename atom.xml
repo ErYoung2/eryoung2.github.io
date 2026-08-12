@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2026-08-12T02:58:52.184Z</updated>
+  <updated>2026-08-12T05:04:34.552Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://eryoung2.github.io/2026/08/12/sing-box%E5%92%8Ccloudflare-warp%E5%81%9A%E6%B5%81%E9%87%8F%E5%88%86%E6%B5%81%E7%9A%84%E6%96%B9%E6%A1%88/"/>
     <id>http://eryoung2.github.io/2026/08/12/sing-box%E5%92%8Ccloudflare-warp%E5%81%9A%E6%B5%81%E9%87%8F%E5%88%86%E6%B5%81%E7%9A%84%E6%96%B9%E6%A1%88/</id>
     <published>2026-08-12T02:11:55.000Z</published>
-    <updated>2026-08-12T02:58:52.184Z</updated>
+    <updated>2026-08-12T05:04:34.552Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>由于平时工作学习需要用到谷歌搜索，因此笔者是谷歌全家桶深度用户。而对于谷歌的AI–Gemini，笔者也是使用了一段时间，觉得还是很牛的，但是由于Gemini对于地区的差异，国内和香港无法直接使用（国内需要开通专业版本），如果想使用免费版本，需要一些操作才可以正常使用。</p><h3 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h3><p>需要一台带有海外ip地址的VPS，最好使用linux操作系统。具体我就不讲了，大家可以自行购买。</p><h3 id="搭建Sing-Box代理"><a href="#搭建Sing-Box代理" class="headerlink" title="搭建Sing-Box代理"></a>搭建Sing-Box代理</h3><p>Singbox是由 nekohasekai 等开发者开发的自由且开源的通用代理平台，使用 Go 语言编写。它被誉为代理工具中的“瑞士军刀”，支持创建代理客户端、服务器以及透明代理，性能强劲且协议支持极为全面。它有以下特点：</p><ol><li>支持Shadowsocks、VMess、VLESS、Trojan、Hysteria&#x2F;Hysteria2、TUIC、WireGuard等协议</li><li>支持Windows、Linux、macOS、Android、iOS 以及 tvOS 等操作系统</li></ol><p>因此它很适合搭建代理，科学上网。</p><p>我们可以使用以下命令来安装sing-box：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(wget -qO- -o- https://github.com/233boy/sing-box/raw/main/install.sh)</span><br></pre></td></tr></table></figure><p>然后就可以得到一串链接，记下这串链接,放通相关安全组的端口。</p><h3 id="使用CF的warp协议做流量分流"><a href="#使用CF的warp协议做流量分流" class="headerlink" title="使用CF的warp协议做流量分流"></a>使用CF的warp协议做流量分流</h3><p>由于我们使用的VPS ip都是机房ip，gemini检测时会认为不正常，导致无法使用，因此我们可以使用CloudFlare的warp安全连接服务来转换ip，使用一些非机房的ip地址，来规避gemini的检测。</p><p>我们可以这么做：</p><ol><li><p>安装sing-warp安全连接服务并保证开机自启</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -L https://raw.githubusercontent.com/wy580477/sing-warp/main/install.sh)</span><br><span class="line">systemctl enable sing-warp</span><br></pre></td></tr></table></figure></li><li><p>可以编辑配置文件，控制哪些流量需要转换ip<br>针对本文所述的gemini, 我们有移动端和网页端的域名，并不一样, 可以编辑配置文件来自定义。<br>网页端域名后缀：google.com<br>移动端域名后缀：googleapis.com</p></li><li><p>重启sing-warp服务</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart sing-warp</span><br></pre></td></tr></table></figure></li></ol><h3 id="使用客户端连接服务"><a href="#使用客户端连接服务" class="headerlink" title="使用客户端连接服务"></a>使用客户端连接服务</h3><p>下载sing-box的APP并安装，各版本都有：</p><blockquote><p><a href="https://sing-box.sagernet.org/zh/clients/">https://sing-box.sagernet.org/zh/clients/</a></p></blockquote><p>载入sing-box的链接后，即可试图连接，使用。</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote><p><a href="https://github.com/233boy/sing-box/wiki/sing-box%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E5%9B%BE%E6%96%87%E6%95%99%E7%A8%8B">Sing-box安装</a></p><p><a href="https://github.com/wy580477/sing-warp">warp服务的安装</a></p></blockquote>]]></content>
     
