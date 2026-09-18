@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2026-09-03T13:48:45.957Z</updated>
+  <updated>2026-09-18T17:12:40.306Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>配置FRP服务实现内网穿透</title>
+    <link href="http://eryoung2.github.io/2026/09/19/%E9%85%8D%E7%BD%AERPC%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"/>
+    <id>http://eryoung2.github.io/2026/09/19/%E9%85%8D%E7%BD%AERPC%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</id>
+    <published>2026-09-18T16:40:11.000Z</published>
+    <updated>2026-09-18T17:12:40.306Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>由于笔者长期在户外办公，导致很多时候无法直接连接家里的内网环境，而有时候需要连一下，所以就总结了一下怎么做FRP服务实现内网穿透的方法，供大家参考。</p><h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><ol><li>带公网ip的vps，笔者的机器是腾讯云的轻量云服务器。</li><li>内网的windows机器，已配置RDP</li></ol><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>如果我们需要使用FRP，需要搞清楚它的原理。它就是在客户端（C端）和服务端（S端）之间创建一条专有链接，服务器可以将固定ip和端口的流量链接到客户端，从而实现对应的穿透。因此我们需要在服务端装FRPS，在客户端装FRPC，然后将其配置并跑通，即可实现内网穿透。</p><h2 id="实操"><a href="#实操" class="headerlink" title="实操"></a>实操</h2><h3 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h3><ol><li><p>下载frps安装包，根据你机器的版本进行下载（x86还是arm，linux还是windows）<br><a href="https://github.com/fatedier/frp/releases?utm_source=gemini">https://github.com/fatedier/frp/releases?utm_source=gemini</a></p></li><li><p>解压</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf frp_*_linux_amd64.tar.gz -c /opt</span><br><span class="line">cd /opt/ &amp;&amp; mv frp_*_linux_amd64 frps</span><br><span class="line">cd frps</span><br></pre></td></tr></table></figure></li><li><p>编辑服务器配置文件frps.toml（假设是7000端口）</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bindPort = 7000           # frp 服务通讯端口</span><br><span class="line">auth.token = &quot;自定义高强度密码&quot; # 身份验证密钥，客户端需一致</span><br></pre></td></tr></table></figure></li><li><p>启动服务端</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./frps -c ./frps.toml &amp;</span><br></pre></td></tr></table></figure></li><li><p>做成服务（可选）</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">cat &lt;&lt;EOF | sudo tee /etc/systemd/system/frps.service</span><br><span class="line">[Unit]</span><br><span class="line">Description=frp server</span><br><span class="line">After=network.target syslog.target</span><br><span class="line">Wants=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">路径根据你的实际存放位置调整，此处以 /opt/frp 为例</span></span><br><span class="line">ExecStart=/opt/frp/frps -c /opt/frp/frps.toml</span><br><span class="line">Restart=always</span><br><span class="line">RestartSec=5s</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line"></span><br><span class="line">sudo systemctl enable frps --now</span><br></pre></td></tr></table></figure></li><li><p>检查状态</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl status frps</span><br></pre></td></tr></table></figure></li><li><p>放通vps的安全组端口，我的例子是7000和7001</p></li></ol><h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h3><ol><li><p>下载frpc安装包，根据你机器的版本进行下载（x86还是arm，linux还是windows）<br><a href="https://github.com/fatedier/frp/releases?utm_source=gemini">https://github.com/fatedier/frp/releases?utm_source=gemini</a></p></li><li><p>下载nssm，是windows服务的安装器<br><a href="https://nssm.cc/">https://nssm.cc/</a></p></li><li><p>单独解压nssm，将其放置在单独的文件夹中，并添加环境变量。</p></li><li><p>解压frpc安装包，编辑frpc.toml文件</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">serverAddr = &quot;你的VPS公网IP&quot;</span><br><span class="line">serverPort = 7000</span><br><span class="line">auth.token = &quot;自定义高强度密码&quot; # 与服务端一致</span><br><span class="line"></span><br><span class="line">[[proxies]]</span><br><span class="line">name = &quot;rdp&quot;</span><br><span class="line">type = &quot;tcp&quot;</span><br><span class="line">localIP = &quot;127.0.0.1&quot;</span><br><span class="line">localPort = 3389</span><br><span class="line">remotePort = 7001        # 映射到 VPS 的外部访问端口</span><br></pre></td></tr></table></figure></li><li><p>利用nssm生成frpc服务，并安装到windows</p></li><li><p>关闭windows防火墙，使其可以通过RDP流量或者frpc的流量。这一点我搞不懂怎么弄，所以直接关掉了，各位如果有兴趣可以研究下。。。</p></li></ol><h2 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h2><p>连接公网ip的7001端口，输入windows机器的登录用户密码，测试是否可以连接（可能比较慢，但是应该有相应的过程，如果没有或者connection rejected，则为配置失败，需要重新检查）</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote><p><a href="https://www.cnblogs.com/test-gang/p/18435566">NSSM配置自定义服务</a></p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;由于笔者长期在户外办公，导致很多时候无法直接连接家里的内网环境，而有时候需要连一下，所以就总结了一下怎么做FRP服务实现内网穿透的方法，供大</summary>
+      
+    
+    
+    
+    <category term="内网穿透" scheme="http://eryoung2.github.io/categories/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"/>
+    
+    
+    <category term="FRP" scheme="http://eryoung2.github.io/tags/FRP/"/>
+    
+  </entry>
   
   <entry>
     <title>继续努力ing</title>
@@ -522,31 +546,6 @@
     
     
     <category term="NBA" scheme="http://eryoung2.github.io/tags/NBA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《世间美好与你环环相扣》-- 柏松</title>
-    <link href="http://eryoung2.github.io/2025/01/05/%E3%80%8A%E4%B8%96%E9%97%B4%E7%BE%8E%E5%A5%BD%E4%B8%8E%E4%BD%A0%E7%8E%AF%E7%8E%AF%E7%9B%B8%E6%89%A3%E3%80%8B-%E6%9F%8F%E6%9D%BE/"/>
-    <id>http://eryoung2.github.io/2025/01/05/%E3%80%8A%E4%B8%96%E9%97%B4%E7%BE%8E%E5%A5%BD%E4%B8%8E%E4%BD%A0%E7%8E%AF%E7%8E%AF%E7%9B%B8%E6%89%A3%E3%80%8B-%E6%9F%8F%E6%9D%BE/</id>
-    <published>2025-01-05T10:50:48.000Z</published>
-    <updated>2025-01-05T10:59:13.968Z</updated>
-    
-    <content type="html"><![CDATA[<p>偏偏秉烛夜游，午夜星辰，似奔走之友，<br>爱你每个结痂伤口，酿成的陈年烈酒。<br>入喉尚算可口，怎么泪水，还偶尔失守，<br>邀你细看心中缺口，裂缝里留存，温柔。</p><p>此时已莺飞草长，爱的人正在路上，<br>我知他风雨兼程，途径日暮不赏，<br>穿越人海，只为与你相拥。</p><p>此刻已皓月当空，爱的人手捧星光，<br>我知他乘风破浪，去了黑暗一趟，<br>感同身受，给你救赎热望。</p><p>知道你不能，还让你感受，<br>让星光加了一点彩虹。<br>让樱花偷偷，吻你额头，<br>让世间美好，与你环环相扣。</p><p>此时已莺飞草长，爱的人正在路上，<br>我知他风雨兼程，途径日暮不赏，<br>穿越人海，只为与你相拥。</p><p>此刻已皓月当空，爱的人手捧星光，<br>我知他乘风破浪，去了黑暗一趟，<br>感同身受，给你救赎热望。</p><p>此时已莺飞草长，爱的人正在路上，<br>我知他风雨兼程，途径日暮不赏，<br>穿越人海，只为与你相拥。</p><p>此刻已皓月当空，爱的人手捧星光，<br>我知他乘风破浪，去了黑暗一趟，<br>感同身受，给你救赎热望。</p><p>知道你不能，还让你感受，<br>让星光加了一点彩虹。<br>让樱花开得，纷纷扬扬，<br>当世间美好，与你环环相扣。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;偏偏秉烛夜游，午夜星辰，似奔走之友，&lt;br&gt;爱你每个结痂伤口，酿成的陈年烈酒。&lt;br&gt;入喉尚算可口，怎么泪水，还偶尔失守，&lt;br&gt;邀你细看心中缺口，裂缝里留存，温柔。&lt;/p&gt;
-&lt;p&gt;此时已莺飞草长，爱的人正在路上，&lt;br&gt;我知他风雨兼程，途径日暮不赏，&lt;br&gt;穿越人海，只为</summary>
-      
-    
-    
-    
-    <category term="歌词" scheme="http://eryoung2.github.io/categories/%E6%AD%8C%E8%AF%8D/"/>
-    
-    
-    <category term="抖音神曲" scheme="http://eryoung2.github.io/tags/%E6%8A%96%E9%9F%B3%E7%A5%9E%E6%9B%B2/"/>
     
   </entry>
   
