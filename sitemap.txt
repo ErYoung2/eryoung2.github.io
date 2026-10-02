@@ -163,8 +163,8 @@ http://eryoung2.github.io/tags/podman/
 http://eryoung2.github.io/tags/hexo/
 http://eryoung2.github.io/tags/jenkins/
 http://eryoung2.github.io/tags/k8s/
-http://eryoung2.github.io/tags/cri-o/
 http://eryoung2.github.io/tags/linux/
+http://eryoung2.github.io/tags/cri-o/
 http://eryoung2.github.io/tags/mysql/
 http://eryoung2.github.io/tags/openwrt/
 http://eryoung2.github.io/tags/cmd/
@@ -173,8 +173,8 @@ http://eryoung2.github.io/tags/ruby/
 http://eryoung2.github.io/tags/Gemini/
 http://eryoung2.github.io/tags/Sing-box/
 http://eryoung2.github.io/tags/ssh/
-http://eryoung2.github.io/tags/ubuntu/
 http://eryoung2.github.io/tags/vim/
+http://eryoung2.github.io/tags/ubuntu/
 http://eryoung2.github.io/tags/%E6%8A%96%E9%9F%B3%E7%A5%9E%E6%9B%B2/
 http://eryoung2.github.io/tags/%E6%8F%BD%E4%BD%AC/
 http://eryoung2.github.io/tags/%E6%B0%91%E8%B0%A3/
@@ -195,11 +195,11 @@ http://eryoung2.github.io/tags/NBA/
 http://eryoung2.github.io/tags/AZure/
 http://eryoung2.github.io/tags/GCP/
 http://eryoung2.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91/
-http://eryoung2.github.io/tags/%E5%8F%91%E5%B8%83%E6%96%B9%E5%BC%8F/
 http://eryoung2.github.io/tags/%E7%BD%91%E7%BB%9C/
 http://eryoung2.github.io/tags/%E6%9D%82%E8%B0%88/
-http://eryoung2.github.io/tags/%E6%89%93%E5%8D%B0%E6%9C%BA/
+http://eryoung2.github.io/tags/%E5%8F%91%E5%B8%83%E6%96%B9%E5%BC%8F/
 http://eryoung2.github.io/tags/%E4%B8%89%E4%BD%93/
+http://eryoung2.github.io/tags/%E6%89%93%E5%8D%B0%E6%9C%BA/
 http://eryoung2.github.io/tags/%E5%86%85%E6%A0%B8/
 http://eryoung2.github.io/tags/%E6%88%BF%E8%B4%B7/
 http://eryoung2.github.io/tags/FRP/

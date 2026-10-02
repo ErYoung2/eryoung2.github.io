@@ -1441,14 +1441,14 @@
   </url>
   
   <url>
-    <loc>http://eryoung2.github.io/tags/cri-o/</loc>
+    <loc>http://eryoung2.github.io/tags/linux/</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://eryoung2.github.io/tags/linux/</loc>
+    <loc>http://eryoung2.github.io/tags/cri-o/</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1511,14 +1511,14 @@
   </url>
   
   <url>
-    <loc>http://eryoung2.github.io/tags/ubuntu/</loc>
+    <loc>http://eryoung2.github.io/tags/vim/</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://eryoung2.github.io/tags/vim/</loc>
+    <loc>http://eryoung2.github.io/tags/ubuntu/</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1665,13 +1665,6 @@
   </url>
   
   <url>
-    <loc>http://eryoung2.github.io/tags/%E5%8F%91%E5%B8%83%E6%96%B9%E5%BC%8F/</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://eryoung2.github.io/tags/%E7%BD%91%E7%BB%9C/</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -1686,7 +1679,7 @@
   </url>
   
   <url>
-    <loc>http://eryoung2.github.io/tags/%E6%89%93%E5%8D%B0%E6%9C%BA/</loc>
+    <loc>http://eryoung2.github.io/tags/%E5%8F%91%E5%B8%83%E6%96%B9%E5%BC%8F/</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1694,6 +1687,13 @@
   
   <url>
     <loc>http://eryoung2.github.io/tags/%E4%B8%89%E4%BD%93/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://eryoung2.github.io/tags/%E6%89%93%E5%8D%B0%E6%9C%BA/</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
