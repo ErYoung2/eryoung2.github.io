@@ -1,0 +1,52 @@
+/* source/css/rate.css */
+.rate-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 4px 0;
+}
+.rate-card-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--light-grey, #e3e8f7);
+  border-radius: 8px;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+}
+.rate-card-item:hover {
+  border-color: var(--theme-color, #49b1f5);
+  transform: translateY(-2px);
+}
+.rate-flag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--font-color, #4c4948);
+}
+.rate-num {
+  font-weight: 700;
+  color: var(--theme-color, #49b1f5);
+  font-size: 1rem;
+  font-family: "SF Mono", Monaco, Consolas, monospace;
+}
+.rate-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--light-grey, #e3e8f7);
+  color: #888;
+  font-size: 0.75rem;
+}
+.rate-refresh-btn {
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+.rate-refresh-btn:hover {
+  transform: rotate(180deg);
+  color: var(--theme-color, #49b1f5);
+}
