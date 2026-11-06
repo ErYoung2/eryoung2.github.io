@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2026-11-05T09:49:55.034Z</updated>
+  <updated>2026-11-06T01:20:26.076Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Debian关闭默认GUI</title>
+    <link href="http://eryoung2.github.io/2026/11/06/Debian%E5%85%B3%E9%97%AD%E9%BB%98%E8%AE%A4GUI/"/>
+    <id>http://eryoung2.github.io/2026/11/06/Debian%E5%85%B3%E9%97%AD%E9%BB%98%E8%AE%A4GUI/</id>
+    <published>2026-11-06T01:13:22.000Z</published>
+    <updated>2026-11-06T01:20:26.076Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天早晨我一看前几天装的Debian系统，发现Hyper-V平台给它分配了10G的系统！！！10G啊，一个Linux而已哦。。。</p><p>然后我就看了一下，发现GUI还开着，那就关掉呗，反正也不用。</p><h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><ol><li><p>登录Debian系统</p></li><li><p>查看默认启动模式</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl get-default</span><br></pre></td></tr></table></figure></li></ol><p>如果出来的是graphical.target，那就说明目前默认启动模式是GUI</p><ol start="3"><li>修改为命令行模式<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl set-default multi-user.target</span><br></pre></td></tr></table></figure></li></ol><p>然后就会出现 Created symlink &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;default.target → … 的提示，表示修改成功。</p><ol start="4"><li><p>重启虚拟机，生效配置</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo reboot</span><br></pre></td></tr></table></figure></li><li><p>重新验证，发现已经变成multi.target了</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@debian109:~# sudo systemctl get-default</span><br><span class="line">multi-user.target</span><br></pre></td></tr></table></figure></li></ol><h2 id="如果要改回去怎么办"><a href="#如果要改回去怎么办" class="headerlink" title="如果要改回去怎么办"></a>如果要改回去怎么办</h2><p>如果你以后需要再次使用图形界面，只需要反向操作，将默认目标改回去即可：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl set-default graphical.target</span><br><span class="line">sudo reboot</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;今天早晨我一看前几天装的Debian系统，发现Hyper-V平台给它分配了10G的系统！！！10G啊，一个Linux而已哦。。。&lt;/p&gt;
+&lt;</summary>
+      
+    
+    
+    
+    <category term="OS" scheme="http://eryoung2.github.io/categories/OS/"/>
+    
+    
+    <category term="Debian" scheme="http://eryoung2.github.io/tags/Debian/"/>
+    
+  </entry>
   
   <entry>
     <title>Nginx常见HTTP问题细究</title>
@@ -514,32 +539,6 @@
     
     
     <category term="揽佬" scheme="http://eryoung2.github.io/tags/%E6%8F%BD%E4%BD%AC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《绵绵》-- 陈奕迅</title>
-    <link href="http://eryoung2.github.io/2025/06/09/%E3%80%8A%E7%BB%B5%E7%BB%B5%E3%80%8B-%E9%99%88%E5%A5%95%E8%BF%85/"/>
-    <id>http://eryoung2.github.io/2025/06/09/%E3%80%8A%E7%BB%B5%E7%BB%B5%E3%80%8B-%E9%99%88%E5%A5%95%E8%BF%85/</id>
-    <published>2025-06-08T16:50:56.000Z</published>
-    <updated>2025-06-08T16:51:41.094Z</updated>
-    
-    <content type="html"><![CDATA[<p>和你也许不会再相拥，大概你的体重，会抱我造梦，<br>从前为了不想失约，连病都不敢痛，到哪一天才会想起我蠢。</p><p>和你也许不会再通宵，坐到咖啡酸了，喝也喝不掉，<br>从前为你舍得无聊，宁愿休息不要，<br>谈论连场大雨你窗台漏水，不得了。</p><p>从来未爱你，绵绵，可惜我爱怀念，<br>尤其是代我伤心的唱片。<br>从来未爱你，但永远为任何人奉献，<br>从来未细心数清楚，一个下雨天，<br>一次愉快的睡眠，断多少发线。</p><p>和你也许不会再拥抱，待你我都苍老，<br>散搬离的步，前尘就似轻于鸿毛，提及心底苦恼，<br>如像自言自语说他人是非，多么好。</p><p>从来未爱你，绵绵，可惜我爱怀念，<br>尤其是代我伤心的唱片。<br>从来未爱你，但永远为任何人奉献，<br>从来未细心数清楚，一个下雨天，<br>一次愉快的睡眠，断多少发线。</p><p>从来未爱你，只喜爱跟一颗心血战，<br>亦怀念那吸不透的香烟，<br>从来未爱你，只喜爱共万人迷遇见，<br>从来未细心数清楚，一个下雨天，<br>一次愉快的睡眠，断多少发线。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;和你也许不会再相拥，大概你的体重，会抱我造梦，&lt;br&gt;从前为了不想失约，连病都不敢痛，到哪一天才会想起我蠢。&lt;/p&gt;
-&lt;p&gt;和你也许不会再通宵，坐到咖啡酸了，喝也喝不掉，&lt;br&gt;从前为你舍得无聊，宁愿休息不要，&lt;br&gt;谈论连场大雨你窗台漏水，不得了。&lt;/p&gt;
-&lt;p&gt;从来未爱</summary>
-      
-    
-    
-    
-    <category term="歌词" scheme="http://eryoung2.github.io/categories/%E6%AD%8C%E8%AF%8D/"/>
-    
-    
-    <category term="陈奕迅" scheme="http://eryoung2.github.io/tags/%E9%99%88%E5%A5%95%E8%BF%85/"/>
     
   </entry>
   
