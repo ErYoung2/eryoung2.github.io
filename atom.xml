@@ -6,7 +6,7 @@
   <link href="http://eryoung2.github.io/atom.xml" rel="self"/>
   
   <link href="http://eryoung2.github.io/"/>
-  <updated>2026-11-13T03:10:38.183Z</updated>
+  <updated>2026-11-25T19:30:24.591Z</updated>
   <id>http://eryoung2.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>K8S Service的四种暴露方式</title>
+    <link href="http://eryoung2.github.io/2026/11/26/K8S-Service%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%9A%B4%E9%9C%B2%E6%96%B9%E5%BC%8F/"/>
+    <id>http://eryoung2.github.io/2026/11/26/K8S-Service%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%9A%B4%E9%9C%B2%E6%96%B9%E5%BC%8F/</id>
+    <published>2026-11-25T19:20:15.000Z</published>
+    <updated>2026-11-25T19:30:24.591Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Service的概念与作用"><a href="#Service的概念与作用" class="headerlink" title="Service的概念与作用"></a>Service的概念与作用</h2><p>Service是K8S当中的一种资源，是将一组提供相同功能的 Pod 抽象为统一网络入口的资源对象，用于解决 Pod IP 动态变化、服务发现与流量负载均衡问题的组件。其核心作用有：</p><ol><li>屏蔽Pod变化：Pod 重建或扩缩容时 IP 会改变，Service 提供稳定的虚拟 IP（ClusterIP）和域名访问入口。</li><li>负载均衡：将发往 Service 的流量分发到匹配标签选择器（selector）且处于就绪状态的后端 Pod。</li><li>服务发现：支持通过环境变量（{SVCNAME}_SERVICE_HOST &#x2F; {SVCNAME}_SERVICE_PORT）和集群 DNS（如 CoreDNS）进行解析。</li></ol><h2 id="常见的暴露方式"><a href="#常见的暴露方式" class="headerlink" title="常见的暴露方式"></a>常见的暴露方式</h2><h4 id="ClusterIP"><a href="#ClusterIP" class="headerlink" title="ClusterIP"></a>ClusterIP</h4><p>Service默认的暴露方式，分配集群内部虚拟IP，仅限集群内访问。若 spec.clusterIP: None，则为无头服务（Headless Service），DNS 直接返回后端 Pod IP 列表。</p><h4 id="NodePort"><a href="#NodePort" class="headerlink" title="NodePort"></a>NodePort</h4><p>在 ClusterIP 基础上，在每个节点上开放静态端口（默认 30000-32767），通过 &lt;节点IP&gt;:<NodePort> 从集群外部访问。</p><h4 id="LoadBalancer"><a href="#LoadBalancer" class="headerlink" title="LoadBalancer"></a>LoadBalancer</h4><p>在 NodePort 基础上，向云厂商申请外部负载均衡器，分配外部 IP 或域名暴露服务。</p><h4 id="ExternalName"><a href="#ExternalName" class="headerlink" title="ExternalName"></a>ExternalName</h4><p>通过 DNS CNAME 记录将 Service 映射到外部域名，不使用选择算符和后端端点。</p><h2 id="关键字段与机制"><a href="#关键字段与机制" class="headerlink" title="关键字段与机制"></a>关键字段与机制</h2><h4 id="端口映射"><a href="#端口映射" class="headerlink" title="端口映射"></a>端口映射</h4><p>port 为 Service 暴露端口，targetPort 为后端 Pod 容器监听端口，nodePort 为节点映射端口。</p><h4 id="EndpointSlices"><a href="#EndpointSlices" class="headerlink" title="EndpointSlices"></a>EndpointSlices</h4><p>记录 Service 对应的后端网络端点，替代已弃用的 Endpoints API，支持双栈和更细粒度的流量路由。</p><h4 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h4><p>可通过 externalTrafficPolicy、internalTrafficPolicy、sessionAffinity（客户端 IP 会话亲和性）和 trafficDistribution 控制路由行为。</p><h2 id="典型的Service-yaml文件"><a href="#典型的Service-yaml文件" class="headerlink" title="典型的Service yaml文件"></a>典型的Service yaml文件</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Service</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">web-svc</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">selector:</span></span><br><span class="line">    <span class="attr">app:</span> <span class="string">web</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">ClusterIP</span></span><br><span class="line">  <span class="attr">ports:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">http</span></span><br><span class="line">      <span class="attr">protocol:</span> <span class="string">TCP</span></span><br><span class="line">      <span class="attr">port:</span> <span class="number">80</span></span><br><span class="line">      <span class="attr">targetPort:</span> <span class="number">8080</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;Service的概念与作用&quot;&gt;&lt;a href=&quot;#Service的概念与作用&quot; class=&quot;headerlink&quot; title=&quot;Service的概念与作用&quot;&gt;&lt;/a&gt;Service的概念与作用&lt;/h2&gt;&lt;p&gt;Service是K8S当中的一种资源，是将一组提供相</summary>
+      
+    
+    
+    
+    <category term="云原生" scheme="http://eryoung2.github.io/categories/%E4%BA%91%E5%8E%9F%E7%94%9F/"/>
+    
+    
+    <category term="k8s" scheme="http://eryoung2.github.io/tags/k8s/"/>
+    
+  </entry>
   
   <entry>
     <title>CNCF全部毕业项目</title>
@@ -503,32 +527,6 @@
     <summary type="html">&lt;p&gt;本周状态很奇怪，可能因为天气很热，导致中暑了，整个人病怏怏的，什么也不想做，就想躺着，也不想上班，也不想学习，整个人的状态很差很差。&lt;/p&gt;
 &lt;p&gt;今天跟朋友聊天，我跟他说废废了，哦那就是废废了。&lt;/p&gt;
 &lt;p&gt;什么也不想做，这是为什么呢，明明很多事情需要做，但就是不想做。</summary>
-      
-    
-    
-    
-    <category term="失眠杂想" scheme="http://eryoung2.github.io/categories/%E5%A4%B1%E7%9C%A0%E6%9D%82%E6%83%B3/"/>
-    
-    
-    <category term="碎碎念" scheme="http://eryoung2.github.io/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2025上半年总结</title>
-    <link href="http://eryoung2.github.io/2025/06/30/2025%E4%B8%8A%E5%8D%8A%E5%B9%B4%E6%80%BB%E7%BB%93/"/>
-    <id>http://eryoung2.github.io/2025/06/30/2025%E4%B8%8A%E5%8D%8A%E5%B9%B4%E6%80%BB%E7%BB%93/</id>
-    <published>2025-06-30T14:54:08.000Z</published>
-    <updated>2025-06-30T15:03:24.867Z</updated>
-    
-    <content type="html"><![CDATA[<p>不知不觉，2025年的上半年已经过去了，在这半年里发生了很多事情，颇有感慨。</p><p>首先，我首次搬家出来住，并将房子租出去，短暂做了半年包租公，但是没多久就停了，因为租客跑路，现在处于两头出血的状态；在可见的下半年仍会维持这样的状态。</p><p>第二，工作渐渐走入正轨，自己也没那么忙了，不过有时候还是会很累。</p><p>第三，由于搬家来公司附近，所以周六日出门的意愿就很低，基本都是在家里休息，原因是没有心情出门，也非常懒得出门。</p><p>第四，上半年回了一趟老家，感觉是非常好的，是难得的惬意时光。</p><p>第五，我开始接触股票，每天会研究股市，但是还没多少输出，自己也刚刚把帐户做成盈利状态，还在学习当中。</p><p>第六，自己的小账户总算有钱了，但不多，但是下半年肉眼可见，手头的金钱会变得更多，但是能多多少，心中并没有底。</p><p>总结：虽然个人经济压力减弱，但是依然承压；不过前景光明，需要调整自己心态，不要过于消极与被动，这样才可能有一些转机。</p><p>就酱紫，睡觉，下半年见～</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;不知不觉，2025年的上半年已经过去了，在这半年里发生了很多事情，颇有感慨。&lt;/p&gt;
-&lt;p&gt;首先，我首次搬家出来住，并将房子租出去，短暂做了半年包租公，但是没多久就停了，因为租客跑路，现在处于两头出血的状态；在可见的下半年仍会维持这样的状态。&lt;/p&gt;
-&lt;p&gt;第二，工作渐渐走</summary>
       
     
     
